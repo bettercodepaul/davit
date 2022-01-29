@@ -1,0 +1,38 @@
+/*TODO: use global css spacing layout usw.*/
+
+.flowChartLabel {
+    align-content: center;
+    display: flex;
+    margin-bottom: 2px;
+    width: 25em;
+}
+
+.flowChartLabelLeft {
+    align-self: center;
+    background-color: var(--secondary-color);
+    border-bottom: 2px solid var(--border-color);
+    border-bottom-left-radius: 5px;
+    border-left: 2px solid var(--border-color);
+    border-top: 2px solid var(--border-color);
+    border-top-left-radius: 5px;
+    color: var(--color-black);
+    display: flex;
+    font-weight: bold;
+    padding: 8px;
+    width: 20%;
+}
+
+.flowChartLabelRight {
+    align-items: center;
+    background-color: var(--background-color-header);
+    border-bottom: 2px solid var(--border-color);
+    border-bottom-right-radius: 5px;
+    border-right: 2px solid var(--border-color);
+    border-top: 2px solid var(--border-color);
+    border-top-right-radius: 5px;
+    color: var(--primary-text-color);
+    display: flex;
+    font-weight: bold;
+    padding: 5px;
+    width: 80%;
+}

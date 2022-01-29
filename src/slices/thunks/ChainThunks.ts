@@ -2,7 +2,7 @@
 
 import { ChainCTO } from "../../dataAccess/access/cto/ChainCTO";
 import { ChainDecisionTO } from "../../dataAccess/access/to/ChainDecisionTO";
-import { ChainlinkTO } from "../../dataAccess/access/to/ChainlinkTO";
+import { ChainLinkTO } from "../../dataAccess/access/to/ChainLinkTO";
 import { ChainTO } from "../../dataAccess/access/to/ChainTO";
 import { DataAccess } from "../../dataAccess/DataAccess";
 import { DataAccessResponse } from "../../dataAccess/DataAccessResponse";
@@ -50,7 +50,7 @@ const deleteChainThunk = (chain: ChainTO): AppThunk => (dispatch) => {
 };
 
 const setChainRootThunk = (chainId: number, rootId: number, isDecision: boolean): AppThunk => (dispatch) => {
-    const response: DataAccessResponse<ChainlinkTO | ChainDecisionTO> = DataAccess.setChainRoot(
+    const response: DataAccessResponse<ChainLinkTO | ChainDecisionTO> = DataAccess.setChainRoot(
         chainId,
         rootId,
         isDecision,

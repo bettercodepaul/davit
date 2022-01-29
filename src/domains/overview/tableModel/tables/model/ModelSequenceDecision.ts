@@ -62,7 +62,7 @@ function getGotoName(goto: GoTo, steps: SequenceStepCTO[], decisions: DecisionTO
             break;
         case GoToTypes.STEP:
             gotoName =
-                steps.find((step) => step.squenceStepTO.id === (goto as Intermediate).id)?.squenceStepTO.name ||
+                steps.find((step) => step.sequenceStepTO.id === (goto as Intermediate).id)?.sequenceStepTO.name ||
                 gotoName;
             break;
         case GoToTypes.DEC:

@@ -1,19 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-// import {BrowserRouter, Route, Switch} from "react-router-dom";
-// electron needs HashRouter
 import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom";
 import { ErrorNotification } from "../components/molecules/notifications/ErrorNotification";
 import { ControlPanelController } from "../components/organisms/controllPanel/presentation/ControlPanelController";
 import { SidePanelController } from "../components/organisms/sidePanel/SidePanelController";
-import "../css/Davit.css";
 import { ActorModelController } from "../domains/actor/ActorModelController";
 import { DataModelController } from "../domains/datamodel/DataModelController";
 import { FlowChartController } from "../domains/overview/flowChartModel/FlowChartController";
 import { TableModelController } from "../domains/overview/tableModel/presentation/TableModelController";
 import { GlobalActions } from "../slices/GlobalSlice";
 import { MasterDataActions } from "../slices/MasterDataSlice";
+import "./Davit.css";
 
 export const ModuleRoutes = {
     home: "/",
@@ -51,37 +49,29 @@ export function Davit() {
                 <Route exact
                        path={ModuleRoutes.actor}
                 >
-                    <div className="Carv2">
-                        <div className="componentPage">
-                            <ActorModelController fullScreen />
-                        </div>
+                    <div className="componentPage">
+                        <ActorModelController />
                     </div>
                 </Route>
                 <Route exact
                        path={ModuleRoutes.data}
                 >
-                    <div className="Carv2">
-                        <div className="componentPage">
-                            <DataModelController fullScreen />
-                        </div>
+                    <div className="componentPage">
+                        <DataModelController />
                     </div>
                 </Route>
                 <Route exact
                        path={ModuleRoutes.table}
                 >
-                    <div className="Carv2">
-                        <div className="componentPage">
-                            <TableModelController fullScreen />
-                        </div>
+                    <div className="componentPage">
+                        <TableModelController />
                     </div>
                 </Route>
                 <Route exact
                        path={ModuleRoutes.flowChart}
                 >
-                    <div className="Carv2">
-                        <div className="componentPage">
-                            <FlowChartController fullScreen />
-                        </div>
+                    <div className="componentPage">
+                        <FlowChartController />
                     </div>
                 </Route>
             </Switch>

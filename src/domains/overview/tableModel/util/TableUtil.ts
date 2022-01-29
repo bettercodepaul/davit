@@ -1,10 +1,10 @@
-import { ChainlinkCTO } from "../../../../dataAccess/access/cto/ChainlinkCTO";
+import { ChainLinkCTO } from "../../../../dataAccess/access/cto/ChainLinkCTO";
 import { ChainDecisionTO } from "../../../../dataAccess/access/to/ChainDecisionTO";
 import { GoToChain, GoToTypesChain, IntermediateChain } from "../../../../dataAccess/access/types/GoToTypeChain";
 
 export function getChainGotoName(
     goto: GoToChain,
-    selectedChainlinks: ChainlinkCTO[],
+    selectedChainlinks: ChainLinkCTO[],
     selectedChainDecisions: ChainDecisionTO[],
 ) {
     let gotoName: string = "could not find goto";

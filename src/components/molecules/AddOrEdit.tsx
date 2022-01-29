@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { DavitAddButton } from "../atomic/buttons/DavitAddButton";
+import { ElementSize } from "../../style/Theme";
+import { DavitAddButton } from "../atomic";
 
 interface AddOrEditProps {
     addCallBack: () => void;
@@ -11,7 +12,9 @@ export const AddOrEdit: FunctionComponent<AddOrEditProps> = (props) => {
 
     return (
         <div className="flex">
-            <DavitAddButton onClick={() => addCallBack()} />
+            <DavitAddButton onClick={() => addCallBack()}
+                            size={ElementSize.medium}
+            />
             {dropDown}
         </div>
     );

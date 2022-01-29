@@ -83,7 +83,7 @@ export const TabPanel: FunctionComponent<TabPanelProps> = (props) => {
                     condition: showCalcSequenceTab,
                 },
                 {
-                    label: "Errors",
+                    label: "Error Actions",
                     identifier: ActiveTab.errorAction,
                     condition: showErrorTab,
                 },

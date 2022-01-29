@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChainDecisionTO } from "../../../../../../../../dataAccess/access/to/ChainDecisionTO";
-import { ChainlinkTO } from "../../../../../../../../dataAccess/access/to/ChainlinkTO";
+import { ChainLinkTO } from "../../../../../../../../dataAccess/access/to/ChainLinkTO";
 import { ChainTO } from "../../../../../../../../dataAccess/access/to/ChainTO";
 import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";
+import { StateFkAndStateCondition } from "../../../../../../../../dataAccess/access/to/DecisionTO";
 import { GoToChain, GoToTypesChain } from "../../../../../../../../dataAccess/access/types/GoToTypeChain";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
@@ -94,7 +95,7 @@ export const useChainDecisionViewModel = () => {
         }
     };
 
-    const setGoToTypeStep = (ifGoTo: boolean, link?: ChainlinkTO) => {
+    const setGoToTypeStep = (ifGoTo: boolean, link?: ChainLinkTO) => {
         if (link) {
             const newGoTo: GoToChain = {type: GoToTypesChain.LINK, id: link.id};
             saveGoToType(ifGoTo, newGoTo);
@@ -111,7 +112,7 @@ export const useChainDecisionViewModel = () => {
     const createGoToLink = (ifGoTo: boolean) => {
         if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
             const copyDecision: ChainDecisionTO = DavitUtil.deepCopy(decisionToEdit);
-            const goToLink: ChainlinkTO = new ChainlinkTO();
+            const goToLink: ChainLinkTO = new ChainLinkTO();
             goToLink.chainFk = decisionToEdit!.chainFk;
             dispatch(EditActions.setMode.editChainLink(goToLink, copyDecision, ifGoTo));
         }
@@ -167,6 +168,34 @@ export const useChainDecisionViewModel = () => {
         }
     };
 
+    // ------------------------------------- State ------------------------------------
+
+    const createStateFkAndStateCondition = () => {
+        if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
+            const copyDecision: ChainDecisionTO = DavitUtil.deepCopy(decisionToEdit);
+            copyDecision.stateFkAndStateConditions.push({stateFk: -1, stateCondition: true});
+
+            updateChainDecision(copyDecision);
+        }
+    };
+
+    const updateStateFkAndStateCondition = (newState: StateFkAndStateCondition | undefined, index: number) => {
+        if (newState) {
+            if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
+                const copyDecision: ChainDecisionTO = DavitUtil.deepCopy(decisionToEdit);
+                copyDecision.stateFkAndStateConditions[index] = newState;
+                updateChainDecision(copyDecision);
+            }
+        }
+    };
+
+    const deleteStateFkAndStateCondition = (stateFkToRemove: number) => {
+        if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
+            const copyDecision: ChainDecisionTO = DavitUtil.deepCopy(decisionToEdit);
+            copyDecision.stateFkAndStateConditions = copyDecision.stateFkAndStateConditions.filter(stateFkStateCondition => stateFkStateCondition.stateFk !== stateFkToRemove);
+            updateChainDecision(copyDecision);
+        }
+    };
 
     return {
         name: decisionToEdit?.name,
@@ -188,5 +217,9 @@ export const useChainDecisionViewModel = () => {
         saveCondition,
         deleteCondition,
         createCondition,
+        stateFkAndStateConditions: decisionToEdit?.stateFkAndStateConditions || [],
+        createStateFkAndStateCondition,
+        updateStateFkAndStateCondition,
+        deleteStateFkAndStateCondition,
     };
 };

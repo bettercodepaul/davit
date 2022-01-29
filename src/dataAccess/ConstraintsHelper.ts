@@ -5,6 +5,23 @@ import { SequenceStepTO } from "./access/to/SequenceStepTO";
 import { GoToTypes } from "./access/types/GoToType";
 
 export const ConstraintsHelper = {
+
+    deleteSequenceStateConstraintCheck(sequenceStateId: number, dataStore: DataStoreCTO) {
+        const decisionIsUsingSequenceState: boolean = Array.from(dataStore.decisions.values())
+            .some(decision => decision.stateFkAndStateConditions.some(stateFkAndCondition => stateFkAndCondition.stateFk === sequenceStateId));
+        if (decisionIsUsingSequenceState) {
+            throw new Error(`Sequence state.error! state with id: ${sequenceStateId} is still connected to decisions(s)!`);
+        }
+    },
+
+    deleteChainStateConstraintCheck(chainStateId: number, dataStore: DataStoreCTO) {
+        const decisionIsUsingChainState: boolean = Array.from(dataStore.chainDecisions.values())
+            .some(decision => decision.stateFkAndStateConditions.some(stateFkAndCondition => stateFkAndCondition.stateFk === chainStateId));
+        if (decisionIsUsingChainState) {
+            throw new Error(`Sequence state.error! state with id: ${chainStateId} is still connected to decisions(s)!`);
+        }
+    },
+
     deleteDataConstraintCheck(dataId: number, dataStore: DataStoreCTO) {
         const dataRelationExists: boolean = Array.from(dataStore.dataConnections.values()).some(
             (relation) => relation.data1Fk === dataId || relation.data2Fk === dataId,
@@ -18,15 +35,11 @@ export const ConstraintsHelper = {
             decision.conditions.some((condition) => condition.dataFk === dataId),
         );
 
-        const chainDecisionExists: boolean = Array.from(dataStore.chaindecisions.values()).some((chainDecision) =>
+        const chainDecisionExists: boolean = Array.from(dataStore.chainDecisions.values()).some((chainDecision) =>
             chainDecision.conditions.some((condition) => condition.dataFk === dataId),
         );
 
-        const initDataExists: boolean = Array.from(dataStore.initDatas.values()).some(
-            (initData) => initData.dataFk === dataId,
-        );
-
-        if (dataRelationExists || actionExist || decisionExists || chainDecisionExists || initDataExists) {
+        if (dataRelationExists || actionExist || decisionExists || chainDecisionExists) {
             throw new Error(`delete.error! data with id: ${dataId} is still connected to Object(s)!`);
         }
     },
@@ -40,17 +53,13 @@ export const ConstraintsHelper = {
             decision.conditions.some((condition) => condition.dataFk === dataId && condition.instanceFk === instanceId),
         );
 
-        const chainDecisionExists: boolean = Array.from(dataStore.chaindecisions.values()).some((chainDecision) =>
+        const chainDecisionExists: boolean = Array.from(dataStore.chainDecisions.values()).some((chainDecision) =>
             chainDecision.conditions.some(
                 (condition) => condition.dataFk === dataId && condition.instanceFk === instanceId,
             ),
         );
 
-        const initDataExists: boolean = Array.from(dataStore.initDatas.values()).some(
-            (initData) => initData.dataFk === dataId && initData.instanceFk === instanceId,
-        );
-
-        if (actionExists || decisionExists || initDataExists || chainDecisionExists) {
+        if (actionExists || decisionExists || chainDecisionExists) {
             throw new Error(`delete.error! data instance with id: ${instanceId} is still connected to Object(s)!`);
         }
     },
@@ -64,15 +73,11 @@ export const ConstraintsHelper = {
             decision.conditions.some((condition) => condition.actorFk === actorId),
         );
 
-        const chainDecisionExists: boolean = Array.from(dataStore.chaindecisions.values()).some(
+        const chainDecisionExists: boolean = Array.from(dataStore.chainDecisions.values()).some(
             (chainDecision) => chainDecision.conditions.some(condition => condition.actorFk === actorId),
         );
 
-        const initDataExists: boolean = Array.from(dataStore.initDatas.values()).some(
-            (initData) => initData.actorFk === actorId,
-        );
-
-        if (actionExists || decisionExists || chainDecisionExists || initDataExists) {
+        if (actionExists || decisionExists || chainDecisionExists) {
             throw new Error(`delete.error! actor with id: ${actorId} is still connected to Object(s)!`);
         }
     },
@@ -123,11 +128,11 @@ export const ConstraintsHelper = {
     },
 
     deleteChainConstraintCheck(chainId: number, dataStore: DataStoreCTO) {
-        const linkExists: boolean = Array.from(dataStore.chainlinks.values()).some(
+        const linkExists: boolean = Array.from(dataStore.chainLinks.values()).some(
             (chainlink) => chainlink.chainFk === chainId,
         );
 
-        const chainDecisionExists: boolean = Array.from(dataStore.chaindecisions.values()).some(
+        const chainDecisionExists: boolean = Array.from(dataStore.chainDecisions.values()).some(
             (chainDecision) => chainDecision.chainFk === chainId,
         );
 

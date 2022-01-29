@@ -1,5 +1,5 @@
 import { ChainDecisionTO } from "../../dataAccess/access/to/ChainDecisionTO";
-import { ChainlinkTO } from "../../dataAccess/access/to/ChainlinkTO";
+import { ChainLinkTO } from "../../dataAccess/access/to/ChainLinkTO";
 import { GoToTypesChain } from "../../dataAccess/access/types/GoToTypeChain";
 import { DataAccess } from "../../dataAccess/DataAccess";
 import { DataAccessResponse } from "../../dataAccess/DataAccessResponse";
@@ -9,17 +9,17 @@ import { GlobalActions } from "../GlobalSlice";
 import { MasterDataActions } from "../MasterDataSlice";
 import { EditChainDecision } from "./ChainDecisionThunks";
 
-const createChainLinkThunk = (link: ChainlinkTO, from?: ChainlinkTO | ChainDecisionTO, ifGoTO?: boolean): AppThunk => (
+const createChainLinkThunk = (link: ChainLinkTO, from?: ChainLinkTO | ChainDecisionTO, ifGoTO?: boolean): AppThunk => (
     dispatch,
 ) => {
-    const response: DataAccessResponse<ChainlinkTO> = DataAccess.saveChainlink(link);
+    const response: DataAccessResponse<ChainLinkTO> = DataAccess.saveChainlink(link);
     if (response.code !== 200) {
         dispatch(GlobalActions.handleError(response.message));
     } else {
         if (from !== undefined) {
-            if ((from as ChainlinkTO).dataSetupFk !== undefined) {
-                (from as ChainlinkTO).goto = {type: GoToTypesChain.LINK, id: response.object.id};
-                dispatch(saveChainLinkThunk(from as ChainlinkTO));
+            if ((from as ChainLinkTO).sequenceConfigurationFk !== undefined) {
+                (from as ChainLinkTO).goto = {type: GoToTypesChain.LINK, id: response.object.id};
+                dispatch(saveChainLinkThunk(from as ChainLinkTO));
             }
             if ((from as ChainDecisionTO).ifGoTo !== undefined) {
                 if (ifGoTO) {
@@ -34,24 +34,24 @@ const createChainLinkThunk = (link: ChainlinkTO, from?: ChainlinkTO | ChainDecis
     }
 };
 
-const saveChainLinkThunk = (link: ChainlinkTO): AppThunk => (dispatch) => {
-    const response: DataAccessResponse<ChainlinkTO> = DataAccess.saveChainlink(link);
+const saveChainLinkThunk = (link: ChainLinkTO): AppThunk => (dispatch) => {
+    const response: DataAccessResponse<ChainLinkTO> = DataAccess.saveChainlink(link);
     if (response.code !== 200) {
         dispatch(GlobalActions.handleError(response.message));
     }
     dispatch(MasterDataActions.loadChainLinksFromBackend());
 };
 
-const deleteChainLinkThunk = (link: ChainlinkTO): AppThunk => (dispatch) => {
-    const response: DataAccessResponse<ChainlinkTO> = DataAccess.deleteChainLink(link);
+const deleteChainLinkThunk = (link: ChainLinkTO): AppThunk => (dispatch) => {
+    const response: DataAccessResponse<ChainLinkTO> = DataAccess.deleteChainLink(link);
     if (response.code !== 200) {
         dispatch(GlobalActions.handleError(response.message));
     }
     dispatch(MasterDataActions.loadChainLinksFromBackend());
 };
 
-const findChainLinkThunk = (id: number): ChainlinkTO => {
-    const response: DataAccessResponse<ChainlinkTO> = DataAccess.findChainLink(id);
+const findChainLinkThunk = (id: number): ChainLinkTO => {
+    const response: DataAccessResponse<ChainLinkTO> = DataAccess.findChainLink(id);
     if (response.code !== 200) {
         // TODO: call this with "disptach(GlobalActions.handleError)".
         console.warn(response.message);
@@ -59,7 +59,7 @@ const findChainLinkThunk = (id: number): ChainlinkTO => {
     return response.object;
 };
 
-const setChainLinkToEditThunk = (link: ChainlinkTO): AppThunk => (dispatch, getState) => {
+const setChainLinkToEditThunk = (link: ChainLinkTO): AppThunk => (dispatch, getState) => {
     const mode: Mode = getState().edit.mode;
 
     if (mode === Mode.EDIT_CHAIN_LINK) {

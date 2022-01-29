@@ -1,0 +1,84 @@
+:root {
+    --configurationBodyMinHeight: 20rem;
+    --configurationBodyMinWidth: 15rem;
+}
+
+.configurationPanel {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    left: 5rem;
+    position: fixed;
+    top: 2rem;
+    z-index: 99;
+}
+
+.configurationPanelHeader {
+    background-color: var(--background-color-header);
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 30vw;
+}
+
+.configurationBody {
+    animation-duration: var(--animation-time);
+    animation-name: growFromTopToBottom;
+    animation-timing-function: ease-in-out;
+    background-color: var(--background-color);
+}
+
+.configurationSequenceChainColumn {
+    min-height: var(--configurationBodyMinHeight);
+    min-width: var(--configurationBodyMinWidth);
+}
+
+.configList {
+    max-height: 20vh;
+    overflow: auto;
+}
+
+.clickAble {
+    cursor: pointer;
+}
+
+.greenBorder {
+    border-color: var(--color-green);
+}
+
+.selectedColor {
+    color: var(--secondary-color);
+}
+
+.configurationHeader {
+    background-color: var(--secondary-color);
+    color: var(--color-dark);
+}
+
+.noteTextarea {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    color: var(--primary-text-color);
+    max-width: 100%;
+    resize: none;
+}
+
+.calcButton {
+    background-color: var(--secondary-color);
+}
+
+@keyframes growFromTopToBottom {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+
+    70% {
+        opacity: 0;
+        height: var(--configurationBodyMinHeight);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
