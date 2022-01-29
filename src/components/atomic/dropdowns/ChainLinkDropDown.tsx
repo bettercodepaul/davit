@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
-import { ChainLinkTO } from "../../../dataAccess/access/to/ChainLinkTO";
+import { ChainLinkTO } from "../../../dataAccess/access/to/ChainlinkTO";
 import { masterDataSelectors } from "../../../slices/MasterDataSlice";
 import { DavitUtil } from "../../../utils/DavitUtil";
 import { DavitDropDown, DavitDropDownItemProps, DavitLabelDropDown } from "./DavitDropDown";

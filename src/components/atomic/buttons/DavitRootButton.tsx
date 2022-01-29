@@ -11,6 +11,6 @@ export const DavitRootButton: FunctionComponent<DavitRootButtonProps> = (props) 
 
     return <DavitButton onClick={onClick}
                         label={isRoot ? "Start" : "Set as Start"}
-                        disable={isRoot}
+                        disabled={isRoot}
     />;
 };

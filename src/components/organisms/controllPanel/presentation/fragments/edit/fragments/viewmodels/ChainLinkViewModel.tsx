@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChainDecisionTO } from "../../../../../../../../dataAccess/access/to/ChainDecisionTO";
-import { ChainLinkTO } from "../../../../../../../../dataAccess/access/to/ChainLinkTO";
+import { ChainLinkTO } from "../../../../../../../../dataAccess/access/to/ChainlinkTO";
 import { ChainTO } from "../../../../../../../../dataAccess/access/to/ChainTO";
 import { SequenceConfigurationTO } from "../../../../../../../../dataAccess/access/to/SequenceConfigurationTO";
 import { SequenceTO } from "../../../../../../../../dataAccess/access/to/SequenceTO";

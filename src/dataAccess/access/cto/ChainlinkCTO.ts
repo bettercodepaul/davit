@@ -1,4 +1,4 @@
-import { ChainLinkTO } from "../to/ChainLinkTO";
+import { ChainLinkTO } from "../to/ChainlinkTO";
 import { SequenceConfigurationTO } from "../to/SequenceConfigurationTO";
 import { SequenceCTO } from "./SequenceCTO";
 

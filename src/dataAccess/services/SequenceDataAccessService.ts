@@ -1,12 +1,12 @@
 import { DavitUtil } from "../../utils/DavitUtil";
 import { ChainCTO } from "../access/cto/ChainCTO";
-import { ChainLinkCTO } from "../access/cto/ChainLinkCTO";
+import { ChainLinkCTO } from "../access/cto/ChainlinkCTO";
 import { SequenceCTO } from "../access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../access/cto/SequenceStepCTO";
 import { ActionTO } from "../access/to/ActionTO";
 import { ChainConfigurationTO } from "../access/to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../access/to/ChainDecisionTO";
-import { ChainLinkTO } from "../access/to/ChainLinkTO";
+import { ChainLinkTO } from "../access/to/ChainlinkTO";
 import { ChainStateTO } from "../access/to/ChainStateTO";
 import { ChainTO } from "../access/to/ChainTO";
 import { DecisionTO } from "../access/to/DecisionTO";
