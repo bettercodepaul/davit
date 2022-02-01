@@ -44,7 +44,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: '15.x'
+          node-version: '17.x'
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -61,7 +61,7 @@ jobs:
       - name: Yarn Install
         uses: CultureHQ/actions-yarn@v1.0.1
         with:
-          args: install
+          args: install --ignore-engines
 
       - name: Get Major Version
         run: |
