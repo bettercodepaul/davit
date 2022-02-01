@@ -2,7 +2,7 @@
 
 import { ChainCTO } from "../../dataAccess/access/cto/ChainCTO";
 import { ChainDecisionTO } from "../../dataAccess/access/to/ChainDecisionTO";
-import { ChainLinkTO } from "../../dataAccess/access/to/ChainLinkTO";
+import { ChainLinkTO } from "../../dataAccess/access/to/ChainlinkTO";
 import { ChainTO } from "../../dataAccess/access/to/ChainTO";
 import { DataAccess } from "../../dataAccess/DataAccess";
 import { DataAccessResponse } from "../../dataAccess/DataAccessResponse";

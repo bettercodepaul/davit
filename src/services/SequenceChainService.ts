@@ -1,5 +1,5 @@
 import { ChainCTO } from "../dataAccess/access/cto/ChainCTO";
-import { ChainLinkCTO } from "../dataAccess/access/cto/ChainLinkCTO";
+import { ChainLinkCTO } from "../dataAccess/access/cto/ChainlinkCTO";
 import { ActionTO } from "../dataAccess/access/to/ActionTO";
 import { ChainConfigurationTO, ChainStateValue } from "../dataAccess/access/to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../dataAccess/access/to/ChainDecisionTO";

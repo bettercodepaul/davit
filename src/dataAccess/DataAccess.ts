@@ -6,7 +6,7 @@ import { SequenceStepCTO } from "./access/cto/SequenceStepCTO";
 import { ActionTO } from "./access/to/ActionTO";
 import { ChainConfigurationTO } from "./access/to/ChainConfigurationTO";
 import { ChainDecisionTO } from "./access/to/ChainDecisionTO";
-import { ChainLinkTO } from "./access/to/ChainLinkTO";
+import { ChainLinkTO } from "./access/to/ChainlinkTO";
 import { ChainStateTO } from "./access/to/ChainStateTO";
 import { ChainTO } from "./access/to/ChainTO";
 import { DataRelationTO } from "./access/to/DataRelationTO";

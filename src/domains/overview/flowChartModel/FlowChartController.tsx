@@ -3,7 +3,7 @@ import { ArcherContainer, ArcherElement, Relation } from "react-archer";
 import { useDispatch, useSelector } from "react-redux";
 import { StateView } from "../../../components/molecules/StateView";
 import { ChainCTO } from "../../../dataAccess/access/cto/ChainCTO";
-import { ChainLinkCTO } from "../../../dataAccess/access/cto/ChainLinkCTO";
+import { ChainLinkCTO } from "../../../dataAccess/access/cto/ChainlinkCTO";
 import { SequenceCTO } from "../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../dataAccess/access/cto/SequenceStepCTO";
 import { ChainDecisionTO } from "../../../dataAccess/access/to/ChainDecisionTO";

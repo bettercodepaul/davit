@@ -3,7 +3,7 @@ import { ActionTO } from "../to/ActionTO";
 import { ActorTO } from "../to/ActorTO";
 import { ChainConfigurationTO } from "../to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../to/ChainDecisionTO";
-import { ChainLinkTO } from "../to/ChainLinkTO";
+import { ChainLinkTO } from "../to/ChainlinkTO";
 import { ChainStateTO } from "../to/ChainStateTO";
 import { ChainTO } from "../to/ChainTO";
 import { DataRelationTO } from "../to/DataRelationTO";

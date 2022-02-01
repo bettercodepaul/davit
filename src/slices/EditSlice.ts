@@ -8,7 +8,7 @@ import { SequenceStepCTO } from "../dataAccess/access/cto/SequenceStepCTO";
 import { ActionTO } from "../dataAccess/access/to/ActionTO";
 import { ChainConfigurationTO } from "../dataAccess/access/to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../dataAccess/access/to/ChainDecisionTO";
-import { ChainLinkTO } from "../dataAccess/access/to/ChainLinkTO";
+import { ChainLinkTO } from "../dataAccess/access/to/ChainlinkTO";
 import { ChainTO } from "../dataAccess/access/to/ChainTO";
 import { ConditionTO } from "../dataAccess/access/to/ConditionTO";
 import { DataInstanceTO } from "../dataAccess/access/to/DataInstanceTO";

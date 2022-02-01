@@ -2,7 +2,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { DavitTable } from "../../../../components/organisms/table/DavitTable";
-import { ChainLinkCTO } from "../../../../dataAccess/access/cto/ChainLinkCTO";
+import { ChainLinkCTO } from "../../../../dataAccess/access/cto/ChainlinkCTO";
 import { SequenceCTO } from "../../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../../dataAccess/access/cto/SequenceStepCTO";
 import { ActionTO } from "../../../../dataAccess/access/to/ActionTO";

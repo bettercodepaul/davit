@@ -1,4 +1,5 @@
-import { ChainLinkCTO } from "../../../../dataAccess/access/cto/ChainLinkCTO";
+
+import { ChainLinkCTO } from "../../../../dataAccess/access/cto/ChainlinkCTO";
 import { ChainDecisionTO } from "../../../../dataAccess/access/to/ChainDecisionTO";
 import { GoToChain, GoToTypesChain, IntermediateChain } from "../../../../dataAccess/access/types/GoToTypeChain";
 

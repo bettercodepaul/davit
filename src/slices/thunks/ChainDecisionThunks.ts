@@ -1,5 +1,5 @@
 import { ChainDecisionTO } from "../../dataAccess/access/to/ChainDecisionTO";
-import { ChainLinkTO } from "../../dataAccess/access/to/ChainLinkTO";
+import { ChainLinkTO } from "../../dataAccess/access/to/ChainlinkTO";
 import { GoToTypesChain } from "../../dataAccess/access/types/GoToTypeChain";
 import { DataAccess } from "../../dataAccess/DataAccess";
 import { DataAccessResponse } from "../../dataAccess/DataAccessResponse";

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Arrow, ArrowType } from "../components/atomic/svg/DavitPath";
 import { ChainCTO } from "../dataAccess/access/cto/ChainCTO";
-import { ChainLinkCTO } from "../dataAccess/access/cto/ChainLinkCTO";
+import { ChainLinkCTO } from "../dataAccess/access/cto/ChainlinkCTO";
 import { GeometricalDataCTO } from "../dataAccess/access/cto/GeometraicalDataCTO";
 import { SequenceCTO } from "../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../dataAccess/access/cto/SequenceStepCTO";

@@ -1,4 +1,4 @@
-import { ChainLinkTO } from "../access/to/ChainLinkTO";
+import { ChainLinkTO } from "../access/to/ChainlinkTO";
 import dataStore from "../DataStore";
 import { CheckHelper } from "../util/CheckHelper";
 import { DataAccessUtil } from "../util/DataAccessUtil";
