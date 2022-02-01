@@ -61,7 +61,7 @@ jobs:
       - name: Yarn Install
         uses: CultureHQ/actions-yarn@v1.0.1
         with:
-          args: install --ignore-engines
+          args: install
 
       - name: Get Major Version
         run: |
