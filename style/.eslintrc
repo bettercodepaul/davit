@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    // turned off because of prettier conflict.
+    // "operator-linebreak": ["error", "before"],
+    // "max-len": ["error", { "code": 180 }],
+    "semi": [
+      "error",
+      "always"
+    ],
+    //turned off because the indentation often leads to problems in combination with the formatter
+    // "indent": "off",
+    //turned off because the IntelliJ formatter doesn't correct the linebreak-style even though it is configured correctly
+    // "linebreak-style": "off",
+    //turned off to leave the decision weather a comment is needed or not to the developer
+    "require-jsdoc": "off",
+    "valid-jsdoc": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

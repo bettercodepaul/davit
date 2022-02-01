@@ -1,0 +1,590 @@
+@import "Colors.css";
+@import "Atomic.css";
+@import "Icons.css";
+@import "Flowchart.css";
+
+.davitGridContainer {
+    display: grid;
+    grid-template-columns: 4em 1fr 1fr;
+    grid-template-rows: minmax(8em, 8em) 1fr 1fr;
+    grid-template-areas:
+    "leftBar header header"
+    "leftBar compModel seqModel"
+    "leftBar dataModel seqTabel";
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+.componentPage {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: var(--background-color);
+    grid-template-areas: "compModel";
+}
+
+.leftPanel {
+    grid-area: leftBar;
+    justify-self: center;
+    background-color: var(--background-color-slidebar);
+    width: 100%;
+}
+
+.controllerHeader {
+    grid-area: header;
+    background-color: var(--background-color-header);
+    color: var(--text-color);
+    border-style: solid;
+    border-width: 0 0 5px 0;
+    border-image: linear-gradient(to bottom, var(--background-color-shadow), var(--background-color)) 1 1 100%;
+}
+
+.actorModelFullscreen {
+    border: 1px solid black;
+    background-color: var(--background-color);
+}
+
+.dataModelFullscreen {
+    border: 1px solid black;
+    background-color: var(--background-color);
+}
+
+.actorModel {
+    grid-area: compModel;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-image: linear-gradient(to bottom,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent) 0 100%;
+}
+
+.dndWrapper {
+    position: absolute;
+    display: inline-flex;
+    z-index: 1;
+}
+
+.dataModel {
+    grid-area: dataModel;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    border-image: linear-gradient(to right,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent) 1 1 100%;
+}
+
+.flowChartModel {
+    grid-area: seqModel;
+    min-height: 0;
+    overflow: hidden;
+    border-image: linear-gradient(to right,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent) 1 1 100%;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+}
+
+.flowChart {
+    overflow: auto;
+    padding: 1em;
+    display: block;
+    width: 100%;
+}
+
+.flowChartLabel {
+    margin-bottom: 2px;
+    width: 25em;
+    display: flex;
+    align-content: center;
+}
+
+.flowChartLabelLeft {
+    display: flex;
+    align-self: center;
+    border-left: 2px solid var(--color-secondary);
+    border-top: 2px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 20%;
+    background-color: var(--color-secondary);
+    font-weight: bold;
+    color: var(--background-color-slidebar);
+}
+
+.flowChartLabelRight {
+    width: 80%;
+    border-right: 2px solid var(--color-secondary);
+    border-top: 2px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: var(--background-color-header);
+}
+
+.sequenceTable {
+    min-height: 0;
+    grid-area: seqTabel;
+    border-style: solid;
+    border-width: 0 0 0 2px;
+    border-image: linear-gradient(to bottom,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent) 0 100%;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.fullscreen {
+    max-height: 100vh;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.sVGArea {
+    width: 100%;
+    height: 100%;
+}
+
+.controllPanelView {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.controllPanelViewChild {
+    margin: 10px;
+}
+
+
+/* -------------------------------------------- Optionfield -------------------------------------------- */
+
+.optionField {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.optionFieldChildArea {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.columnDivider {
+    border-style: solid;
+    border-width: 0 0 0 2px;
+    border-image: linear-gradient(to bottom, transparent, #e0e1e2, #e0e1e2, #e0e1e2, transparent) 0 100%;
+}
+
+#buttonGroupLabel {
+    opacity: 1 !important;
+    color: var(--text-color);
+}
+
+/*================================================================================================================*/
+
+.davitMenuLabel {
+    padding-bottom: 1.5em;
+}
+
+.ButtonGroup {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3em;
+    margin: 2px 4px 0 2px;
+    align-items: center;
+}
+
+.button-tiny {
+    width: var(--davit-button-tiny-width);
+    height: var(--davit-button-tiny-height);
+    padding: 0;
+    margin: var(--davit-button-tiny-margin-top-bottom) var(--davit-button-tiny-margin-left-right);
+    box-shadow: 0 0 0 1px var(--color-border);
+    border: var(--davit-border-size-small) solid transparent;
+    color: var(--color-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.disabled:hover {
+    background-color: transparent;
+    transition: background-color 0.4s;
+    color: black;
+    cursor: default;
+}
+
+.button-small {
+    animation-name: growWidth;
+    animation-duration: var(--animation-time);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--davit-button-small-width);
+    height: var(--davit-button-small-height);
+    margin: var(--davit-button-tiny-margin-top-bottom) var(--davit-button-tiny-margin-left-right);
+    background-color: transparent;
+}
+
+.activeButton {
+    background-color: var(--color-secondary);
+}
+
+.button-small:hover {
+    background-color: var(--color-secondary);
+    transition: background-color 0.4s;
+    color: black;
+}
+
+.pLeft1 {
+    padding-left: 0.5em;
+}
+
+/* -------------------------------------------- Sidepanel -------------------------------------------- */
+
+.verticalLabel {
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    text-align: center;
+    font-size: 3em;
+    font-family: ArialRoundedMTBold, "Arial Rounded MT Bold", serif;
+    margin-left: 13px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: #0060a9;
+}
+
+/* -------------------------------------------- Control panel -------------------------------------------- */
+
+.verticalTab {
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    white-space: nowrap;
+    display: block;
+    bottom: 0;
+    width: 2em;
+    height: 7.8em;
+    background-color: var(--background-color-slidebar);
+    color: white;
+    margin: 0;
+    text-align: center;
+    border-style: solid;
+    border-width: 0 0 0 2px;
+    border-image: linear-gradient(to bottom,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent) 0 100%;
+    animation-duration: var(--animation-time);
+}
+
+.verticalTab:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+.verticalTablDummy {
+    animation-name: shrinkWidth;
+    animation-duration: var(--animation-time);
+    border-image: linear-gradient(to bottom,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent);
+    height: 7.8em;
+}
+
+.slideable-verticaltab {
+    width: 2em;
+}
+
+.slideable {
+    width: 100% !important;
+    transition: width var(--animation-time);
+}
+
+.slideable-hidden {
+    width: 0 !important;
+    transition: width var(--animation-time);
+}
+
+.controllPanelEdit {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100%;
+
+    animation-duration: var(--animation-time);
+    animation-timing-function: ease-in-out;
+    animation-name: slidein;
+}
+
+.controllPanelEditChild {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+#innerCard {
+    width: 100px;
+    height: 30px;
+    margin: 0;
+    padding: 0.3em !important;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+/* -------------------------------------------- Actor -------------------------------------------- */
+
+
+.viewFragment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    border-top: 0.5px solid var(--text-color);
+    max-width: 15em;
+}
+
+.appearAnimation {
+    animation-duration: var(--animation-time);
+    animation-name: grow;
+    animation-timing-function: ease-in-out;
+}
+
+.carv2ActorDataNEW {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-add-color) !important;
+    color: var(--data-text-color) !important;
+}
+
+.carv2ActorDataPERSISTENT {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-persistent-color) !important;
+    color: var(--data-text-color) !important;
+}
+
+.carv2ActorDataSENT {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-exxcellent-blue) !important;
+    color: var(--text-color) !important;
+}
+
+.carv2ActorDataUPDATED_TO {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-pink) !important;
+    color: var(--text-color) !important;
+}
+
+.carv2ActorDataUPDATED_FROM {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-purple) !important;
+    color: var(--data-persistent-color) !important;
+}
+
+.carv2ActorDataDELETED {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-delete-color) !important;
+    color: var(--text-color) !important;
+}
+
+.carv2ActorDataADD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color-header) !important;
+    color: var(--text-color) !important;
+    box-shadow: 6px 6px 10px var(--data-add-color) inset !important;
+}
+
+.carv2ActorDataCHECKED {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-persistent-color) !important;
+    color: var(--data-text-color) !important;
+}
+
+.carv2ActorDataCHECK_FAILED {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-persistent-color) !important;
+    color: var(--text-color) !important;
+}
+
+.carv2ActorDataDELETE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color-header) !important;
+    color: var(--text-color) !important;
+    box-shadow: 6px 6px 10px var(--data-delete-color) inset !important;
+}
+
+.carv2ActorDataERROR_ADD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-add-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+
+.carv2ActorDataERROR_DELETE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--data-delete-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+
+.carv2ActorDataERROR_SEND {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-exxcellent-blue) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 0 20px rgb(255, 0, 0);
+}
+
+/*========================================== NEW DAVIT CSS ==========================================================*/
+
+.zoomLabel {
+    color: var(--text-color);
+    font-size: 0.7em;
+    animation-name: disapear;
+    animation-duration: 3s;
+    opacity: 0;
+}
+
+.sidePanelButton {
+    border: none;
+    width: var(--davit-button-sidepanel-width);
+    height: var(--davit-button-sidepanel-height);
+    border-bottom: var(--davit-border-size-medium) solid var(--color-primary);
+    border-radius: 0;
+}
+
+.sidePanelButton.active {
+    background-color: var(--color-secondary);
+    transition: background-color var(--animation-time);
+}
+
+
+.labelField {
+    color: var(--text-color);
+    background-color: transparent;
+    text-align: center;
+    padding: var(--davit-padding-top-bottom) var(--davit-padding-right-left);
+    min-width: 8em;
+    border-radius: 0;
+}
+
+.deleteButton {
+    background-color: transparent;
+    color: var(--davit-color-warning);
+    border-color: var(--davit-color-warning);
+}
+
+.deleteButton.fluid {
+    width: 8em;
+    animation: growDeleteButton var(--animation-time) ease-in-out 0s;
+}
+
+.headerGrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    height: 100%;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}

@@ -1,0 +1,129 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+import { typography } from '../shared/styles';
+
+<Meta title="basics/Typography" />
+
+# Typography
+
+## h1
+<Typeset
+  fontFamily={typography.type['font-family-text']}
+  fontSizes={[
+    Number(typography.size.h1),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+```
+font-family: var(--text-font-family); /* "DIN OT", Helvetica, Arial, sans-serif; */
+font-weight: 700;
+font-size: 2rem;
+```
+
+## h2
+
+<Typeset
+  fontFamily={typography.type['font-family-text']}
+  fontSizes={[
+    Number(typography.size.h2),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+```
+font-family: var(--text-font-family); /* "DIN OT", Helvetica, Arial, sans-serif; */
+font-weight: 700;
+font-size: 1.75rem;
+```
+
+## h3
+
+<Typeset
+  fontFamily={typography.type['font-family-text']}
+  fontSizes={[
+    Number(typography.size.h3),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+```
+font-family: var(--text-font-family); /* "DIN OT", Helvetica, Arial, sans-serif; */
+font-weight: 700;
+font-size: 1.5rem;
+```
+
+## h4
+
+<Typeset
+  fontFamily={typography.type['font-family-text']}
+  fontSizes={[
+    Number(typography.size.h4),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+
+```
+font-family: var(--text-font-family); /* "DIN OT", Helvetica, Arial, sans-serif; */
+font-weight: 700;
+font-size: 1.25rem;
+```
+
+## h5, h6
+
+<Typeset
+  fontFamily={typography.type['font-family-text']}
+  fontSizes={[
+    Number(typography.size.h5),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+```
+font-family: var(--text-font-family); /* "DIN OT", Helvetica, Arial, sans-serif; */
+font-weight: 700;
+font-size: 1rem;
+```
+
+## html, body
+
+<Typeset
+  fontFamily={typography.type['font-family-text']}
+  fontSizes={[
+    Number(typography.size.p),
+  ]}
+  fontWeight={typography.weight.light}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+```
+font-family: var(--text-font-family); /* "DIN OT", Helvetica, Arial, sans-serif; */
+font-weight: 200;
+font-size: 1rem;
+```
+
+## code, pre
+
+<Typeset
+  fontFamily={typography.type['font-family-code']}
+  fontSizes={[
+    Number(typography.size.p),
+  ]}
+  fontWeight={typography.weight.light}
+  sampleText={'The quick brown fox jumps over the lazy dog'}
+/>
+
+```
+font-family: Consolas, Courier, monospace;
+font-weight: normal;
+font-size: 1rem;
+```
+
+
+
+

@@ -1,0 +1,45 @@
+:root {
+    --davit-border-radius: 0.2rem;
+
+    --davit-border-size-small: 0.2rem;
+    --davit-border-size-medium: 0.15rem;
+    --davit-border-size-larg: 0.5rem;
+
+    --davit-padding-top-bottom: 0.7em;
+    --davit-padding-right-left: 1.2em;
+
+    --davit-margin-top-bottom: 1rem;
+
+    --davit-font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    --davit-font-size: 16px;
+
+    --davit-hover-color: rgba(0, 0, 0, .5);
+
+    --davit-button-tiny-height: 1rem;
+    --davit-button-tiny-width: 1rem;
+    --davit-button-tiny-margin-top-bottom: 0.1rem;
+    --davit-button-tiny-margin-left-right: 0.3rem;
+
+    --davit-button-small-height: 1.8rem;
+    --davit-button-small-width: 2rem;
+    --davit-button-small-margin-top-bottom: 0.1rem;
+    --davit-button-small-margin-left-right: 0.3rem;
+
+    --davit-button-sidepanel-height: 3.5rem;
+    --davit-button-sidepanel-width: 100%;
+}
+
+.border {
+    border: var(--davit-border-size-medium) solid var(--color-secondary);
+    border-radius: var(--davit-border-radius);
+}
+
+.padding {
+    padding: var(--davit-padding-top-bottom) var(--davit-padding-right-left);
+}
+
+html {
+    font-size: var(--davit-font-size);
+    font-family: var(--davit-font-family);
+    color: var(--text-color);
+}

@@ -1,0 +1,229 @@
+{
+  "actors": [
+    {
+      "id": 1,
+      "name": "A",
+      "geometricalDataFk": 1,
+      "designFk": 1,
+      "groupFks": -1
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "geometricalDataFk": 2,
+      "designFk": 2,
+      "groupFks": -1
+    }
+  ],
+  "groups": [],
+  "designs": [
+    {
+      "id": 1,
+      "color": "#3498db"
+    },
+    {
+      "id": 2,
+      "color": "#3498db"
+    }
+  ],
+  "geometricalDatas": [
+    {
+      "id": 1,
+      "width": 100,
+      "height": 30,
+      "positionFk": 1
+    },
+    {
+      "id": 2,
+      "width": 100,
+      "height": 30,
+      "positionFk": 2
+    },
+    {
+      "id": 3,
+      "width": 100,
+      "height": 30,
+      "positionFk": 3
+    },
+    {
+      "id": 4,
+      "width": 100,
+      "height": 30,
+      "positionFk": 4
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "x": 18.991416309012877,
+      "y": 17.19128329297821
+    },
+    {
+      "id": 2,
+      "x": 55.90128755364807,
+      "y": 16.707021791767556
+    },
+    {
+      "id": 3,
+      "x": 25.9656652360515,
+      "y": 22.033898305084747
+    },
+    {
+      "id": 4,
+      "x": 61.69527896995708,
+      "y": 21.06537530266344
+    }
+  ],
+  "sequences": [
+    {
+      "id": 1,
+      "name": "A bekommt C"
+    },
+    {
+      "id": 3,
+      "name": "A lösch C"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "A + C",
+      "index": -1,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": true
+    },
+    {
+      "id": 2,
+      "name": "A - C",
+      "index": -1,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": true
+    }
+  ],
+  "actions": [
+    {
+      "id": 1,
+      "sequenceStepFk": 1,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 1,
+      "instanceFk": 0,
+      "actionType": "ADD"
+    },
+    {
+      "id": 2,
+      "sequenceStepFk": 2,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 1,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    }
+  ],
+  "datas": [
+    {
+      "id": 1,
+      "name": "C",
+      "geometricalDataFk": 3,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 0,
+          "name": "default"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "D",
+      "geometricalDataFk": 4,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 0,
+          "name": "default"
+        }
+      ]
+    }
+  ],
+  "dataConnections": [],
+  "initDatas": [],
+  "dataSetups": [
+    {
+      "id": 1,
+      "name": "empty"
+    }
+  ],
+  "decisions": [],
+  "chains": [
+    {
+      "id": 1,
+      "name": "Decision Test"
+    }
+  ],
+  "chainlinks": [
+    {
+      "id": 1,
+      "name": "start",
+      "sequenceFk": 1,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "DEC",
+        "id": 1
+      },
+      "root": true,
+      "chainFk": 1
+    },
+    {
+      "id": 2,
+      "name": "lösche C von A",
+      "sequenceFk": 3,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 1
+    },
+    {
+      "id": 3,
+      "name": "A bekommt jetzt nochmal C",
+      "sequenceFk": 1,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 1
+    }
+  ],
+  "chaindecisions": [
+    {
+      "id": 1,
+      "name": "hat A C",
+      "chainFk": 1,
+      "has": true,
+      "actorFk": 1,
+      "dataAndInstanceIds": [
+        {
+          "dataFk": 1,
+          "instanceId": 0
+        }
+      ],
+      "ifGoTo": {
+        "type": "LINK",
+        "id": 2
+      },
+      "elseGoTo": {
+        "type": "LINK",
+        "id": 3
+      }
+    }
+  ]
+}

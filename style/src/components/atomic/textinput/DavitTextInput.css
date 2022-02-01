@@ -1,0 +1,30 @@
+.inputLabel {
+    border-bottom-left-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    border: var(--border-size-medium) solid var(--border-color);
+    border-bottom: var(--border-size-medium) solid var(--border-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+}
+
+input {
+    border-radius: var(--border-radius);
+    border-color: var(--border-color);
+    background-color: transparent;
+    border-style: solid;
+    border-width: var(--border-size-medium);
+    color: var(--primary-text-color);
+}
+
+input:focus {
+    outline: none;
+}
+
+input.label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+label {
+    line-height: 1.15;
+}
