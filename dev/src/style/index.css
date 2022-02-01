@@ -1,0 +1,149 @@
+@import "./spacing.css";
+@import "./layout.css";
+@import "./fonts.css";
+@import "./animations.css";
+@import "./border.css";
+@import "./colors.css";
+
+:root {
+    --text-font-family: "DIN OT", Helvetica, Arial, sans-serif;
+    --spacing-large: 22px;
+
+    --spacing-medium: 15px;
+    --border-radius: 0.2rem;
+    --text-size: 100%;
+    --border-size-large: 4px;
+
+    --border-size-medium: 2px;
+    --border-size-small: 1px;
+    --spacing-small: 10px;
+    --spacing-tiny: 5px;
+}
+
+.light {
+    /* primary */
+    --data-add-color: var(--color-green);
+    --2x2-border-color: var(--color-white);
+
+    /* secondary */
+    --background-color: var(--color-dark--lighter);
+    /*--secondary-color: var(--color-blue);*/
+    --border-color: var(--secondary-color);
+
+    /* tertiary */
+    --primary-color: var(--color-dark-blue);
+    --secondary-color: var(--color-cyan--lighter);
+
+
+    --tertiary-color: var(--color-grey);
+    /* 2x2 border */
+    --background-color-header: var(--color-dark);
+
+    /* data */
+    --background-color-shadow: var(--color-black);
+    --data-delete-color: var(--color-error);
+    --color-hover: rgba(0, 0, 0, .5);
+    --data-persistent-color: var(--color-dark--lighter);
+
+    --data-text-color: var(--color-black);
+
+
+    /*--background-color-header: rgba(0, 0, 0, 0.5);*/
+    --primary-text-color: var(--color-light);
+
+    --secondary-text-color: var(--color-light);
+    --tertiary-text-color: var(--color-dark);
+
+}
+
+.dark {
+    /* primary */
+    --data-add-color: var(--color-green);
+    --2x2-border-color: var(--color-white);
+
+    /* secondary */
+    --background-color: var(--color-dark--lighter);
+    /*--secondary-color: var(--color-blue);*/
+    --border-color: var(--secondary-color);
+
+    /* tertiary */
+    --primary-color: var(--color-dark-blue);
+    --secondary-color: var(--color-cyan--lighter);
+
+
+    --tertiary-color: var(--color-grey);
+    /* 2x2 border */
+    --background-color-header: var(--color-dark);
+
+    /* data */
+    --background-color-shadow: var(--color-black);
+    --data-delete-color: var(--color-error);
+    --color-hover: rgba(0, 0, 0, .5);
+    --data-persistent-color: var(--color-dark--lighter);
+
+    --data-text-color: var(--color-black);
+
+
+    /*--background-color-header: rgba(0, 0, 0, 0.5);*/
+    --primary-text-color: var(--color-light);
+
+    --secondary-text-color: var(--color-light);
+    --tertiary-text-color: var(--color-dark);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    border: 0;
+    color: var(--primary-text-color);
+    font-family: var(--text-font-family);
+
+    font-size: var(--text-size);
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* misc utils */
+.no-user-select {
+    user-select: none;
+}

@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-text-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 0 1px var(--border-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    background-color: var(--background-color-header);
+    animation-duration: var(--animation-time);
+    animation-name: growHeight;
+    animation-timing-function: ease-in-out;
+    transition: width var(--animation-time), box-shadow var(--animation-time);
+    cursor: grab;
+    width: 100%;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+.activeFilter {
+    box-shadow: 0 0 0 3px var(--secondary-color);
+    transition: box-shadow var(--animation-time);
+}
+
+.cardLabelWrapper {
+    font-size: 0.8em;
+    text-align: center;
+    display: flex;
+    transition: color var(--animation-time), height var(--animation-time) width var(--animation-time);
+    width: 100%;
+    justify-content: flex-start;
+}
+
+/*TODO: use instead spacing variables*/
+.cardButtonGroup {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cardInstanceWrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}

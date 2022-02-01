@@ -1,0 +1,2511 @@
+{
+  "actors": [
+    {
+      "id": 1,
+      "name": "Daimler",
+      "geometricalDataFk": 1,
+      "designFk": 1,
+      "groupFks": -1
+    },
+    {
+      "id": 2,
+      "name": "Kunde",
+      "geometricalDataFk": 2,
+      "designFk": 2,
+      "groupFks": -1
+    },
+    {
+      "id": 3,
+      "name": "Leasinggeber",
+      "geometricalDataFk": 3,
+      "designFk": 3,
+      "groupFks": -1
+    },
+    {
+      "id": 5,
+      "name": "FLAMS",
+      "geometricalDataFk": 5,
+      "designFk": 5,
+      "groupFks": -1
+    },
+    {
+      "id": 6,
+      "name": "GO",
+      "geometricalDataFk": 15,
+      "designFk": 6,
+      "groupFks": -1
+    },
+    {
+      "id": 7,
+      "name": "DiVerS",
+      "geometricalDataFk": 17,
+      "designFk": 7,
+      "groupFks": -1
+    },
+    {
+      "id": 8,
+      "name": "Mosolf",
+      "geometricalDataFk": 18,
+      "designFk": 8,
+      "groupFks": -1
+    },
+    {
+      "id": 9,
+      "name": "YUCAS",
+      "geometricalDataFk": 19,
+      "designFk": 9,
+      "groupFks": -1
+    },
+    {
+      "id": 10,
+      "name": "ZB II Tool",
+      "geometricalDataFk": 21,
+      "designFk": 10,
+      "groupFks": -1
+    },
+    {
+      "id": 11,
+      "name": "DiFaS",
+      "geometricalDataFk": 26,
+      "designFk": 11,
+      "groupFks": -1
+    },
+    {
+      "id": 12,
+      "name": "YUCON",
+      "geometricalDataFk": 27,
+      "designFk": 12,
+      "groupFks": -1
+    },
+    {
+      "id": 13,
+      "name": "Fallkonfiguration",
+      "geometricalDataFk": 31,
+      "designFk": 13,
+      "groupFks": -1
+    },
+    {
+      "id": 14,
+      "name": "IBIS",
+      "geometricalDataFk": 33,
+      "designFk": 14,
+      "groupFks": -1
+    }
+  ],
+  "groups": [],
+  "designs": [
+    {
+      "id": 1,
+      "color": "#3498db"
+    },
+    {
+      "id": 2,
+      "color": "#3498db"
+    },
+    {
+      "id": 3,
+      "color": "#3498db"
+    },
+    {
+      "id": 5,
+      "color": "#3498db"
+    },
+    {
+      "id": 6,
+      "color": "#3498db"
+    },
+    {
+      "id": 7,
+      "color": "#3498db"
+    },
+    {
+      "id": 8,
+      "color": "#3498db"
+    },
+    {
+      "id": 9,
+      "color": "#3498db"
+    },
+    {
+      "id": 10,
+      "color": "#3498db"
+    },
+    {
+      "id": 11,
+      "color": "#3498db"
+    },
+    {
+      "id": 12,
+      "color": "#3498db"
+    },
+    {
+      "id": 13,
+      "color": "#3498db"
+    },
+    {
+      "id": 14,
+      "color": "#3498db"
+    }
+  ],
+  "geometricalDatas": [
+    {
+      "id": 1,
+      "width": 100,
+      "height": 30,
+      "positionFk": 1
+    },
+    {
+      "id": 2,
+      "width": 100,
+      "height": 30,
+      "positionFk": 2
+    },
+    {
+      "id": 3,
+      "width": 100,
+      "height": 30,
+      "positionFk": 3
+    },
+    {
+      "id": 5,
+      "width": 100,
+      "height": 30,
+      "positionFk": 5
+    },
+    {
+      "id": 6,
+      "width": 100,
+      "height": 30,
+      "positionFk": 6
+    },
+    {
+      "id": 7,
+      "width": 100,
+      "height": 30,
+      "positionFk": 7
+    },
+    {
+      "id": 8,
+      "width": 100,
+      "height": 30,
+      "positionFk": 8
+    },
+    {
+      "id": 9,
+      "width": 100,
+      "height": 30,
+      "positionFk": 9
+    },
+    {
+      "id": 10,
+      "width": 100,
+      "height": 30,
+      "positionFk": 10
+    },
+    {
+      "id": 11,
+      "width": 100,
+      "height": 30,
+      "positionFk": 11
+    },
+    {
+      "id": 12,
+      "width": 100,
+      "height": 30,
+      "positionFk": 12
+    },
+    {
+      "id": 13,
+      "width": 100,
+      "height": 30,
+      "positionFk": 13
+    },
+    {
+      "id": 14,
+      "width": 100,
+      "height": 30,
+      "positionFk": 14
+    },
+    {
+      "id": 15,
+      "width": 100,
+      "height": 30,
+      "positionFk": 15
+    },
+    {
+      "id": 16,
+      "width": 100,
+      "height": 30,
+      "positionFk": 16
+    },
+    {
+      "id": 17,
+      "width": 100,
+      "height": 30,
+      "positionFk": 17
+    },
+    {
+      "id": 18,
+      "width": 100,
+      "height": 30,
+      "positionFk": 18
+    },
+    {
+      "id": 19,
+      "width": 100,
+      "height": 30,
+      "positionFk": 19
+    },
+    {
+      "id": 20,
+      "width": 100,
+      "height": 30,
+      "positionFk": 20
+    },
+    {
+      "id": 21,
+      "width": 100,
+      "height": 30,
+      "positionFk": 21
+    },
+    {
+      "id": 22,
+      "width": 100,
+      "height": 30,
+      "positionFk": 22
+    },
+    {
+      "id": 23,
+      "width": 100,
+      "height": 30,
+      "positionFk": 23
+    },
+    {
+      "id": 24,
+      "width": 100,
+      "height": 30,
+      "positionFk": 24
+    },
+    {
+      "id": 25,
+      "width": 100,
+      "height": 30,
+      "positionFk": 25
+    },
+    {
+      "id": 26,
+      "width": 100,
+      "height": 30,
+      "positionFk": 26
+    },
+    {
+      "id": 27,
+      "width": 100,
+      "height": 30,
+      "positionFk": 27
+    },
+    {
+      "id": 28,
+      "width": 100,
+      "height": 30,
+      "positionFk": 28
+    },
+    {
+      "id": 29,
+      "width": 100,
+      "height": 30,
+      "positionFk": 29
+    },
+    {
+      "id": 30,
+      "width": 100,
+      "height": 30,
+      "positionFk": 30
+    },
+    {
+      "id": 31,
+      "width": 100,
+      "height": 30,
+      "positionFk": 31
+    },
+    {
+      "id": 32,
+      "width": 100,
+      "height": 30,
+      "positionFk": 32
+    },
+    {
+      "id": 33,
+      "width": 100,
+      "height": 30,
+      "positionFk": 33
+    },
+    {
+      "id": 34,
+      "width": 100,
+      "height": 30,
+      "positionFk": 34
+    },
+    {
+      "id": 35,
+      "width": 100,
+      "height": 30,
+      "positionFk": 35
+    },
+    {
+      "id": 36,
+      "width": 100,
+      "height": 30,
+      "positionFk": 36
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "x": 47.077922077922075,
+      "y": 2.066115702479339
+    },
+    {
+      "id": 2,
+      "x": 23.068669527896994,
+      "y": 3.512396694214876
+    },
+    {
+      "id": 3,
+      "x": 2.1645021645021645,
+      "y": 22.31404958677686
+    },
+    {
+      "id": 5,
+      "x": 40.58441558441558,
+      "y": 39.049586776859506
+    },
+    {
+      "id": 6,
+      "x": 2.467811158798283,
+      "y": -0.4132231404958678
+    },
+    {
+      "id": 7,
+      "x": 25.643776824034333,
+      "y": -0.4132231404958678
+    },
+    {
+      "id": 8,
+      "x": 15.450643776824034,
+      "y": 25
+    },
+    {
+      "id": 9,
+      "x": 33.15450643776824,
+      "y": 25
+    },
+    {
+      "id": 10,
+      "x": 75.32188841201716,
+      "y": -0.4132231404958678
+    },
+    {
+      "id": 11,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 12,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 13,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 14,
+      "x": 66.09442060085837,
+      "y": 26.859504132231407
+    },
+    {
+      "id": 15,
+      "x": 87.66233766233766,
+      "y": 10.12396694214876
+    },
+    {
+      "id": 16,
+      "x": 0,
+      "y": 51.85950413223141
+    },
+    {
+      "id": 17,
+      "x": 71.32034632034632,
+      "y": 60.53719008264463
+    },
+    {
+      "id": 18,
+      "x": 70.23809523809524,
+      "y": 36.36363636363637
+    },
+    {
+      "id": 19,
+      "x": 2.7056277056277054,
+      "y": 72.72727272727273
+    },
+    {
+      "id": 20,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 21,
+      "x": 85.60606060606061,
+      "y": 82.23140495867769
+    },
+    {
+      "id": 22,
+      "x": 62.44635193133047,
+      "y": -0.4132231404958678
+    },
+    {
+      "id": 23,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 24,
+      "x": 12.875536480686694,
+      "y": 52.06611570247934
+    },
+    {
+      "id": 25,
+      "x": 31.33047210300429,
+      "y": 45.867768595041326
+    },
+    {
+      "id": 26,
+      "x": 63.095238095238095,
+      "y": 79.95867768595042
+    },
+    {
+      "id": 27,
+      "x": 19.805194805194805,
+      "y": 74.58677685950414
+    },
+    {
+      "id": 28,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 29,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 30,
+      "x": 62.1244635193133,
+      "y": 64.25619834710744
+    },
+    {
+      "id": 31,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 32,
+      "x": 0,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 33,
+      "x": 8.008658008658008,
+      "y": 47.31404958677686
+    },
+    {
+      "id": 34,
+      "x": 77.25321888412017,
+      "y": 45.66115702479339
+    },
+    {
+      "id": 35,
+      "x": 0.2145922746781116,
+      "y": 83.88429752066116
+    },
+    {
+      "id": 36,
+      "x": 52.682403433476395,
+      "y": 26.03305785123967
+    }
+  ],
+  "sequences": [
+    {
+      "id": 1,
+      "name": "Vertragsentstehung 288"
+    },
+    {
+      "id": 2,
+      "name": "Ordering"
+    },
+    {
+      "id": 3,
+      "name": "Rücknahme 288er"
+    },
+    {
+      "id": 4,
+      "name": "Vertragsentstehung 224"
+    },
+    {
+      "id": 5,
+      "name": "Ordering 224"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "Legt inital Vertrag an",
+      "index": 5,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "DEC",
+        "id": 2
+      },
+      "root": false
+    },
+    {
+      "id": 2,
+      "name": "Vertragseport erstellen",
+      "index": 1,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "STEP",
+        "id": 3
+      },
+      "root": false
+    },
+    {
+      "id": 3,
+      "name": "Vertragsreport verschicken",
+      "index": 2,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "STEP",
+        "id": 5
+      },
+      "root": false
+    },
+    {
+      "id": 4,
+      "name": "Vertrag wird als vereinbart markiert",
+      "index": 3,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 5,
+      "name": "Antwort der Vertragspartner",
+      "index": 4,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "STEP",
+        "id": 4
+      },
+      "root": false
+    },
+    {
+      "id": 6,
+      "name": "Monatsvolumen buchen",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 7
+      },
+      "root": false
+    },
+    {
+      "id": 7,
+      "name": "GO bucht Aufträge",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 10
+      },
+      "root": false
+    },
+    {
+      "id": 8,
+      "name": "GO meldet Auslieferung",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false
+    },
+    {
+      "id": 9,
+      "name": "Kunde übernimmt Fahrzeuge",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 11
+      },
+      "root": false
+    },
+    {
+      "id": 10,
+      "name": "Fahrzeuge bekommen Schlussabnahme",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 9
+      },
+      "root": false
+    },
+    {
+      "id": 11,
+      "name": "Replikation der Übernahmen",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 12,
+      "name": "Kunde bringt Fahrzeug zu Mosolf",
+      "index": 1,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 13
+      },
+      "root": true
+    },
+    {
+      "id": 13,
+      "name": "DiVerS meldet Lagereingang",
+      "index": 2,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 14
+      },
+      "root": false
+    },
+    {
+      "id": 14,
+      "name": "FLAMS informiert über Lagereingang",
+      "index": 3,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 15
+      },
+      "root": false
+    },
+    {
+      "id": 15,
+      "name": "Bewertung und Freigabe",
+      "index": 4,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "DEC",
+        "id": 9
+      },
+      "root": false
+    },
+    {
+      "id": 16,
+      "name": "Abrechnung erstellen",
+      "index": 5,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 17
+      },
+      "root": false
+    },
+    {
+      "id": 17,
+      "name": "Verbuchung der Abrechnung",
+      "index": 6,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "DEC",
+        "id": 6
+      },
+      "root": false
+    },
+    {
+      "id": 18,
+      "name": "Verkaufsfreigabe",
+      "index": 7,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 19
+      },
+      "root": false
+    },
+    {
+      "id": 19,
+      "name": "Gebrauchtfahrzeugverkauf",
+      "index": 8,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false
+    },
+    {
+      "id": 20,
+      "name": "Ausschreibung an Daimler schicken",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "STEP",
+        "id": 21
+      },
+      "root": true
+    },
+    {
+      "id": 21,
+      "name": "Ausschreibung in IBIS erfassen",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "STEP",
+        "id": 22
+      },
+      "root": false
+    },
+    {
+      "id": 22,
+      "name": "Ausschreibung als Vertrag erfassen",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 24,
+      "name": "Daimler bucht Auftrag",
+      "index": 1,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "STEP",
+        "id": 25
+      },
+      "root": false
+    },
+    {
+      "id": 25,
+      "name": "Fahrzeugübernahme",
+      "index": 2,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "STEP",
+        "id": 26
+      },
+      "root": false
+    },
+    {
+      "id": 26,
+      "name": "Fahrzeugzulassung",
+      "index": 3,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "STEP",
+        "id": 27
+      },
+      "root": false
+    },
+    {
+      "id": 27,
+      "name": "Lese Auftrag aus GO",
+      "index": 4,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 28,
+      "name": "Abrechnung berrechen",
+      "index": -1,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 16
+      },
+      "root": false
+    }
+  ],
+  "actions": [
+    {
+      "id": 2,
+      "sequenceStepFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "dataFk": 2,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 5,
+      "sequenceStepFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "dataFk": 3,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 6,
+      "sequenceStepFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "dataFk": 4,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 7,
+      "sequenceStepFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 5,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 8,
+      "sequenceStepFk": 2,
+      "receivingActorFk": 1,
+      "sendingActorFk": 5,
+      "dataFk": 5,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 9,
+      "sequenceStepFk": 3,
+      "receivingActorFk": 2,
+      "sendingActorFk": 1,
+      "dataFk": 5,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 10,
+      "sequenceStepFk": 3,
+      "receivingActorFk": 3,
+      "sendingActorFk": 1,
+      "dataFk": 5,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 13,
+      "sequenceStepFk": 5,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "dataFk": 7,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 14,
+      "sequenceStepFk": 5,
+      "receivingActorFk": 1,
+      "sendingActorFk": 2,
+      "dataFk": 7,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 15,
+      "sequenceStepFk": 5,
+      "receivingActorFk": 3,
+      "sendingActorFk": -1,
+      "dataFk": 6,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 16,
+      "sequenceStepFk": 5,
+      "receivingActorFk": 1,
+      "sendingActorFk": 3,
+      "dataFk": 6,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 17,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 18,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 19,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 2,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 20,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 2,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 21,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 22,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 7,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 23,
+      "sequenceStepFk": 4,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 6,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 24,
+      "sequenceStepFk": 6,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": 4,
+      "actionType": "ADD"
+    },
+    {
+      "id": 25,
+      "sequenceStepFk": 6,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 26,
+      "sequenceStepFk": 6,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "dataFk": 4,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 27,
+      "sequenceStepFk": 6,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 28,
+      "sequenceStepFk": 7,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 29,
+      "sequenceStepFk": 7,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 30,
+      "sequenceStepFk": 7,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 4,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 31,
+      "sequenceStepFk": 8,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 32,
+      "sequenceStepFk": 8,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 33,
+      "sequenceStepFk": 8,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 34,
+      "sequenceStepFk": 8,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 35,
+      "sequenceStepFk": 10,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 10,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 36,
+      "sequenceStepFk": 9,
+      "receivingActorFk": 2,
+      "sendingActorFk": 6,
+      "dataFk": 10,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 39,
+      "sequenceStepFk": 11,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 40,
+      "sequenceStepFk": 11,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 42,
+      "sequenceStepFk": 9,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 43,
+      "sequenceStepFk": 9,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 44,
+      "sequenceStepFk": 12,
+      "receivingActorFk": 8,
+      "sendingActorFk": 2,
+      "dataFk": 10,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 45,
+      "sequenceStepFk": 12,
+      "receivingActorFk": 8,
+      "sendingActorFk": -1,
+      "dataFk": 11,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 46,
+      "sequenceStepFk": 12,
+      "receivingActorFk": 7,
+      "sendingActorFk": 8,
+      "dataFk": 11,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 47,
+      "sequenceStepFk": 12,
+      "receivingActorFk": 10,
+      "sendingActorFk": -1,
+      "dataFk": 12,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 48,
+      "sequenceStepFk": 12,
+      "receivingActorFk": 7,
+      "sendingActorFk": 10,
+      "dataFk": 12,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 49,
+      "sequenceStepFk": 13,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "dataFk": 11,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 50,
+      "sequenceStepFk": 13,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "dataFk": 12,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 51,
+      "sequenceStepFk": 13,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 13,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 52,
+      "sequenceStepFk": 13,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "dataFk": 13,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 53,
+      "sequenceStepFk": 13,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 13,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 54,
+      "sequenceStepFk": 13,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 55,
+      "sequenceStepFk": 14,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 56,
+      "sequenceStepFk": 14,
+      "receivingActorFk": 3,
+      "sendingActorFk": 5,
+      "dataFk": 11,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 57,
+      "sequenceStepFk": 15,
+      "receivingActorFk": 9,
+      "sendingActorFk": -1,
+      "dataFk": 14,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 58,
+      "sequenceStepFk": 15,
+      "receivingActorFk": 5,
+      "sendingActorFk": 9,
+      "dataFk": 14,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 59,
+      "sequenceStepFk": 15,
+      "receivingActorFk": 3,
+      "sendingActorFk": 9,
+      "dataFk": 14,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 60,
+      "sequenceStepFk": 16,
+      "receivingActorFk": 3,
+      "sendingActorFk": -1,
+      "dataFk": 18,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 61,
+      "sequenceStepFk": 16,
+      "receivingActorFk": 5,
+      "sendingActorFk": 3,
+      "dataFk": 18,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 63,
+      "sequenceStepFk": 17,
+      "receivingActorFk": 11,
+      "sendingActorFk": -1,
+      "dataFk": 18,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 64,
+      "sequenceStepFk": 17,
+      "receivingActorFk": 11,
+      "sendingActorFk": -1,
+      "dataFk": 18,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 66,
+      "sequenceStepFk": 18,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 16,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 67,
+      "sequenceStepFk": 18,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "dataFk": 16,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 68,
+      "sequenceStepFk": 18,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 69,
+      "sequenceStepFk": 18,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "dataFk": 14,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 70,
+      "sequenceStepFk": 18,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "dataFk": 16,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 71,
+      "sequenceStepFk": 19,
+      "receivingActorFk": 12,
+      "sendingActorFk": -1,
+      "dataFk": 17,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 72,
+      "sequenceStepFk": 19,
+      "receivingActorFk": 11,
+      "sendingActorFk": 12,
+      "dataFk": 17,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 73,
+      "sequenceStepFk": 19,
+      "receivingActorFk": 5,
+      "sendingActorFk": 11,
+      "dataFk": 17,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 75,
+      "sequenceStepFk": 16,
+      "receivingActorFk": 11,
+      "sendingActorFk": 5,
+      "dataFk": 18,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 76,
+      "sequenceStepFk": 17,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 18,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 77,
+      "sequenceStepFk": 17,
+      "receivingActorFk": 5,
+      "sendingActorFk": 11,
+      "dataFk": 18,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 78,
+      "sequenceStepFk": 20,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "dataFk": 20,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 79,
+      "sequenceStepFk": 20,
+      "receivingActorFk": 1,
+      "sendingActorFk": 2,
+      "dataFk": 20,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 80,
+      "sequenceStepFk": 21,
+      "receivingActorFk": 14,
+      "sendingActorFk": 1,
+      "dataFk": 20,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 81,
+      "sequenceStepFk": 22,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 2,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 82,
+      "sequenceStepFk": 22,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 83,
+      "sequenceStepFk": 22,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 84,
+      "sequenceStepFk": 22,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 87,
+      "sequenceStepFk": 25,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 88,
+      "sequenceStepFk": 25,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "actionType": "ADD"
+    },
+    {
+      "id": 91,
+      "sequenceStepFk": 25,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 10,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 92,
+      "sequenceStepFk": 25,
+      "receivingActorFk": 2,
+      "sendingActorFk": 6,
+      "dataFk": 10,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 93,
+      "sequenceStepFk": 26,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "dataFk": 21,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 94,
+      "sequenceStepFk": 26,
+      "receivingActorFk": 3,
+      "sendingActorFk": 2,
+      "dataFk": 21,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 95,
+      "sequenceStepFk": 26,
+      "receivingActorFk": 14,
+      "sendingActorFk": 3,
+      "dataFk": 21,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 96,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": 5,
+      "actionType": "ADD"
+    },
+    {
+      "id": 97,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 14,
+      "sendingActorFk": 1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 99,
+      "sequenceStepFk": 26,
+      "receivingActorFk": 5,
+      "sendingActorFk": 14,
+      "dataFk": 22,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 100,
+      "sequenceStepFk": 27,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 13,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 101,
+      "sequenceStepFk": 27,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "dataFk": 13,
+      "instanceFk": -1,
+      "actionType": "SEND_AND_DELETE"
+    },
+    {
+      "id": 102,
+      "sequenceStepFk": 27,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 13,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 103,
+      "sequenceStepFk": 27,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "dataFk": 9,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 104,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 6,
+      "sendingActorFk": 1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "SEND"
+    },
+    {
+      "id": 105,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 106,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "dataFk": 8,
+      "instanceFk": -1,
+      "actionType": "DELETE"
+    },
+    {
+      "id": 107,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "dataFk": 9,
+      "instanceFk": 2,
+      "actionType": "ADD"
+    },
+    {
+      "id": 108,
+      "sequenceStepFk": 24,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "dataFk": 22,
+      "instanceFk": 1,
+      "actionType": "ADD"
+    },
+    {
+      "id": 109,
+      "sequenceStepFk": 28,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "dataFk": 15,
+      "instanceFk": 4,
+      "actionType": "ADD"
+    }
+  ],
+  "datas": [
+    {
+      "id": 1,
+      "name": "Kundenstamm",
+      "geometricalDataFk": 6,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Kundenstamm"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Vertrag",
+      "geometricalDataFk": 7,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Vertrag"
+        },
+        {
+          "id": 2,
+          "name": "In Verhandlung"
+        },
+        {
+          "id": 3,
+          "name": "Vereinbart"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Konditionen",
+      "geometricalDataFk": 8,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Konditionen"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Konfiguration",
+      "geometricalDataFk": 9,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Konfiguration"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Vertrags und Konditonen Report",
+      "geometricalDataFk": 10,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Vertrags und Konditonen Report"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Z Leasinggeber Antwort",
+      "geometricalDataFk": 11,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Leasinggeber Antwort"
+        },
+        {
+          "id": 2,
+          "name": "OK"
+        },
+        {
+          "id": 3,
+          "name": "NOK"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Z Autovermieter Antwort",
+      "geometricalDataFk": 12,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Autovermieter Antwort"
+        },
+        {
+          "id": 2,
+          "name": "OK"
+        },
+        {
+          "id": 3,
+          "name": "NOK"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Z Daimler Aktionen",
+      "geometricalDataFk": 13,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Daimler Aktionen"
+        },
+        {
+          "id": 2,
+          "name": "Vertrag erstellen"
+        },
+        {
+          "id": 3,
+          "name": "Vertrag auf vereinbart setzten"
+        },
+        {
+          "id": 4,
+          "name": "Monatsvolumen buchen"
+        },
+        {
+          "id": 5,
+          "name": "Lege Auftrag in IBIS an"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Auftrag",
+      "geometricalDataFk": 14,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Auftrag"
+        },
+        {
+          "id": 2,
+          "name": "Gebucht"
+        },
+        {
+          "id": 3,
+          "name": "Übernommen"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Fahrzeug",
+      "geometricalDataFk": 16,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Fahrzeug"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Z Lagereingangsmeldung",
+      "geometricalDataFk": 20,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Lagereingangsmeldung"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Briefdaten",
+      "geometricalDataFk": 22,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Briefdaten"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Z FLAMS Aktion",
+      "geometricalDataFk": 23,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z FLAMS Aktion"
+        },
+        {
+          "id": 2,
+          "name": "GO lesen"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Fahrzeugbewertung",
+      "geometricalDataFk": 24,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Fahrzeugbewertung"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Abrechnung",
+      "geometricalDataFk": 25,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Abrechnung"
+        },
+        {
+          "id": 2,
+          "name": "OK"
+        },
+        {
+          "id": 3,
+          "name": "NOK"
+        },
+        {
+          "id": 4,
+          "name": "Berechnet"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Z Verkaufsfreigabe",
+      "geometricalDataFk": 28,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Verkaufsfreigabe"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Z Verkaufsmeldung",
+      "geometricalDataFk": 29,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Verkaufsmeldung"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Bank Abrechnung",
+      "geometricalDataFk": 30,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Bank Abrechnung"
+        },
+        {
+          "id": 2,
+          "name": "mit UKS"
+        },
+        {
+          "id": 3,
+          "name": "ohne UKS"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Z AbrechnungsDiff",
+      "geometricalDataFk": 32,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z AbrechnungsDiff"
+        },
+        {
+          "id": 2,
+          "name": "OK"
+        },
+        {
+          "id": 3,
+          "name": "Zu groß"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Auschreibung",
+      "geometricalDataFk": 34,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Auschreibung"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Z Zulassung",
+      "geometricalDataFk": 35,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Zulassung"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "IBIS Auftrag",
+      "geometricalDataFk": 36,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "IBIS Auftrag"
+        }
+      ]
+    }
+  ],
+  "dataConnections": [
+    {
+      "id": 1,
+      "data1Fk": 2,
+      "data2Fk": 3,
+      "label1": "",
+      "label2": "",
+      "direction1": "BOTTOM",
+      "direction2": "TOP",
+      "type1": "OUT",
+      "type2": "IN"
+    },
+    {
+      "id": 2,
+      "data1Fk": 2,
+      "data2Fk": 4,
+      "label1": "",
+      "label2": "",
+      "direction1": "BOTTOM",
+      "direction2": "TOP",
+      "type1": "OUT",
+      "type2": "IN"
+    }
+  ],
+  "initDatas": [
+    {
+      "id": 1,
+      "actorFk": 5,
+      "dataFk": 1,
+      "instanceFk": 1,
+      "dataSetupFk": 1
+    },
+    {
+      "id": 2,
+      "actorFk": 1,
+      "dataFk": 2,
+      "instanceFk": 2,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 3,
+      "actorFk": 1,
+      "dataFk": 3,
+      "instanceFk": 1,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 4,
+      "actorFk": 1,
+      "dataFk": 4,
+      "instanceFk": 1,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 5,
+      "actorFk": 5,
+      "dataFk": 2,
+      "instanceFk": 3,
+      "dataSetupFk": 3
+    },
+    {
+      "id": 6,
+      "actorFk": 5,
+      "dataFk": 4,
+      "instanceFk": 1,
+      "dataSetupFk": 3
+    },
+    {
+      "id": 7,
+      "actorFk": 2,
+      "dataFk": 10,
+      "instanceFk": 1,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 8,
+      "actorFk": 5,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 9,
+      "actorFk": 5,
+      "dataFk": 3,
+      "instanceFk": 1,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 10,
+      "actorFk": 6,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 11,
+      "actorFk": 5,
+      "dataFk": 2,
+      "instanceFk": 3,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 12,
+      "actorFk": 13,
+      "dataFk": 19,
+      "instanceFk": 2,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 13,
+      "actorFk": 13,
+      "dataFk": 19,
+      "instanceFk": 2,
+      "dataSetupFk": 5
+    }
+  ],
+  "dataSetups": [
+    {
+      "id": 1,
+      "name": "default"
+    },
+    {
+      "id": 2,
+      "name": "Daimler hat Vertragsdaten"
+    },
+    {
+      "id": 3,
+      "name": "Ordering"
+    },
+    {
+      "id": 4,
+      "name": "288er Rücknahme OK"
+    },
+    {
+      "id": 5,
+      "name": "Fall 1 Abrechnung OK"
+    }
+  ],
+  "decisions": [
+    {
+      "id": 1,
+      "name": "Vertragsdaten vollständig",
+      "sequenceFk": 1,
+      "actorFk": 1,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 2,
+          "instanceId": 1
+        },
+        {
+          "dataFk": 3,
+          "instanceId": 1
+        },
+        {
+          "dataFk": 4,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 1
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": true
+    },
+    {
+      "id": 2,
+      "name": "Vertragsdaten vollständig",
+      "sequenceFk": 1,
+      "actorFk": 5,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 2,
+          "instanceId": 1
+        },
+        {
+          "dataFk": 3,
+          "instanceId": 1
+        },
+        {
+          "dataFk": 4,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 2
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": false
+    },
+    {
+      "id": 3,
+      "name": "Vertrag und Konfiguration liegen vor",
+      "sequenceFk": 2,
+      "actorFk": 5,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 2,
+          "instanceId": 3
+        },
+        {
+          "dataFk": 4,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 6
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": true
+    },
+    {
+      "id": 4,
+      "name": "288er Fahrzeug beim Kunden",
+      "sequenceFk": 3,
+      "actorFk": 2,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 10,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "DEC",
+        "id": 5
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": false
+    },
+    {
+      "id": 5,
+      "name": "288er FLAMS hat Auftrag - Übernommen und Konditionen",
+      "sequenceFk": 3,
+      "actorFk": 5,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 9,
+          "instanceId": 3
+        },
+        {
+          "dataFk": 3,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 12
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": false
+    },
+    {
+      "id": 6,
+      "name": "BX Prüfung 1/2",
+      "sequenceFk": 3,
+      "actorFk": 5,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 12,
+          "instanceId": 1
+        },
+        {
+          "dataFk": 15,
+          "instanceId": 4
+        },
+        {
+          "dataFk": 18,
+          "instanceId": 2
+        }
+      ],
+      "ifGoTo": {
+        "type": "DEC",
+        "id": 7
+      },
+      "elseGoTo": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 7,
+      "name": "BX Prüfung 2/2",
+      "sequenceFk": 3,
+      "actorFk": 13,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 19,
+          "instanceId": 2
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 18
+      },
+      "elseGoTo": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 8,
+      "name": "IBIS hat Ausschreibung",
+      "sequenceFk": 5,
+      "actorFk": 14,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 20,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 24
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": true
+    },
+    {
+      "id": 9,
+      "name": "Konditionen prüfen ",
+      "sequenceFk": 3,
+      "actorFk": 5,
+      "has": true,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 3,
+          "instanceId": 1
+        }
+      ],
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 28
+      },
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "root": false
+    }
+  ],
+  "chains": [
+    {
+      "id": 1,
+      "name": "FLAMS 1.0"
+    },
+    {
+      "id": 2,
+      "name": "FLAMS 2.0 288"
+    },
+    {
+      "id": 3,
+      "name": "Neufahrzeugprozess 224"
+    }
+  ],
+  "chainlinks": [
+    {
+      "id": 1,
+      "name": "Vertragsentstehung OK",
+      "sequenceFk": 1,
+      "dataSetupFk": 2,
+      "goto": {
+        "type": "LINK",
+        "id": 2
+      },
+      "root": true,
+      "chainFk": 1
+    },
+    {
+      "id": 2,
+      "name": "Ordering no setup",
+      "sequenceFk": 2,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 1
+    },
+    {
+      "id": 3,
+      "name": "Vertragsentstehung",
+      "sequenceFk": 1,
+      "dataSetupFk": 2,
+      "goto": {
+        "type": "LINK",
+        "id": 4
+      },
+      "root": true,
+      "chainFk": 2
+    },
+    {
+      "id": 4,
+      "name": "Ordering",
+      "sequenceFk": 2,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 5
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 5,
+      "name": "Rücknahme 288 Abrechnung OK",
+      "sequenceFk": 3,
+      "dataSetupFk": 5,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 6,
+      "name": "Vertragsentstehung 224",
+      "sequenceFk": 4,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 7
+      },
+      "root": true,
+      "chainFk": 3
+    },
+    {
+      "id": 7,
+      "name": "Ordering 224",
+      "sequenceFk": 5,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 8
+      },
+      "root": false,
+      "chainFk": 3
+    },
+    {
+      "id": 8,
+      "name": "Rücknahme 288er",
+      "sequenceFk": 3,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 3
+    }
+  ],
+  "chaindecisions": []
+}
