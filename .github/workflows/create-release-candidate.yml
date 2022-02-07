@@ -44,7 +44,7 @@ jobs:
         with:
           file: package.json
           field: homepage
-          value: https://exxcellent.github.io/davit/realease-candidate
+          value: https://bettercodepaul.github.io/davit/realease-candidate
 
       - name: Yarn Build
         uses: CultureHQ/actions-yarn@v1.0.1
