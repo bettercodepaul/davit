@@ -1,20 +1,18 @@
 import { DAVIT_VERISON, DEFAULT_PROJECT_NAME, DEFAULT_ZOOM } from "../../../DavitConstants";
 import { ActionTO } from "../to/ActionTO";
 import { ActorTO } from "../to/ActorTO";
-import { ChainConfigurationTO } from "../to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../to/ChainDecisionTO";
-import { ChainLinkTO } from "../to/ChainlinkTO";
-import { ChainStateTO } from "../to/ChainStateTO";
+import { ChainlinkTO } from "../to/ChainlinkTO";
 import { ChainTO } from "../to/ChainTO";
 import { DataRelationTO } from "../to/DataRelationTO";
+import { DataSetupTO } from "../to/DataSetupTO";
 import { DataTO } from "../to/DataTO";
 import { DecisionTO } from "../to/DecisionTO";
 import { DesignTO } from "../to/DesignTO";
 import { GeometricalDataTO } from "../to/GeometricalDataTO";
 import { GroupTO } from "../to/GroupTO";
+import { InitDataTO } from "../to/InitDataTO";
 import { PositionTO } from "../to/PositionTO";
-import { SequenceConfigurationTO } from "../to/SequenceConfigurationTO";
-import { SequenceStateTO } from "../to/SequenceStateTO";
 import { SequenceStepTO } from "../to/SequenceStepTO";
 import { SequenceTO } from "../to/SequenceTO";
 
@@ -39,16 +37,13 @@ export class DataStoreCTO {
         // Data
         public datas = new Map<number, DataTO>(),
         public dataConnections = new Map<number, DataRelationTO>(),
-        // Configuration
-        public sequenceConfigurations = new Map<number, SequenceConfigurationTO>(),
-        public chainConfigurations = new Map<number, ChainConfigurationTO>(),
+        // Setup
+        public initDatas = new Map<number, InitDataTO>(),
+        public dataSetups = new Map<number, DataSetupTO>(),
         // Chain
         public chains = new Map<number, ChainTO>(),
-        public chainLinks = new Map<number, ChainLinkTO>(),
-        public chainDecisions = new Map<number, ChainDecisionTO>(),
-        // Mock
-        public sequenceStates = new Map<number, SequenceStateTO>(),
-        public chainStates = new Map<number, ChainStateTO>(),
+        public chainlinks = new Map<number, ChainlinkTO>(),
+        public chaindecisions = new Map<number, ChainDecisionTO>(),
     ) {
     }
 }

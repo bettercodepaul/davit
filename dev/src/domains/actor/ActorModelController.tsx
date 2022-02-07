@@ -1,14 +1,17 @@
 import React, { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Arrow, ArrowType, DavitPathHead, DavitPathProps, DavitPathTypes } from "../../components/atomic/svg/DavitPath";
-import { DavitCard, DavitCardProps } from "../../components/molecules";
+import { ViewPlaceholder } from "../../components/layout/ViewPlaceholder";
+import { DavitCard, DavitCardProps } from "../../components/molecules/card/DavitCard";
 import { DnDBox, DnDBoxElement, DnDBoxType } from "../../components/organisms/dndBox/DnDBox";
 import { ActorCTO } from "../../dataAccess/access/cto/ActorCTO";
 import { DataCTO } from "../../dataAccess/access/cto/DataCTO";
+import { DataSetupCTO } from "../../dataAccess/access/cto/DataSetupCTO";
 import { SequenceStepCTO } from "../../dataAccess/access/cto/SequenceStepCTO";
 import { ActionTO } from "../../dataAccess/access/to/ActionTO";
 import { ConditionTO } from "../../dataAccess/access/to/ConditionTO";
 import { DecisionTO } from "../../dataAccess/access/to/DecisionTO";
+import { InitDataTO } from "../../dataAccess/access/to/InitDataTO";
 import { ActionType } from "../../dataAccess/access/types/ActionType";
 import { editSelectors } from "../../slices/EditSlice";
 import { GlobalActions, globalSelectors } from "../../slices/GlobalSlice";
@@ -21,9 +24,11 @@ import { ActorDataState } from "../../viewDataTypes/ActorDataState";
 import { ViewFragmentProps } from "../../viewDataTypes/ViewFragment";
 
 interface ActorModelControllerProps {
+    fullScreen?: boolean;
 }
 
-export const ActorModelController: FunctionComponent<ActorModelControllerProps> = () => {
+export const ActorModelController: FunctionComponent<ActorModelControllerProps> = (props) => {
+        const {fullScreen} = props;
 
         const {
             onPositionUpdate,
@@ -39,12 +44,13 @@ export const ActorModelController: FunctionComponent<ActorModelControllerProps> 
             <>
                 {toDnDElements.length === 0 &&
                 <div className="actorModel">
-                    <h2 className={"fluid flex flex-center"}>{"Create a new actor"}</h2>
+                    <ViewPlaceholder text={"Create a new actor"} />
                 </div>}
                 {toDnDElements.length > 0 && <DnDBox
                     onPositionUpdate={onPositionUpdate}
                     toDnDElements={toDnDElements}
                     svgElements={getArrows()}
+                    fullScreen={fullScreen}
                     zoomIn={zoomIn}
                     zoomOut={zoomOut}
                     zoom={actorZoom}
@@ -67,6 +73,8 @@ const useViewModel = () => {
         const actionToEdit: ActionTO | null = useSelector(editSelectors.selectActionToEdit);
         const decisionToEdit: DecisionTO | null = useSelector(editSelectors.selectDecisionToEdit);
         const conditionToEdit: ConditionTO | null = useSelector(editSelectors.selectConditionToEdit);
+        const dataSetupToEdit: DataSetupCTO | null = useSelector(editSelectors.selectDataSetupToEdit);
+        const initDataToEdit: InitDataTO | null = useSelector(editSelectors.selectInitDataToEdit);
         const editArrow: Arrow | null = useSelector(editSelectors.selectEditActionArrow);
         const editStepArrows: Arrow[] = useSelector(editSelectors.selectEditStepArrows);
         // ----- VIEW -----
@@ -113,14 +121,21 @@ const useViewModel = () => {
                 stepToEdit?.actions.map((action) => (action ? mapActionToActorDatas(action) : [])).flat(1) || [];
             const actorDataFromActionToEdit: ViewFragmentProps[] = actionToEdit ? mapActionToActorDatas(actionToEdit) : [];
             const actorDataFromDecisionToEdit: ViewFragmentProps[] = mapDecisionToActorData(decisionToEdit);
-
+            const actorDatasFromDataSetupEdit: ViewFragmentProps[] = dataSetupToEdit
+                ? dataSetupToEdit.initDatas.map(mapInitDataToActorData)
+                : [];
+            const actorDatasFromInitData: ViewFragmentProps | undefined = initDataToEdit
+                ? mapInitDataToActorData(initDataToEdit)
+                : undefined;
             actorDatasFromStepToEdit.forEach((actorData) => {
                 actorData && actorDatas.push(actorData);
             });
-
             actorDatas.push(...actorDataFromDecisionToEdit);
+            actorDatas.push(...actorDatasFromDataSetupEdit);
             actorDatas.push(...actorDataFromActionToEdit);
-
+            if (actorDatasFromInitData) {
+                actorDatas.push(actorDatasFromInitData);
+            }
             if (conditionToEdit) {
                 actorDatas.push(mapConditionToActorData(conditionToEdit));
             }
@@ -195,13 +210,13 @@ const useViewModel = () => {
             };
         };
 
-        // const mapInitDataToActorData = (initData: InitDataTO): ViewFragmentProps => {
-        //     return {
-        //         parentId: initData.actorFk,
-        //         name: getDataNameById(initData.dataFk, initData.instanceFk),
-        //         state: ActorDataState.NEW,
-        //     };
-        // };
+        const mapInitDataToActorData = (initData: InitDataTO): ViewFragmentProps => {
+            return {
+                parentId: initData.actorFk,
+                name: getDataNameById(initData.dataFk, initData.instanceFk),
+                state: ActorDataState.NEW,
+            };
+        };
 
         const getDataNameById = (dataId: number, instanceId?: number): string => {
             let dataName: string = "Could not find Data";
@@ -345,8 +360,7 @@ const useViewModel = () => {
                     targetHeight: arrowToDraw.targetGeometricalData.geometricalData.height,
                     targetWidth: arrowToDraw.targetGeometricalData.geometricalData.width,
                     stroked: arrowToDraw.type === ArrowType.TRIGGER,
-                    // TODO: this is a bad place to set css color variable!
-                    lineColor: arrowToDraw.type === ArrowType.SEND ? "var(--color-blue)" : "var(--color-black)",
+                    lineColor: arrowToDraw.type === ArrowType.SEND ? "var(--color-exxcellent-blue)" : "black",
                 });
             });
             return arrowProps;

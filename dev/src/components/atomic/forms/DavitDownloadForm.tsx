@@ -2,9 +2,7 @@ import React, { FunctionComponent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { GlobalActions } from "../../../slices/GlobalSlice";
 import { useEnterHook, useEscHook } from "../../../utils/WindowUtil";
-import { DavitButton } from "../buttons/DavitButton";
 import { DavitTextInput } from "../textinput/DavitTextInput";
-import "./DavitDownloadForm.css";
 import { FormFooter } from "./fragments/FormFooter";
 import { FormHeader } from "./fragments/FormHeader";
 
@@ -28,7 +26,7 @@ export const DavitDownloadForm: FunctionComponent<DavitDownloadFormProps> = (pro
     useEnterHook(onSubmit);
 
     return (
-        <div className="downloadForm padding-medium">
+        <div className="downloadForm">
             <FormHeader>
                 <DavitTextInput
                     label="File name:"
@@ -38,12 +36,8 @@ export const DavitDownloadForm: FunctionComponent<DavitDownloadFormProps> = (pro
                 />
             </FormHeader>
             <FormFooter>
-                <DavitButton onClick={() => onCloseCallback()}>
-                    {"cancel"}
-                </DavitButton>
-                <DavitButton onClick={() => onSubmit()}>
-                    {"download"}
-                </DavitButton>
+                <button onClick={() => onCloseCallback()}>cancel</button>
+                <button onClick={() => onSubmit()}>download</button>
             </FormFooter>
         </div>
     );

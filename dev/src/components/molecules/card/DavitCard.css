@@ -3,12 +3,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--primary-text-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px var(--border-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    color: var(--text-color);
+    border-radius: var(--davit-border-radius);
+    box-shadow: 0 0 0 1px var(--color-border), 0 0 5px 5px rgba(0, 0, 0, 0.199);
     background-color: var(--background-color-header);
     animation-duration: var(--animation-time);
-    animation-name: growHeight;
+    animation-name: grow;
     animation-timing-function: ease-in-out;
     transition: width var(--animation-time), box-shadow var(--animation-time);
     cursor: grab;
@@ -26,20 +26,20 @@
 }
 
 .activeFilter {
-    box-shadow: 0 0 0 3px var(--secondary-color);
+    box-shadow: 0 0 0 3px var(--color-secondary);
     transition: box-shadow var(--animation-time);
 }
 
 .cardLabelWrapper {
     font-size: 0.8em;
     text-align: center;
+    padding: var(--spacing-small);
     display: flex;
     transition: color var(--animation-time), height var(--animation-time) width var(--animation-time);
     width: 100%;
     justify-content: flex-start;
 }
 
-/*TODO: use instead spacing variables*/
 .cardButtonGroup {
     width: 100%;
     display: flex;

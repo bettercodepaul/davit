@@ -1,9 +1,8 @@
 import { ChainCTO } from "../dataAccess/access/cto/ChainCTO";
-import { ChainLinkCTO } from "../dataAccess/access/cto/ChainlinkCTO";
+import { ChainlinkCTO } from "../dataAccess/access/cto/ChainlinkCTO";
+import { DataSetupCTO } from "../dataAccess/access/cto/DataSetupCTO";
 import { ActionTO } from "../dataAccess/access/to/ActionTO";
-import { ChainConfigurationTO, ChainStateValue } from "../dataAccess/access/to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../dataAccess/access/to/ChainDecisionTO";
-import { SequenceConfigurationTO } from "../dataAccess/access/to/SequenceConfigurationTO";
 import { GoToChain, GoToTypesChain, TerminalChain } from "../dataAccess/access/types/GoToTypeChain";
 import { DavitUtil } from "../utils/DavitUtil";
 import { ActorData } from "../viewDataTypes/ActorData";
@@ -13,7 +12,7 @@ export interface CalcChainLink {
     name: string;
     chainLinkId: number;
     stepId: string;
-    sequenceConfiguration: SequenceConfigurationTO;
+    dataSetup: DataSetupCTO;
     sequence: CalcSequence;
     errors: ActionTO[];
 }
@@ -26,28 +25,28 @@ export interface CalcChain {
 }
 
 export const SequenceChainService = {
-    calculateChain: (sequenceChain: ChainCTO | null, chainConfiguration: ChainConfigurationTO): CalcChain => {
+    calculateChain: (sequenceChain: ChainCTO | null): CalcChain => {
         const calcSequenceChain: CalcChain = {calcLinks: [], linkIds: [], terminal: {type: GoToTypesChain.ERROR}};
         let loopStartingStep: number = -1;
         let actorDatas: ActorData[] = [];
 
         if (sequenceChain) {
-            const root: ChainLinkCTO | null = getRoot(sequenceChain);
+            const root: ChainlinkCTO | null = getRoot(sequenceChain);
 
             if (root) {
-                let step: ChainLinkCTO | ChainDecisionTO | TerminalChain = root;
+                let step: ChainlinkCTO | ChainDecisionTO | TerminalChain = root;
                 let type = getType(step);
                 let stepId: string = "";
 
                 while (!isLooping(loopStartingStep) && (type === GoToTypesChain.LINK || type === GoToTypesChain.DEC)) {
                     if (type === GoToTypesChain.LINK) {
-                        const link: ChainLinkCTO = step as ChainLinkCTO;
+                        const link: ChainlinkCTO = step as ChainlinkCTO;
 
                         loopStartingStep = checkForLoop(calcSequenceChain, link, actorDatas);
 
                         const result: CalcSequence = SequenceService.calculateSequence(
                             link.sequence,
-                            link.sequenceConfiguration,
+                            link.dataSetup,
                             actorDatas,
                         );
 
@@ -66,13 +65,13 @@ export const SequenceChainService = {
                             chainLinkId: link.chainLink.id,
                             stepId: stepId,
                             sequence: result,
-                            sequenceConfiguration: link.sequenceConfiguration,
+                            dataSetup: link.dataSetup,
                             errors: result.calculatedSteps.map((step) => step.errors).flat(1),
                         });
 
                         if (!isLooping(loopStartingStep)) {
                             // set next object.
-                            step = getNext((step as ChainLinkCTO).chainLink.goto, sequenceChain);
+                            step = getNext((step as ChainlinkCTO).chainLink.goto, sequenceChain);
                             type = getType(step);
                         }
                     }
@@ -80,7 +79,7 @@ export const SequenceChainService = {
                     if (type === GoToTypesChain.DEC) {
                         const decision: ChainDecisionTO = step as ChainDecisionTO;
 
-                        const goTo: GoToChain = executeChainDecisionCheck(decision, actorDatas, chainConfiguration.stateValues);
+                        const goTo: GoToChain = executeChainDecisionCheck(decision, actorDatas);
                         step = getNext(goTo, sequenceChain);
                         type = getType(step);
 
@@ -99,9 +98,9 @@ export const SequenceChainService = {
     },
 };
 
-const executeChainDecisionCheck = (chainDecision: ChainDecisionTO, actorDatas: ActorData[], chainStates: ChainStateValue[]): GoToChain => {
+const executeChainDecisionCheck = (chainDecision: ChainDecisionTO, actorDatas: ActorData[]): GoToChain => {
+    // const filteredCompData: ActorData[] = actorDatas.filter((actorData) => actorData.actorFk === chainDecision.actorFk);
     let goTo: GoToChain | undefined;
-    // check conditions
     if (chainDecision.conditions !== []) {
         chainDecision.conditions.forEach((condition) => {
             const isIncluded: boolean = actorDatas.some(
@@ -112,21 +111,10 @@ const executeChainDecisionCheck = (chainDecision: ChainDecisionTO, actorDatas: A
             }
         });
     }
-
-    // check states
-    chainDecision.stateFkAndStateConditions.forEach(stateFkAndStateCondition => {
-        const stateToCheck: ChainStateValue | undefined = chainStates.find(state => state.chainStateFk === stateFkAndStateCondition.stateFk);
-        if (stateToCheck) {
-            if (stateToCheck.value !== stateFkAndStateCondition.stateCondition) {
-                goTo = chainDecision.elseGoTo;
-            }
-        }
-    });
-
     return goTo || chainDecision.ifGoTo;
 };
 
-const getLinkFromChain = (linkId: number, chain: ChainCTO): ChainLinkCTO | undefined => {
+const getLinkFromChain = (linkId: number, chain: ChainCTO): ChainlinkCTO | undefined => {
     return chain.links.find((link) => link.chainLink.id === linkId);
 };
 
@@ -134,16 +122,16 @@ const getDecisionFromChain = (id: number, chain: ChainCTO): ChainDecisionTO | un
     return chain.decisions.find((decision) => decision.id === id);
 };
 
-export const getRoot = (chain: ChainCTO | null): ChainLinkCTO | null => {
-    let rootLink: ChainLinkCTO | null = null;
+export const getRoot = (chain: ChainCTO | null): ChainlinkCTO | null => {
+    let rootLink: ChainlinkCTO | null = null;
     if (!DavitUtil.isNullOrUndefined(chain)) {
         rootLink = chain!.links.find((link) => link.chainLink.root) || null;
     }
     return rootLink;
 };
 
-const getNext = (goTo: GoToChain, chain: ChainCTO): ChainLinkCTO | ChainDecisionTO | TerminalChain => {
-    let nextStepOrDecisionOrTerminal: ChainLinkCTO | ChainDecisionTO | TerminalChain = {type: GoToTypesChain.ERROR};
+const getNext = (goTo: GoToChain, chain: ChainCTO): ChainlinkCTO | ChainDecisionTO | TerminalChain => {
+    let nextStepOrDecisionOrTerminal: ChainlinkCTO | ChainDecisionTO | TerminalChain = {type: GoToTypesChain.ERROR};
     switch (goTo.type) {
         case GoToTypesChain.LINK:
             nextStepOrDecisionOrTerminal = getLinkFromChain(goTo.id, chain) || {type: GoToTypesChain.ERROR};
@@ -157,8 +145,8 @@ const getNext = (goTo: GoToChain, chain: ChainCTO): ChainLinkCTO | ChainDecision
     return nextStepOrDecisionOrTerminal;
 };
 
-const getType = (step: ChainLinkCTO | ChainDecisionTO | TerminalChain): GoToTypesChain => {
-    if ((step as ChainLinkCTO).chainLink) {
+const getType = (step: ChainlinkCTO | ChainDecisionTO | TerminalChain): GoToTypesChain => {
+    if ((step as ChainlinkCTO).chainLink) {
         return GoToTypesChain.LINK;
     } else if ((step as ChainDecisionTO).elseGoTo) {
         return GoToTypesChain.DEC;
@@ -169,7 +157,7 @@ const getType = (step: ChainLinkCTO | ChainDecisionTO | TerminalChain): GoToType
     }
 };
 
-const checkForLoop = (calcSequenceChain: CalcChain, step: ChainLinkCTO, actorDatas: ActorData[]): number => {
+const checkForLoop = (calcSequenceChain: CalcChain, step: ChainlinkCTO, actorDatas: ActorData[]): number => {
     return calcSequenceChain.calcLinks.findIndex(
         (calcLink) =>
             calcLink.chainLinkId === step.chainLink.id &&

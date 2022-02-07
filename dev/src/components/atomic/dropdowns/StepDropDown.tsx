@@ -50,9 +50,9 @@ const useStepDropDownViewModel = (exclude?: number) => {
 
     const stepToOption = (step: SequenceStepCTO): DavitDropDownItemProps => {
         return {
-            key: step.sequenceStepTO.id,
-            value: step.sequenceStepTO.id.toString(),
-            text: step.sequenceStepTO.name,
+            key: step.squenceStepTO.id,
+            value: step.squenceStepTO.id.toString(),
+            text: step.squenceStepTO.name,
         };
     };
 
@@ -60,7 +60,7 @@ const useStepDropDownViewModel = (exclude?: number) => {
         if (!DavitUtil.isNullOrUndefined(sequenceToEdit)) {
             let copySteps: SequenceStepCTO[] = DavitUtil.deepCopy(sequenceToEdit!.sequenceStepCTOs);
             if (exclude) {
-                copySteps = copySteps.filter((step) => step.sequenceStepTO.id !== exclude);
+                copySteps = copySteps.filter((step) => step.squenceStepTO.id !== exclude);
             }
             return copySteps.map(stepToOption);
         }
@@ -69,7 +69,7 @@ const useStepDropDownViewModel = (exclude?: number) => {
 
     const selectSequenceStep = (stepId: number, sequence: SequenceCTO | null): SequenceStepCTO | undefined => {
         if (!DavitUtil.isNullOrUndefined(sequence) && !DavitUtil.isNullOrUndefined(stepId)) {
-            return sequence!.sequenceStepCTOs.find((step) => step.sequenceStepTO.id === stepId);
+            return sequence!.sequenceStepCTOs.find((step) => step.squenceStepTO.id === stepId);
         }
         return undefined;
     };

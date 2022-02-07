@@ -8,7 +8,7 @@ export const FormFooter: FunctionComponent<FormFooterProps> = (props) => {
     const {children} = props;
 
     return (
-        <div className={"width-fluid flex content-space-around padding-vertical-medium"}>
+        <div className={"formFooter"}>
             {children}
         </div>
     );

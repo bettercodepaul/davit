@@ -1,7 +1,7 @@
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import React, { FunctionComponent } from "react";
 import { ModuleRoutes } from "../../../../../../pages/Davit";
-import { DavitIconButton } from "../../../../../atomic";
+import { DavitButton } from "../../../../../atomic/buttons/DavitButton";
 import { ControlPanel } from "../edit/common/ControlPanel";
 import { OptionField } from "../edit/common/OptionField";
 
@@ -16,17 +16,17 @@ export const ControlPanelTabController: FunctionComponent<ControlPanelTabControl
     return (
         <ControlPanel>
             <OptionField>
-                <DavitIconButton iconName={faShare}
-                                 onClick={showActorPage}
+                <DavitButton iconName={faShare}
+                             onClick={showActorPage}
                 />
-                <DavitIconButton iconName={faShare}
-                                 onClick={showDataPage}
+                <DavitButton iconName={faShare}
+                             onClick={showDataPage}
                 />
-                <DavitIconButton iconName={faShare}
-                                 onClick={showTablePage}
+                <DavitButton iconName={faShare}
+                             onClick={showTablePage}
                 />
-                <DavitIconButton iconName={faShare}
-                                 onClick={showFlowChartPage}
+                <DavitButton iconName={faShare}
+                             onClick={showFlowChartPage}
                 />
             </OptionField>
         </ControlPanel>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SequenceCTO } from "../../../../../../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../../../../../../dataAccess/access/cto/SequenceStepCTO";
 import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";
-import { DecisionTO, StateFkAndStateCondition } from "../../../../../../../../dataAccess/access/to/DecisionTO";
+import { DecisionTO } from "../../../../../../../../dataAccess/access/to/DecisionTO";
 import { GoTo, GoToTypes } from "../../../../../../../../dataAccess/access/types/GoToType";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
@@ -31,7 +31,7 @@ export const useDecisionViewModel = () => {
             copyConditionToEdit.name = name;
             // TODO: das geht einfacher!
             dispatch(EditActions.setMode.editDecision(copyConditionToEdit));
-            dispatch(SequenceModelActions.setCurrentSequenceById(copyConditionToEdit.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copyConditionToEdit.sequenceFk));
         }
     };
 
@@ -40,7 +40,7 @@ export const useDecisionViewModel = () => {
             const copyConditionToEdit: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
             copyConditionToEdit.note = text;
             dispatch(EditActions.setMode.editDecision(copyConditionToEdit));
-            dispatch(SequenceModelActions.setCurrentSequenceById(copyConditionToEdit.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copyConditionToEdit.sequenceFk));
         }
     };
 
@@ -84,7 +84,7 @@ export const useDecisionViewModel = () => {
             const copyDecisionToEdit: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
             ifGoTo ? (copyDecisionToEdit.ifGoTo = goTo) : (copyDecisionToEdit.elseGoTo = goTo);
             updateDecision(copyDecisionToEdit);
-            dispatch(SequenceModelActions.setCurrentSequenceById(copyDecisionToEdit.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copyDecisionToEdit.sequenceFk));
         }
     };
 
@@ -113,7 +113,7 @@ export const useDecisionViewModel = () => {
 
     const setGoToTypeStep = (ifGoTo: boolean, step?: SequenceStepCTO) => {
         if (step) {
-            const newGoTo: GoTo = {type: GoToTypes.STEP, id: step.sequenceStepTO.id};
+            const newGoTo: GoTo = {type: GoToTypes.STEP, id: step.squenceStepTO.id};
             saveGoToType(ifGoTo, newGoTo);
         }
     };
@@ -128,7 +128,7 @@ export const useDecisionViewModel = () => {
     const createGoToStep = (ifGoTo: boolean) => {
         if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
             const goToStep: SequenceStepCTO = new SequenceStepCTO();
-            goToStep.sequenceStepTO.sequenceFk = decisionToEdit!.sequenceFk;
+            goToStep.squenceStepTO.sequenceFk = decisionToEdit!.sequenceFk;
             const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
             dispatch(EditActions.setMode.editStep(goToStep, copyDecision, ifGoTo));
         }
@@ -150,34 +150,6 @@ export const useDecisionViewModel = () => {
             dispatch(EditActions.setMode.editDecision(EditDecision.find(decisionToEdit!.id)));
         }
     };
-
-
-    const checkGoTos = (goto: GoTo): GoTo => {
-        const copyGoto: GoTo = DavitUtil.deepCopy(goto);
-
-        if ((goto.type === GoToTypes.STEP || goto.type === GoToTypes.DEC) && (goto.id === -1 || goto.id === undefined)) {
-            copyGoto.type = GoToTypes.ERROR;
-        }
-
-        return copyGoto;
-    };
-
-    const saveAndGoBack = () => {
-        if (!DavitUtil.isNullOrUndefined(decisionToEdit) && !DavitUtil.isNullOrUndefined(selectedSequence)) {
-            const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
-            if (copyDecision!.name !== "") {
-                copyDecision.ifGoTo = checkGoTos(copyDecision.ifGoTo);
-                copyDecision.elseGoTo = checkGoTos(copyDecision.elseGoTo);
-
-                dispatch(EditDecision.save(copyDecision!));
-                dispatch(EditActions.setMode.editSequence(selectedSequence!.sequenceTO.id));
-            } else {
-                deleteDecision();
-            }
-        }
-    };
-
-    // ------------------------------------- Condition ------------------------------------
 
     const createCondition = () => {
         if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
@@ -218,32 +190,28 @@ export const useDecisionViewModel = () => {
         }
     };
 
-    // ------------------------------------- State ------------------------------------
+    const checkGoTos = (goto: GoTo): GoTo => {
+        const copyGoto: GoTo = DavitUtil.deepCopy(goto);
 
-    const updateStateFkAndStateCondition = (newState: StateFkAndStateCondition | undefined, index: number) => {
-        if (newState) {
-            if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
-                const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
-                copyDecision.stateFkAndStateConditions[index] = newState;
-                updateDecision(copyDecision);
+        if ((goto.type === GoToTypes.STEP || goto.type === GoToTypes.DEC) && (goto.id === -1 || goto.id === undefined)) {
+            copyGoto.type = GoToTypes.ERROR;
+        }
+
+        return copyGoto;
+    };
+
+    const saveAndGoBack = () => {
+        if (!DavitUtil.isNullOrUndefined(decisionToEdit) && !DavitUtil.isNullOrUndefined(selectedSequence)) {
+            const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
+            if (copyDecision!.name !== "") {
+                copyDecision.ifGoTo = checkGoTos(copyDecision.ifGoTo);
+                copyDecision.elseGoTo = checkGoTos(copyDecision.elseGoTo);
+
+                dispatch(EditDecision.save(copyDecision!));
+                dispatch(EditActions.setMode.editSequence(selectedSequence!.sequenceTO.id));
+            } else {
+                deleteDecision();
             }
-        }
-    };
-
-    const createStateFkAndStateCondition = () => {
-        if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
-            const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
-            copyDecision.stateFkAndStateConditions.push({stateFk: -1, stateCondition: true});
-
-            updateDecision(copyDecision);
-        }
-    };
-
-    const deleteStateFkAndStateCondition = (stateFkToRemove: number) => {
-        if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
-            const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
-            copyDecision.stateFkAndStateConditions = copyDecision.stateFkAndStateConditions.filter(stateFkStateCondition => stateFkStateCondition.stateFk !== stateFkToRemove);
-            updateDecision(copyDecision);
         }
     };
 
@@ -273,10 +241,5 @@ export const useDecisionViewModel = () => {
         deleteCondition,
         saveCondition,
         saveAndGoBack,
-        stateFkAndStateConditions: decisionToEdit?.stateFkAndStateConditions || [],
-        deleteStateFkAndStateCondition,
-        createStateFkAndStateCondition,
-        updateStateFkAndStateCondition,
-        sequenceFk: decisionToEdit?.sequenceFk || -1,
     };
 };

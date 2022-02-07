@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { DavitIcons } from "../../../../../components/atomic/icons/IconSet";
 import { DavitTableRowData } from "../../../../../components/organisms/table/DavitTable";
-import { ChainLinkCTO } from "../../../../../dataAccess/access/cto/ChainlinkCTO";
+import { ChainlinkCTO } from "../../../../../dataAccess/access/cto/ChainlinkCTO";
 import { ChainDecisionTO } from "../../../../../dataAccess/access/to/ChainDecisionTO";
 import { CalcChain } from "../../../../../services/SequenceChainService";
 import { EditActions } from "../../../../../slices/EditSlice";
@@ -9,7 +9,7 @@ import { getChainGotoName } from "../../util/TableUtil";
 
 export const useGetModelChainDecisionTableData = (
     calcChain: CalcChain | null,
-    selectedChainLinks: ChainLinkCTO[],
+    selectedChainLinks: ChainlinkCTO[],
     selectedChainDecisions: ChainDecisionTO[],
 ) => {
     const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const header = ["NAME", "IF GOTO", "ELSE GOTO", "ACTIONS"];
 
 const createChainDecisionColumn = (
     decision: ChainDecisionTO,
-    selectedChainlinks: ChainLinkCTO[],
+    selectedChainlinks: ChainlinkCTO[],
     selectedChainDecisions: ChainDecisionTO[],
     editCallback: () => void,
 ): DavitTableRowData => {

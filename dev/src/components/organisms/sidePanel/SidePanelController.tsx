@@ -3,31 +3,28 @@ import { useDispatch, useSelector } from "react-redux";
 import logo from "../../../assets/exxcellent_logo_200.png";
 import { DAVIT_VERISON } from "../../../DavitConstants";
 import { EditActions, editSelectors, Mode } from "../../../slices/EditSlice";
-import { ElementSize } from "../../../style/Theme";
-import { DavitIconButton } from "../../atomic";
+import { DavitSidePanelButton } from "../../atomic/buttons/DavitSidePanelButton";
 import { DavitIcons } from "../../atomic/icons/IconSet";
-import "./SidePanel.css";
 
 export interface SidePanelProps {
 }
 
 export const SidePanelController: FunctionComponent<SidePanelProps> = () => {
-    const {setModeToEdit, setModeToFile, setModeToConfiguration, mode} = useSidePanelViewModel();
+    const {setModeToEdit, setModeToFile, setModeToView, mode} = useSidePanelViewModel();
 
     return (
         <div className="leftPanel">
-            <DavitIconButton iconName={DavitIcons.pencil}
-                             size={ElementSize.large}
-                             className={"sidePanelButton" + ((mode.includes(Mode.EDIT.toString()) && mode !== Mode.VIEW_CONFIGURATION) ? " active" : "")}
-                             onClick={setModeToEdit}
+            <DavitSidePanelButton icon={DavitIcons.pencil}
+                                  onClick={setModeToEdit}
+                                  active={mode.includes(Mode.EDIT.toString())}
             />
-            <DavitIconButton iconName={DavitIcons.eye}
-                             className={"sidePanelButton" + (mode === Mode.VIEW || mode === Mode.VIEW_CONFIGURATION ? " active" : "")}
-                             onClick={setModeToConfiguration}
+            <DavitSidePanelButton icon={DavitIcons.eye}
+                                  onClick={setModeToView}
+                                  active={mode === Mode.VIEW}
             />
-            <DavitIconButton iconName={DavitIcons.file}
-                             className={"sidePanelButton" + (mode === Mode.FILE ? " active" : "")}
-                             onClick={setModeToFile}
+            <DavitSidePanelButton icon={DavitIcons.file}
+                                  onClick={setModeToFile}
+                                  active={mode === Mode.FILE}
             />
             {/*TODO: enable wenn tabs are fixed!*/}
             {/*<DavitSidePanelButton icon="external alternate" onClick={setModeToTab} active={mode === Mode.TAB} />*/}
@@ -53,8 +50,8 @@ const useSidePanelViewModel = () => {
         dispatch(EditActions.setMode.edit());
     };
 
-    const setModeToConfiguration = () => {
-        dispatch(EditActions.setMode.editConfiguration());
+    const setModeToView = () => {
+        dispatch(EditActions.setMode.view());
     };
 
     const setModeToFile = () => {
@@ -67,7 +64,7 @@ const useSidePanelViewModel = () => {
 
     return {
         setModeToEdit,
-        setModeToConfiguration,
+        setModeToView,
         setModeToFile,
         setModeToTab,
         mode,

@@ -1,7 +1,6 @@
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import React, { FunctionComponent } from "react";
 import { ActionType } from "../../../../../../../../dataAccess/access/types/ActionType";
-import { DavitIconButton } from "../../../../../../../atomic";
 import { DavitButton } from "../../../../../../../atomic/buttons/DavitButton";
 import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
 import { ActionTypeDropDown } from "../../../../../../../atomic/dropdowns/ActionTypeDropDown";
@@ -130,11 +129,11 @@ export const ActionForm: FunctionComponent<ActionFormProps> = () => {
 
         <FormLine>
             <DavitDeleteButton onClick={deleteActionToEdit} />
-            <DavitButton onClick={createAnother}>
-                {"Create another"}
-            </DavitButton>
-            <DavitIconButton onClick={setMode}
-                             iconName={faReply}
+            <DavitButton onClick={createAnother}
+                         label="Create another"
+            />
+            <DavitButton onClick={setMode}
+                         iconName={faReply}
             />
         </FormLine>
     </Form>;

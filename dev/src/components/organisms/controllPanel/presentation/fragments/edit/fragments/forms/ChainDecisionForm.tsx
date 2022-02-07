@@ -1,26 +1,20 @@
 import React, { FunctionComponent } from "react";
-import { ChainStateTO } from "../../../../../../../../dataAccess/access/to/ChainStateTO";
 import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";
-import { StateFkAndStateCondition } from "../../../../../../../../dataAccess/access/to/DecisionTO";
 import { GoToTypesChain } from "../../../../../../../../dataAccess/access/types/GoToTypeChain";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import {
-    ActorDropDown,
-    ChainDecisionDropDown,
-    ChainLinkDropDown,
-    DavitAddButton,
-    DavitBackButton,
-    DavitDeleteButton,
-    DavitTextInput,
-    Form,
-    GoToChainOptionDropDown,
-    InstanceDropDown
-} from "../../../../../../../atomic";
-import { ChainStateDropDown } from "../../../../../../../atomic/dropdowns/ChainStateDropDown";
+import { DavitAddButton } from "../../../../../../../atomic/buttons/DavitAddButton";
+import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";
+import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
+import { ActorDropDown } from "../../../../../../../atomic/dropdowns/ActorDropDown";
+import { ChainDecisionDropDown } from "../../../../../../../atomic/dropdowns/ChainDecisionDropDown";
+import { ChainLinkDropDown } from "../../../../../../../atomic/dropdowns/ChainLinkDropDown";
+import { GoToChainOptionDropDown } from "../../../../../../../atomic/dropdowns/GoToChainOptionDropDown";
+import { InstanceDropDown } from "../../../../../../../atomic/dropdowns/InstanceDropDown";
+import { Form } from "../../../../../../../atomic/forms/Form";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
-import { ToggleButton } from "../../../../../../../molecules/ToggleButton";
+import { DavitTextInput } from "../../../../../../../atomic/textinput/DavitTextInput";
 import { useChainDecisionViewModel } from "../viewmodels/ChainDecisionViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { FormLabel } from "./fragments/FormLabel";
@@ -41,6 +35,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
         deleteDecision,
         elseGoTo,
         ifGoTo,
+        // saveDecision,
         createGoToStep,
         decId,
         setGoToTypeDecision,
@@ -50,10 +45,6 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
         deleteCondition,
         createCondition,
         goBack,
-        stateFkAndStateConditions,
-        createStateFkAndStateCondition,
-        updateStateFkAndStateCondition,
-        deleteStateFkAndStateCondition,
     } = useChainDecisionViewModel();
 
     const labelName: string = "Chain decision - name";
@@ -106,49 +97,6 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
         );
     };
 
-    const selectChainState = (chainState: ChainStateTO | undefined, index: number) => {
-        if (chainState) {
-            updateStateFkAndStateCondition({stateFk: chainState.id, stateCondition: chainState.isState}, index);
-        }
-    };
-
-    const setStateCondition = (stateFkAndStateConditions: StateFkAndStateCondition, index: number, condition: boolean) => {
-        const copyStateFkAndStateCondition: StateFkAndStateCondition = DavitUtil.deepCopy(stateFkAndStateConditions);
-        copyStateFkAndStateCondition.stateCondition = condition;
-        updateStateFkAndStateCondition(copyStateFkAndStateCondition, index);
-    };
-
-    const buildStateTableRow = (stateFkAndStateCondition: StateFkAndStateCondition, index: number): JSX.Element => {
-
-        return (
-            <tr key={stateFkAndStateCondition.stateFk}>
-                <td>
-                    <div className="flex content-space-between">
-
-                        <ChainStateDropDown onSelect={(stateFkAndStateCondition) => selectChainState(stateFkAndStateCondition, index)}
-                                            chainFk={chainId}
-                                            value={stateFkAndStateCondition.stateFk.toString()}
-                                            placeholder="Select sequence state"
-                        />
-
-                        <ToggleButton toggleCallback={(is) => setStateCondition(stateFkAndStateCondition, index, is)}
-                                      isLeft={stateFkAndStateCondition.stateCondition}
-                                      leftLabel="TRUE"
-                                      rightLabel="FLASE"
-                        />
-
-                        <DavitDeleteButton onClick={() => {
-                            deleteStateFkAndStateCondition(stateFkAndStateCondition.stateFk);
-                        }}
-                                           noConfirm
-                        />
-                    </div>
-                </td>
-            </tr>
-        );
-    };
-
-
     return (
         <Form>
             <FormHeader>
@@ -176,39 +124,20 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                     <FormLabel>{labelConditions}</FormLabel>
                 </FormLine>
 
-                {/*------------------------- Condition -------------------------*/}
+                {/*// TODO: Condition list*/}
                 <FormLine>
                     <table className={"border"}
-                           style={{width: "40em"}}
+                           style={{width: "40em", minHeight: "30vh"}}
                     >
                         <thead>
                         <tr>
                             <td style={{textAlign: "center"}}>Actor</td>
                             <td style={{textAlign: "center"}}>Data Instance</td>
-                            <td className={"flex flex-end"}><DavitAddButton onClick={createCondition} /></td>
+                            <td style={{textAlign: "end"}}><DavitAddButton onClick={createCondition} /></td>
                         </tr>
                         </thead>
                         <tbody style={{maxHeight: "40vh"}}>
                         {chainConditions.map(buildChainConditionTableRow)}
-                        </tbody>
-                    </table>
-                </FormLine>
-
-                {/*------------------------- State -------------------------*/}
-                <FormLine>
-                    <table className="border"
-                           style={{width: "40em"}}
-                    >
-                        <thead>
-                        <tr>
-                            <td>State</td>
-                            <td>Is</td>
-                            <td className={"flex flex-end"}><DavitAddButton onClick={createStateFkAndStateCondition} />
-                            </td>
-                        </tr>
-                        </thead>
-                        <tbody style={{maxHeight: "20vh"}}>
-                        {stateFkAndStateConditions.map((state, index) => buildStateTableRow(state, index))}
                         </tbody>
                     </table>
                 </FormLine>

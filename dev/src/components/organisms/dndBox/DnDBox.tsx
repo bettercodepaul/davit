@@ -5,7 +5,6 @@ import { PositionTO } from "../../../dataAccess/access/to/PositionTO";
 import { ASPECT_RATIO, WINDOW_FACTOR } from "../../../DavitConstants";
 import { useCurrentHeight, useCurrentWitdh, useCustomZoomEvent } from "../../../utils/WindowUtil";
 import { DavitPath, DavitPathProps } from "../../atomic/svg/DavitPath";
-import "./DnDBox.css";
 import { createDnDItem } from "./fragments/DnDWrapper";
 
 export interface DnDBoxElement {
@@ -75,7 +74,7 @@ export const DnDBox: FunctionComponent<DnDBox> = (props) => {
             onMouseLeave={() => setMouseOver(false)}
             ref={constraintsRef}
             style={fullScreen ? {height: height, maxWidth: width} : {}}
-            className={type.toString()}
+            className={fullScreen ? type.toString() + "Fullscreen" : type.toString()}
             key={key}
         >
             {toDnDElements.map(wrapItem)}
@@ -84,7 +83,7 @@ export const DnDBox: FunctionComponent<DnDBox> = (props) => {
             >
                 {zoom ? Math.round(zoom * 100) + "%" : ""}
             </motion.label>
-            <motion.svg className="fluid">{createDavitPath(paths)}</motion.svg>
+            <motion.svg className="sVGArea">{createDavitPath(paths)}</motion.svg>
         </motion.div>
     );
 };

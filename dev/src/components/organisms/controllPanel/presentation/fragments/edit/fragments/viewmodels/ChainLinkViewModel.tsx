@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChainDecisionTO } from "../../../../../../../../dataAccess/access/to/ChainDecisionTO";
-import { ChainLinkTO } from "../../../../../../../../dataAccess/access/to/ChainlinkTO";
+import { ChainlinkTO } from "../../../../../../../../dataAccess/access/to/ChainlinkTO";
 import { ChainTO } from "../../../../../../../../dataAccess/access/to/ChainTO";
-import { SequenceConfigurationTO } from "../../../../../../../../dataAccess/access/to/SequenceConfigurationTO";
+import { DataSetupTO } from "../../../../../../../../dataAccess/access/to/DataSetupTO";
 import { SequenceTO } from "../../../../../../../../dataAccess/access/to/SequenceTO";
 import { GoToChain, GoToTypesChain } from "../../../../../../../../dataAccess/access/types/GoToTypeChain";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
@@ -14,7 +14,7 @@ import { EditChain } from "../../../../../../../../slices/thunks/ChainThunks";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useChainLinkViewModel = () => {
-    const chainLinkToEdit: ChainLinkTO | null = useSelector(editSelectors.selectChainLinkToEdit);
+    const chainLinkToEdit: ChainlinkTO | null = useSelector(editSelectors.selectChainLinkToEdit);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
     const dispatch = useDispatch();
     const [currentGoTo, setCurrentGoTo] = useState<GoToChain>({type: GoToTypesChain.LINK, id: -1});
@@ -31,7 +31,7 @@ export const useChainLinkViewModel = () => {
 
     const changeName = (name: string) => {
         if (!DavitUtil.isNullOrUndefined(chainLinkToEdit)) {
-            const copyChainLink: ChainLinkTO = DavitUtil.deepCopy(chainLinkToEdit);
+            const copyChainLink: ChainlinkTO = DavitUtil.deepCopy(chainLinkToEdit);
             copyChainLink.name = name;
             dispatch(EditChainLink.save(copyChainLink));
             dispatch(EditActions.setMode.editChainLink(copyChainLink));
@@ -62,7 +62,7 @@ export const useChainLinkViewModel = () => {
 
     const saveGoToType = (goTo: GoToChain) => {
         if (goTo !== undefined && !DavitUtil.isNullOrUndefined(chainLinkToEdit)) {
-            const copyChainlink: ChainLinkTO = DavitUtil.deepCopy(chainLinkToEdit);
+            const copyChainlink: ChainlinkTO = DavitUtil.deepCopy(chainLinkToEdit);
             copyChainlink.goto = goTo;
             dispatch(EditChainLink.save(copyChainlink!));
             dispatch(EditActions.setMode.editChainLink(copyChainlink));
@@ -84,7 +84,7 @@ export const useChainLinkViewModel = () => {
         }
     };
 
-    const setNextLink = (link?: ChainLinkTO) => {
+    const setNextLink = (link?: ChainlinkTO) => {
         if (link) {
             const newGoTo: GoToChain = {type: GoToTypesChain.LINK, id: link.id};
             saveGoToType(newGoTo);
@@ -100,8 +100,8 @@ export const useChainLinkViewModel = () => {
 
     const createNewChainLink = () => {
         if (!DavitUtil.isNullOrUndefined(chainLinkToEdit)) {
-            const copyChainLinkToEdit: ChainLinkTO = DavitUtil.deepCopy(chainLinkToEdit);
-            const newChainLink: ChainLinkTO = new ChainLinkTO();
+            const copyChainLinkToEdit: ChainlinkTO = DavitUtil.deepCopy(chainLinkToEdit);
+            const newChainLink: ChainlinkTO = new ChainlinkTO();
             newChainLink.chainFk = chainLinkToEdit!.chainFk;
             dispatch(EditActions.setMode.editChainLink(newChainLink, copyChainLinkToEdit));
         }
@@ -116,13 +116,13 @@ export const useChainLinkViewModel = () => {
         }
     };
 
-    const setDataSetup = (sequenceConfigurationTO?: SequenceConfigurationTO) => {
+    const setDataSetup = (dataSetup?: DataSetupTO) => {
         if (!DavitUtil.isNullOrUndefined(chainLinkToEdit)) {
-            const copyChainLinkToEdit: ChainLinkTO = DavitUtil.deepCopy(chainLinkToEdit);
-            if (sequenceConfigurationTO) {
-                copyChainLinkToEdit.sequenceConfigurationFk = sequenceConfigurationTO.id;
+            const copyChainLinkToEdit: ChainlinkTO = DavitUtil.deepCopy(chainLinkToEdit);
+            if (dataSetup) {
+                copyChainLinkToEdit.dataSetupFk = dataSetup.id;
             } else {
-                copyChainLinkToEdit.sequenceConfigurationFk = -1;
+                copyChainLinkToEdit.dataSetupFk = -1;
             }
             dispatch(EditChainLink.save(copyChainLinkToEdit));
             dispatch(EditActions.setMode.editChainLink(copyChainLinkToEdit));
@@ -131,7 +131,7 @@ export const useChainLinkViewModel = () => {
 
     const setSequenceModel = (sequence?: SequenceTO) => {
         if (!DavitUtil.isNullOrUndefined(chainLinkToEdit)) {
-            const copyChainLinkToEdit: ChainLinkTO = DavitUtil.deepCopy(chainLinkToEdit);
+            const copyChainLinkToEdit: ChainlinkTO = DavitUtil.deepCopy(chainLinkToEdit);
             if (sequence) {
                 copyChainLinkToEdit.sequenceFk = sequence.id;
             } else {
@@ -158,7 +158,7 @@ export const useChainLinkViewModel = () => {
         goTo: currentGoTo,
         isRoot: chainLinkToEdit?.root ? chainLinkToEdit.root : false,
         stepId: chainLinkToEdit?.id,
-        currentSequenceConfiguration: chainLinkToEdit?.sequenceConfigurationFk,
+        currentDataSetup: chainLinkToEdit?.dataSetupFk,
         currentSequence: chainLinkToEdit?.sequenceFk,
         setDataSetup,
         setSequenceModel,

@@ -1,7 +1,5 @@
 import { ActionTO } from "../dataAccess/access/to/ActionTO";
 import { DecisionTO } from "../dataAccess/access/to/DecisionTO";
-import { SequenceStateValue } from "../dataAccess/access/to/SequenceConfigurationTO";
-import { SequenceStateTO } from "../dataAccess/access/to/SequenceStateTO";
 import { ActionType } from "../dataAccess/access/types/ActionType";
 import { GoTo } from "../dataAccess/access/types/GoToType";
 import { ActorData } from "../viewDataTypes/ActorData";
@@ -12,14 +10,10 @@ import { ActorDataState } from "../viewDataTypes/ActorDataState";
 export interface SequenceActionResult {
     actorDatas: ActorData[];
     errors: ActionTO[];
-    falseStates: SequenceStateTO[];
-    trueStates: SequenceStateTO[];
 }
 
 export interface SequenceDecisionResult {
     actorDatas: ActorData[];
-    falseStates: SequenceStateTO[];
-    trueStates: SequenceStateTO[];
     goto: GoTo;
 }
 
@@ -121,15 +115,10 @@ export const SequenceActionReducer = {
                     break;
             }
         });
-        return {actorDatas: newActorDatas, errors: errors, falseStates: [], trueStates: []};
+        return {actorDatas: newActorDatas, errors};
     },
 
-    executeDecisionCheck(
-        decision: DecisionTO,
-        actorDatas: ActorData[],
-        states: SequenceStateTO[],
-        stateValues: SequenceStateValue[]
-    ): SequenceDecisionResult {
+    executeDecisionCheck(decision: DecisionTO, actorDatas: ActorData[]): SequenceDecisionResult {
         /**
          * Remove with status "deleted" and "check failed"
          * Change rest to status "persistent".
@@ -160,31 +149,7 @@ export const SequenceActionReducer = {
             }
         });
 
-        const falseStates: SequenceStateTO[] = [];
-        const trueStates: SequenceStateTO[] = [];
-
-        const configuredStates: SequenceStateTO[] = states.map(state => {
-            stateValues.forEach(stateValue => {
-                if(state.id === stateValue.sequenceStateFk){
-                    state.isState = stateValue.value;
-                }
-            });
-            return state;
-        });
-
-        decision.stateFkAndStateConditions.forEach(stateFkAndStateCondition => {
-            const stateToCheck: SequenceStateTO | undefined = configuredStates.find(state => state.id === stateFkAndStateCondition.stateFk);
-            if (stateToCheck) {
-                if (stateToCheck.isState !== stateFkAndStateCondition.stateCondition) {
-                    falseStates.push(stateToCheck);
-                    goTo = decision.elseGoTo;
-                } else {
-                    trueStates.push(stateToCheck);
-                }
-            }
-        });
-
-        return {actorDatas: updatedActorDatas, goto: goTo, falseStates: falseStates, trueStates: trueStates};
+        return {actorDatas: updatedActorDatas, goto: goTo};
     },
 };
 
