@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-import "./TabGroupFragment.css";
 
 interface TabGroupFragmentProps {
     label: string;
@@ -13,7 +12,7 @@ export const TabGroupFragment: FunctionComponent<TabGroupFragmentProps> = (props
              style={style}
         >
             <div className="tab-aggregator">{label}</div>
-            <div className="flex">{children}</div>
+            <div style={{display: "flex"}}>{children}</div>
         </div>
     );
 };

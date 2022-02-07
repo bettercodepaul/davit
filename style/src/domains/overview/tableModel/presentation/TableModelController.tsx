@@ -2,15 +2,15 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { DavitTable } from "../../../../components/organisms/table/DavitTable";
-import { ChainLinkCTO } from "../../../../dataAccess/access/cto/ChainlinkCTO";
+import { ChainlinkCTO } from "../../../../dataAccess/access/cto/ChainlinkCTO";
 import { SequenceCTO } from "../../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../../dataAccess/access/cto/SequenceStepCTO";
 import { ActionTO } from "../../../../dataAccess/access/to/ActionTO";
 import { ChainDecisionTO } from "../../../../dataAccess/access/to/ChainDecisionTO";
 import { ChainTO } from "../../../../dataAccess/access/to/ChainTO";
 import { ConditionTO } from "../../../../dataAccess/access/to/ConditionTO";
+import { DataSetupTO } from "../../../../dataAccess/access/to/DataSetupTO";
 import { DecisionTO } from "../../../../dataAccess/access/to/DecisionTO";
-import { SequenceConfigurationTO } from "../../../../dataAccess/access/to/SequenceConfigurationTO";
 import { SequenceTO } from "../../../../dataAccess/access/to/SequenceTO";
 import { CalcChain } from "../../../../services/SequenceChainService";
 import { CalculatedStep } from "../../../../services/SequenceService";
@@ -33,6 +33,7 @@ import { useGetStepTableData } from "../tables/model/ModelSequenceStep";
 import { useGetStepActionTableData } from "../tables/model/ModelSequenceStepAction";
 
 interface TableModelControllerProps {
+    fullScreen?: boolean;
 }
 
 export enum ActiveTab {
@@ -50,7 +51,8 @@ export enum ActiveTab {
     dataSetup = "dataSetup",
 }
 
-export const TableModelController: FunctionComponent<TableModelControllerProps> = () => {
+export const TableModelController: FunctionComponent<TableModelControllerProps> = (props) => {
+    const {fullScreen} = props;
     const {
         showChainModelTab,
         showSequenceModelTabs,
@@ -65,7 +67,7 @@ export const TableModelController: FunctionComponent<TableModelControllerProps> 
     } = useSequenceTableViewModel();
 
     return (
-        <div className={"sequenceTable padding-tiny"}
+        <div className={fullScreen ? "" : "sequenceTable"}
              ref={parentRef}
         >
             <div className="tableBorder">
@@ -91,10 +93,10 @@ const useSequenceTableViewModel = () => {
     const calcSteps: CalculatedStep[] = useSelector(sequenceModelSelectors.selectCalcSteps);
     const calcChain: CalcChain | null = useSelector(sequenceModelSelectors.selectCalcChain);
     const sequences: SequenceTO[] = useSelector(masterDataSelectors.selectSequences);
-    const dataSetups: SequenceConfigurationTO[] = useSelector(masterDataSelectors.selectSequenceConfigurations);
+    const dataSetups: DataSetupTO[] = useSelector(masterDataSelectors.selectDataSetups);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
     const chainModels: ChainTO[] = useSelector(masterDataSelectors.selectChains);
-    const selectedChainlinks: ChainLinkCTO[] = useSelector(sequenceModelSelectors.selectCurrentChainLinks);
+    const selectedChainlinks: ChainlinkCTO[] = useSelector(sequenceModelSelectors.selectCurrentChainLinks);
     const selectedChainDecisions: ChainDecisionTO[] = useSelector(sequenceModelSelectors.selectCurrentChainDecisions);
     const selectedActionToEdit: ActionTO | null = useSelector(editSelectors.selectActionToEdit);
     const selectedDecisionToEdit: DecisionTO | null = useSelector(editSelectors.selectDecisionToEdit);
@@ -156,7 +158,7 @@ const useSequenceTableViewModel = () => {
         if (mode === Mode.EDIT_SEQUENCE_STEP_ACTION) {
             if (selectedActionToEdit) {
                 const step: SequenceStepCTO | undefined = selectedSequence?.sequenceStepCTOs.find(
-                    (step) => step.sequenceStepTO.id === selectedActionToEdit?.sequenceStepFk,
+                    (step) => step.squenceStepTO.id === selectedActionToEdit?.sequenceStepFk,
                 );
                 if (step) {
                     stepToShow = step;
@@ -240,6 +242,7 @@ const useSequenceTableViewModel = () => {
         showErrorTab: selectedErrors.length > 0,
         activeTab,
         setActiveTab,
+
         activeTableData: getActiveTableData(),
         tableHeight,
         parentRef,

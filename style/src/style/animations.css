@@ -1,7 +1,3 @@
-:root {
-    --animation-time: 0.8s;
-}
-
 @keyframes appearTabGroup {
     0% {
         color: transparent;
@@ -17,9 +13,9 @@
     }
 
     5% {
-        color: var(--primary-text-color);
+        color: var(--text-color);
         background-color: rgba(0, 0, 0, 0.1);
-        box-shadow: 0 0 0 1px var(--border-color);
+        box-shadow: 0 0 0 1px var(--color-border);
         height: 4.4em;
     }
 }
@@ -39,7 +35,7 @@
     }
 
     100% {
-        color: var(--primary-text-color);
+        color: var(--text-color);
         background-color: rgba(0, 0, 0, 0.2);
         height: 2.2em;
         border-right: 0.5px solid rgba(255, 250, 250, 0.2);
@@ -72,7 +68,7 @@
     }
 }
 
-@keyframes growHeight {
+@keyframes grow {
     from {
         background-color: transparent;
         box-shadow: 0 0 0 1px transparent, 0 0 5px 5px transparent;
@@ -82,8 +78,8 @@
 
     to {
         background-color: var(--background-color-header);
-        box-shadow: 0 0 0 1px var(--border-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
-        color: var(--primary-text-color);
+        box-shadow: 0 0 0 1px var(--color-border), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+        color: var(--text-color);
         height: 100%;
     }
 }
@@ -94,17 +90,19 @@
     }
 
     to {
-        box-shadow: 0 0 6px 2px var(--secondary-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+        box-shadow: 0 0 6px 2px var(--color-secondary), 0 0 5px 5px rgba(0, 0, 0, 0.199);
     }
 }
 
-@keyframes slideIn {
+@keyframes slidein {
     from {
         margin-bottom: 11em;
+        /* height: 300%; */
     }
 
     to {
         margin-bottom: 0;
+        /* height: 100%; */
     }
 }
 
@@ -127,7 +125,7 @@
 @keyframes shrinkWidth {
     0% {
         width: 2em;
-        background-color: var(--color-black);
+        background-color: var(--background-color-slidebar);
         border-width: 0 0 0 2px;
     }
 
@@ -149,33 +147,15 @@
     100% {
         width: 1.2em;
         color: white !important;
-        box-shadow: 0 0 0 1px var(--border-color) !important;
+        box-shadow: 0 0 0 1px var(--color-border) !important;
     }
 }
 
-@keyframes disappear {
+@keyframes disapear {
     0% {
         opacity: 1;
     }
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes borderGrow {
-    0% {
-        border-color: transparent;
-    }
-    100% {
-        border-color: var(--color-error--lighter);
     }
 }

@@ -8,7 +8,7 @@ export const FormBody: FunctionComponent<FormBodyProps> = (props) => {
     const {children, style} = props;
 
     return (
-        <div className="flex-column flex-center"
+        <div className={"formBody"}
              style={style}
         >
             {children}

@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-import "./FlowChartlabel.css";
 
 interface FlowChartlabelProps {
     label: string;

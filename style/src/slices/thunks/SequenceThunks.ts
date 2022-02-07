@@ -22,7 +22,7 @@ const saveSequenceThunk = (sequence: SequenceTO): AppThunk => (dispatch) => {
     }
     dispatch(MasterDataActions.loadSequencesFromBackend());
     dispatch(setSequenceToEditThunk(response.object));
-    dispatch(SequenceModelActions.setCurrentSequenceById(response.object.id));
+    dispatch(SequenceModelActions.setCurrentSequence(response.object.id));
 };
 
 const deleteSequenceThunk = (sequence: SequenceTO): AppThunk => (dispatch, getState) => {

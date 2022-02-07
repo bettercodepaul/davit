@@ -2,8 +2,6 @@ import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { useEnterHook, useEscHook } from "../../../utils/WindowUtil";
 import { FormDivider } from "../../organisms/controllPanel/presentation/fragments/edit/fragments/forms/fragments/FormDivider";
 import { FormLine } from "../../organisms/controllPanel/presentation/fragments/edit/fragments/forms/fragments/FormLine";
-import { DavitButton } from "../buttons/DavitButton";
-import "./DavitNoteForm.css";
 import { FormBody } from "./fragments/FormBody";
 import { FormFooter } from "./fragments/FormFooter";
 import { FormHeader } from "./fragments/FormHeader";
@@ -32,7 +30,7 @@ export const DavitNoteForm: FunctionComponent<DavitNoteFormProps> = (props) => {
     useEnterHook(() => onSubmit(noteText));
 
     return (
-        <div className="noteForm padding-medium">
+        <div className="noteForm">
             <FormHeader>
                 <h1>Note</h1>
             </FormHeader>
@@ -43,7 +41,7 @@ export const DavitNoteForm: FunctionComponent<DavitNoteFormProps> = (props) => {
 
             <FormBody>
                 <textarea
-                    className={"noteTextarea border padding-medium"}
+                    className={"noteTextarea border"}
                     onChange={(e) => setNoteText(e.target.value)}
                     value={noteText}
                     ref={textAreRef}
@@ -53,12 +51,8 @@ export const DavitNoteForm: FunctionComponent<DavitNoteFormProps> = (props) => {
             <FormDivider />
 
             <FormFooter>
-                <DavitButton onClick={() => onCancel()}>
-                    {"cancel"}
-                </DavitButton>
-                <DavitButton onClick={() => onSubmit(noteText)}>
-                    {"save"}
-                </DavitButton>
+                <button onClick={() => onCancel()}>cancel</button>
+                <button onClick={() => onSubmit(noteText)}>save</button>
             </FormFooter>
         </div>
     );

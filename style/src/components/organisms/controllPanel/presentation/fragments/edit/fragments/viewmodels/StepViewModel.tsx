@@ -30,7 +30,7 @@ export const useStepViewModel = () => {
             dispatch(EditActions.setMode.edit());
         }
         if (stepToEdit) {
-            setCurrentGoTo(stepToEdit.sequenceStepTO.goto);
+            setCurrentGoTo(stepToEdit.squenceStepTO.goto);
         }
 
     }, [dispatch, stepToEdit]);
@@ -38,16 +38,16 @@ export const useStepViewModel = () => {
     const changeName = (name: string) => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit)) {
             const copySequenceStep: SequenceStepCTO = DavitUtil.deepCopy(stepToEdit);
-            copySequenceStep.sequenceStepTO.name = name;
+            copySequenceStep.squenceStepTO.name = name;
             dispatch(EditActions.setMode.editStep(copySequenceStep));
             dispatch(EditStep.save(copySequenceStep));
-            dispatch(SequenceModelActions.setCurrentSequenceById(copySequenceStep.sequenceStepTO.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copySequenceStep.squenceStepTO.sequenceFk));
         }
     };
 
     const saveSequenceStep = (newMode?: string) => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit) && !DavitUtil.isNullOrUndefined(selectedSequence)) {
-            if (stepToEdit!.sequenceStepTO.name !== "") {
+            if (stepToEdit!.squenceStepTO.name !== "") {
                 dispatch(EditStep.save(stepToEdit!));
             } else {
                 dispatch(EditStep.delete(stepToEdit!, selectedSequence!));
@@ -55,7 +55,7 @@ export const useStepViewModel = () => {
             if (newMode && newMode === "EDIT") {
                 dispatch(EditActions.setMode.edit());
             } else {
-                dispatch(EditActions.setMode.editSequence(stepToEdit!.sequenceStepTO.sequenceFk));
+                dispatch(EditActions.setMode.editSequence(stepToEdit!.squenceStepTO.sequenceFk));
             }
         }
     };
@@ -63,7 +63,7 @@ export const useStepViewModel = () => {
     const deleteSequenceStep = () => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit) && !DavitUtil.isNullOrUndefined(selectedSequence)) {
             dispatch(EditStep.delete(stepToEdit!, selectedSequence!));
-            dispatch(EditActions.setMode.editSequence(stepToEdit!.sequenceStepTO.sequenceFk));
+            dispatch(EditActions.setMode.editSequence(stepToEdit!.squenceStepTO.sequenceFk));
         }
     };
 
@@ -79,7 +79,7 @@ export const useStepViewModel = () => {
             let copyAction: ActionTO | undefined = DavitUtil.deepCopy(action);
             if (copyAction === undefined) {
                 copyAction = new ActionTO();
-                copyAction.sequenceStepFk = stepToEdit!.sequenceStepTO.id;
+                copyAction.sequenceStepFk = stepToEdit!.squenceStepTO.id;
                 copyAction.index = stepToEdit!.actions.length;
                 dispatch(EditAction.create(copyAction));
             } else {
@@ -91,7 +91,7 @@ export const useStepViewModel = () => {
     const validStep = (): boolean => {
         let valid: boolean = false;
         if (!DavitUtil.isNullOrUndefined(stepToEdit)) {
-            if (stepToEdit!.sequenceStepTO.name !== "") {
+            if (stepToEdit!.squenceStepTO.name !== "") {
                 valid = true;
             }
         }
@@ -101,10 +101,10 @@ export const useStepViewModel = () => {
     const saveGoToType = (goTo: GoTo) => {
         if (goTo !== undefined) {
             const copySequenceStep: SequenceStepCTO = DavitUtil.deepCopy(stepToEdit);
-            copySequenceStep.sequenceStepTO.goto = goTo;
+            copySequenceStep.squenceStepTO.goto = goTo;
             dispatch(EditStep.update(copySequenceStep));
             dispatch(EditStep.save(copySequenceStep));
-            dispatch(SequenceModelActions.setCurrentSequenceById(copySequenceStep.sequenceStepTO.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copySequenceStep.squenceStepTO.sequenceFk));
         }
     };
 
@@ -127,7 +127,7 @@ export const useStepViewModel = () => {
 
     const setGoToTypeStep = (step?: SequenceStepCTO) => {
         if (step) {
-            const newGoTo: GoTo = {type: GoToTypes.STEP, id: step.sequenceStepTO.id};
+            const newGoTo: GoTo = {type: GoToTypes.STEP, id: step.squenceStepTO.id};
             saveGoToType(newGoTo);
         }
     };
@@ -142,18 +142,18 @@ export const useStepViewModel = () => {
     const createGoToStep = () => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit)) {
             const goToStep: SequenceStepCTO = new SequenceStepCTO();
-            goToStep.sequenceStepTO.sequenceFk = stepToEdit!.sequenceStepTO.sequenceFk;
+            goToStep.squenceStepTO.sequenceFk = stepToEdit!.squenceStepTO.sequenceFk;
             const copyStepToEdit: SequenceStepCTO = DavitUtil.deepCopy(stepToEdit);
             setKey(key + 1);
             dispatch(EditActions.setMode.editStep(goToStep, copyStepToEdit));
-            dispatch(SequenceModelActions.setCurrentSequenceById(goToStep.sequenceStepTO.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(goToStep.squenceStepTO.sequenceFk));
         }
     };
 
     const createGoToDecision = () => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit)) {
             const goToDecision: DecisionTO = new DecisionTO();
-            goToDecision.sequenceFk = stepToEdit!.sequenceStepTO.sequenceFk;
+            goToDecision.sequenceFk = stepToEdit!.squenceStepTO.sequenceFk;
             const copyStepToEdit: SequenceStepCTO = DavitUtil.deepCopy(stepToEdit);
             dispatch(EditActions.setMode.editDecision(goToDecision, copyStepToEdit));
         }
@@ -161,9 +161,9 @@ export const useStepViewModel = () => {
 
     const setRoot = () => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit) && !DavitUtil.isNullOrUndefined(selectedSequence)) {
-            dispatch(EditSequence.setRoot(stepToEdit!.sequenceStepTO.sequenceFk, stepToEdit!.sequenceStepTO.id, false));
+            dispatch(EditSequence.setRoot(stepToEdit!.squenceStepTO.sequenceFk, stepToEdit!.squenceStepTO.id, false));
             const step: SequenceStepCTO | undefined = MasterDataActions.find.findSequenceStepCTO(
-                stepToEdit!.sequenceStepTO.id,
+                stepToEdit!.squenceStepTO.id,
             );
             if (step) {
                 dispatch(EditActions.setMode.editStep(step));
@@ -176,10 +176,10 @@ export const useStepViewModel = () => {
     const saveNote = (text: string) => {
         if (!DavitUtil.isNullOrUndefined(stepToEdit) && text !== "") {
             const copySequenceStep: SequenceStepCTO = DavitUtil.deepCopy(stepToEdit);
-            copySequenceStep.sequenceStepTO.note = text;
+            copySequenceStep.squenceStepTO.note = text;
             dispatch(EditActions.setMode.editStep(copySequenceStep));
             dispatch(EditStep.save(copySequenceStep));
-            dispatch(SequenceModelActions.setCurrentSequenceById(copySequenceStep.sequenceStepTO.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copySequenceStep.squenceStepTO.sequenceFk));
         }
     };
 
@@ -199,7 +199,7 @@ export const useStepViewModel = () => {
             dispatch(EditStep.save(copyStep));
 
             // load sequence from backend
-            dispatch(SequenceModelActions.setCurrentSequenceById(copyStep.sequenceStepTO.sequenceFk));
+            dispatch(SequenceModelActions.setCurrentSequence(copyStep.squenceStepTO.sequenceFk));
 
             // update current step if object to edit
             dispatch(EditStep.update(copyStep));
@@ -207,8 +207,8 @@ export const useStepViewModel = () => {
     };
 
     return {
-        label: "EDIT * " + (selectedSequence?.sequenceTO.name || "") + " * " + (stepToEdit?.sequenceStepTO.name || ""),
-        name: stepToEdit ? stepToEdit!.sequenceStepTO.name : "",
+        label: "EDIT * " + (selectedSequence?.sequenceTO.name || "") + " * " + (stepToEdit?.squenceStepTO.name || ""),
+        name: stepToEdit ? stepToEdit!.squenceStepTO.name : "",
         changeName,
         saveSequenceStep,
         deleteSequenceStep,
@@ -222,10 +222,10 @@ export const useStepViewModel = () => {
         createGoToStep,
         createGoToDecision,
         setRoot,
-        isRoot: stepToEdit?.sequenceStepTO.root ? stepToEdit?.sequenceStepTO.root : false,
+        isRoot: stepToEdit?.squenceStepTO.root ? stepToEdit?.squenceStepTO.root : false,
         key,
-        stepId: stepToEdit?.sequenceStepTO.id,
-        note: stepToEdit ? stepToEdit.sequenceStepTO.note : "",
+        stepId: stepToEdit?.squenceStepTO.id,
+        note: stepToEdit ? stepToEdit.squenceStepTO.note : "",
         saveNote,
         actions: stepToEdit?.actions || [],
         switchIndexesAndSave,

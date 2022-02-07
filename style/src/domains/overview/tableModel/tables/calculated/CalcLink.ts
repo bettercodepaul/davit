@@ -30,7 +30,7 @@ const createCalcLinkColumn = (
 ): DavitTableRowData => {
     const name: string = link.name || "Link name not found!";
     const sequenceName: string = link.sequence.sequenceModel?.sequenceTO.name || "Sequence name not found!";
-    const dataSetupName: string = link.sequenceConfiguration.name || "Sequence Configuration name not found!";
+    const dataSetupName: string = link.dataSetup.dataSetup?.name || "Data setup name not found!";
     let trClass = "carv2Tr";
     if (index === chainIndex) {
         trClass = "carv2TrMarked";

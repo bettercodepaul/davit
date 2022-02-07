@@ -19,8 +19,8 @@ const createDecisionThunk = (decision: DecisionTO, from?: SequenceStepCTO | Deci
         dispatch(GlobalActions.handleError(response.message));
     } else {
         if (from) {
-            if ((from as SequenceStepCTO).sequenceStepTO !== undefined) {
-                (from as SequenceStepCTO).sequenceStepTO.goto = {type: GoToTypes.DEC, id: response.object.id};
+            if ((from as SequenceStepCTO).squenceStepTO !== undefined) {
+                (from as SequenceStepCTO).squenceStepTO.goto = {type: GoToTypes.DEC, id: response.object.id};
                 dispatch(EditStep.save(from as SequenceStepCTO));
             }
             if ((from as DecisionTO).elseGoTo !== undefined) {
@@ -49,8 +49,8 @@ const deleteDecisionThunk = (decision: DecisionTO, sequenceCTO?: SequenceCTO): A
         const copySequence: SequenceCTO = DavitUtil.deepCopy(sequenceCTO);
         // update steps
         copySequence.sequenceStepCTOs.forEach((step) => {
-            if (step.sequenceStepTO.goto.type === GoToTypes.DEC && step.sequenceStepTO.goto.id === decision.id) {
-                step.sequenceStepTO.goto = {type: GoToTypes.ERROR};
+            if (step.squenceStepTO.goto.type === GoToTypes.DEC && step.squenceStepTO.goto.id === decision.id) {
+                step.squenceStepTO.goto = {type: GoToTypes.ERROR};
                 dispatch(EditStep.save(step));
             }
         });
