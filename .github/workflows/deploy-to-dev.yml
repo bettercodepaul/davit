@@ -36,7 +36,7 @@ jobs:
       - name: Yarn Install
         uses: CultureHQ/actions-yarn@v1.0.1
         with:
-          args: install
+          args: install --ignore-engines
 
       # If the App is not deploy in the Servers root directory React needs to know where it is located.
       #https://create-react-app.dev/docs/deployment/#building-for-relative-paths
