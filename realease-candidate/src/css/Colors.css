@@ -1,0 +1,38 @@
+/* -------------------------------------------- Colors -------------------------------------------- */
+:root {
+    --background-color: rgb(134, 134, 134);
+    /* --carv2-background-color: rgb(230, 230, 230); */
+    /* --carv2-background-color: rgb(24, 24, 24); */
+    --background-color-header: rgba(0, 0, 0, 0.5);
+    /* --carv2-background-color-header: rgb(23, 47, 48); */
+    --background-color-shadow: black;
+    --color-primary: #e0e1e2;
+    /* --carv2-color-secondary: #3bc97b; */
+    --color-secondary: #00cdf1;
+    --color-border: #d4d4d5;
+
+    --color-exxcellent-blue: #0060a9;
+    --color-exxcellent-yellow: #c5c800;
+    --color-exxcellent-gray: #666d71;
+    --color-exxcellent-purple: #a568a8;
+
+    --color-pink: #93019b;
+    --color-dark-purple: #540058;
+    --davit-color-warning: #F53B1B;
+
+    --background-color-slidebar: rgba(0, 0, 0, 0.8);
+    --text-color: white;
+    /* --carv2-data-add-color: #6cbf8f; */
+    --data-add-color: #0fbd58;
+    --data-delete-color: #af0837;
+    --data-text-color: black;
+    --data-persistent-color: #a7a5a5;
+
+    --card-color: white;
+
+    --data-table-row-color: #c8c8c8;
+    --data-table-row-odd-color: #bdbbbb;
+    --data-table-row-odd-hover: #a7a5a5;
+    --aspect-ratio: 2/1;
+    --animation-time: 0.6s;
+}

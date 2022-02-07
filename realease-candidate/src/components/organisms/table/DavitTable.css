@@ -1,0 +1,195 @@
+:root {
+    --table-tab-height: 2.2em;
+    --table-group-tab-height: calc(var(--table-tab-height) * 2);
+    --table-header-height: 1.5rem;
+}
+
+
+td {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-image: linear-gradient(to bottom,
+    transparent,
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-primary),
+    transparent) 0 100%;
+}
+
+td:last-child {
+    border: none;
+}
+
+/*tr {*/
+/*    color: var(--carv2-text-color);*/
+/*    text-align: start;*/
+/*}*/
+
+tbody {
+    display: block;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+th {
+    text-align: start;
+    padding-left: 1em;
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /* even columns width , fix width of table too*/
+}
+
+thead {
+    background-color: var(--background-color-header);
+    color: var(--text-color);
+    animation-name: appearText;
+    animation-duration: 0.2s;
+    height: var(--table-header-height);
+    /*padding-right: 1em;*/
+}
+
+table {
+    width: 100%;
+}
+
+.carv2Tr {
+    background-color: var(--data-table-row-color);
+    color: black;
+    height: 2.5em;
+    text-align: start;
+    animation-name: appearText;
+    animation-duration: 0.2s;
+}
+
+.carv2Tr:nth-child(odd) {
+    background-color: var(--data-table-row-odd-color);
+}
+
+.clickable:hover {
+    background-color: var(--data-table-row-odd-hover);
+    transition: background-color 0.4s;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.tableBorder {
+    margin: 0.5em;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    border-radius: 5px;
+    border: 2px solid var(--background-color-header);
+}
+
+.tabs {
+    background-color: var(--background-color-header);
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+    height: 4.4em;
+}
+
+.tab-group {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 1px var(--color-border);
+    border-radius: 0.28571429rem;
+    animation-duration: var(--animation-time);
+    animation-timing-function: ease-in-out;
+    animation-name: appearTabGroup;
+    overflow: hidden;
+    height: var(--table-group-tab-height);
+}
+
+.tab-aggregator {
+    color: var(--text-color);
+    padding: 0.5em;
+    text-align: center;
+    animation-duration: var(--animation-time);
+    animation-timing-function: ease-in-out;
+    animation-name: appearTab;
+    overflow: hidden;
+    height: var(--table-tab-height);
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 7em;
+    border-right: 0.5px solid rgba(255, 250, 250, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    animation-duration: var(--animation-time);
+    animation-timing-function: ease-out;
+    animation-name: appearTab;
+    overflow: hidden;
+    height: var(--table-tab-height);
+}
+
+.tab:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--color-secondary) !important;
+    color: black !important;
+    transition: background-color var(--animation-time), color var(--animation-time);
+}
+
+.carv2TrMarked {
+    height: 2.5em;
+}
+
+.carv2TrTerminalERROR.davitTrTerminalMarked {
+    opacity: 1;
+}
+
+.carv2TrTerminalIDLE.davitTrTerminalMarked {
+    opacity: 1;
+}
+
+.carv2TrTerminalFIN.davitTrTerminalMarked {
+    opacity: 1;
+}
+
+.carv2TrTerminalERROR.clickable:hover {
+    background-color: var(--data-delete-color);
+    opacity: 1;
+}
+
+.carv2TrTerminalFIN.clickable:hover {
+    background-color: var(--data-add-color);
+    opacity: 1;
+}
+
+.carv2TrTerminalIDLE.clickable:hover {
+    background-color: var(--color-exxcellent-blue);
+    opacity: 1;
+}
+
+.carv2TrTerminalERROR {
+    background-color: var(--data-delete-color);
+    opacity: 0.75;
+    height: 2.5em;
+}
+
+.carv2TrTerminalFIN {
+    background-color: var(--data-add-color);
+    height: 2.5em;
+    opacity: 0.75;
+}
+
+.carv2TrTerminalIDLE {
+    background-color: var(--color-exxcellent-blue);
+    height: 2.5em;
+    opacity: 0.75;
+}

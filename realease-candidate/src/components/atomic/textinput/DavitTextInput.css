@@ -1,0 +1,42 @@
+.inputLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: var(--davit-padding-right-left);
+    padding-left: var(--davit-padding-right-left);
+    border-bottom-left-radius: var(--davit-border-radius);
+    border-top-left-radius: var(--davit-border-radius);
+    border: var(--davit-border-size-medium) solid var(--color-secondary);
+    border-bottom: var(--davit-border-size-medium) solid var(--color-secondary);
+    background-color: var(--color-secondary);
+    color: var(--text-color);
+    font-family: var(--davit-font-family);
+    font-size: var(--davit-font-size);
+}
+
+input {
+    padding: var(--davit-padding-top-bottom) var(--davit-padding-right-left);
+    border-radius: var(--davit-border-radius);
+    border-color: var(--color-secondary);
+    background-color: transparent;
+    border-style: solid;
+    border-width: var(--davit-border-size-medium);
+    color: var(--text-color);
+    font-family: var(--davit-font-family);
+    font-size: var(--davit-font-size);
+}
+
+input:focus {
+    outline: none;
+}
+
+input.label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+}

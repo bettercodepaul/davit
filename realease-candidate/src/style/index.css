@@ -1,0 +1,102 @@
+@import "./spacing.css";
+@import "./layout.css";
+@import "./fonts.css";
+@import "./animations.css";
+
+:root {
+    --color-dark-blue: #0D456B;
+    --color-dark-blue--lighter: #567D97;
+    --color-blue: #0060A9;
+    --color-blue--lighter: #4D90C3;
+    --color-cyan: #35ABE2;
+    --color-cyan--lighter: #72C4EB;
+    --color-lila: #9D599F;
+    --color-lila--lighter: #BA8BBC;
+    --color-green: #C8D400;
+    --color-green--lighter: #D9E14D;
+    --color-error: #C81919;
+    --color-error--lighter: #D95E5E;
+    --color-warning: #F0BB29;
+    --color-warning--lighter: #F5CF69;
+
+    --color-black: #000000;
+    --color-dark: #54585B;
+    --color-dark--lighter: #878A8C;
+    --color-grey: #C7C7C7;
+    --color-grey--lighter: #EAEAEA;
+    --color-light: #F4F4F4;
+    --color-light--lighter: #F7F7F7;
+    --color-white: #FFFFFF;
+
+    --text-size: 100%;
+    --text-font-family: "DIN OT", Helvetica, Arial, sans-serif;
+
+    --spacing-small: 10px;
+    --spacing-medium: 10px;
+    --spacing-large: 22px;
+
+    /* primary */
+    --primary-color: var(--color-dark-blue);
+    --primary-text-color: var(--color-light);
+
+    /* secondary */
+    --secondary-color: var(--color-blue);
+    --secondary-text-color: var(--color-light);
+
+    /* tertiary */
+    --tertiary-color: var(--color-grey);
+    --tertiary-text-color: var(--color-dark);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+
+    font-family: var(--text-font-family);
+    font-size: var(--text-size);
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

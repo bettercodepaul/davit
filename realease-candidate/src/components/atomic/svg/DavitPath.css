@@ -1,0 +1,32 @@
+.carvPath {
+    stroke-width: 2px;
+    fill: transparent;
+    position: absolute;
+}
+
+.carvPath.SEND {
+    stroke: var(--color-exxcellent-blue);
+}
+
+.carvPath.TRIGGER {
+    stroke: black;
+    stroke-dasharray: 5, 5;
+}
+
+.carvStrokeDasharray {
+    stroke-dasharray: 0.5em;
+    stroke-width: 3px;
+}
+
+.carvArrowMarker {
+    fill: black;
+}
+
+.davitArrowText {
+    fill: var(--text-color);
+}
+
+.davitArrowTextBG {
+    stroke: var(--background-color-header);
+    stroke-width: 0.3em;
+}

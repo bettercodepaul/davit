@@ -1,0 +1,5248 @@
+{
+  "projectName": "New project",
+  "version": 0.1,
+  "actors": [
+    {
+      "id": 1,
+      "name": "Daimler",
+      "geometricalDataFk": 1,
+      "designFk": 1,
+      "groupFks": -1
+    },
+    {
+      "id": 2,
+      "name": "Kunde",
+      "geometricalDataFk": 2,
+      "designFk": 2,
+      "groupFks": -1
+    },
+    {
+      "id": 3,
+      "name": "Leasinggeber",
+      "geometricalDataFk": 3,
+      "designFk": 3,
+      "groupFks": -1
+    },
+    {
+      "id": 5,
+      "name": "FLAMS",
+      "geometricalDataFk": 5,
+      "designFk": 5,
+      "groupFks": -1
+    },
+    {
+      "id": 6,
+      "name": "GO / Werk",
+      "geometricalDataFk": 15,
+      "designFk": 6,
+      "groupFks": -1
+    },
+    {
+      "id": 7,
+      "name": "DiVerS",
+      "geometricalDataFk": 17,
+      "designFk": 7,
+      "groupFks": -1
+    },
+    {
+      "id": 8,
+      "name": "Mosolf / CARS",
+      "geometricalDataFk": 18,
+      "designFk": 8,
+      "groupFks": -1
+    },
+    {
+      "id": 9,
+      "name": "YUCAS",
+      "geometricalDataFk": 19,
+      "designFk": 9,
+      "groupFks": -1
+    },
+    {
+      "id": 10,
+      "name": "ZB II Tool",
+      "geometricalDataFk": 21,
+      "designFk": 10,
+      "groupFks": -1
+    },
+    {
+      "id": 11,
+      "name": "DiFaS",
+      "geometricalDataFk": 26,
+      "designFk": 11,
+      "groupFks": -1
+    },
+    {
+      "id": 12,
+      "name": "YUCON",
+      "geometricalDataFk": 27,
+      "designFk": 12,
+      "groupFks": -1
+    },
+    {
+      "id": 13,
+      "name": "Fall: Vertrag",
+      "geometricalDataFk": 31,
+      "designFk": 13,
+      "groupFks": -1
+    },
+    {
+      "id": 14,
+      "name": "IBIS",
+      "geometricalDataFk": 33,
+      "designFk": 14,
+      "groupFks": -1
+    },
+    {
+      "id": 15,
+      "name": "Fall: Fzg",
+      "geometricalDataFk": 43,
+      "designFk": 15,
+      "groupFks": -1
+    },
+    {
+      "id": 16,
+      "name": "NDL oder ext. Partner",
+      "geometricalDataFk": 49,
+      "designFk": 16,
+      "groupFks": -1
+    }
+  ],
+  "groups": [],
+  "designs": [
+    {
+      "id": 1,
+      "color": "#3498db"
+    },
+    {
+      "id": 2,
+      "color": "#3498db"
+    },
+    {
+      "id": 3,
+      "color": "#3498db"
+    },
+    {
+      "id": 5,
+      "color": "#3498db"
+    },
+    {
+      "id": 6,
+      "color": "#3498db"
+    },
+    {
+      "id": 7,
+      "color": "#3498db"
+    },
+    {
+      "id": 8,
+      "color": "#3498db"
+    },
+    {
+      "id": 9,
+      "color": "#3498db"
+    },
+    {
+      "id": 10,
+      "color": "#3498db"
+    },
+    {
+      "id": 11,
+      "color": "#3498db"
+    },
+    {
+      "id": 12,
+      "color": "#3498db"
+    },
+    {
+      "id": 13,
+      "color": "#3498db"
+    },
+    {
+      "id": 14,
+      "color": "#3498db"
+    },
+    {
+      "id": 15,
+      "color": "#3498db"
+    },
+    {
+      "id": 16,
+      "color": "#3498db"
+    }
+  ],
+  "geometricalDatas": [
+    {
+      "id": 1,
+      "width": 100,
+      "height": 30,
+      "positionFk": 1
+    },
+    {
+      "id": 2,
+      "width": 100,
+      "height": 30,
+      "positionFk": 2
+    },
+    {
+      "id": 3,
+      "width": 100,
+      "height": 30,
+      "positionFk": 3
+    },
+    {
+      "id": 5,
+      "width": 100,
+      "height": 30,
+      "positionFk": 5
+    },
+    {
+      "id": 6,
+      "width": 100,
+      "height": 30,
+      "positionFk": 6
+    },
+    {
+      "id": 7,
+      "width": 100,
+      "height": 30,
+      "positionFk": 7
+    },
+    {
+      "id": 8,
+      "width": 100,
+      "height": 30,
+      "positionFk": 8
+    },
+    {
+      "id": 9,
+      "width": 100,
+      "height": 30,
+      "positionFk": 9
+    },
+    {
+      "id": 10,
+      "width": 100,
+      "height": 30,
+      "positionFk": 10
+    },
+    {
+      "id": 11,
+      "width": 100,
+      "height": 30,
+      "positionFk": 11
+    },
+    {
+      "id": 12,
+      "width": 100,
+      "height": 30,
+      "positionFk": 12
+    },
+    {
+      "id": 13,
+      "width": 100,
+      "height": 30,
+      "positionFk": 13
+    },
+    {
+      "id": 14,
+      "width": 100,
+      "height": 30,
+      "positionFk": 14
+    },
+    {
+      "id": 15,
+      "width": 100,
+      "height": 30,
+      "positionFk": 15
+    },
+    {
+      "id": 16,
+      "width": 100,
+      "height": 30,
+      "positionFk": 16
+    },
+    {
+      "id": 17,
+      "width": 100,
+      "height": 30,
+      "positionFk": 17
+    },
+    {
+      "id": 18,
+      "width": 100,
+      "height": 30,
+      "positionFk": 18
+    },
+    {
+      "id": 19,
+      "width": 100,
+      "height": 30,
+      "positionFk": 19
+    },
+    {
+      "id": 20,
+      "width": 100,
+      "height": 30,
+      "positionFk": 20
+    },
+    {
+      "id": 21,
+      "width": 100,
+      "height": 30,
+      "positionFk": 21
+    },
+    {
+      "id": 22,
+      "width": 100,
+      "height": 30,
+      "positionFk": 22
+    },
+    {
+      "id": 23,
+      "width": 100,
+      "height": 30,
+      "positionFk": 23
+    },
+    {
+      "id": 24,
+      "width": 100,
+      "height": 30,
+      "positionFk": 24
+    },
+    {
+      "id": 25,
+      "width": 100,
+      "height": 30,
+      "positionFk": 25
+    },
+    {
+      "id": 26,
+      "width": 100,
+      "height": 30,
+      "positionFk": 26
+    },
+    {
+      "id": 27,
+      "width": 100,
+      "height": 30,
+      "positionFk": 27
+    },
+    {
+      "id": 28,
+      "width": 100,
+      "height": 30,
+      "positionFk": 28
+    },
+    {
+      "id": 29,
+      "width": 100,
+      "height": 30,
+      "positionFk": 29
+    },
+    {
+      "id": 30,
+      "width": 100,
+      "height": 30,
+      "positionFk": 30
+    },
+    {
+      "id": 31,
+      "width": 100,
+      "height": 30,
+      "positionFk": 31
+    },
+    {
+      "id": 32,
+      "width": 100,
+      "height": 30,
+      "positionFk": 32
+    },
+    {
+      "id": 33,
+      "width": 100,
+      "height": 30,
+      "positionFk": 33
+    },
+    {
+      "id": 34,
+      "width": 100,
+      "height": 30,
+      "positionFk": 34
+    },
+    {
+      "id": 35,
+      "width": 100,
+      "height": 30,
+      "positionFk": 35
+    },
+    {
+      "id": 36,
+      "width": 100,
+      "height": 30,
+      "positionFk": 36
+    },
+    {
+      "id": 37,
+      "width": 100,
+      "height": 30,
+      "positionFk": 37
+    },
+    {
+      "id": 38,
+      "width": 100,
+      "height": 30,
+      "positionFk": 38
+    },
+    {
+      "id": 39,
+      "width": 100,
+      "height": 30,
+      "positionFk": 39
+    },
+    {
+      "id": 40,
+      "width": 100,
+      "height": 30,
+      "positionFk": 40
+    },
+    {
+      "id": 41,
+      "width": 100,
+      "height": 30,
+      "positionFk": 41
+    },
+    {
+      "id": 42,
+      "width": 100,
+      "height": 30,
+      "positionFk": 42
+    },
+    {
+      "id": 43,
+      "width": 100,
+      "height": 30,
+      "positionFk": 43
+    },
+    {
+      "id": 44,
+      "width": 100,
+      "height": 30,
+      "positionFk": 44
+    },
+    {
+      "id": 45,
+      "width": 100,
+      "height": 30,
+      "positionFk": 45
+    },
+    {
+      "id": 46,
+      "width": 100,
+      "height": 30,
+      "positionFk": 46
+    },
+    {
+      "id": 47,
+      "width": 100,
+      "height": 30,
+      "positionFk": 47
+    },
+    {
+      "id": 48,
+      "width": 100,
+      "height": 30,
+      "positionFk": 48
+    },
+    {
+      "id": 49,
+      "width": 100,
+      "height": 30,
+      "positionFk": 49
+    },
+    {
+      "id": 50,
+      "width": 100,
+      "height": 30,
+      "positionFk": 50
+    },
+    {
+      "id": 51,
+      "width": 100,
+      "height": 30,
+      "positionFk": 51
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "x": 58.56966707768188,
+      "y": 17.120622568093385
+    },
+    {
+      "id": 2,
+      "x": 28.853267570900126,
+      "y": 20.622568093385215
+    },
+    {
+      "id": 3,
+      "x": 0,
+      "y": 23.198594024604567
+    },
+    {
+      "id": 5,
+      "x": 44.099378881987576,
+      "y": 41.77514792899409
+    },
+    {
+      "id": 6,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 7,
+      "x": 9.987669543773121,
+      "y": 31.16883116883117
+    },
+    {
+      "id": 8,
+      "x": 25.27743526510481,
+      "y": 45.84415584415584
+    },
+    {
+      "id": 9,
+      "x": 0.36991368680641185,
+      "y": 45.97402597402597
+    },
+    {
+      "id": 10,
+      "x": 69.42046855733663,
+      "y": 17.01298701298701
+    },
+    {
+      "id": 11,
+      "x": 66.34312696747115,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 12,
+      "x": 58.892969569779645,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 13,
+      "x": 45.0682056663169,
+      "y": 95.88477366255144
+    },
+    {
+      "id": 14,
+      "x": 48.82860665844637,
+      "y": -0.2597402597402597
+    },
+    {
+      "id": 15,
+      "x": 82.61405672009865,
+      "y": 4.026845637583892
+    },
+    {
+      "id": 16,
+      "x": 34.64858199753391,
+      "y": -0.2597402597402597
+    },
+    {
+      "id": 17,
+      "x": 81.2577065351418,
+      "y": 49.156939040207526
+    },
+    {
+      "id": 18,
+      "x": 83.9751552795031,
+      "y": 28.165680473372785
+    },
+    {
+      "id": 19,
+      "x": 0,
+      "y": 76.09841827768014
+    },
+    {
+      "id": 20,
+      "x": 67.33997901364114,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 21,
+      "x": 87.79284833538841,
+      "y": 67.70428015564202
+    },
+    {
+      "id": 22,
+      "x": 0,
+      "y": 60.649350649350644
+    },
+    {
+      "id": 23,
+      "x": 58.36831059811123,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 24,
+      "x": 0,
+      "y": 77.79220779220779
+    },
+    {
+      "id": 25,
+      "x": 37.60789149198521,
+      "y": 60.259740259740255
+    },
+    {
+      "id": 26,
+      "x": 72.17391304347825,
+      "y": 83.90532544378699
+    },
+    {
+      "id": 27,
+      "x": 37.515527950310556,
+      "y": 82.36686390532545
+    },
+    {
+      "id": 28,
+      "x": 61.90975865687304,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 29,
+      "x": 68.33683105981113,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 30,
+      "x": 51.911220715166465,
+      "y": 75.97402597402598
+    },
+    {
+      "id": 31,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 32,
+      "x": 61.77859391395593,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 33,
+      "x": 0,
+      "y": 47.85992217898833
+    },
+    {
+      "id": 34,
+      "x": 0,
+      "y": 12.727272727272727
+    },
+    {
+      "id": 35,
+      "x": 65.58237145855195,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 36,
+      "x": 30.826140567200987,
+      "y": 17.01298701298701
+    },
+    {
+      "id": 37,
+      "x": 59.67995802728227,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 38,
+      "x": 56.92549842602309,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 39,
+      "x": 68.20566631689402,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 40,
+      "x": 59.31269674711438,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 41,
+      "x": 63.03777544596013,
+      "y": 95.88477366255144
+    },
+    {
+      "id": 42,
+      "x": 67.47114375655825,
+      "y": 95.88477366255144
+    },
+    {
+      "id": 43,
+      "x": 0,
+      "y": 10.894941634241246
+    },
+    {
+      "id": 44,
+      "x": 57.64331210191082,
+      "y": 94.83660130718954
+    },
+    {
+      "id": 45,
+      "x": 60.00000000000001,
+      "y": 95.70484581497797
+    },
+    {
+      "id": 46,
+      "x": 57.423924449108085,
+      "y": 95.88477366255144
+    },
+    {
+      "id": 47,
+      "x": 61.4900314795383,
+      "y": 95.93621399176953
+    },
+    {
+      "id": 48,
+      "x": 59.523809523809526,
+      "y": 95.70484581497797
+    },
+    {
+      "id": 49,
+      "x": 37.389202256244964,
+      "y": 0
+    },
+    {
+      "id": 50,
+      "x": 72.8789492367767,
+      "y": 94.38444924406048
+    },
+    {
+      "id": 51,
+      "x": 10,
+      "y": 10
+    }
+  ],
+  "sequences": [
+    {
+      "id": 1,
+      "name": "Vertragsentstehung 288"
+    },
+    {
+      "id": 2,
+      "name": "Ordering 288"
+    },
+    {
+      "id": 3,
+      "name": "Rücknahme 288er"
+    },
+    {
+      "id": 4,
+      "name": "Vertragsentstehung 224"
+    },
+    {
+      "id": 5,
+      "name": "Ordering 224"
+    },
+    {
+      "id": 8,
+      "name": "Rücknahme 224"
+    },
+    {
+      "id": 6,
+      "name": "Vertragserfassung 229"
+    },
+    {
+      "id": 7,
+      "name": "Ordering 229"
+    },
+    {
+      "id": 9,
+      "name": "Rücknahme 229"
+    },
+    {
+      "id": 11,
+      "name": "Abrechnung"
+    },
+    {
+      "id": 12,
+      "name": "Vereinbarung freier Ankauf (NDL und Zentrale)"
+    },
+    {
+      "id": 13,
+      "name": "Start"
+    },
+    {
+      "id": 14,
+      "name": "Verkauf"
+    },
+    {
+      "id": 15,
+      "name": "Fahrzeugvoranlage 229"
+    },
+    {
+      "id": 16,
+      "name": "Rücknahme freier Ankauf"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "Legt inital Vertrag an",
+      "index": 5,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "DEC",
+        "id": 2
+      },
+      "root": false
+    },
+    {
+      "id": 2,
+      "name": "Vertragseport erstellen",
+      "index": 1,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "STEP",
+        "id": 3
+      },
+      "root": false
+    },
+    {
+      "id": 3,
+      "name": "Vertragsreport verschicken",
+      "index": 2,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "STEP",
+        "id": 5
+      },
+      "root": false
+    },
+    {
+      "id": 4,
+      "name": "Vertrag wird als vereinbart markiert",
+      "index": 3,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 5,
+      "name": "Antwort der Vertragspartner",
+      "index": 4,
+      "sequenceFk": 1,
+      "goto": {
+        "type": "STEP",
+        "id": 4
+      },
+      "root": false
+    },
+    {
+      "id": 6,
+      "name": "Monatsvolumen buchen",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 7
+      },
+      "root": false
+    },
+    {
+      "id": 7,
+      "name": "Auftragsbuchung in GO",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 10
+      },
+      "root": false
+    },
+    {
+      "id": 8,
+      "name": "GO meldet Auslieferung",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false
+    },
+    {
+      "id": 9,
+      "name": "Kunde übernimmt Fahrzeuge",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 11
+      },
+      "root": false
+    },
+    {
+      "id": 10,
+      "name": "Fahrzeuge bekommen Schlussabnahme",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "STEP",
+        "id": 9
+      },
+      "root": false
+    },
+    {
+      "id": 11,
+      "name": "Replikation der Übernahmen",
+      "index": -1,
+      "sequenceFk": 2,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 12,
+      "name": "Kunde bringt Fahrzeug zu Mosolf",
+      "index": 1,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 13
+      },
+      "root": true
+    },
+    {
+      "id": 13,
+      "name": "DiVerS meldet Lagereingang",
+      "index": 2,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 14
+      },
+      "root": false
+    },
+    {
+      "id": 14,
+      "name": "FLAMS informiert über Lagereingang",
+      "index": 3,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "STEP",
+        "id": 15
+      },
+      "root": false
+    },
+    {
+      "id": 15,
+      "name": "Bewertung und Freigabe",
+      "index": 4,
+      "sequenceFk": 3,
+      "goto": {
+        "type": "DEC",
+        "id": 9
+      },
+      "root": false
+    },
+    {
+      "id": 20,
+      "name": "Ausschreibung an Daimler & NDL schicken",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "STEP",
+        "id": 21
+      },
+      "root": true
+    },
+    {
+      "id": 21,
+      "name": "Ausschreibung in IBIS erfassen",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "DEC",
+        "id": 22
+      },
+      "root": false
+    },
+    {
+      "id": 22,
+      "name": "Ausschreibung als Vertrag erfassen",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 24,
+      "name": "NDL bucht 224er Auftrag",
+      "index": 1,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "STEP",
+        "id": 25
+      },
+      "root": false
+    },
+    {
+      "id": 25,
+      "name": "Fahrzeugübernahme",
+      "index": 2,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "STEP",
+        "id": 26
+      },
+      "root": false
+    },
+    {
+      "id": 26,
+      "name": "Fahrzeugzulassung",
+      "index": 3,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "STEP",
+        "id": 27
+      },
+      "root": false
+    },
+    {
+      "id": 27,
+      "name": "Lese Auftrag aus GO",
+      "index": 4,
+      "sequenceFk": 5,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 29,
+      "name": "Ausschreibung an NDL schicken",
+      "index": 1,
+      "sequenceFk": 6,
+      "goto": {
+        "type": "STEP",
+        "id": 30
+      },
+      "root": true
+    },
+    {
+      "id": 30,
+      "name": "NDL erfasst Ausschreibung in IBIS",
+      "index": 2,
+      "sequenceFk": 6,
+      "goto": {
+        "type": "DEC",
+        "id": 12
+      },
+      "root": false
+    },
+    {
+      "id": 31,
+      "name": "VPU legt 229er Pseudovertrag in FLAMS an",
+      "index": 3,
+      "sequenceFk": 6,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 33,
+      "name": "Kunde bringt Fahrzeug zu Mosolf",
+      "index": 1,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "STEP",
+        "id": 34
+      },
+      "root": true
+    },
+    {
+      "id": 34,
+      "name": "DiVerS meldet Lageeingang",
+      "index": 2,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "STEP",
+        "id": 35
+      },
+      "root": false
+    },
+    {
+      "id": 35,
+      "name": "FLAMS informiert über Lagereingang",
+      "index": 3,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "DEC",
+        "id": 10
+      },
+      "root": false
+    },
+    {
+      "id": 36,
+      "name": "Bewertung und Freigabe",
+      "index": 4,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "DEC",
+        "id": 11
+      },
+      "root": false
+    },
+    {
+      "id": 37,
+      "name": "Erfasse Bewertung aus PDF",
+      "index": 5,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "STEP",
+        "id": 79
+      },
+      "root": false
+    },
+    {
+      "id": 38,
+      "name": "Abrechnung berechnen",
+      "index": 6,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false
+    },
+    {
+      "id": 40,
+      "name": "Abrechnung berechnen",
+      "index": 1,
+      "sequenceFk": 11,
+      "goto": {
+        "type": "DEC",
+        "id": 17
+      },
+      "root": true
+    },
+    {
+      "id": 41,
+      "name": "Abrechnung erstellen",
+      "index": 2,
+      "sequenceFk": 11,
+      "goto": {
+        "type": "STEP",
+        "id": 77
+      },
+      "root": false
+    },
+    {
+      "id": 43,
+      "name": "Fahrzeugübernahme",
+      "index": 2,
+      "sequenceFk": 7,
+      "goto": {
+        "type": "STEP",
+        "id": 44
+      },
+      "root": false
+    },
+    {
+      "id": 44,
+      "name": "Fahrzeugzulassung",
+      "index": 1,
+      "sequenceFk": 7,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 45,
+      "name": "NDL bucht 229er Auftrag",
+      "index": -1,
+      "sequenceFk": 7,
+      "goto": {
+        "type": "STEP",
+        "id": 43
+      },
+      "root": true
+    },
+    {
+      "id": 46,
+      "name": "Kunde bringt 229er Fahrzeug zu Mosolf",
+      "index": 1,
+      "sequenceFk": 9,
+      "goto": {
+        "type": "STEP",
+        "id": 47
+      },
+      "root": true
+    },
+    {
+      "id": 47,
+      "name": "DiVerS meldet Lagereingang",
+      "index": 2,
+      "sequenceFk": 9,
+      "goto": {
+        "type": "STEP",
+        "id": 48
+      },
+      "root": false
+    },
+    {
+      "id": 48,
+      "name": "Informiere über Lagereingang",
+      "index": 3,
+      "sequenceFk": 9,
+      "goto": {
+        "type": "DEC",
+        "id": 15
+      },
+      "root": false
+    },
+    {
+      "id": 49,
+      "name": "Setze 229er No-Return",
+      "index": 4,
+      "sequenceFk": 9,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false
+    },
+    {
+      "id": 50,
+      "name": "NDL bietet Fahrzeug zum freien Ankauf",
+      "index": 1,
+      "sequenceFk": 12,
+      "goto": {
+        "type": "STEP",
+        "id": 73
+      },
+      "root": false
+    },
+    {
+      "id": 51,
+      "name": "Fzg-Voranlage des freien Ankaufs",
+      "index": 2,
+      "sequenceFk": 12,
+      "goto": {
+        "type": "STEP",
+        "id": 52
+      },
+      "root": false
+    },
+    {
+      "id": 52,
+      "name": "Fzg-Datenbeschaffung",
+      "index": 3,
+      "sequenceFk": 12,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 60,
+      "name": "Bewertung und Freigabe",
+      "index": -1,
+      "sequenceFk": 9,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 61,
+      "name": "Erfasse Bewertung",
+      "index": -1,
+      "sequenceFk": 9,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 62,
+      "name": "Start",
+      "index": -1,
+      "sequenceFk": 13,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": true
+    },
+    {
+      "id": 63,
+      "name": "Abrechnung man. Erstellen und Freigeben",
+      "index": 3,
+      "sequenceFk": 11,
+      "goto": {
+        "type": "STEP",
+        "id": 77
+      },
+      "root": false
+    },
+    {
+      "id": 64,
+      "name": "Verkaufsfreigabe",
+      "index": -1,
+      "sequenceFk": 14,
+      "goto": {
+        "type": "STEP",
+        "id": 78
+      },
+      "root": false
+    },
+    {
+      "id": 65,
+      "name": "229er-Fahrzeug nach FLAMS importieren ",
+      "index": -1,
+      "sequenceFk": 15,
+      "goto": {
+        "type": "STEP",
+        "id": 66
+      },
+      "root": true
+    },
+    {
+      "id": 66,
+      "name": "Lese Auftrag aus GO",
+      "index": -1,
+      "sequenceFk": 15,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false
+    },
+    {
+      "id": 67,
+      "name": "Kunde gibt Fzg zurück",
+      "index": 4,
+      "sequenceFk": 12,
+      "goto": {
+        "type": "STEP",
+        "id": 50
+      },
+      "root": true
+    },
+    {
+      "id": 68,
+      "name": "Lagereingang",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 69
+      },
+      "root": true
+    },
+    {
+      "id": 69,
+      "name": "DiVerS meldet Lagereingang",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 70
+      },
+      "root": false
+    },
+    {
+      "id": 70,
+      "name": "Gutachten in FLAMS erfassen",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 81
+      },
+      "root": false
+    },
+    {
+      "id": 71,
+      "name": "Fixen Wert abrechnen",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 72
+      },
+      "root": false
+    },
+    {
+      "id": 72,
+      "name": "Abrechnung verbuchen",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 74
+      },
+      "root": false
+    },
+    {
+      "id": 73,
+      "name": "Ggf. Kunden- und Bankstammdaten erfassen",
+      "index": -1,
+      "sequenceFk": 12,
+      "goto": {
+        "type": "STEP",
+        "id": 51
+      },
+      "root": false
+    },
+    {
+      "id": 74,
+      "name": "Bewerten",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 75,
+      "name": "Freigabe zum Verkauf",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 76
+      },
+      "root": false
+    },
+    {
+      "id": 76,
+      "name": "Verkaufsmeldung",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false
+    },
+    {
+      "id": 77,
+      "name": "Abrechnung verbuchen",
+      "index": -1,
+      "sequenceFk": 11,
+      "goto": {
+        "type": "IDLE"
+      },
+      "root": false
+    },
+    {
+      "id": 78,
+      "name": "Verkaufsmeldung",
+      "index": -1,
+      "sequenceFk": 14,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false
+    },
+    {
+      "id": 79,
+      "name": "Bewertung ohne Freigabe",
+      "index": -1,
+      "sequenceFk": 8,
+      "goto": {
+        "type": "DEC",
+        "id": 11
+      },
+      "root": false
+    },
+    {
+      "id": 80,
+      "name": "Kundenstamm erfassen",
+      "index": -1,
+      "sequenceFk": 4,
+      "goto": {
+        "type": "STEP",
+        "id": 22
+      },
+      "root": false
+    },
+    {
+      "id": 81,
+      "name": "NDL sendet Abrechnung",
+      "index": -1,
+      "sequenceFk": 16,
+      "goto": {
+        "type": "STEP",
+        "id": 72
+      },
+      "root": false
+    }
+  ],
+  "actions": [
+    {
+      "id": 2,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 2,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 1,
+      "triggerText": ""
+    },
+    {
+      "id": 5,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 3,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 1,
+      "triggerText": ""
+    },
+    {
+      "id": 6,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 4,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 1,
+      "triggerText": ""
+    },
+    {
+      "id": 7,
+      "actionType": "ADD",
+      "dataFk": 5,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 2,
+      "triggerText": ""
+    },
+    {
+      "id": 8,
+      "actionType": "SEND",
+      "dataFk": 5,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 2,
+      "triggerText": ""
+    },
+    {
+      "id": 9,
+      "actionType": "SEND",
+      "dataFk": 5,
+      "instanceFk": -1,
+      "receivingActorFk": 2,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 3,
+      "triggerText": ""
+    },
+    {
+      "id": 10,
+      "actionType": "SEND",
+      "dataFk": 5,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 3,
+      "triggerText": ""
+    },
+    {
+      "id": 13,
+      "actionType": "ADD",
+      "dataFk": 7,
+      "instanceFk": 2,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 5,
+      "triggerText": ""
+    },
+    {
+      "id": 14,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 7,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 5,
+      "triggerText": ""
+    },
+    {
+      "id": 15,
+      "actionType": "ADD",
+      "dataFk": 6,
+      "instanceFk": 2,
+      "receivingActorFk": 3,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 5,
+      "triggerText": ""
+    },
+    {
+      "id": 16,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 6,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 3,
+      "sequenceStepFk": 5,
+      "triggerText": ""
+    },
+    {
+      "id": 17,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 3,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 18,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 19,
+      "actionType": "DELETE",
+      "dataFk": 2,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 20,
+      "actionType": "ADD",
+      "dataFk": 2,
+      "instanceFk": 3,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 21,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 22,
+      "actionType": "DELETE",
+      "dataFk": 7,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 23,
+      "actionType": "DELETE",
+      "dataFk": 6,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 4,
+      "triggerText": ""
+    },
+    {
+      "id": 24,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 4,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 6,
+      "triggerText": ""
+    },
+    {
+      "id": 25,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 6,
+      "triggerText": ""
+    },
+    {
+      "id": 26,
+      "actionType": "SEND",
+      "dataFk": 4,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 6,
+      "triggerText": ""
+    },
+    {
+      "id": 27,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 6,
+      "triggerText": ""
+    },
+    {
+      "id": 28,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 2,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 7,
+      "triggerText": ""
+    },
+    {
+      "id": 29,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 7,
+      "triggerText": ""
+    },
+    {
+      "id": 30,
+      "actionType": "DELETE",
+      "dataFk": 4,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 7,
+      "triggerText": ""
+    },
+    {
+      "id": 31,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 8,
+      "triggerText": ""
+    },
+    {
+      "id": 32,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 3,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 8,
+      "triggerText": ""
+    },
+    {
+      "id": 33,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 8,
+      "triggerText": ""
+    },
+    {
+      "id": 34,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 8,
+      "triggerText": ""
+    },
+    {
+      "id": 35,
+      "actionType": "ADD",
+      "dataFk": 10,
+      "instanceFk": 1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 10,
+      "triggerText": ""
+    },
+    {
+      "id": 36,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 2,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 9,
+      "triggerText": ""
+    },
+    {
+      "id": 39,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 11,
+      "triggerText": ""
+    },
+    {
+      "id": 40,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 11,
+      "triggerText": ""
+    },
+    {
+      "id": 42,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 9,
+      "triggerText": ""
+    },
+    {
+      "id": 43,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 3,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 9,
+      "triggerText": ""
+    },
+    {
+      "id": 44,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 8,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 12,
+      "triggerText": ""
+    },
+    {
+      "id": 45,
+      "actionType": "ADD",
+      "dataFk": 11,
+      "instanceFk": 1,
+      "receivingActorFk": 8,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 12,
+      "triggerText": ""
+    },
+    {
+      "id": 46,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 8,
+      "sequenceStepFk": 12,
+      "triggerText": ""
+    },
+    {
+      "id": 47,
+      "actionType": "ADD",
+      "dataFk": 12,
+      "instanceFk": 1,
+      "receivingActorFk": 10,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 12,
+      "triggerText": ""
+    },
+    {
+      "id": 48,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 10,
+      "sequenceStepFk": 12,
+      "triggerText": ""
+    },
+    {
+      "id": 49,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 13,
+      "triggerText": ""
+    },
+    {
+      "id": 50,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 13,
+      "triggerText": ""
+    },
+    {
+      "id": 51,
+      "actionType": "ADD",
+      "dataFk": 13,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 13,
+      "triggerText": ""
+    },
+    {
+      "id": 52,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 13,
+      "triggerText": ""
+    },
+    {
+      "id": 53,
+      "actionType": "DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 13,
+      "triggerText": ""
+    },
+    {
+      "id": 54,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 13,
+      "triggerText": ""
+    },
+    {
+      "id": 55,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 14,
+      "triggerText": ""
+    },
+    {
+      "id": 56,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 14,
+      "triggerText": ""
+    },
+    {
+      "id": 57,
+      "actionType": "ADD",
+      "dataFk": 14,
+      "instanceFk": 1,
+      "receivingActorFk": 9,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 15,
+      "triggerText": ""
+    },
+    {
+      "id": 58,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 15,
+      "triggerText": ""
+    },
+    {
+      "id": 59,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 15,
+      "triggerText": ""
+    },
+    {
+      "id": 78,
+      "actionType": "ADD",
+      "dataFk": 20,
+      "instanceFk": 1,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 20,
+      "triggerText": ""
+    },
+    {
+      "id": 79,
+      "actionType": "SEND",
+      "dataFk": 20,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 20,
+      "triggerText": ""
+    },
+    {
+      "id": 80,
+      "actionType": "SEND",
+      "dataFk": 20,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 21,
+      "triggerText": ""
+    },
+    {
+      "id": 81,
+      "actionType": "ADD",
+      "dataFk": 2,
+      "instanceFk": 3,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 22,
+      "triggerText": ""
+    },
+    {
+      "id": 82,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 2,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 22,
+      "triggerText": ""
+    },
+    {
+      "id": 83,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 22,
+      "triggerText": ""
+    },
+    {
+      "id": 84,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 22,
+      "triggerText": ""
+    },
+    {
+      "id": 91,
+      "actionType": "ADD",
+      "dataFk": 10,
+      "instanceFk": 1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 25,
+      "triggerText": ""
+    },
+    {
+      "id": 92,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 2,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 25,
+      "triggerText": ""
+    },
+    {
+      "id": 93,
+      "actionType": "ADD",
+      "dataFk": 21,
+      "instanceFk": 1,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 26,
+      "triggerText": ""
+    },
+    {
+      "id": 94,
+      "actionType": "SEND",
+      "dataFk": 21,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 26,
+      "triggerText": ""
+    },
+    {
+      "id": 95,
+      "actionType": "SEND",
+      "dataFk": 21,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": 3,
+      "sequenceStepFk": 26,
+      "triggerText": ""
+    },
+    {
+      "id": 96,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 5,
+      "receivingActorFk": 16,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 100,
+      "actionType": "ADD",
+      "dataFk": 13,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 27,
+      "triggerText": ""
+    },
+    {
+      "id": 101,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 27,
+      "triggerText": ""
+    },
+    {
+      "id": 102,
+      "actionType": "DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 27,
+      "triggerText": ""
+    },
+    {
+      "id": 103,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 27,
+      "triggerText": ""
+    },
+    {
+      "id": 104,
+      "actionType": "SEND",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 105,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 106,
+      "actionType": "SEND",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 107,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 2,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 108,
+      "actionType": "ADD",
+      "dataFk": 22,
+      "instanceFk": 2,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 110,
+      "actionType": "ADD",
+      "dataFk": 20,
+      "instanceFk": 1,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 29,
+      "triggerText": ""
+    },
+    {
+      "id": 112,
+      "actionType": "ADD",
+      "dataFk": 23,
+      "instanceFk": 1,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 31,
+      "triggerText": ""
+    },
+    {
+      "id": 113,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 23,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 31,
+      "triggerText": ""
+    },
+    {
+      "id": 114,
+      "actionType": "SEND",
+      "dataFk": 20,
+      "instanceFk": -1,
+      "receivingActorFk": 16,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 29,
+      "triggerText": ""
+    },
+    {
+      "id": 115,
+      "actionType": "SEND",
+      "dataFk": 20,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 30,
+      "triggerText": ""
+    },
+    {
+      "id": 117,
+      "actionType": "ADD",
+      "dataFk": 2,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 31,
+      "triggerText": ""
+    },
+    {
+      "id": 122,
+      "actionType": "ADD",
+      "dataFk": 3,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 22,
+      "triggerText": ""
+    },
+    {
+      "id": 123,
+      "actionType": "DELETE",
+      "dataFk": 22,
+      "instanceFk": 2,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 26,
+      "triggerText": ""
+    },
+    {
+      "id": 124,
+      "actionType": "ADD",
+      "dataFk": 22,
+      "instanceFk": 3,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 26,
+      "triggerText": ""
+    },
+    {
+      "id": 125,
+      "actionType": "SEND",
+      "dataFk": 22,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 14,
+      "sequenceStepFk": 26,
+      "triggerText": ""
+    },
+    {
+      "id": 126,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 8,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 33,
+      "triggerText": ""
+    },
+    {
+      "id": 127,
+      "actionType": "ADD",
+      "dataFk": 11,
+      "instanceFk": 1,
+      "receivingActorFk": 8,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 33,
+      "triggerText": ""
+    },
+    {
+      "id": 128,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 8,
+      "sequenceStepFk": 33,
+      "triggerText": ""
+    },
+    {
+      "id": 129,
+      "actionType": "ADD",
+      "dataFk": 12,
+      "instanceFk": 1,
+      "receivingActorFk": 10,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 33,
+      "triggerText": ""
+    },
+    {
+      "id": 130,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 10,
+      "sequenceStepFk": 33,
+      "triggerText": ""
+    },
+    {
+      "id": 131,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 132,
+      "actionType": "ADD",
+      "dataFk": 13,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 133,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 134,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 135,
+      "actionType": "DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 136,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 35,
+      "triggerText": ""
+    },
+    {
+      "id": 137,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 35,
+      "triggerText": ""
+    },
+    {
+      "id": 138,
+      "actionType": "ADD",
+      "dataFk": 14,
+      "instanceFk": 1,
+      "receivingActorFk": 9,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 36,
+      "triggerText": ""
+    },
+    {
+      "id": 139,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 36,
+      "triggerText": ""
+    },
+    {
+      "id": 140,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 36,
+      "triggerText": ""
+    },
+    {
+      "id": 141,
+      "actionType": "ADD",
+      "dataFk": 14,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 37,
+      "triggerText": ""
+    },
+    {
+      "id": 148,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": 3,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 25,
+      "triggerText": ""
+    },
+    {
+      "id": 149,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 3,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 25,
+      "triggerText": ""
+    },
+    {
+      "id": 150,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 43,
+      "triggerText": ""
+    },
+    {
+      "id": 151,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 3,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 43,
+      "triggerText": ""
+    },
+    {
+      "id": 152,
+      "actionType": "ADD",
+      "dataFk": 10,
+      "instanceFk": 1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 43,
+      "triggerText": ""
+    },
+    {
+      "id": 153,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 2,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 43,
+      "triggerText": ""
+    },
+    {
+      "id": 154,
+      "actionType": "ADD",
+      "dataFk": 21,
+      "instanceFk": 1,
+      "receivingActorFk": 2,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 44,
+      "triggerText": ""
+    },
+    {
+      "id": 155,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 21,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 44,
+      "triggerText": ""
+    },
+    {
+      "id": 156,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 21,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": 3,
+      "sequenceStepFk": 44,
+      "triggerText": ""
+    },
+    {
+      "id": 157,
+      "actionType": "DELETE",
+      "dataFk": 21,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 44,
+      "triggerText": ""
+    },
+    {
+      "id": 158,
+      "actionType": "DELETE",
+      "dataFk": 22,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 44,
+      "triggerText": ""
+    },
+    {
+      "id": 159,
+      "actionType": "ADD",
+      "dataFk": 22,
+      "instanceFk": 3,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 44,
+      "triggerText": ""
+    },
+    {
+      "id": 160,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 5,
+      "receivingActorFk": 16,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 161,
+      "actionType": "SEND",
+      "dataFk": 8,
+      "instanceFk": 2,
+      "receivingActorFk": 6,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 162,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 5,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 163,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 164,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 165,
+      "actionType": "ADD",
+      "dataFk": 22,
+      "instanceFk": 2,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 166,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 45,
+      "triggerText": ""
+    },
+    {
+      "id": 167,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 8,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 46,
+      "triggerText": ""
+    },
+    {
+      "id": 168,
+      "actionType": "ADD",
+      "dataFk": 11,
+      "instanceFk": 1,
+      "receivingActorFk": 8,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 46,
+      "triggerText": ""
+    },
+    {
+      "id": 169,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 8,
+      "sequenceStepFk": 46,
+      "triggerText": ""
+    },
+    {
+      "id": 170,
+      "actionType": "ADD",
+      "dataFk": 12,
+      "instanceFk": 1,
+      "receivingActorFk": 10,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 46,
+      "triggerText": ""
+    },
+    {
+      "id": 171,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 10,
+      "sequenceStepFk": 46,
+      "triggerText": ""
+    },
+    {
+      "id": 172,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 173,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 174,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 175,
+      "actionType": "ADD",
+      "dataFk": 13,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 178,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 179,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 180,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 3,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 48,
+      "triggerText": ""
+    },
+    {
+      "id": 181,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 48,
+      "triggerText": ""
+    },
+    {
+      "id": 182,
+      "actionType": "DELETE",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 49,
+      "triggerText": ""
+    },
+    {
+      "id": 183,
+      "actionType": "ADD",
+      "dataFk": 9,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 49,
+      "triggerText": ""
+    },
+    {
+      "id": 184,
+      "actionType": "DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 192,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 52,
+      "triggerText": ""
+    },
+    {
+      "id": 205,
+      "actionType": "ADD",
+      "dataFk": 15,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 40,
+      "triggerText": ""
+    },
+    {
+      "id": 206,
+      "actionType": "ADD",
+      "dataFk": 18,
+      "instanceFk": 4,
+      "receivingActorFk": 3,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 41,
+      "triggerText": ""
+    },
+    {
+      "id": 207,
+      "actionType": "SEND",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 3,
+      "sequenceStepFk": 41,
+      "triggerText": ""
+    },
+    {
+      "id": 208,
+      "actionType": "SEND",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 41,
+      "triggerText": ""
+    },
+    {
+      "id": 212,
+      "actionType": "ADD",
+      "dataFk": 1,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 31,
+      "triggerText": ""
+    },
+    {
+      "id": 218,
+      "actionType": "DELETE",
+      "dataFk": 23,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 31,
+      "triggerText": ""
+    },
+    {
+      "id": 219,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 6,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 65,
+      "triggerText": ""
+    },
+    {
+      "id": 220,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 65,
+      "triggerText": ""
+    },
+    {
+      "id": 222,
+      "actionType": "ADD",
+      "dataFk": 13,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 66,
+      "triggerText": ""
+    },
+    {
+      "id": 223,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 66,
+      "triggerText": ""
+    },
+    {
+      "id": 224,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 66,
+      "triggerText": ""
+    },
+    {
+      "id": 225,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 66,
+      "triggerText": ""
+    },
+    {
+      "id": 226,
+      "actionType": "DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 66,
+      "triggerText": ""
+    },
+    {
+      "id": 227,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 47,
+      "triggerText": ""
+    },
+    {
+      "id": 228,
+      "actionType": "SEND",
+      "dataFk": 20,
+      "instanceFk": -1,
+      "receivingActorFk": 16,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 20,
+      "triggerText": ""
+    },
+    {
+      "id": 229,
+      "actionType": "SEND",
+      "dataFk": 20,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 30,
+      "triggerText": ""
+    },
+    {
+      "id": 230,
+      "actionType": "ADD",
+      "dataFk": 14,
+      "instanceFk": 2,
+      "receivingActorFk": 16,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 50,
+      "triggerText": ""
+    },
+    {
+      "id": 231,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 50,
+      "triggerText": ""
+    },
+    {
+      "id": 232,
+      "actionType": "ADD",
+      "dataFk": 8,
+      "instanceFk": 7,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 50,
+      "triggerText": ""
+    },
+    {
+      "id": 233,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 16,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 50,
+      "triggerText": ""
+    },
+    {
+      "id": 236,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 16,
+      "sendingActorFk": 2,
+      "sequenceStepFk": 67,
+      "triggerText": ""
+    },
+    {
+      "id": 238,
+      "actionType": "ADD",
+      "dataFk": 2,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 51,
+      "triggerText": ""
+    },
+    {
+      "id": 239,
+      "actionType": "ADD",
+      "dataFk": 29,
+      "instanceFk": 3,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 51,
+      "triggerText": ""
+    },
+    {
+      "id": 240,
+      "actionType": "DELETE",
+      "dataFk": 29,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 52,
+      "triggerText": ""
+    },
+    {
+      "id": 241,
+      "actionType": "ADD",
+      "dataFk": 13,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 52,
+      "triggerText": ""
+    },
+    {
+      "id": 244,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 29,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 51,
+      "triggerText": ""
+    },
+    {
+      "id": 245,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 52,
+      "triggerText": ""
+    },
+    {
+      "id": 246,
+      "actionType": "DELETE",
+      "dataFk": 13,
+      "instanceFk": -1,
+      "receivingActorFk": 6,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 52,
+      "triggerText": ""
+    },
+    {
+      "id": 247,
+      "actionType": "ADD",
+      "dataFk": 15,
+      "instanceFk": 6,
+      "receivingActorFk": 1,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 50,
+      "triggerText": ""
+    },
+    {
+      "id": 248,
+      "actionType": "SEND",
+      "dataFk": 15,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 51,
+      "triggerText": ""
+    },
+    {
+      "id": 249,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 10,
+      "instanceFk": -1,
+      "receivingActorFk": 8,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 68,
+      "triggerText": ""
+    },
+    {
+      "id": 250,
+      "actionType": "ADD",
+      "dataFk": 11,
+      "instanceFk": 1,
+      "receivingActorFk": 8,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 68,
+      "triggerText": ""
+    },
+    {
+      "id": 251,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 8,
+      "sequenceStepFk": 68,
+      "triggerText": ""
+    },
+    {
+      "id": 252,
+      "actionType": "ADD",
+      "dataFk": 12,
+      "instanceFk": 1,
+      "receivingActorFk": 10,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 68,
+      "triggerText": ""
+    },
+    {
+      "id": 253,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 7,
+      "sendingActorFk": 10,
+      "sequenceStepFk": 68,
+      "triggerText": ""
+    },
+    {
+      "id": 254,
+      "actionType": "SEND",
+      "dataFk": 11,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 69,
+      "triggerText": ""
+    },
+    {
+      "id": 255,
+      "actionType": "SEND",
+      "dataFk": 12,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 7,
+      "sequenceStepFk": 69,
+      "triggerText": ""
+    },
+    {
+      "id": 256,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 69,
+      "triggerText": ""
+    },
+    {
+      "id": 257,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": 2,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 70,
+      "triggerText": ""
+    },
+    {
+      "id": 258,
+      "actionType": "ADD",
+      "dataFk": 18,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 71,
+      "triggerText": ""
+    },
+    {
+      "id": 259,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 71,
+      "triggerText": ""
+    },
+    {
+      "id": 261,
+      "actionType": "ADD",
+      "dataFk": 18,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 72,
+      "triggerText": ""
+    },
+    {
+      "id": 263,
+      "actionType": "ADD",
+      "dataFk": 1,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 73,
+      "triggerText": ""
+    },
+    {
+      "id": 264,
+      "actionType": "ADD",
+      "dataFk": 14,
+      "instanceFk": 3,
+      "receivingActorFk": 9,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 74,
+      "triggerText": ""
+    },
+    {
+      "id": 266,
+      "actionType": "ADD",
+      "dataFk": 16,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 75,
+      "triggerText": ""
+    },
+    {
+      "id": 267,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 16,
+      "instanceFk": -1,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 75,
+      "triggerText": ""
+    },
+    {
+      "id": 268,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 16,
+      "instanceFk": -1,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 75,
+      "triggerText": ""
+    },
+    {
+      "id": 269,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 75,
+      "triggerText": ""
+    },
+    {
+      "id": 270,
+      "actionType": "ADD",
+      "dataFk": 17,
+      "instanceFk": 1,
+      "receivingActorFk": 12,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 76,
+      "triggerText": ""
+    },
+    {
+      "id": 271,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 17,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": 12,
+      "sequenceStepFk": 76,
+      "triggerText": ""
+    },
+    {
+      "id": 272,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 17,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 11,
+      "sequenceStepFk": 76,
+      "triggerText": ""
+    },
+    {
+      "id": 274,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 16,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 275,
+      "actionType": "DELETE",
+      "dataFk": 8,
+      "instanceFk": -1,
+      "receivingActorFk": 14,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 24,
+      "triggerText": ""
+    },
+    {
+      "id": 276,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 6,
+      "sequenceStepFk": 34,
+      "triggerText": ""
+    },
+    {
+      "id": 277,
+      "actionType": "DELETE",
+      "dataFk": 15,
+      "instanceFk": 5,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 63,
+      "triggerText": ""
+    },
+    {
+      "id": 278,
+      "actionType": "ADD",
+      "dataFk": 18,
+      "instanceFk": 4,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 63,
+      "triggerText": ""
+    },
+    {
+      "id": 280,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 18,
+      "instanceFk": 2,
+      "receivingActorFk": 11,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 77,
+      "triggerText": ""
+    },
+    {
+      "id": 282,
+      "actionType": "ADD",
+      "dataFk": 15,
+      "instanceFk": 5,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 63,
+      "triggerText": ""
+    },
+    {
+      "id": 283,
+      "actionType": "DELETE",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 77,
+      "triggerText": ""
+    },
+    {
+      "id": 284,
+      "actionType": "ADD",
+      "dataFk": 18,
+      "instanceFk": 2,
+      "receivingActorFk": 11,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 77,
+      "triggerText": ""
+    },
+    {
+      "id": 285,
+      "actionType": "SEND",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 11,
+      "sequenceStepFk": 77,
+      "triggerText": ""
+    },
+    {
+      "id": 286,
+      "actionType": "ADD",
+      "dataFk": 16,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 64,
+      "triggerText": ""
+    },
+    {
+      "id": 287,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 16,
+      "instanceFk": -1,
+      "receivingActorFk": 9,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 64,
+      "triggerText": ""
+    },
+    {
+      "id": 288,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 16,
+      "instanceFk": -1,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 64,
+      "triggerText": ""
+    },
+    {
+      "id": 289,
+      "actionType": "ADD",
+      "dataFk": 17,
+      "instanceFk": 1,
+      "receivingActorFk": 12,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 78,
+      "triggerText": ""
+    },
+    {
+      "id": 290,
+      "actionType": "SEND",
+      "dataFk": 17,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": 12,
+      "sequenceStepFk": 78,
+      "triggerText": ""
+    },
+    {
+      "id": 291,
+      "actionType": "SEND",
+      "dataFk": 17,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 11,
+      "sequenceStepFk": 78,
+      "triggerText": ""
+    },
+    {
+      "id": 292,
+      "actionType": "SEND",
+      "dataFk": 14,
+      "instanceFk": -1,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 64,
+      "triggerText": ""
+    },
+    {
+      "id": 293,
+      "actionType": "ADD",
+      "dataFk": 14,
+      "instanceFk": 3,
+      "receivingActorFk": 9,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 79,
+      "triggerText": ""
+    },
+    {
+      "id": 295,
+      "actionType": "ADD",
+      "dataFk": 1,
+      "instanceFk": 1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 80,
+      "triggerText": ""
+    },
+    {
+      "id": 296,
+      "actionType": "SEND",
+      "dataFk": 9,
+      "instanceFk": -1,
+      "receivingActorFk": 12,
+      "sendingActorFk": 9,
+      "sequenceStepFk": 64,
+      "triggerText": ""
+    },
+    {
+      "id": 297,
+      "actionType": "ADD",
+      "dataFk": 35,
+      "instanceFk": 1,
+      "receivingActorFk": 16,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 81,
+      "triggerText": ""
+    },
+    {
+      "id": 298,
+      "actionType": "SEND",
+      "dataFk": 35,
+      "instanceFk": -1,
+      "receivingActorFk": 1,
+      "sendingActorFk": 16,
+      "sequenceStepFk": 81,
+      "triggerText": ""
+    },
+    {
+      "id": 299,
+      "actionType": "SEND",
+      "dataFk": 35,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 1,
+      "sequenceStepFk": 81,
+      "triggerText": ""
+    },
+    {
+      "id": 300,
+      "actionType": "DELETE",
+      "dataFk": 35,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 72,
+      "triggerText": ""
+    },
+    {
+      "id": 301,
+      "actionType": "SEND_AND_DELETE",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": 5,
+      "sequenceStepFk": 72,
+      "triggerText": ""
+    },
+    {
+      "id": 302,
+      "actionType": "DELETE",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 11,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 72,
+      "triggerText": ""
+    },
+    {
+      "id": 303,
+      "actionType": "ADD",
+      "dataFk": 18,
+      "instanceFk": 2,
+      "receivingActorFk": 11,
+      "sendingActorFk": -1,
+      "sequenceStepFk": 72,
+      "triggerText": ""
+    },
+    {
+      "id": 304,
+      "actionType": "SEND",
+      "dataFk": 18,
+      "instanceFk": -1,
+      "receivingActorFk": 5,
+      "sendingActorFk": 11,
+      "sequenceStepFk": 72,
+      "triggerText": ""
+    }
+  ],
+  "datas": [
+    {
+      "id": 15,
+      "name": "Abrechnung",
+      "geometricalDataFk": 25,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "Abrechnung"
+        },
+        {
+          "id": 3,
+          "name": "NOK"
+        },
+        {
+          "id": 4,
+          "name": "Berechnet"
+        },
+        {
+          "id": 5,
+          "name": "OK"
+        },
+        {
+          "id": 6,
+          "name": "Fixbetrag"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Auftrag",
+      "geometricalDataFk": 14,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "Auftrag"
+        },
+        {
+          "id": 3,
+          "name": "Übernommen"
+        },
+        {
+          "id": 4,
+          "name": "NoReturn"
+        },
+        {
+          "id": 5,
+          "name": "Gebucht"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Ausschreibung",
+      "geometricalDataFk": 34,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Ausschreibung"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": " AbrechnungBuchungssatz",
+      "geometricalDataFk": 30,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "mit UKS"
+        },
+        {
+          "id": 3,
+          "name": " AbrechnungBuchungssatz"
+        },
+        {
+          "id": 4,
+          "name": "ohne UKS"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Briefdaten",
+      "geometricalDataFk": 22,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Briefdaten"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Fahrzeug",
+      "geometricalDataFk": 16,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Fahrzeug"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Fahrzeugbewertung",
+      "geometricalDataFk": 24,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Fahrzeugbewertung"
+        },
+        {
+          "id": 2,
+          "name": "Gutachten"
+        },
+        {
+          "id": 3,
+          "name": "ohne Freigabe"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "IBIS Auftrag",
+      "geometricalDataFk": 36,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "IBIS Auftrag"
+        },
+        {
+          "id": 3,
+          "name": "IBIS-Auftrag zugelassen"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Konditionen",
+      "geometricalDataFk": 8,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Konditionen"
+        },
+        {
+          "id": 2,
+          "name": "224"
+        },
+        {
+          "id": 3,
+          "name": "229 nötig??"
+        },
+        {
+          "id": 4,
+          "name": "288"
+        },
+        {
+          "id": 5,
+          "name": "Risikoarmer Restwert??"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Konfiguration",
+      "geometricalDataFk": 9,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Konfiguration"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Kundenstamm",
+      "geometricalDataFk": 6,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Kundenstamm"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Vertrag",
+      "geometricalDataFk": 7,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "Vertrag"
+        },
+        {
+          "id": 3,
+          "name": "Vereinbart"
+        },
+        {
+          "id": 4,
+          "name": "PseudoVtrg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Vertrags und Konditonen Report",
+      "geometricalDataFk": 10,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Vertrags und Konditonen Report"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Z 229er-Rücknahme-Vereinbarung",
+      "geometricalDataFk": 37,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z 229er-Rücknahme-Vereinbarung"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Z AbrechnungsDiff",
+      "geometricalDataFk": 32,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "Z AbrechnungsDiff"
+        },
+        {
+          "id": 3,
+          "name": "Zu groß"
+        },
+        {
+          "id": 4,
+          "name": "OK"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Z Antwort Autovermieter",
+      "geometricalDataFk": 12,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "Z Antwort Autovermieter"
+        },
+        {
+          "id": 3,
+          "name": "NOK"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Z Antwort Leasinggeber",
+      "geometricalDataFk": 11,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 2,
+          "name": "Z Antwort Leasinggeber"
+        },
+        {
+          "id": 3,
+          "name": "NOK"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Z Bewertung aus YUCAS",
+      "geometricalDataFk": 38,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Bewertung aus YUCAS"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Z Daimler Aktionen",
+      "geometricalDataFk": 13,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Daimler Aktionen"
+        },
+        {
+          "id": 2,
+          "name": "Vertrag erstellen"
+        },
+        {
+          "id": 3,
+          "name": "Vertrag auf vereinbart setzten"
+        },
+        {
+          "id": 4,
+          "name": "Monatsvolumen buchen"
+        },
+        {
+          "id": 5,
+          "name": "Buche Leasing-Auftrag"
+        },
+        {
+          "id": 6,
+          "name": "229er-Vereinbarung anlegen"
+        },
+        {
+          "id": 7,
+          "name": "Freien Ankauf akzeptieren"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Z FLAMS Aktion",
+      "geometricalDataFk": 23,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z FLAMS Aktion"
+        },
+        {
+          "id": 2,
+          "name": "GO lesen"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Z Lagereingangsmeldung",
+      "geometricalDataFk": 20,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Lagereingangsmeldung"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Z Verkaufsfreigabe",
+      "geometricalDataFk": 28,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Verkaufsfreigabe"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Z Verkaufsmeldung",
+      "geometricalDataFk": 29,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Verkaufsmeldung"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Z Zulassung",
+      "geometricalDataFk": 35,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Zulassung"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Z Bewertung per PDF",
+      "geometricalDataFk": 39,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Bewertung per PDF"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Z Fahrzeugvoranlage \"freier Ankauf\" -obsolet",
+      "geometricalDataFk": 40,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Fahrzeugvoranlage \"freier Ankauf\" -obsolet"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "ZCase 229-NoReturn",
+      "geometricalDataFk": 41,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase 229-NoReturn"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "ZCase 229-Drehscheibe",
+      "geometricalDataFk": 42,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase 229-Drehscheibe"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Z Fzg-Voranlage",
+      "geometricalDataFk": 44,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Fzg-Voranlage"
+        },
+        {
+          "id": 2,
+          "name": "IBIS"
+        },
+        {
+          "id": 3,
+          "name": "CSV"
+        },
+        {
+          "id": 4,
+          "name": "FLAMS-Buchung 288"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "ZCase: Abrechn-Quelle",
+      "geometricalDataFk": 45,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase: Abrechn-Quelle"
+        },
+        {
+          "id": 2,
+          "name": "LEAS"
+        },
+        {
+          "id": 3,
+          "name": "man. Ein- und Freigabe"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "ZCase: Finanzgesellschaft",
+      "geometricalDataFk": 46,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase: Finanzgesellschaft"
+        },
+        {
+          "id": 2,
+          "name": "Konzernbank"
+        },
+        {
+          "id": 3,
+          "name": "Fremdbank"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "ZCase Abrech-Quelle LEAS",
+      "geometricalDataFk": 47,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase Abrech-Quelle LEAS"
+        },
+        {
+          "id": 2,
+          "name": "LEAS"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "ZCase Abrech-Quelle manuell",
+      "geometricalDataFk": 48,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase Abrech-Quelle manuell"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "ZCase freier Ankauf",
+      "geometricalDataFk": 50,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "ZCase freier Ankauf"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Z Abrechnungsdokument",
+      "geometricalDataFk": 51,
+      "dataConnectionFks": [],
+      "instances": [
+        {
+          "id": 1,
+          "name": "Z Abrechnungsdokument"
+        }
+      ]
+    }
+  ],
+  "dataConnections": [
+    {
+      "id": 1,
+      "data1Fk": 2,
+      "data2Fk": 3,
+      "label1": "",
+      "label2": "",
+      "direction1": "BOTTOM",
+      "direction2": "TOP",
+      "type1": "OUT",
+      "type2": "IN"
+    },
+    {
+      "id": 2,
+      "data1Fk": 2,
+      "data2Fk": 4,
+      "label1": "",
+      "label2": "",
+      "direction1": "BOTTOM",
+      "direction2": "TOP",
+      "type1": "OUT",
+      "type2": "IN"
+    }
+  ],
+  "initDatas": [
+    {
+      "id": 5,
+      "actorFk": 5,
+      "dataFk": 2,
+      "instanceFk": 3,
+      "dataSetupFk": 3
+    },
+    {
+      "id": 6,
+      "actorFk": 5,
+      "dataFk": 4,
+      "instanceFk": 1,
+      "dataSetupFk": 3
+    },
+    {
+      "id": 7,
+      "actorFk": 2,
+      "dataFk": 10,
+      "instanceFk": 1,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 8,
+      "actorFk": 5,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 9,
+      "actorFk": 5,
+      "dataFk": 3,
+      "instanceFk": 1,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 10,
+      "actorFk": 6,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 11,
+      "actorFk": 5,
+      "dataFk": 2,
+      "instanceFk": 3,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 12,
+      "actorFk": 13,
+      "dataFk": 19,
+      "instanceFk": 2,
+      "dataSetupFk": 4
+    },
+    {
+      "id": 1,
+      "actorFk": 5,
+      "dataFk": 1,
+      "instanceFk": 1,
+      "dataSetupFk": 1
+    },
+    {
+      "id": 24,
+      "actorFk": 13,
+      "dataFk": 27,
+      "instanceFk": 1,
+      "dataSetupFk": 9
+    },
+    {
+      "id": 25,
+      "actorFk": 13,
+      "dataFk": 24,
+      "instanceFk": 1,
+      "dataSetupFk": 10
+    },
+    {
+      "id": 17,
+      "actorFk": 13,
+      "dataFk": 19,
+      "instanceFk": 4,
+      "dataSetupFk": 5
+    },
+    {
+      "id": 2,
+      "actorFk": 1,
+      "dataFk": 2,
+      "instanceFk": 2,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 3,
+      "actorFk": 1,
+      "dataFk": 3,
+      "instanceFk": 4,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 4,
+      "actorFk": 1,
+      "dataFk": 4,
+      "instanceFk": 1,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 26,
+      "actorFk": 13,
+      "dataFk": 31,
+      "instanceFk": 2,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 27,
+      "actorFk": 13,
+      "dataFk": 29,
+      "instanceFk": 4,
+      "dataSetupFk": 2
+    },
+    {
+      "id": 16,
+      "actorFk": 13,
+      "dataFk": 24,
+      "instanceFk": 1,
+      "dataSetupFk": 6
+    },
+    {
+      "id": 18,
+      "actorFk": 15,
+      "dataFk": 19,
+      "instanceFk": 4,
+      "dataSetupFk": 6
+    },
+    {
+      "id": 28,
+      "actorFk": 13,
+      "dataFk": 31,
+      "instanceFk": 2,
+      "dataSetupFk": 6
+    },
+    {
+      "id": 29,
+      "actorFk": 13,
+      "dataFk": 29,
+      "instanceFk": 2,
+      "dataSetupFk": 6
+    },
+    {
+      "id": 30,
+      "actorFk": 13,
+      "dataFk": 32,
+      "instanceFk": 2,
+      "dataSetupFk": 6
+    },
+    {
+      "id": 31,
+      "actorFk": 2,
+      "dataFk": 10,
+      "instanceFk": 1,
+      "dataSetupFk": 11
+    },
+    {
+      "id": 32,
+      "actorFk": 6,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "dataSetupFk": 11
+    },
+    {
+      "id": 21,
+      "actorFk": 2,
+      "dataFk": 10,
+      "instanceFk": 1,
+      "dataSetupFk": 8
+    },
+    {
+      "id": 22,
+      "actorFk": 6,
+      "dataFk": 9,
+      "instanceFk": 3,
+      "dataSetupFk": 8
+    },
+    {
+      "id": 33,
+      "actorFk": 15,
+      "dataFk": 34,
+      "instanceFk": 1,
+      "dataSetupFk": 8
+    },
+    {
+      "id": 19,
+      "actorFk": 15,
+      "dataFk": 19,
+      "instanceFk": 4,
+      "dataSetupFk": 7
+    },
+    {
+      "id": 20,
+      "actorFk": 13,
+      "dataFk": 25,
+      "instanceFk": 1,
+      "dataSetupFk": 7
+    }
+  ],
+  "dataSetups": [
+    {
+      "id": 1,
+      "name": "default"
+    },
+    {
+      "id": 2,
+      "name": "288 Fall 1: Abrechn OK"
+    },
+    {
+      "id": 3,
+      "name": "Ordering"
+    },
+    {
+      "id": 4,
+      "name": "288er Rücknahme OK"
+    },
+    {
+      "id": 5,
+      "name": "288 Fall 1: Abrechnung OK - alt"
+    },
+    {
+      "id": 6,
+      "name": "224 Fall 1: Bewertung YUCAS"
+    },
+    {
+      "id": 7,
+      "name": "224 Fall 2: Bewertung via PDF"
+    },
+    {
+      "id": 8,
+      "name": "Freier Ankauf von NDL"
+    },
+    {
+      "id": 9,
+      "name": "229 Fall 1: NoReturn"
+    },
+    {
+      "id": 10,
+      "name": "229 Fall 2: Drehscheibe"
+    },
+    {
+      "id": 11,
+      "name": "Freier Ankuf eines Fahrzeugs"
+    }
+  ],
+  "decisions": [
+    {
+      "actorFk": 1,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 1,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 1
+      },
+      "name": "Vertragsdaten vorbereitet",
+      "root": true,
+      "sequenceFk": 1
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 2,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 2
+      },
+      "name": "Konfiguration valide",
+      "root": false,
+      "sequenceFk": 1
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 3,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 6
+      },
+      "name": "Vertrag und Konfiguration liegen vor",
+      "root": true,
+      "sequenceFk": 2
+    },
+    {
+      "actorFk": 2,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 4,
+      "ifGoTo": {
+        "type": "DEC",
+        "id": 5
+      },
+      "name": "288er Fahrzeug beim Kunden",
+      "root": false,
+      "sequenceFk": 3
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 5,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 12
+      },
+      "name": "288er FLAMS hat Auftrag - Übernommen und Konditionen",
+      "root": false,
+      "sequenceFk": 3
+    },
+    {
+      "actorFk": 14,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 8,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 24
+      },
+      "name": "IBIS hat Ausschreibung",
+      "root": true,
+      "sequenceFk": 5
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 9,
+      "ifGoTo": {
+        "type": "IDLE"
+      },
+      "name": "Konditionen prüfen 288",
+      "root": false,
+      "sequenceFk": 3
+    },
+    {
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "STEP",
+        "id": 37
+      },
+      "id": 10,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 36
+      },
+      "name": "Quelle der Fzg-Bewertung",
+      "root": false,
+      "sequenceFk": 8
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 11,
+      "ifGoTo": {
+        "type": "IDLE"
+      },
+      "name": "Konditionen prüfen 224",
+      "root": false,
+      "sequenceFk": 8
+    },
+    {
+      "actorFk": 1,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 12,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 31
+      },
+      "name": "229er Ausschreibung vorhanden?",
+      "root": false,
+      "sequenceFk": 6
+    },
+    {
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 13,
+      "ifGoTo": {
+        "type": "ERROR"
+      },
+      "name": "Rückkaufbetrag OK",
+      "root": false,
+      "sequenceFk": 12
+    },
+    {
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 14,
+      "ifGoTo": {
+        "type": "ERROR"
+      },
+      "name": "Abrechnung \"freier Ankauf\" ok",
+      "root": false,
+      "sequenceFk": 12
+    },
+    {
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "DEC",
+        "id": 16
+      },
+      "id": 15,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 49
+      },
+      "name": "Vermarktung durch NDL?",
+      "root": false,
+      "sequenceFk": 9
+    },
+    {
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "STEP",
+        "id": 61
+      },
+      "id": 16,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 60
+      },
+      "name": "Quelle der Bewertung",
+      "root": false,
+      "sequenceFk": 9
+    },
+    {
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "STEP",
+        "id": 63
+      },
+      "id": 17,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 41
+      },
+      "name": "Quelle Leas",
+      "root": false,
+      "sequenceFk": 11
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 18,
+      "ifGoTo": {
+        "type": "DEC",
+        "id": 21
+      },
+      "name": "BX-Prüfung FLAMS",
+      "root": true,
+      "sequenceFk": 14
+    },
+    {
+      "actorFk": 15,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "ERROR"
+      },
+      "id": 19,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 64
+      },
+      "name": "BX-Prüfung: Fall Abr-ok",
+      "root": false,
+      "sequenceFk": 14
+    },
+    {
+      "actorFk": 15,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "DEC",
+        "id": 19
+      },
+      "id": 21,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 64
+      },
+      "name": "BX-Prüfung freier Ankauf",
+      "root": false,
+      "sequenceFk": 14
+    },
+    {
+      "actorFk": 5,
+      "dataAndInstaceIds": [
+        {}
+      ],
+      "elseGoTo": {
+        "type": "STEP",
+        "id": 80
+      },
+      "id": 22,
+      "ifGoTo": {
+        "type": "STEP",
+        "id": 22
+      },
+      "name": "Kundenstamm vorhanden",
+      "root": false,
+      "sequenceFk": 4
+    }
+  ],
+  "chains": [
+    {
+      "id": 1,
+      "name": "FLAMS 1.0"
+    },
+    {
+      "id": 2,
+      "name": "FLAMS 3.0 komplett"
+    },
+    {
+      "id": 3,
+      "name": "FLAMS 3.0 224"
+    },
+    {
+      "id": 4,
+      "name": "Hereinnahme 229 m No-Return"
+    },
+    {
+      "id": 5,
+      "name": "Freier Ankauf \"ein Fahrzeug\" und Verkauf"
+    },
+    {
+      "id": 6,
+      "name": "Hereinnahme 229 m Drehscheibe -> alt!!"
+    }
+  ],
+  "chainlinks": [
+    {
+      "id": 1,
+      "name": "Vertragsentstehung OK",
+      "sequenceFk": 1,
+      "dataSetupFk": 2,
+      "goto": {
+        "type": "LINK",
+        "id": 2
+      },
+      "root": true,
+      "chainFk": 1
+    },
+    {
+      "id": 2,
+      "name": "Ordering",
+      "sequenceFk": 2,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 1
+    },
+    {
+      "id": 3,
+      "name": "Vertragsentstehung 288",
+      "sequenceFk": 1,
+      "dataSetupFk": 2,
+      "goto": {
+        "type": "LINK",
+        "id": 4
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 4,
+      "name": "Ordering 288",
+      "sequenceFk": 2,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 5
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 5,
+      "name": "Rücknahme 288 Abrechnung OK",
+      "sequenceFk": 3,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 28
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 6,
+      "name": "Vertragsentstehung 224",
+      "sequenceFk": 4,
+      "dataSetupFk": 7,
+      "goto": {
+        "type": "LINK",
+        "id": 7
+      },
+      "root": true,
+      "chainFk": 3
+    },
+    {
+      "id": 7,
+      "name": "Ordering 224",
+      "sequenceFk": 5,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 9
+      },
+      "root": false,
+      "chainFk": 3
+    },
+    {
+      "id": 9,
+      "name": "Rücknahme 224",
+      "sequenceFk": 8,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 15
+      },
+      "root": false,
+      "chainFk": 3
+    },
+    {
+      "id": 10,
+      "name": "Vertragsentstehung y",
+      "sequenceFk": 6,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 11
+      },
+      "root": false,
+      "chainFk": 4
+    },
+    {
+      "id": 11,
+      "name": "Ordering y",
+      "sequenceFk": 7,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false,
+      "chainFk": 4
+    },
+    {
+      "id": 12,
+      "name": "Vertragsentstehung 229 ok",
+      "sequenceFk": 6,
+      "dataSetupFk": 9,
+      "goto": {
+        "type": "LINK",
+        "id": 13
+      },
+      "root": true,
+      "chainFk": 4
+    },
+    {
+      "id": 13,
+      "name": "Ordering 229",
+      "sequenceFk": 7,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 30
+      },
+      "root": false,
+      "chainFk": 4
+    },
+    {
+      "id": 14,
+      "name": "Rücknahme 229",
+      "sequenceFk": 9,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 4
+    },
+    {
+      "id": 15,
+      "name": "Abrechnung (LEAS & PDF)",
+      "sequenceFk": 11,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 32
+      },
+      "root": false,
+      "chainFk": 3
+    },
+    {
+      "id": 16,
+      "name": "Vereinbarung des freien Ankaufs",
+      "sequenceFk": 12,
+      "dataSetupFk": 8,
+      "goto": {
+        "type": "LINK",
+        "id": 31
+      },
+      "root": true,
+      "chainFk": 5
+    },
+    {
+      "id": 17,
+      "name": "",
+      "sequenceFk": -1,
+      "dataSetupFk": -1,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false,
+      "chainFk": 4
+    },
+    {
+      "id": 18,
+      "name": "Vertragserfassung",
+      "sequenceFk": 6,
+      "dataSetupFk": 10,
+      "goto": {
+        "type": "LINK",
+        "id": 19
+      },
+      "root": true,
+      "chainFk": 6
+    },
+    {
+      "id": 19,
+      "name": "Ordering",
+      "sequenceFk": 7,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 20
+      },
+      "root": false,
+      "chainFk": 6
+    },
+    {
+      "id": 20,
+      "name": "Rücknahme",
+      "sequenceFk": 9,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 21
+      },
+      "root": false,
+      "chainFk": 6
+    },
+    {
+      "id": 21,
+      "name": "Abrechnung",
+      "sequenceFk": 11,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 6
+    },
+    {
+      "id": 22,
+      "name": "Vertragsentstehung 224",
+      "sequenceFk": 4,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 27
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 23,
+      "name": "Vertragsentstehung 229",
+      "sequenceFk": 6,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 24,
+      "name": "Start 288",
+      "sequenceFk": -1,
+      "dataSetupFk": 2,
+      "goto": {
+        "type": "ERROR"
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 25,
+      "name": "Start",
+      "sequenceFk": 13,
+      "dataSetupFk": 6,
+      "goto": {
+        "type": "DEC",
+        "id": 1
+      },
+      "root": true,
+      "chainFk": 2
+    },
+    {
+      "id": 26,
+      "name": "Rücknahme 224",
+      "sequenceFk": 8,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 27,
+      "name": "Ordering 224",
+      "sequenceFk": 5,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 26
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 28,
+      "name": "Abrechnung LEAS",
+      "sequenceFk": 11,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 29
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 29,
+      "name": "Verkauf",
+      "sequenceFk": 14,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 2
+    },
+    {
+      "id": 30,
+      "name": "Fahrzeug in FLAMS bekannt machen",
+      "sequenceFk": 15,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 14
+      },
+      "root": false,
+      "chainFk": 4
+    },
+    {
+      "id": 31,
+      "name": "Rückname freier Ankauf",
+      "sequenceFk": 16,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "LINK",
+        "id": 33
+      },
+      "root": false,
+      "chainFk": 5
+    },
+    {
+      "id": 32,
+      "name": "Verkauf 224",
+      "sequenceFk": 14,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 3
+    },
+    {
+      "id": 33,
+      "name": "Verkauf",
+      "sequenceFk": 14,
+      "dataSetupFk": 1,
+      "goto": {
+        "type": "FIN"
+      },
+      "root": false,
+      "chainFk": 5
+    }
+  ],
+  "chaindecisions": [
+    {
+      "id": 1,
+      "name": "288-Fall",
+      "chainFk": 2,
+      "has": true,
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 29,
+          "instanceId": 2
+        }
+      ],
+      "ifGoTo": {
+        "type": "DEC",
+        "id": 2
+      },
+      "elseGoTo": {
+        "type": "LINK",
+        "id": 3
+      }
+    },
+    {
+      "id": 2,
+      "name": "RW-Garant 224",
+      "chainFk": 2,
+      "has": true,
+      "actorFk": 13,
+      "dataAndInstaceIds": [
+        {
+          "dataFk": 29,
+          "instanceId": 2
+        }
+      ],
+      "ifGoTo": {
+        "type": "LINK",
+        "id": 22
+      },
+      "elseGoTo": {
+        "type": "LINK",
+        "id": 23
+      }
+    }
+  ]
+}

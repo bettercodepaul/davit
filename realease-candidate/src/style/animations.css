@@ -1,0 +1,161 @@
+@keyframes appearTabGroup {
+    0% {
+        color: transparent;
+        background-color: transparent;
+        box-shadow: 0 0 0 0 transparent;
+        height: 0;
+    }
+
+    5% {
+        color: transparent;
+        background-color: transparent;
+        box-shadow: 0 0 0 0 transparent;
+    }
+
+    5% {
+        color: var(--text-color);
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 0 1px var(--color-border);
+        height: 4.4em;
+    }
+}
+
+@keyframes appearTab {
+    0% {
+        color: transparent;
+        background-color: transparent;
+        height: 0;
+        border-right: 0.5px solid transparent;
+    }
+
+    10% {
+        background-color: transparent;
+        color: transparent;
+        border-right: 0.5px solid transparent;
+    }
+
+    100% {
+        color: var(--text-color);
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 2.2em;
+        border-right: 0.5px solid rgba(255, 250, 250, 0.2);
+    }
+}
+
+@keyframes growDeleteButton {
+    0% {
+        width: 0;
+        color: transparent;
+    }
+
+    80% {
+        color: transparent;
+    }
+
+    100% {
+        width: 8em;
+        color: red;
+    }
+}
+
+@keyframes appearText {
+    0% {
+        color: transparent;
+    }
+
+    100% {
+        color: black;
+    }
+}
+
+@keyframes grow {
+    from {
+        background-color: transparent;
+        box-shadow: 0 0 0 1px transparent, 0 0 5px 5px transparent;
+        color: transparent;
+        height: 0;
+    }
+
+    to {
+        background-color: var(--background-color-header);
+        box-shadow: 0 0 0 1px var(--color-border), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+        color: var(--text-color);
+        height: 100%;
+    }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+    }
+
+    to {
+        box-shadow: 0 0 6px 2px var(--color-secondary), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    }
+}
+
+@keyframes slidein {
+    from {
+        margin-bottom: 11em;
+        /* height: 300%; */
+    }
+
+    to {
+        margin-bottom: 0;
+        /* height: 100%; */
+    }
+}
+
+@keyframes growWidth {
+    0% {
+        width: 0;
+        color: transparent;
+    }
+
+    80% {
+        color: transparent;
+    }
+
+    100% {
+        width: 2em;
+        color: white;
+    }
+}
+
+@keyframes shrinkWidth {
+    0% {
+        width: 2em;
+        background-color: var(--background-color-slidebar);
+        border-width: 0 0 0 2px;
+    }
+
+    100% {
+        width: 0;
+        background-color: transparent;
+        border-width: 0 0 0 0;
+    }
+}
+
+@keyframes growWidth {
+    0% {
+        width: 0;
+        color: transparent !important;
+        box-shadow: 0 0 0 1px transparent !important;
+        border-color: transparent !important;
+    }
+
+    100% {
+        width: 1.2em;
+        color: white !important;
+        box-shadow: 0 0 0 1px var(--color-border) !important;
+    }
+}
+
+@keyframes disapear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

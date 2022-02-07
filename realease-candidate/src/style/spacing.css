@@ -1,0 +1,183 @@
+/* padding */
+
+.padding-small, .padding-s {
+    padding: var(--spacing-small);
+}
+
+.padding-medium, .padding-m {
+    padding: var(--spacing-medium);
+}
+
+.padding-large, .padding-l {
+    padding: var(--spacing-large);
+}
+
+.padding-vertical-small, .padding-vertical-s {
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+}
+
+.padding-vertical-medium, .padding-vertical-m {
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-medium);
+}
+
+.padding-vertical-large, .padding-vertical-l {
+    padding-top: var(--spacing-large);
+    padding-bottom: var(--spacing-large);
+}
+
+.padding-horizontal-small, .padding-horizontal-s {
+    padding-left: var(--spacing-small);
+    padding-right: var(--spacing-small);
+}
+
+.padding-horizontal-medium, .padding-horizontal-m {
+    padding-left: var(--spacing-medium);
+    padding-right: var(--spacing-medium);
+}
+
+.padding-horizontal-large, .padding-horizontal-l {
+    padding-left: var(--spacing-large);
+    padding-right: var(--spacing-large);
+}
+
+.padding-top-small, .padding-top-s {
+    padding-top: var(--spacing-small);
+}
+
+.padding-top-medium, .padding-top-m {
+    padding-top: var(--spacing-medium);
+}
+
+.padding-top-large, .padding-top-l {
+    padding-top: var(--spacing-large);
+}
+
+.padding-right-small, .padding--rights {
+    padding-right: var(--spacing-small);
+}
+
+.padding-right-medium, .padding-right-m {
+    padding-right: var(--spacing-medium);
+}
+
+.padding-right-large, .padding-right-l {
+    padding-right: var(--spacing-large);
+}
+
+.padding-bottom-small, .padding-bottom-s {
+    padding-bottom: var(--spacing-small);
+}
+
+.padding-bottom-medium, .padding-bottom-m {
+    padding-bottom: var(--spacing-medium);
+}
+
+.padding-bottom-large, .padding-bottom-l {
+    padding-bottom: var(--spacing-large);
+}
+
+.padding-left-small, .padding-left-s {
+    padding-left: var(--spacing-small);
+}
+
+.padding-left-medium, .padding-left-m {
+    padding-left: var(--spacing-medium);
+}
+
+.padding-left-large, .padding-left-l {
+    padding-left: var(--spacing-large);
+}
+
+/* margin */
+
+.margin-small, .margin-s {
+    margin: var(--spacing-small);
+}
+
+.margin-medium, .margin-m {
+    margin: var(--spacing-medium);
+}
+
+.margin-large, .margin-l {
+    margin: var(--spacing-large);
+}
+
+.margin-vertical-small, .margin-vertical-s {
+    margin-top: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+}
+
+.margin-vertical-medium, .margin-vertical-m {
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+.margin-vertical-large, .margin-vertical-l {
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+}
+
+.margin-horizontal-small, .margin-horizontal-s {
+    margin-left: var(--spacing-small);
+    margin-right: var(--spacing-small);
+}
+
+.margin-horizontal-medium, .margin-horizontal-m {
+    margin-left: var(--spacing-medium);
+    margin-right: var(--spacing-medium);
+}
+
+.margin-horizontal-large, .margin-horizontal-l {
+    margin-left: var(--spacing-large);
+    margin-right: var(--spacing-large);
+}
+
+.margin-top-small, .margin-top-s {
+    margin-top: var(--spacing-small);
+}
+
+.margin-top-medium, .margin-top-m {
+    margin-top: var(--spacing-medium);
+}
+
+.margin-top-large, .margin-top-l {
+    margin-top: var(--spacing-large);
+}
+
+.margin-right-small, .margin--rights {
+    margin-right: var(--spacing-small);
+}
+
+.margin-right-medium, .margin-right-m {
+    margin-right: var(--spacing-medium);
+}
+
+.margin-right-large, .margin-right-l {
+    margin-right: var(--spacing-large);
+}
+
+.margin-bottom-small, .margin-bottom-s {
+    margin-bottom: var(--spacing-small);
+}
+
+.margin-bottom-medium, .margin-bottom-m {
+    margin-bottom: var(--spacing-medium);
+}
+
+.margin-bottom-large, .margin-bottom-l {
+    margin-bottom: var(--spacing-large);
+}
+
+.margin-left-small, .margin-left-s {
+    margin-left: var(--spacing-small);
+}
+
+.margin-left-medium, .margin-left-m {
+    margin-left: var(--spacing-medium);
+}
+
+.margin-left-large, .margin-left-l {
+    margin-left: var(--spacing-large);
+}

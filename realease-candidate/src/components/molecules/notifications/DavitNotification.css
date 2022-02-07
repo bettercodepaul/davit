@@ -1,0 +1,38 @@
+.notificationCard {
+    width: 30em;
+    min-height: 6em;
+    background-color: var(--background-color);
+    border-radius: var(--davit-border-radius);
+    border: var(--davit-border-size-medium) solid var(--color-border);
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    right: 0;
+    top: 0;
+    animation: notificationSlideIn var(--animation-time) ease-in-out 0s;
+}
+
+.notificationCard .info {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.notificationCard .warning {
+    color: var(--color-warning);
+    border-color: var(--color-warning);
+}
+
+.notificationCard .error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+@keyframes notificationSlideIn {
+    0% {
+        right: -30em;
+    }
+    100% {
+        right: 0;
+    }
+}
