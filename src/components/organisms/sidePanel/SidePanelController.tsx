@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../../assets/exxcellent_logo_200.png";
+import logo from "../../../images/bcxp_logo.png";
 import { DAVIT_VERISON } from "../../../DavitConstants";
 import { EditActions, editSelectors, Mode } from "../../../slices/EditSlice";
 import { DavitSidePanelButton } from "../../atomic/buttons/DavitSidePanelButton";
 import { DavitIcons } from "../../atomic/icons/IconSet";
+import "./SidePanelController.css";
 
 export interface SidePanelProps {
 }
@@ -29,14 +30,19 @@ export const SidePanelController: FunctionComponent<SidePanelProps> = () => {
             {/*TODO: enable wenn tabs are fixed!*/}
             {/*<DavitSidePanelButton icon="external alternate" onClick={setModeToTab} active={mode === Mode.TAB} />*/}
 
-            <div style={{position: "absolute", bottom: "1em"}}>
-                <img src={logo}
+            <div className="logo-area flex flex-center flex-column">
+
+                <img className="company-logo"
+                     src={logo}
                      alt="fireSpot"
                 />
-                <div className="verticalLabel">DAVIT by</div>
-                <label style={{color: "white", position: "absolute", bottom: "0"}}>
+
+                <div className="verticalLabel padding-top-m padding-bottom-m">DAVIT by</div>
+
+                <label className="label-version">
                     v {DAVIT_VERISON}
                 </label>
+
             </div>
         </div>
     );
