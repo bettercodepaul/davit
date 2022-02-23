@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/davit/v0/static/css/main.07a22398.chunk.css",
+    "main.js": "/davit/v0/static/js/main.e5593197.chunk.js",
+    "main.js.map": "/davit/v0/static/js/main.e5593197.chunk.js.map",
+    "runtime-main.js": "/davit/v0/static/js/runtime-main.cbd70936.js",
+    "runtime-main.js.map": "/davit/v0/static/js/runtime-main.cbd70936.js.map",
+    "static/js/2.f9206e1f.chunk.js": "/davit/v0/static/js/2.f9206e1f.chunk.js",
+    "static/js/2.f9206e1f.chunk.js.map": "/davit/v0/static/js/2.f9206e1f.chunk.js.map",
+    "index.html": "/davit/v0/index.html",
+    "precache-manifest.ac357c78efdfbbab79a1a88a1a541f3e.js": "/davit/v0/precache-manifest.ac357c78efdfbbab79a1a88a1a541f3e.js",
+    "service-worker.js": "/davit/v0/service-worker.js",
+    "static/css/main.07a22398.chunk.css.map": "/davit/v0/static/css/main.07a22398.chunk.css.map",
+    "static/js/2.f9206e1f.chunk.js.LICENSE.txt": "/davit/v0/static/js/2.f9206e1f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/davit/v0/static/media/DINOT-Medium.d41d8cd9.ttf",
+    "static/media/exxcellent_logo_200.png": "/davit/v0/static/media/exxcellent_logo_200.d20fbb57.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cbd70936.js",
+    "static/js/2.f9206e1f.chunk.js",
+    "static/css/main.07a22398.chunk.css",
+    "static/js/main.e5593197.chunk.js"
+  ]
+}
