@@ -2,49 +2,92 @@
 @import "./layout.css";
 @import "./fonts.css";
 @import "./animations.css";
+@import "./border.css";
+@import "./colors.css";
 
 :root {
-    --color-dark-blue: #0D456B;
-    --color-dark-blue--lighter: #567D97;
-    --color-blue: #0060A9;
-    --color-blue--lighter: #4D90C3;
-    --color-cyan: #35ABE2;
-    --color-cyan--lighter: #72C4EB;
-    --color-lila: #9D599F;
-    --color-lila--lighter: #BA8BBC;
-    --color-green: #C8D400;
-    --color-green--lighter: #D9E14D;
-    --color-error: #C81919;
-    --color-error--lighter: #D95E5E;
-    --color-warning: #F0BB29;
-    --color-warning--lighter: #F5CF69;
-
-    --color-black: #000000;
-    --color-dark: #54585B;
-    --color-dark--lighter: #878A8C;
-    --color-grey: #C7C7C7;
-    --color-grey--lighter: #EAEAEA;
-    --color-light: #F4F4F4;
-    --color-light--lighter: #F7F7F7;
-    --color-white: #FFFFFF;
-
-    --text-size: 100%;
     --text-font-family: "DIN OT", Helvetica, Arial, sans-serif;
-
-    --spacing-small: 10px;
-    --spacing-medium: 10px;
     --spacing-large: 22px;
 
+    --spacing-medium: 15px;
+    --border-radius: 0.2rem;
+    --text-size: 100%;
+    --border-size-large: 4px;
+
+    --border-size-medium: 2px;
+    --border-size-small: 1px;
+    --spacing-small: 10px;
+    --spacing-tiny: 5px;
+}
+
+.light {
     /* primary */
-    --primary-color: var(--color-dark-blue);
-    --primary-text-color: var(--color-light);
+    --data-add-color: var(--color-green);
+    --2x2-border-color: var(--color-white);
 
     /* secondary */
-    --secondary-color: var(--color-blue);
-    --secondary-text-color: var(--color-light);
+    --background-color: var(--color-dark--lighter);
+    /*--secondary-color: var(--color-blue);*/
+    --border-color: var(--secondary-color);
 
     /* tertiary */
+    --primary-color: var(--color-dark-blue);
+    --secondary-color: var(--color-cyan--lighter);
+
+
     --tertiary-color: var(--color-grey);
+    /* 2x2 border */
+    --background-color-header: var(--color-dark);
+
+    /* data */
+    --background-color-shadow: var(--color-black);
+    --data-delete-color: var(--color-error);
+    --color-hover: rgba(0, 0, 0, .5);
+    --data-persistent-color: var(--color-dark--lighter);
+
+    --data-text-color: var(--color-black);
+
+
+    /*--background-color-header: rgba(0, 0, 0, 0.5);*/
+    --primary-text-color: var(--color-light);
+
+    --secondary-text-color: var(--color-light);
+    --tertiary-text-color: var(--color-dark);
+
+}
+
+.dark {
+    /* primary */
+    --data-add-color: var(--color-green);
+    --2x2-border-color: var(--color-white);
+
+    /* secondary */
+    --background-color: var(--color-dark--lighter);
+    /*--secondary-color: var(--color-blue);*/
+    --border-color: var(--secondary-color);
+
+    /* tertiary */
+    --primary-color: var(--color-dark-blue);
+    --secondary-color: var(--color-cyan--lighter);
+
+
+    --tertiary-color: var(--color-grey);
+    /* 2x2 border */
+    --background-color-header: var(--color-dark);
+
+    /* data */
+    --background-color-shadow: var(--color-black);
+    --data-delete-color: var(--color-error);
+    --color-hover: rgba(0, 0, 0, .5);
+    --data-persistent-color: var(--color-dark--lighter);
+
+    --data-text-color: var(--color-black);
+
+
+    /*--background-color-header: rgba(0, 0, 0, 0.5);*/
+    --primary-text-color: var(--color-light);
+
+    --secondary-text-color: var(--color-light);
     --tertiary-text-color: var(--color-dark);
 }
 
@@ -61,14 +104,13 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+    border: 0;
+    color: var(--primary-text-color);
+    font-family: var(--text-font-family);
+
+    font-size: var(--text-size);
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-
-    font-family: var(--text-font-family);
-    font-size: var(--text-size);
     vertical-align: baseline;
 }
 
@@ -99,4 +141,9 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+/* misc utils */
+.no-user-select {
+    user-select: none;
 }

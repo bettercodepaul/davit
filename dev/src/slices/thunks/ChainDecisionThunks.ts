@@ -1,5 +1,5 @@
 import { ChainDecisionTO } from "../../dataAccess/access/to/ChainDecisionTO";
-import { ChainlinkTO } from "../../dataAccess/access/to/ChainlinkTO";
+import { ChainLinkTO } from "../../dataAccess/access/to/ChainlinkTO";
 import { GoToTypesChain } from "../../dataAccess/access/types/GoToTypeChain";
 import { DataAccess } from "../../dataAccess/DataAccess";
 import { DataAccessResponse } from "../../dataAccess/DataAccessResponse";
@@ -11,7 +11,7 @@ import { EditChainLink } from "./ChainLinkThunks";
 
 const createChainDecisionThunk = (
     decision: ChainDecisionTO,
-    from?: ChainDecisionTO | ChainlinkTO,
+    from?: ChainDecisionTO | ChainLinkTO,
     ifGoTO?: boolean,
 ): AppThunk => (dispatch) => {
     const response: DataAccessResponse<ChainDecisionTO> = DataAccess.saveChainDecision(decision);
@@ -19,9 +19,9 @@ const createChainDecisionThunk = (
         dispatch(GlobalActions.handleError(response.message));
     } else {
         if (from !== undefined) {
-            if ((from as ChainlinkTO).dataSetupFk !== undefined) {
-                (from as ChainlinkTO).goto = {type: GoToTypesChain.DEC, id: response.object.id};
-                dispatch(EditChainLink.save(from as ChainlinkTO));
+            if ((from as ChainLinkTO).sequenceConfigurationFk !== undefined) {
+                (from as ChainLinkTO).goto = {type: GoToTypesChain.DEC, id: response.object.id};
+                dispatch(EditChainLink.save(from as ChainLinkTO));
             }
             if ((from as ChainDecisionTO).elseGoTo !== undefined) {
                 if (ifGoTO) {

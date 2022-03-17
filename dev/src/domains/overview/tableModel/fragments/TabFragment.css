@@ -1,0 +1,5 @@
+.activeTabFragment {
+    background-color: var(--secondary-color) !important;
+    color: black !important;
+    transition: background-color var(--animation-time), color var(--animation-time);
+}

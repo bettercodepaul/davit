@@ -1,17 +1,15 @@
 import { faWrench } from "@fortawesome/free-solid-svg-icons/faWrench";
-import React, { CSSProperties, FunctionComponent } from "react";
-import { DavitButton } from "./DavitButton";
+import React, { FunctionComponent } from "react";
+import { DavitButtonProps } from "./DavitButton";
+import { DavitIconButton } from "./DavitIconButton";
 
-interface DavitEditButtonProps {
-    onClick: () => void;
-    style?: CSSProperties;
+interface DavitEditButtonProps extends DavitButtonProps {
 }
 
 export const DavitEditButton: FunctionComponent<DavitEditButtonProps> = (props) => {
-    const {onClick, style} = props;
+    const {onClick} = props;
 
-    return <DavitButton onClick={onClick}
-                        iconName={faWrench}
-                        style={style}
+    return <DavitIconButton onClick={onClick}
+                            iconName={faWrench}
     />;
 };

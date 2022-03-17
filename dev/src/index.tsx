@@ -5,10 +5,13 @@ import { Davit } from "./pages/Davit";
 import * as serviceWorker from "./serviceWorker";
 import { store } from "./store";
 import "./style/index.css";
+import { Theme } from "./style/Theme";
 
 ReactDOM.render(
     <Provider store={store}>
-        <Davit />
+        <Theme>
+            <Davit />
+        </Theme>
     </Provider>,
     document.getElementById("root"),
 );

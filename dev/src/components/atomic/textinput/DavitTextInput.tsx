@@ -30,9 +30,9 @@ export const DavitTextInput: FunctionComponent<DavitTextInputProps> = (props) =>
 
     return (
         <div className="flex">
-            {label && <label className={"inputLabel"}>{label}</label>}
+            {label && <label className={"inputLabel flex flex-center padding-small"}>{label}</label>}
             <input
-                className={label ? "input label" : undefined}
+                className={label ? "input label padding-small" : "padding-small"}
                 type={"text"}
                 placeholder={placeholder}
                 value={stateValue}

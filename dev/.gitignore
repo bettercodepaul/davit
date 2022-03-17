@@ -26,3 +26,4 @@ dist
 /yarn.lock
 
 storybook-static
+/.idea/misc.xml
