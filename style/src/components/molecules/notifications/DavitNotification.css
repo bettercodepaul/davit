@@ -2,8 +2,8 @@
     width: 30em;
     min-height: 6em;
     background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    border: var(--border-size-medium) solid var(--border-color);
+    border-radius: var(--davit-border-radius);
+    border: var(--davit-border-size-medium) solid var(--color-border);
     display: flex;
     align-items: center;
     z-index: 99;

@@ -7,7 +7,7 @@ export const FormHeader: FunctionComponent<FormHeaderProps> = (props) => {
     const {children} = props;
 
     return (
-        <div className={"flex content-space-around padding-vertical-medium width-fluid"}>
+        <div className={"formHeader"}>
             {children}
         </div>
     );

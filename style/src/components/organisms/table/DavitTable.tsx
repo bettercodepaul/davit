@@ -1,7 +1,6 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import React, { FunctionComponent } from "react";
-import { ElementSize } from "../../../style/Theme";
-import { DavitIconButton } from "../../atomic";
+import { DavitTableButton } from "../../atomic/buttons/DavitTableButton";
 import { DavitIcons } from "../../atomic/icons/IconSet";
 import "./DavitTable.css";
 
@@ -39,12 +38,10 @@ export const DavitTable: FunctionComponent<DavitTableProps> = (props) => {
     };
 
     const createButton = (action: DavitTableAction, key: number) => {
-        return <DavitIconButton iconName={action.icon}
-                                size={ElementSize.small}
-                                className={"margin-right-xs"}
-                                onClick={action.callback}
-                                key={key}
-                                disabled={action.disable}
+        return <DavitTableButton icon={action.icon}
+                                 onClick={action.callback}
+                                 key={key}
+                                 disable={action.disable}
         />;
     };
 
@@ -55,8 +52,7 @@ export const DavitTable: FunctionComponent<DavitTableProps> = (props) => {
                 onClick={data.onClick}
             >
                 {data.data.map(mapValue)}
-                {data.actions.length > 0 &&
-                <td className={"flex flex-end"}>{data.actions.map((action, index) => createButton(action, index))}</td>}
+                {data.actions.length > 0 && <td>{data.actions.map((action, index) => createButton(action, index))}</td>}
             </tr>
         );
     };

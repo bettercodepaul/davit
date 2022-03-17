@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { DataInstanceTO } from "../../../dataAccess/access/to/DataInstanceTO";
 import { EditActions } from "../../../slices/EditSlice";
 import { Filter, SequenceModelActions, sequenceModelSelectors } from "../../../slices/SequenceModelSlice";
-import { ElementSize } from "../../../style/Theme";
 import { createViewFragment, ViewFragmentProps } from "../../../viewDataTypes/ViewFragment";
-import { DavitIconButton, DavitShowMoreButton } from "../../atomic";
+import { DavitCardButton } from "../../atomic/buttons/DavitCardButton";
+import { DavitShowMoreButton } from "../../atomic/buttons/DavitShowMoreButton";
 import { DavitIcons } from "../../atomic/icons/IconSet";
 import "./DavitCard.css";
 
@@ -48,28 +48,19 @@ export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
 
     const getCardHeaderContent = (showOptions: boolean): JSX.Element => {
         if (showOptions) {
-            return (
-                <div className="cardButtonGroup padding-tiny">
-                    {type !== "INSTANCE" &&
-                    <div className="margin-tiny">
-                        <DavitIconButton
-                            size={ElementSize.small}
-                            onClick={() => onClickEdit(id, type)}
-                            className={`padding-tiny border`}
-                            iconName={DavitIcons.wrench}
-                        />
-                    </div>}
-                    <div className="margin-tiny">
-                        <DavitIconButton
-                            size={ElementSize.small}
-                            onClick={() => onClickFilter(id, type)}
-                            className={`padding-tiny border ${isActiveFilter ? "activeButton" : ""}`}
-                            iconName={DavitIcons.filter}
-                        />
-                    </div>
-                </div>);
+            return (<div className="cardButtonGroup">
+                {type !== "INSTANCE" &&
+                <DavitCardButton icon={DavitIcons.wrench}
+                                 onClick={() => onClickEdit(id, type)}
+                />}
+                <DavitCardButton
+                    icon={DavitIcons.filter}
+                    onClick={() => onClickFilter(id, type)}
+                    isActive={isActiveFilter}
+                />
+            </div>);
         } else {
-            return (<div className="cardLabelWrapper padding-small">
+            return (<div className="cardLabelWrapper">
                 <label>{initName}</label>
             </div>);
         }
@@ -90,14 +81,11 @@ export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
 
                 {getCardHeaderContent(showMenu)}
 
-                <div className="margin-tiny">
-                    <DavitShowMoreButton className={"button-tiny border border-small"}
-                                         onClick={() => {
-                                             setShowMenu(!showMenu);
-                                         }}
-                                         show={showMenu}
-                    />
-                </div>
+                <DavitShowMoreButton className={"button-tiny"}
+                                     onClick={() => {
+                                         setShowMenu(!showMenu);
+                                     }}
+                />
             </div>
 
             {instances && (

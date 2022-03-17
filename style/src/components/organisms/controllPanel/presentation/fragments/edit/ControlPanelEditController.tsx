@@ -8,11 +8,10 @@ import { EditActionModal } from "./fragments/modals/EditActionModal";
 import { EditActorModal } from "./fragments/modals/EditActorModal";
 import { EditChainDecisionModal } from "./fragments/modals/EditChainDecisionModal";
 import { EditChainLinkModal } from "./fragments/modals/EditChainLinkModal";
-import { EditChainStateModal } from "./fragments/modals/EditChainStateModal";
 import { EditDataModal } from "./fragments/modals/EditDataModal";
 import { EditDataRelationModal } from "./fragments/modals/EditDataRelationModal";
+import { EditDataSetupModal } from "./fragments/modals/EditDataSetupModal";
 import { EditDecisionModal } from "./fragments/modals/EditDecisionModal";
-import { EditSequenceStateModal } from "./fragments/modals/EditSequenceStateModal";
 import { EditStepModal } from "./fragments/modals/EditStepModal";
 
 export interface ControlPanelEditControllerProps {
@@ -34,16 +33,14 @@ export const ControlPanelEditController: FunctionComponent<ControlPanelEditContr
                 return <ControlPanelEditSequence />;
             case Mode.EDIT_SEQUENCE_STEP:
                 return <EditStepModal />;
-            case Mode.EDIT_SEQUENCE_STATES:
-                return <EditSequenceStateModal />;
             case Mode.EDIT_SEQUENCE_DECISION:
                 return <EditDecisionModal />;
             case Mode.EDIT_SEQUENCE_STEP_ACTION:
                 return <EditActionModal />;
+            case Mode.EDIT_DATASETUP:
+                return <EditDataSetupModal />;
             case Mode.EDIT_CHAIN:
                 return <ControlPanelEditChain />;
-            case Mode.EDIT_CHAIN_STATES:
-                return <EditChainStateModal />;
             case Mode.EDIT_CHAIN_LINK:
                 return <EditChainLinkModal />;
             case Mode.EDIT_CHAIN_DECISION:

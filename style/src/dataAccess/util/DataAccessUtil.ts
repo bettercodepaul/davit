@@ -8,14 +8,4 @@ export const DataAccessUtil = {
         }
         return id;
     },
-
-    getOrCreateId(id: number, abstractTOs: AbstractTO[]): number {
-        let idToCheck: number = id;
-
-        if (idToCheck === -1) {
-            idToCheck = this.determineNewId(abstractTOs);
-        }
-
-        return idToCheck;
-    }
 };

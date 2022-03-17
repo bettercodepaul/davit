@@ -5,11 +5,11 @@ import { DataAccessUtil } from "../util/DataAccessUtil";
 
 export const ChainDecisionRepository = {
     find(id: number): ChainDecisionTO | undefined {
-        return dataStore.getDataStore().chainDecisions.get(id);
+        return dataStore.getDataStore().chaindecisions.get(id);
     },
 
     findAll(): ChainDecisionTO[] {
-        return Array.from(dataStore.getDataStore().chainDecisions.values());
+        return Array.from(dataStore.getDataStore().chaindecisions.values());
     },
 
     findAllForChain(id: number): ChainDecisionTO[] {
@@ -18,7 +18,7 @@ export const ChainDecisionRepository = {
     },
 
     delete(decision: ChainDecisionTO) {
-        const success = dataStore.getDataStore().chainDecisions.delete(decision.id);
+        const success = dataStore.getDataStore().chaindecisions.delete(decision.id);
         if (!success) {
             throw new Error("dataAccess.repository.error.notExists");
         }
@@ -36,7 +36,7 @@ export const ChainDecisionRepository = {
         } else {
             chainDecisionTO = {...decision};
         }
-        dataStore.getDataStore().chainDecisions.set(chainDecisionTO.id!, chainDecisionTO);
+        dataStore.getDataStore().chaindecisions.set(chainDecisionTO.id!, chainDecisionTO);
         return chainDecisionTO;
     },
 };

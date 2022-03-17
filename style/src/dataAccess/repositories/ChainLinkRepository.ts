@@ -1,34 +1,35 @@
-import { ChainLinkTO } from "../access/to/ChainlinkTO";
+import { ChainlinkTO } from "../access/to/ChainlinkTO";
 import dataStore from "../DataStore";
 import { CheckHelper } from "../util/CheckHelper";
 import { DataAccessUtil } from "../util/DataAccessUtil";
 
 export const ChainLinkRepository = {
-    find(id: number): ChainLinkTO | undefined {
-        return dataStore.getDataStore().chainLinks.get(id);
+    find(id: number): ChainlinkTO | undefined {
+        return dataStore.getDataStore().chainlinks.get(id);
     },
 
-    findAll(): ChainLinkTO[] {
-        return Array.from(dataStore.getDataStore().chainLinks.values());
+    findAll(): ChainlinkTO[] {
+        return Array.from(dataStore.getDataStore().chainlinks.values());
     },
 
-    findAllForChain(id: number): ChainLinkTO[] {
-        const all: ChainLinkTO[] = this.findAll();
-        return all.filter((link) => link.chainFk === id);
+    findAllForChain(id: number): ChainlinkTO[] {
+        const all: ChainlinkTO[] = this.findAll();
+        const filtered: ChainlinkTO[] = all.filter((link) => link.chainFk === id);
+        return filtered;
     },
 
-    delete(step: ChainLinkTO) {
+    delete(step: ChainlinkTO) {
         // ConstraintsHelper.deleteStepConstraintCheck(step.id, dataStore.getDataStore());
-        const success = dataStore.getDataStore().chainLinks.delete(step.id);
+        const success = dataStore.getDataStore().chainlinks.delete(step.id);
         if (!success) {
             throw new Error("dataAccess.repository.error.notExists");
         }
         return step;
     },
 
-    save(chainLink: ChainLinkTO): ChainLinkTO {
+    save(chainLink: ChainlinkTO): ChainlinkTO {
         CheckHelper.nullCheck(chainLink, "chainlink");
-        let chainlinkTO: ChainLinkTO;
+        let chainlinkTO: ChainlinkTO;
         if (chainLink.id === -1) {
             chainlinkTO = {
                 ...chainLink,
@@ -37,7 +38,7 @@ export const ChainLinkRepository = {
         } else {
             chainlinkTO = {...chainLink};
         }
-        dataStore.getDataStore().chainLinks.set(chainlinkTO.id!, chainlinkTO);
+        dataStore.getDataStore().chainlinks.set(chainlinkTO.id!, chainlinkTO);
         return chainlinkTO;
     },
 };

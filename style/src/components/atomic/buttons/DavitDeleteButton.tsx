@@ -1,15 +1,15 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { DavitIcons } from "../icons/IconSet";
-import { DavitButtonProps } from "./DavitButton";
-import "./DavitDeleteButton.css";
-import { DavitIconButton } from "./DavitIconButton";
+import { DavitButton } from "./DavitButton";
 
-interface DavitDeleteButtonProps extends DavitButtonProps {
+interface DavitDeleteButtonProps {
+    onClick: () => void;
+    disable?: boolean;
     noConfirm?: boolean;
 }
 
 export const DavitDeleteButton: FunctionComponent<DavitDeleteButtonProps> = (props) => {
-    const {onClick, disabled, noConfirm} = props;
+    const {onClick, disable, noConfirm} = props;
 
     const SHRINK_DELAY: number = 3000;
 
@@ -29,13 +29,12 @@ export const DavitDeleteButton: FunctionComponent<DavitDeleteButtonProps> = (pro
     };
 
     return (
-        <DavitIconButton
+        <DavitButton
             iconName={fluid ? undefined : DavitIcons.trash}
             onClick={clickEventHandler}
-            className={fluid ? "deleteButton fluid padding-vertical-small padding-horizontal-medium border" : "deleteButton"}
-            disabled={disabled}
-        >
-            {fluid ? "SURE" : undefined}
-        </DavitIconButton>
+            className={fluid ? "deleteButton fluid" : "deleteButton"}
+            disable={disable}
+            label={fluid ? "SURE" : undefined}
+        />
     );
 };

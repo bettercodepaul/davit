@@ -3,13 +3,13 @@ import { DataInstanceTO } from "../../../../../../../../dataAccess/access/to/Dat
 import { DavitAddButton } from "../../../../../../../atomic/buttons/DavitAddButton";
 import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";
 import { DavitButton } from "../../../../../../../atomic/buttons/DavitButton";
+import { DavitCommentButton } from "../../../../../../../atomic/buttons/DavitCommentButton";
 import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
 import { Form } from "../../../../../../../atomic/forms/Form";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
 import { DavitTextInput } from "../../../../../../../atomic/textinput/DavitTextInput";
-import { DavitCommentButton } from "../../../../../../../molecules";
 import { useDataViewModel } from "../viewmodels/DataViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { FormLine } from "./fragments/FormLine";
@@ -91,7 +91,7 @@ export const DataForm: FunctionComponent<DataFormProps> = () => {
                             <thead>
                             <tr>
                                 <td style={{textAlign: "center"}}>Instances</td>
-                                <td className={"flex flex-end"}><DavitAddButton onClick={createInstance} /></td>
+                                <td style={{textAlign: "end"}}><DavitAddButton onClick={createInstance} /></td>
                             </tr>
                             </thead>
                             <tbody>
@@ -113,9 +113,8 @@ export const DataForm: FunctionComponent<DataFormProps> = () => {
                         createAnother();
                         setKey(key + 1);
                     }}
-                    >
-                        {"Create another"}
-                    </DavitButton>
+                                 label="Create another"
+                    />
                     <DavitBackButton onClick={saveData} />
                 </FormFooter>
 

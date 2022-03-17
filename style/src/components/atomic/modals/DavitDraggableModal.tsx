@@ -18,7 +18,9 @@ export const DavitDraggableModal: FunctionComponent<DavitDraggableModalProps> = 
                 toDnDElements={[
                     {
                         element: form,
-                        position: new PositionTO(30, 10),
+                        position: new PositionTO(),
+                        // TODO: center modal if possible
+                        // position: new PositionTO(30, 30),
                     },
                 ]}
                 svgElements={[]}

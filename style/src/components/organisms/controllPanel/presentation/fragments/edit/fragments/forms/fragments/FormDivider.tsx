@@ -7,6 +7,6 @@ interface FormDividerProps {
 export const FormDivider: FunctionComponent<FormDividerProps> = () => {
 
     return (
-        <div className={"flex border-top margin-medium width-fluid"} />
+        <div className={"formDivider"} />
     );
 };

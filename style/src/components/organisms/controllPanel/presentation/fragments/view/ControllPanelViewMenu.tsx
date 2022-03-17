@@ -25,6 +25,7 @@ export const ControlPanelViewMenu: FunctionComponent<ControlPanelViewMenuProps> 
         linkIndex,
         selectSequence,
         selectDataSetup,
+        currentDataSetup,
         currentSequence,
         currentChain,
         selectChain,
@@ -42,6 +43,11 @@ export const ControlPanelViewMenu: FunctionComponent<ControlPanelViewMenuProps> 
         <div className={"headerGrid"}>
 
             <OptionField label="Data - Setup">
+                <DataSetupDropDown
+                    onSelect={selectDataSetup}
+                    placeholder="Select Data Setup ..."
+                    value={currentDataSetup}
+                />
             </OptionField>
 
             <OptionField label="SEQUENCE">
@@ -76,13 +82,13 @@ export const ControlPanelViewMenu: FunctionComponent<ControlPanelViewMenuProps> 
 const useControlPanelViewMenuViewModel = () => {
     const sequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
     const stepIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentStepIndex);
+    const selectedDataSetup: DataSetupCTO | null = useSelector(sequenceModelSelectors.selectDataSetup);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
     const linkIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentLinkIndex);
     const dispatch = useDispatch();
 
     const selectSequence = (sequence: SequenceTO | undefined) => {
         if (!DavitUtil.isNullOrUndefined(sequence)) {
-            // @ts-ignore
             dispatch(SequenceModelActions.setCurrentSequence(sequence!.id));
         }
         if (sequence === undefined) {
@@ -101,13 +107,20 @@ const useControlPanelViewMenuViewModel = () => {
         }
     };
 
-    // TODO: maybe can be removed
     const selectDataSetup = (dataSetup: DataSetupTO | undefined): void => {
-        // if (DavitUtil.isNullOrUndefined(dataSetup)) {
-        //     dispatch(SequenceModelActions.resetCurrentDataSetup);
-        // } else {
-        //     dispatch(SequenceModelActions.setCurrentDataSetup(dataSetup!.id));
-        // }
+        if (DavitUtil.isNullOrUndefined(dataSetup)) {
+            dispatch(SequenceModelActions.resetCurrentDataSetup);
+        } else {
+            dispatch(SequenceModelActions.setCurrentDataSetup(dataSetup!.id));
+        }
+    };
+
+    const getDataSetupName = (): string => {
+        if (selectedDataSetup) {
+            return " * " + selectDataSetup.name;
+        } else {
+            return "";
+        }
     };
 
     const getSequenceName = (): string => {
@@ -118,12 +131,25 @@ const useControlPanelViewMenuViewModel = () => {
         }
     };
 
+    const getStepName = (): string => {
+        if (stepIndex && sequence) {
+            return (
+                " * " +
+                sequence.sequenceStepCTOs.find((step) => step.squenceStepTO.id === stepIndex)?.squenceStepTO.name
+            );
+        } else {
+            return "";
+        }
+    };
+
     return {
+        label: "VIEW" + getDataSetupName() + getSequenceName() + getStepName(),
         sequence,
         stepIndex,
         linkIndex,
         selectSequence,
         selectDataSetup,
+        currentDataSetup: selectedDataSetup?.dataSetup.id || -1,
         currentSequence: sequence?.sequenceTO.id || -1,
         currentChain: selectedChain?.id || -1,
         selectChain,
