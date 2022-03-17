@@ -1,12 +1,12 @@
-import { ChainlinkTO } from "../to/ChainlinkTO";
-import { DataSetupCTO } from "./DataSetupCTO";
+import { ChainLinkTO } from "../to/ChainlinkTO";
+import { SequenceConfigurationTO } from "../to/SequenceConfigurationTO";
 import { SequenceCTO } from "./SequenceCTO";
 
-export class ChainlinkCTO {
+export class ChainLinkCTO {
     constructor(
-        public chainLink: ChainlinkTO = new ChainlinkTO(),
+        public chainLink: ChainLinkTO = new ChainLinkTO(),
         public sequence: SequenceCTO = new SequenceCTO(),
-        public dataSetup: DataSetupCTO = new DataSetupCTO(),
+        public sequenceConfiguration: SequenceConfigurationTO = new SequenceConfigurationTO(),
     ) {
     }
 }

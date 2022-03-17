@@ -2,8 +2,9 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { faFastBackward } from "@fortawesome/free-solid-svg-icons/faFastBackward";
 import { faFastForward } from "@fortawesome/free-solid-svg-icons/faFastForward";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FunctionComponent } from "react";
-import { DavitButton } from "../../../../../../atomic/buttons/DavitButton";
+import { DavitButton, DavitIconButton } from "../../../../../../atomic";
 
 interface ViewNavigatorProps {
     fastBackward: () => void,
@@ -18,33 +19,24 @@ export const ViewNavigator: FunctionComponent<ViewNavigatorProps> = (props) => {
 
     return (
         <div className="flex">
-            <DavitButton
+            <DavitIconButton
                 iconName={faFastBackward}
                 onClick={fastBackward}
-                style={{borderTopRightRadius: 0, borderBottomRightRadius: 0}}
             />
-            <DavitButton
-                iconName={faArrowLeft}
-                label="BACK"
-                onClick={backward}
-                iconLeft={true}
-                style={{borderRadius: 0}}
-            />
-            <div className={"border"}
-                 style={{textAlign: "center", padding: "0.43rem", borderRadius: 0}}
-            >
+            <DavitButton onClick={backward}>
+                <FontAwesomeIcon icon={faArrowLeft} />
+                {"BACK"}
+            </DavitButton>
+            <div className={"border border-medium border-radius flex flex-center padding-small"}>
                 <label>{index}</label>
             </div>
-            <DavitButton
-                iconName={faArrowRight}
-                label="NEXT"
-                onClick={forward}
-                style={{borderRadius: 0}}
-            />
-            <DavitButton
+            <DavitIconButton onClick={forward}>
+                {"NEXT"}
+                <FontAwesomeIcon icon={faArrowRight} />
+            </DavitIconButton>
+            <DavitIconButton
                 iconName={faFastForward}
                 onClick={fastForward}
-                style={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0}}
             />
         </div>
     );

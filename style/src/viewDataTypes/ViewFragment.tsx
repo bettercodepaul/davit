@@ -1,5 +1,6 @@
 import React from "react";
 import { ActorDataState } from "./ActorDataState";
+import "./ViewFragment.css";
 
 export interface ViewFragmentProps {
     parentId: number | { dataId: number; instanceId?: number };
@@ -8,7 +9,7 @@ export interface ViewFragmentProps {
 }
 
 const getClassnameForViewFragmentState = (state: ActorDataState) => {
-    return "carv2ActorData" + state;
+    return `actorData ${state} flex flex-center`;
 };
 
 export const createViewFragment = (actorDataFragmentProps: ViewFragmentProps, key: number) => {
@@ -17,7 +18,8 @@ export const createViewFragment = (actorDataFragmentProps: ViewFragmentProps, ke
             return (
                 <div
                     className={"gg-check-o"}
-                    style={{color: "green", backgroundColor: "var(--carv2-data-persistent-color)"}}
+                    //TODO: css variablen nicht hier setzten
+                    style={{color: "green", backgroundColor: "var(--data-persistent-color)"}}
                 />
             );
         }
@@ -26,7 +28,8 @@ export const createViewFragment = (actorDataFragmentProps: ViewFragmentProps, ke
             return (
                 <div
                     className={"gg-close-o"}
-                    style={{color: "red", backgroundColor: "var(--carv2-data-persistent-color)"}}
+                    //TODO: css variablen nicht hier setzten
+                    style={{color: "red", backgroundColor: "var(--data-persistent-color)"}}
                 />
             );
         }
@@ -35,7 +38,7 @@ export const createViewFragment = (actorDataFragmentProps: ViewFragmentProps, ke
     };
 
     return (
-        <div className="viewFragment"
+        <div className="viewFragment flex flex-center width-fluid"
              key={key}
         >
             <div className={getClassnameForViewFragmentState(actorDataFragmentProps.state)}

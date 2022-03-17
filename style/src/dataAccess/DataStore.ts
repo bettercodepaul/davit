@@ -35,11 +35,13 @@ class DataStore {
             decisions: [],
             datas: [],
             dataConnections: [],
-            initDatas: [],
-            dataSetups: [],
+            sequenceConfigurations: [],
+            chainConfigurations: [],
             chains: [],
-            chainlinks: [],
-            chaindecisions: [],
+            chainLinks: [],
+            chainDecisions: [],
+            sequenceStates: [],
+            chainStates: [],
         } as StoreTO;
         if (!dataObjectString) {
             localStorage.setItem(STORE_ID, JSON.stringify(objectStore));
@@ -55,9 +57,9 @@ class DataStore {
 
     private readData(objectStore: StoreTO) {
         this.data = new DataStoreCTO();
-        if (!DavitVersionManager.projectVersionIsEqualDavitVersion(objectStore)) {
-            objectStore = DavitVersionManager.updateProject(objectStore);
-        }
+        // if (!DavitVersionManager.projectVersionIsEqualDavitVersion(objectStore)) {
+        //     objectStore = DavitVersionManager.updateProject(objectStore);
+        // }
         Object.entries(objectStore).forEach(([key, value]) => {
             if (value !== undefined) {
                 if (Array.isArray(value)) {
@@ -102,12 +104,14 @@ class DataStore {
             actions: Array.from(this.data!.actions.values()),
             datas: Array.from(this.data!.datas.values()),
             dataConnections: Array.from(this.data!.dataConnections.values()),
-            initDatas: Array.from(this.data!.initDatas.values()),
-            dataSetups: Array.from(this.data!.dataSetups.values()),
+            sequenceConfigurations: Array.from(this.data!.sequenceConfigurations.values()),
+            chainConfigurations: Array.from(this.data!.chainConfigurations.values()),
             decisions: Array.from(this.data!.decisions.values()),
             chains: Array.from(this.data!.chains.values()),
-            chainlinks: Array.from(this.data!.chainlinks.values()),
-            chaindecisions: Array.from(this.data!.chaindecisions.values()),
+            chainLinks: Array.from(this.data!.chainLinks.values()),
+            chainDecisions: Array.from(this.data!.chainDecisions.values()),
+            sequenceStates: Array.from(this.data!.sequenceStates.values()),
+            chainStates: Array.from(this.data!.chainStates.values()),
         };
     }
 

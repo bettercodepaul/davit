@@ -65,7 +65,6 @@ export const DavitLabelDropDown: FunctionComponent<DavitLabelDropDownProps> = (p
 ;
 
 const parsDataToDavitDropDownItemProps = (data: ReactSelectOption): DavitDropDownItemProps => {
-    console.info("parsing data: ", data);
     return {
         key: -1,
         text: data.label ? data.label : "",

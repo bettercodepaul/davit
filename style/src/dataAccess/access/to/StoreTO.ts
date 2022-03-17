@@ -18,11 +18,14 @@ export interface StoreTO {
     // Data
     datas: any[];
     dataConnections: any[];
-    // setup
-    initDatas: any[];
-    dataSetups: any[];
+    // Configuration
+    sequenceConfigurations: any[];
+    chainConfigurations: any[];
     // chain
     chains: any[];
-    chainlinks: any[];
-    chaindecisions: any[];
+    chainLinks: any[];
+    chainDecisions: any[];
+    // mock
+    sequenceStates: any[];
+    chainStates: any[];
 }

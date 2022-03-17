@@ -47,7 +47,7 @@ export const ControlPanelEditDataInstance: FunctionComponent<ControlPanelEditDat
                          divider={true}
             >
                 <DavitDeleteButton onClick={deleteDataInstance}
-                                   disable={isDeleteButtonDisable()}
+                                   disabled={isDeleteButtonDisable()}
                 />
             </OptionField>
         </div>

@@ -15,7 +15,7 @@ export const FormLabel: FunctionComponent<FormLabelProps> = (props) => {
     const {children, className, align} = props;
 
     return (
-        <label className={className ? className : "formLabel"}
+        <label className={className ? className : "flex flex-start"}
                style={{justifyContent: align ? align : undefined}}
         >{children}</label>
     );

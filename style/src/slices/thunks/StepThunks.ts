@@ -21,18 +21,18 @@ const createSequenceStepThunk = (
         dispatch(GlobalActions.handleError(response.message));
     } else {
         if (from !== undefined) {
-            if ((from as SequenceStepCTO).squenceStepTO !== undefined) {
-                (from as SequenceStepCTO).squenceStepTO.goto = {
+            if ((from as SequenceStepCTO).sequenceStepTO !== undefined) {
+                (from as SequenceStepCTO).sequenceStepTO.goto = {
                     type: GoToTypes.STEP,
-                    id: response.object.squenceStepTO.id,
+                    id: response.object.sequenceStepTO.id,
                 };
                 dispatch(saveSequenceStepThunk(from as SequenceStepCTO));
             }
             if ((from as DecisionTO).elseGoTo !== undefined) {
                 if (ifGoTO) {
-                    (from as DecisionTO).ifGoTo = {type: GoToTypes.STEP, id: response.object.squenceStepTO.id};
+                    (from as DecisionTO).ifGoTo = {type: GoToTypes.STEP, id: response.object.sequenceStepTO.id};
                 } else {
-                    (from as DecisionTO).elseGoTo = {type: GoToTypes.STEP, id: response.object.squenceStepTO.id};
+                    (from as DecisionTO).elseGoTo = {type: GoToTypes.STEP, id: response.object.sequenceStepTO.id};
                 }
                 dispatch(EditDecision.save(from as DecisionTO));
             }
@@ -48,20 +48,20 @@ const deleteSequenceStepThunk = (step: SequenceStepCTO, sequenceCTO?: SequenceCT
         // update steps
         copySequence.sequenceStepCTOs.forEach((item) => {
             if (
-                item.squenceStepTO.goto.type === GoToTypes.STEP &&
-                item.squenceStepTO.goto.id === step.squenceStepTO.id
+                item.sequenceStepTO.goto.type === GoToTypes.STEP &&
+                item.sequenceStepTO.goto.id === step.sequenceStepTO.id
             ) {
-                item.squenceStepTO.goto = {type: GoToTypes.ERROR};
+                item.sequenceStepTO.goto = {type: GoToTypes.ERROR};
                 dispatch(saveSequenceStepThunk(item));
             }
         });
         // update decision
         copySequence.decisions.forEach((cond) => {
-            if (cond.ifGoTo.type === GoToTypes.STEP && cond.ifGoTo.id === step.squenceStepTO.id) {
+            if (cond.ifGoTo.type === GoToTypes.STEP && cond.ifGoTo.id === step.sequenceStepTO.id) {
                 cond.ifGoTo = {type: GoToTypes.ERROR};
                 dispatch(EditDecision.save(cond));
             }
-            if (cond.elseGoTo.type === GoToTypes.STEP && cond.elseGoTo.id === step.squenceStepTO.id) {
+            if (cond.elseGoTo.type === GoToTypes.STEP && cond.elseGoTo.id === step.sequenceStepTO.id) {
                 cond.elseGoTo = {type: GoToTypes.ERROR};
                 dispatch(EditDecision.save(cond));
             }

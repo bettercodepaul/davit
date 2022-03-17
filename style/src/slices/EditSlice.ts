@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Arrow, ArrowType } from "../components/atomic/svg/DavitPath";
 import { ActorCTO } from "../dataAccess/access/cto/ActorCTO";
 import { DataCTO } from "../dataAccess/access/cto/DataCTO";
-import { DataSetupCTO } from "../dataAccess/access/cto/DataSetupCTO";
 import { GeometricalDataCTO } from "../dataAccess/access/cto/GeometraicalDataCTO";
 import { SequenceCTO } from "../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../dataAccess/access/cto/SequenceStepCTO";
 import { ActionTO } from "../dataAccess/access/to/ActionTO";
+import { ChainConfigurationTO } from "../dataAccess/access/to/ChainConfigurationTO";
 import { ChainDecisionTO } from "../dataAccess/access/to/ChainDecisionTO";
-import { ChainlinkTO } from "../dataAccess/access/to/ChainlinkTO";
+import { ChainLinkTO } from "../dataAccess/access/to/ChainlinkTO";
 import { ChainTO } from "../dataAccess/access/to/ChainTO";
 import { ConditionTO } from "../dataAccess/access/to/ConditionTO";
 import { DataInstanceTO } from "../dataAccess/access/to/DataInstanceTO";
@@ -16,6 +16,7 @@ import { DataRelationTO } from "../dataAccess/access/to/DataRelationTO";
 import { DecisionTO } from "../dataAccess/access/to/DecisionTO";
 import { GroupTO } from "../dataAccess/access/to/GroupTO";
 import { InitDataTO } from "../dataAccess/access/to/InitDataTO";
+import { SequenceConfigurationTO } from "../dataAccess/access/to/SequenceConfigurationTO";
 import { SequenceTO } from "../dataAccess/access/to/SequenceTO";
 import { ActionType } from "../dataAccess/access/types/ActionType";
 import { DataAccess } from "../dataAccess/DataAccess";
@@ -29,11 +30,9 @@ import { EditActor } from "./thunks/ActorThunks";
 import { EditChainDecision } from "./thunks/ChainDecisionThunks";
 import { EditChainLink } from "./thunks/ChainLinkThunks";
 import { EditChain } from "./thunks/ChainThunks";
-import { EditDataSetup } from "./thunks/DataSetupThunks";
 import { EditData } from "./thunks/DataThunks";
 import { EditDecision } from "./thunks/DecisionThunks";
 import { EditGroup } from "./thunks/GroupThunks";
-import { EditInitData } from "./thunks/InitDataThunks";
 import { EditRelation } from "./thunks/RelationThunks";
 import { EditSequence } from "./thunks/SequenceThunks";
 import { EditStep } from "./thunks/StepThunks";
@@ -42,19 +41,20 @@ export enum Mode {
     TAB = "TAB",
     FILE = "FILE",
     VIEW = "VIEW",
+    VIEW_CONFIGURATION = "VIEW_CONFIGURATION",
     EDIT = "EDIT",
     EDIT_ACTOR = "EDIT_ACTOR",
     EDIT_GROUP = "EDIT_GROUP",
     EDIT_DATA = "EDIT_DATA",
     EDIT_DATA_INSTANCE = "EDIT_DATA_INSTANCE",
     EDIT_RELATION = "EDIT_RELATION",
-    EDIT_DATASETUP = "EDIT_DATASETUP",
-    EDIT_DATASETUP_INITDATA = "EDIT_DATASETUP_INIT DATA",
     EDIT_CHAIN = "EDIT_CHAIN",
+    EDIT_CHAIN_STATES = "EDIT_CHAIN_STATES",
     EDIT_CHAIN_DECISION = "EDIT_CHAIN_DECISION",
     EDIT_CHAIN_DECISION_CONDITION = "EDIT_CHAIN_DECISION_CONDITION",
     EDIT_CHAIN_LINK = "EDIT_CHAIN_LINK",
     EDIT_SEQUENCE = "EDIT_SEQUENCE",
+    EDIT_SEQUENCE_STATES = "EDIT_SEQUENCE_STATES",
     EDIT_SEQUENCE_DECISION = "EDIT_SEQUENCE_DECISION",
     EDIT_SEQUENCE_DECISION_CONDITION = "EDIT_SEQUENCE_DECISION_CONDITION",
     EDIT_SEQUENCE_STEP = "EDIT_SEQUENCE_STEP",
@@ -80,14 +80,15 @@ interface EditState {
         | SequenceTO
         | SequenceStepCTO
         | StepAction
-        | DataSetupCTO
+        | SequenceConfigurationTO
         | InitDataTO
         | GroupTO
         | DecisionTO
-        | ChainlinkTO
+        | ChainLinkTO
         | ChainDecisionTO
         | ActionTO
         | ConditionTO
+        | ChainConfigurationTO
         | EmptyObjectToEdit;
     instanceId: number;
 }
@@ -102,7 +103,14 @@ const EditSlice = createSlice({
     name: "edit",
     initialState: getInitialState,
     reducers: {
-        setChainLinkToEdit: (state, action: PayloadAction<ChainlinkTO>) => {
+        setChainConfiguration: (state, action: PayloadAction<ChainConfigurationTO>) => {
+            if (state.mode === Mode.VIEW_CONFIGURATION) {
+                state.objectToEdit = action.payload;
+            } else {
+                console.warn("Try to set chain configuration to edit, in mode: " + state.mode);
+            }
+        },
+        setChainLinkToEdit: (state, action: PayloadAction<ChainLinkTO>) => {
             if (state.mode === Mode.EDIT_CHAIN_LINK) {
                 state.objectToEdit = action.payload;
             } else {
@@ -168,18 +176,11 @@ const EditSlice = createSlice({
                 console.warn("Try to set action to edit in mode: " + state.mode);
             }
         },
-        setDataSetupToEdit: (state, action: PayloadAction<DataSetupCTO>) => {
-            if (state.mode === Mode.EDIT_DATASETUP) {
-                state.objectToEdit = action.payload;
+        setSequenceConfigurationToEdit: (state, action: PayloadAction<SequenceConfigurationTO>) => {
+            if (state.mode === Mode.VIEW_CONFIGURATION) {
+                (state.objectToEdit as SequenceConfigurationTO) = action.payload;
             } else {
-                console.warn("Try to set dataSetup to edit in mode: " + state.mode);
-            }
-        },
-        setInitDataToEdit: (state, action: PayloadAction<InitDataTO>) => {
-            if (state.mode === Mode.EDIT_DATASETUP_INITDATA) {
-                state.objectToEdit = action.payload;
-            } else {
-                console.warn("Try to set initData to edit in mode: " + state.mode);
+                console.warn("Try to set Sequence Configuration to edit in mode: " + state.mode);
             }
         },
         setGroupToEdit: (state, action: PayloadAction<GroupTO>) => {
@@ -217,8 +218,8 @@ export const editActions = EditSlice.actions;
 // =============================================== THUNKS ===============================================
 
 // ----------------------------------------------- SET MODE -----------------------------------------------
-const setModeWithStorageThunk = (mode: Mode): AppThunk => (dispatch, getstate) => {
-    if (mode !== getstate().edit.mode) {
+const setModeWithStorageThunk = (mode: Mode): AppThunk => (dispatch, getState) => {
+    if (mode !== getState().edit.mode) {
         localStorage.setItem(MODE_LOCAL_STORAGE, mode);
         dispatch(EditSlice.actions.setMode(mode));
     }
@@ -237,7 +238,6 @@ const setModeToTabThunk = (): AppThunk => (dispatch) => {
 const setModeToViewThunk = (): AppThunk => (dispatch) => {
     dispatch(EditSlice.actions.clearObjectToEdit());
     dispatch(setModeWithStorageThunk(Mode.VIEW));
-    dispatch(SequenceModelActions.calcChain());
 };
 
 const setModeToEditThunk = (): AppThunk => (dispatch, getState) => {
@@ -250,7 +250,7 @@ const setModeToEditThunk = (): AppThunk => (dispatch, getState) => {
             const step:
                 | SequenceStepCTO
                 | undefined = getState().sequenceModel.selectedSequenceModel?.sequenceStepCTOs.find(
-                (step) => step.squenceStepTO.id === stepIndex,
+                (step) => step.sequenceStepTO.id === stepIndex,
             );
             if (step) {
                 dispatch(setModeToEditStepThunk(step));
@@ -329,14 +329,17 @@ const setModeToEditRelationThunk = (relation?: DataRelationTO): AppThunk => (dis
     }
 };
 
+const setModeToEditSequenceStatesThunk = (): AppThunk => (dispatch) => {
+    dispatch(setModeWithStorageThunk(Mode.EDIT_SEQUENCE_STATES));
+};
+
 const setModeToEditSequenceThunk = (sequenceId?: number): AppThunk => (dispatch) => {
     dispatch(setModeWithStorageThunk(Mode.EDIT_SEQUENCE));
     if (sequenceId) {
-        // TODO: change CTO to TO.
         const response: DataAccessResponse<SequenceCTO> = DataAccess.findSequenceCTO(sequenceId);
         if (response.code === 200) {
             dispatch(EditSlice.actions.setSequenceToEdit(DavitUtil.deepCopy(response.object.sequenceTO)));
-            dispatch(SequenceModelActions.setCurrentSequence(sequenceId));
+            dispatch(SequenceModelActions.setCurrentSequence(response.object));
         } else {
             dispatch(GlobalActions.handleError(response.message));
         }
@@ -355,8 +358,8 @@ const setModeToEditChainThunk = (chain?: ChainTO): AppThunk => (dispatch) => {
 };
 
 const setModeToEditChainLinkThunk = (
-    chainLink: ChainlinkTO,
-    from?: ChainlinkTO | ChainDecisionTO,
+    chainLink: ChainLinkTO,
+    from?: ChainLinkTO | ChainDecisionTO,
     ifGoTo?: boolean,
 ): AppThunk => (dispatch) => {
     dispatch(setModeWithStorageThunk(Mode.EDIT_CHAIN_LINK));
@@ -365,7 +368,7 @@ const setModeToEditChainLinkThunk = (
 
 const setModeEditChainDecisionThunk = (
     chainDecision: ChainDecisionTO,
-    from?: ChainDecisionTO | ChainlinkTO,
+    from?: ChainDecisionTO | ChainLinkTO,
     ifGoTO?: boolean,
 ): AppThunk => (dispatch) => {
     dispatch(setModeWithStorageThunk(Mode.EDIT_CHAIN_DECISION));
@@ -378,6 +381,10 @@ const setModeToEditChainConditionThunk = (decision: ChainDecisionTO): AppThunk =
     } else {
         dispatch(GlobalActions.handleError("Edit Condition: 'Decision is null or undefined'."));
     }
+};
+
+const setModeToEditChainStatesThunk = (): AppThunk => (dispatch) => {
+    dispatch(setModeWithStorageThunk(Mode.EDIT_CHAIN_STATES));
 };
 
 const setModeToEditStepThunk = (
@@ -403,31 +410,18 @@ const setModeToEditGroupThunk = (group?: GroupTO): AppThunk => (dispatch) => {
     }
 };
 
-const setModeToEditInitDataThunk = (initData: InitDataTO): AppThunk => (dispatch) => {
-    dispatch(setModeWithStorageThunk(Mode.EDIT_DATASETUP_INITDATA));
-    if (initData.id !== -1) {
-        const response: DataAccessResponse<InitDataTO> = DataAccess.findInitData(initData.id);
-        if (response.code === 200) {
-            dispatch(EditSlice.actions.setInitDataToEdit(DavitUtil.deepCopy(response.object)));
-        } else {
-            dispatch(GlobalActions.handleError(response.message));
-        }
-    } else {
-        dispatch(EditInitData.save(initData));
-    }
-};
-
-const setModeToEditDataSetupThunk = (id?: number): AppThunk => (dispatch) => {
-    dispatch(setModeWithStorageThunk(Mode.EDIT_DATASETUP));
+const setModeToEditSequenceConfigurationThunk = (id?: number): AppThunk => (dispatch) => {
+    dispatch(setModeWithStorageThunk(Mode.VIEW_CONFIGURATION));
     if (id) {
-        const response: DataAccessResponse<DataSetupCTO> = DataAccess.findDataSetupCTO(id);
+        const response: DataAccessResponse<SequenceConfigurationTO> = DataAccess.findSequenceConfiguration(id);
         if (response.code === 200) {
-            dispatch(EditSlice.actions.setDataSetupToEdit(DavitUtil.deepCopy(response.object)));
+            dispatch(EditSlice.actions.setSequenceConfigurationToEdit(DavitUtil.deepCopy(response.object)));
         } else {
             dispatch(GlobalActions.handleError(response.message));
         }
     } else {
-        dispatch(EditDataSetup.create());
+        dispatch(SequenceModelActions.resetCurrentSequence);
+        dispatch(SequenceModelActions.resetCurrentSequenceConfiguration);
     }
 };
 
@@ -538,9 +532,14 @@ export const editSelectors = {
             ? (state.edit.objectToEdit as ActorCTO)
             : null;
     },
-    selectChainLinkToEdit: (state: RootState): ChainlinkTO | null => {
-        return state.edit.mode === Mode.EDIT_CHAIN_LINK && (state.edit.objectToEdit as ChainlinkTO).dataSetupFk
-            ? (state.edit.objectToEdit as ChainlinkTO)
+    selectChainConfiguration: (state: RootState): ChainConfigurationTO | null => {
+        return state.edit.mode === Mode.VIEW_CONFIGURATION && (state.edit.objectToEdit as ChainConfigurationTO).stateValues
+            ? (state.edit.objectToEdit as ChainConfigurationTO)
+            : null;
+    },
+    selectChainLinkToEdit: (state: RootState): ChainLinkTO | null => {
+        return state.edit.mode === Mode.EDIT_CHAIN_LINK && (state.edit.objectToEdit as ChainLinkTO).sequenceConfigurationFk
+            ? (state.edit.objectToEdit as ChainLinkTO)
             : null;
     },
     selectChainDecisionToEdit: (state: RootState): ChainDecisionTO | null => {
@@ -567,9 +566,15 @@ export const editSelectors = {
             : null;
     },
     selectSequenceToEdit: (state: RootState): SequenceTO | null => {
-        return state.edit.mode === Mode.EDIT_SEQUENCE && (state.edit.objectToEdit as SequenceTO)
-            ? (state.edit.objectToEdit as SequenceTO)
-            : null;
+        if ((state.edit.mode === Mode.EDIT_SEQUENCE || state.edit.mode === Mode.EDIT_SEQUENCE_STATES) && (state.edit.objectToEdit as SequenceTO)) {
+            return (state.edit.objectToEdit as SequenceTO);
+        }
+
+        if ((state.edit.mode === Mode.VIEW_CONFIGURATION && (state.edit.objectToEdit as SequenceConfigurationTO))) {
+            return (state.edit.objectToEdit as SequenceConfigurationTO);
+        }
+
+        return null;
     },
     selectEditActionArrow: (state: RootState): Arrow | null => {
         if (
@@ -611,25 +616,27 @@ export const editSelectors = {
     selectEditStepArrows: (state: RootState): Arrow[] => {
         let arrows: Arrow[] = [];
 
-        if (state.edit.mode === Mode.EDIT_SEQUENCE_STEP && (state.edit.objectToEdit as SequenceStepCTO).squenceStepTO) {
+        if (state.edit.mode === Mode.EDIT_SEQUENCE_STEP && (state.edit.objectToEdit as SequenceStepCTO).sequenceStepTO) {
             arrows = getArrowsForStepFk(state.edit.objectToEdit as SequenceStepCTO, state);
         }
         return arrows;
     },
-    selectDataSetupToEdit: (state: RootState): DataSetupCTO | null => {
-        return state.edit.mode === Mode.EDIT_DATASETUP && (state.edit.objectToEdit as DataSetupCTO).dataSetup
-            ? (state.edit.objectToEdit as DataSetupCTO)
-            : null;
-    },
-    selectInitDataToEdit: (state: RootState): InitDataTO | null => {
-        return state.edit.mode === Mode.EDIT_DATASETUP_INITDATA && (state.edit.objectToEdit as InitDataTO).dataSetupFk
-            ? (state.edit.objectToEdit as InitDataTO)
-            : null;
+    selectSequenceConfigurationToEdit: (state: RootState): SequenceConfigurationTO | null => {
+
+        if (state.edit.mode === Mode.VIEW_CONFIGURATION && (state.edit.objectToEdit as SequenceConfigurationTO).stateValues) {
+            return (state.edit.objectToEdit as SequenceConfigurationTO);
+        }
+
+        if (state.edit.mode === Mode.VIEW_CONFIGURATION && (state.edit.objectToEdit as SequenceConfigurationTO).stateValues) {
+            return (state.edit.objectToEdit as SequenceConfigurationTO);
+        }
+
+        return null;
     },
     selectStepToEdit: (state: RootState): SequenceStepCTO | null => {
         switch (state.edit.mode) {
             case Mode.EDIT_SEQUENCE_STEP:
-                return (state.edit.objectToEdit as SequenceStepCTO).squenceStepTO
+                return (state.edit.objectToEdit as SequenceStepCTO).sequenceStepTO
                     ? (state.edit.objectToEdit as SequenceStepCTO)
                     : null;
             case Mode.EDIT_SEQUENCE_STEP_ACTION:
@@ -675,16 +682,18 @@ export const EditActions = {
         editGroup: setModeToEditGroupThunk,
         editRelation: setModeToEditRelationThunk,
         editSequence: setModeToEditSequenceThunk,
-        editDataSetup: setModeToEditDataSetupThunk,
-        editInitData: setModeToEditInitDataThunk,
+        editSequenceStates: setModeToEditSequenceStatesThunk,
+        editSequenceConfiguration: setModeToEditSequenceConfigurationThunk,
         editStep: setModeToEditStepThunk,
         editDecision: setModeToEditDecisionThunk,
         editCondition: setModeToEditConditionThunk,
         editAction: setModeToEditActionThunk,
         editChain: setModeToEditChainThunk,
+        editChainStates: setModeToEditChainStatesThunk,
         editChainLink: setModeToEditChainLinkThunk,
         editChainDecision: setModeEditChainDecisionThunk,
         editChainCondition: setModeToEditChainConditionThunk,
+        editConfiguration: setModeToEditSequenceConfigurationThunk,
         edit: setModeToEditThunk,
         view: setModeToViewThunk,
         file: setModeToFileThunk,
