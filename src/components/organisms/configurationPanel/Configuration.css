@@ -11,10 +11,11 @@
     position: fixed;
     top: 2rem;
     z-index: 99;
+    background-color: #747576;
 }
 
 .configurationPanelHeader {
-    background-color: var(--background-color-header);
+    background-color: #343636;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,7 +26,8 @@
     animation-duration: var(--animation-time);
     animation-name: growFromTopToBottom;
     animation-timing-function: ease-in-out;
-    background-color: var(--background-color);
+    /*background-color: var(--background-color);*/
+    background-color: #747576;
 }
 
 .configurationSequenceChainColumn {
