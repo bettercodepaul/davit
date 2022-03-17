@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/davit/realease-candidate/static/css/main.d5c241b3.chunk.css",
-    "main.js": "/davit/realease-candidate/static/js/main.17e63782.chunk.js",
-    "main.js.map": "/davit/realease-candidate/static/js/main.17e63782.chunk.js.map",
+    "main.css": "/davit/realease-candidate/static/css/main.f581d86b.chunk.css",
+    "main.js": "/davit/realease-candidate/static/js/main.fe37e528.chunk.js",
+    "main.js.map": "/davit/realease-candidate/static/js/main.fe37e528.chunk.js.map",
     "runtime-main.js": "/davit/realease-candidate/static/js/runtime-main.30416c42.js",
     "runtime-main.js.map": "/davit/realease-candidate/static/js/runtime-main.30416c42.js.map",
-    "static/js/2.f9206e1f.chunk.js": "/davit/realease-candidate/static/js/2.f9206e1f.chunk.js",
-    "static/js/2.f9206e1f.chunk.js.map": "/davit/realease-candidate/static/js/2.f9206e1f.chunk.js.map",
+    "static/js/2.ac22feb8.chunk.js": "/davit/realease-candidate/static/js/2.ac22feb8.chunk.js",
+    "static/js/2.ac22feb8.chunk.js.map": "/davit/realease-candidate/static/js/2.ac22feb8.chunk.js.map",
     "index.html": "/davit/realease-candidate/index.html",
-    "precache-manifest.e2ae40ec774c292b5a30b4a91417403c.js": "/davit/realease-candidate/precache-manifest.e2ae40ec774c292b5a30b4a91417403c.js",
+    "precache-manifest.8ff7a8c247bf65d64a09eff4953010db.js": "/davit/realease-candidate/precache-manifest.8ff7a8c247bf65d64a09eff4953010db.js",
     "service-worker.js": "/davit/realease-candidate/service-worker.js",
-    "static/css/main.d5c241b3.chunk.css.map": "/davit/realease-candidate/static/css/main.d5c241b3.chunk.css.map",
-    "static/js/2.f9206e1f.chunk.js.LICENSE.txt": "/davit/realease-candidate/static/js/2.f9206e1f.chunk.js.LICENSE.txt",
+    "static/css/main.f581d86b.chunk.css.map": "/davit/realease-candidate/static/css/main.f581d86b.chunk.css.map",
+    "static/js/2.ac22feb8.chunk.js.LICENSE.txt": "/davit/realease-candidate/static/js/2.ac22feb8.chunk.js.LICENSE.txt",
     "static/media/index.css": "/davit/realease-candidate/static/media/DINOT-Medium.d41d8cd9.ttf",
-    "static/media/exxcellent_logo_200.png": "/davit/realease-candidate/static/media/exxcellent_logo_200.d20fbb57.png"
+    "static/media/bcxp_logo.png": "/davit/realease-candidate/static/media/bcxp_logo.c072d20d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.30416c42.js",
-    "static/js/2.f9206e1f.chunk.js",
-    "static/css/main.d5c241b3.chunk.css",
-    "static/js/main.17e63782.chunk.js"
+    "static/js/2.ac22feb8.chunk.js",
+    "static/css/main.f581d86b.chunk.css",
+    "static/js/main.fe37e528.chunk.js"
   ]
 }
