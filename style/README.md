@@ -1,26 +1,32 @@
+[![Deploy to PROD](https://github.com/exxcellent/davit/actions/workflows/deploy-to-prod.yml/badge.svg)](https://github.com/exxcellent/davit/actions/workflows/deploy-to-prod.yml) [![Deploy to DEV](https://github.com/exxcellent/davit/actions/workflows/deploy-to-dev.yml/badge.svg)](https://github.com/exxcellent/davit/actions/workflows/deploy-to-dev.yml)
 
 # DAVIT
 
 > Dataflow Analysis and Visualization Tool (DAVIT)
 
+## Style Guide
+
+[DAVIT Style Guide](https://exxcellent.github.io/davit/style/)
+
 ## Releases:
 
 - PROD
-    - [![Deploy to PROD](https://github.com/bettercodepaul/davit/actions/workflows/deploy-to-prod.yml/badge.svg)](https://github.com/bettercodepaul/davit/actions/workflows/deploy-to-prod.yml) <br>
-      [PROD V0 Website](https://bettercodepaul.github.io/davit/v0/)
-
-- RC
-    - [![Create Release Candidate](https://github.com/bettercodepaul/davit/actions/workflows/create-release-candidate.yml/badge.svg)](https://github.com/bettercodepaul/davit/actions/workflows/create-release-candidate.yml) <br>
-      [RC V0 Website](https://bettercodepaul.github.io/davit/v1/)
+    - [PROD V1 Website](https://exxcellent.github.io/davit/v1/)
 
 - DEV
-    - [![Deploy to DEV](https://github.com/bettercodepaul/davit/actions/workflows/deploy-to-dev.yml/badge.svg)](https://github.com/bettercodepaul/davit/actions/workflows/deploy-to-dev.yml) <br> 
-      [DEV Website](https://bettercodepaul.github.io/davit/dev/)
-      
-     
+    - [DEV Website](https://exxcellent.github.io/davit/dev/)
 
-## Style Guide
+## Project structure
 
-[![Deploy Styleguide](https://github.com/bettercodepaul/davit/actions/workflows/create-style-guide.yml/badge.svg)](https://github.com/bettercodepaul/davit/actions/workflows/create-style-guide.yml)
-
-[DAVIT Style Guide](https://bettercodepaul.github.io/davit/style/)
+```
+src/
+ components/    <-- reusable components
+  atomic/
+  molecules/
+  organisms/
+  layout/
+ domains/       <-- business components        
+ style/         <-- global style definition
+ 
+ stories/
+```

@@ -1,5 +1,6 @@
 import { faComment, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import React, { FunctionComponent, useState } from "react";
+import { DavitIconButton } from ".";
 import { DavitNoteModal } from "../modals/DavitNoteModal";
 import { DavitButton } from "./DavitButton";
 
@@ -15,7 +16,7 @@ export const DavitCommentButton: FunctionComponent<DavitCommentButtonProps> = (p
 
     return (
         <>
-            <DavitButton onClick={() => setShowForm(true)}
+            <DavitIconButton onClick={() => setShowForm(true)}
                          iconName={comment === "" ? faComment : faCommentDots}
             />
             {showForm &&

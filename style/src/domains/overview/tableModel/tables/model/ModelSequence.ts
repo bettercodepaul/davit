@@ -12,7 +12,7 @@ export const useGetSequenceModelsTableBody = (sequences: SequenceTO[]) => {
     if (sequences) {
         bodyData = sequences.map((sequence) => {
             const selectAction = () => {
-                dispatch(SequenceModelActions.setCurrentSequence(sequence.id));
+                dispatch(SequenceModelActions.setCurrentSequenceById(sequence.id));
                 dispatch(EditActions.setMode.view());
             };
             const editAction = () => dispatch(EditActions.setMode.editSequence(sequence.id));

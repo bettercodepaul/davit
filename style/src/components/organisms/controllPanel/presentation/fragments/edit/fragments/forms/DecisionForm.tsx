@@ -1,22 +1,28 @@
 import React, { FunctionComponent } from "react";
 import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";
+import { StateFkAndStateCondition } from "../../../../../../../../dataAccess/access/to/DecisionTO";
+import { SequenceStateTO } from "../../../../../../../../dataAccess/access/to/SequenceStateTO";
 import { GoToTypes } from "../../../../../../../../dataAccess/access/types/GoToType";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import { DavitAddButton } from "../../../../../../../atomic/buttons/DavitAddButton";
-import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";
-import { DavitCommentButton } from "../../../../../../../atomic/buttons/DavitCommentButton";
-import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
-import { DavitRootButton } from "../../../../../../../atomic/buttons/DavitRootButton";
-import { ActorDropDown } from "../../../../../../../atomic/dropdowns/ActorDropDown";
-import { DecisionDropDown } from "../../../../../../../atomic/dropdowns/DecisionDropDown";
-import { GoToOptionDropDown } from "../../../../../../../atomic/dropdowns/GoToOptionDropDown";
-import { InstanceDropDown } from "../../../../../../../atomic/dropdowns/InstanceDropDown";
-import { StepDropDown } from "../../../../../../../atomic/dropdowns/StepDropDown";
-import { Form } from "../../../../../../../atomic/forms/Form";
+import {
+    ActorDropDown,
+    DavitAddButton,
+    DavitBackButton,
+    DavitButton,
+    DavitDeleteButton,
+    DavitTextInput,
+    DecisionDropDown,
+    Form,
+    GoToOptionDropDown,
+    InstanceDropDown,
+    StepDropDown
+} from "../../../../../../../atomic";
+import { SequenceStateDropDown } from "../../../../../../../atomic/dropdowns/SequenceStateDropDown";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
-import { DavitTextInput } from "../../../../../../../atomic/textinput/DavitTextInput";
+import { DavitCommentButton } from "../../../../../../../molecules";
+import { ToggleButton } from "../../../../../../../molecules/ToggleButton";
 import { useDecisionViewModel } from "../viewmodels/DecisionViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { FormLabel, FormlabelAlign } from "./fragments/FormLabel";
@@ -49,6 +55,11 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
         deleteCondition,
         saveCondition,
         saveAndGoBack,
+        stateFkAndStateConditions,
+        createStateFkAndStateCondition,
+        updateStateFkAndStateCondition,
+        deleteStateFkAndStateCondition,
+        sequenceFk,
     } = useDecisionViewModel();
 
 
@@ -68,7 +79,7 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
         return (
             <tr key={copyCondition.id}>
                 <td>
-                    <div style={{display: "flex", justifyContent: "space-between"}}>
+                    <div className="flex content-space-between">
                         <ActorDropDown
                             onSelect={(actor) => {
                                 copyCondition.actorFk = actor ? actor.actor.id : -1;
@@ -103,13 +114,56 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
         );
     };
 
+    const selectSequenceState = (sequenceState: SequenceStateTO | undefined, index: number) => {
+        if (sequenceState) {
+            updateStateFkAndStateCondition({stateFk: sequenceState.id, stateCondition: sequenceState.isState}, index);
+        }
+    };
+
+    const setStateCondition = (stateFkAndStateConditions: StateFkAndStateCondition, index: number, condition: boolean) => {
+        const copyStateFkAndStateCondition: StateFkAndStateCondition = DavitUtil.deepCopy(stateFkAndStateConditions);
+        copyStateFkAndStateCondition.stateCondition = condition;
+        updateStateFkAndStateCondition(copyStateFkAndStateCondition, index);
+    };
+
+    const buildStateTableRow = (stateFkAndCondition: StateFkAndStateCondition, index: number): JSX.Element => {
+
+        return (
+            <tr key={stateFkAndCondition.stateFk}>
+                <td>
+                    <div className="flex content-space-between">
+
+                        <SequenceStateDropDown onSelect={(selectedState) => selectSequenceState(selectedState, index)}
+                                               sequenceFk={sequenceFk}
+                                               value={stateFkAndCondition.stateFk.toString()}
+                                               placeholder="Select sequence state"
+                        />
+
+                        <ToggleButton toggleCallback={(is) => setStateCondition(stateFkAndCondition, index, is)}
+                                      isLeft={stateFkAndCondition.stateCondition}
+                                      leftLabel="TRUE"
+                                      rightLabel="FALSE"
+                        />
+
+                        <DavitDeleteButton onClick={() => {
+                            deleteStateFkAndStateCondition(stateFkAndCondition.stateFk);
+                        }}
+                                           noConfirm
+                        />
+                    </div>
+                </td>
+            </tr>
+        );
+    };
+
     return (
         <Form>
             <FormHeader><h2>Decision</h2></FormHeader>
 
-            <FormDivider />
 
             <FormBody>
+
+                <FormDivider />
 
                 <FormLine>
                     <DavitTextInput
@@ -125,17 +179,36 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
 
                 <FormLine>
                     <table className={"border"}
-                           style={{width: "40em", minHeight: "30vh"}}
+                           style={{width: "40em"}}
                     >
                         <thead>
                         <tr>
-                            <td style={{textAlign: "center"}}>Actor</td>
-                            <td style={{textAlign: "center"}}>Data Instance</td>
-                            <td style={{textAlign: "end"}}><DavitAddButton onClick={createCondition} /></td>
+                            <td>Actor</td>
+                            <td>Data Instance</td>
+                            <td className={"flex flex-end"}><DavitAddButton onClick={createCondition} /></td>
                         </tr>
                         </thead>
-                        <tbody style={{maxHeight: "40vh"}}>
+                        <tbody style={{maxHeight: "20vh"}}>
                         {conditions.map(buildConditionTableRow)}
+                        </tbody>
+                    </table>
+                </FormLine>
+
+                {/*------------------------- State -------------------------*/}
+                <FormLine>
+                    <table className="border"
+                           style={{width: "40em"}}
+                    >
+                        <thead>
+                        <tr>
+                            <td>State</td>
+                            <td>Is</td>
+                            <td className={"flex flex-end"}><DavitAddButton onClick={createStateFkAndStateCondition} />
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody style={{maxHeight: "20vh"}}>
+                        {stateFkAndStateConditions.map((state, index) => buildStateTableRow(state, index))}
                         </tbody>
                     </table>
                 </FormLine>
@@ -240,16 +313,20 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
                         </FormLine>
                     </>
                 )}
+
+                <FormDivider />
+
             </FormBody>
-            <FormDivider />
             <FormFooter>
                 <DavitDeleteButton onClick={deleteDecision} />
                 <DavitCommentButton onSaveCallback={saveNote}
                                     comment={note}
                 />
-                <DavitRootButton onClick={setRoot}
-                                 isRoot={isRoot}
-                />
+                <DavitButton onClick={setRoot}
+                             disabled={isRoot}
+                >
+                    {isRoot ? "Start" : "Set as Start"}
+                </DavitButton>
                 <DavitBackButton onClick={saveAndGoBack} />
             </FormFooter>
 

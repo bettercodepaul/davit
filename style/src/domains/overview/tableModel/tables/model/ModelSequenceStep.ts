@@ -31,13 +31,13 @@ const createModelStepColumn = (
     selectedSequence: SequenceCTO,
     editCallback: () => void,
 ): DavitTableRowData => {
-    const name = step.squenceStepTO.name;
+    const name = step.sequenceStepTO.name;
     const gotoName: string = getGotoName(
-        step.squenceStepTO.goto,
+        step.sequenceStepTO.goto,
         selectedSequence?.sequenceStepCTOs || [],
         selectedSequence?.decisions || [],
     );
-    const start: string = step.squenceStepTO.root ? "start" : "";
+    const start: string = step.sequenceStepTO.root ? "start" : "";
 
     const trClass = "carv2Tr";
 
@@ -58,7 +58,7 @@ function getGotoName(goto: GoTo, steps: SequenceStepCTO[], decisions: DecisionTO
             break;
         case GoToTypes.STEP:
             gotoName =
-                steps.find((step) => step.squenceStepTO.id === (goto as Intermediate).id)?.squenceStepTO.name ||
+                steps.find((step) => step.sequenceStepTO.id === (goto as Intermediate).id)?.sequenceStepTO.name ||
                 gotoName;
             break;
         case GoToTypes.DEC:

@@ -2,6 +2,7 @@ import { motion, useInvertedScale, useMotionValue } from "framer-motion";
 import React, { FunctionComponent, useEffect, useRef } from "react";
 import { PositionTO } from "../../../../dataAccess/access/to/PositionTO";
 import { WINDOW_FACTOR } from "../../../../DavitConstants";
+import "./DnDWrapper.css";
 
 export interface DnDWrapperProps {
     dragConstraintsRef: any;

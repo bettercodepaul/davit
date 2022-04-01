@@ -1,17 +1,17 @@
 import { useDispatch } from "react-redux";
 import { DavitIcons } from "../../../../../components/atomic/icons/IconSet";
 import { DavitTableRowData } from "../../../../../components/organisms/table/DavitTable";
-import { DataSetupTO } from "../../../../../dataAccess/access/to/DataSetupTO";
+import { SequenceConfigurationTO } from "../../../../../dataAccess/access/to/SequenceConfigurationTO";
 import { EditActions } from "../../../../../slices/EditSlice";
 import { SequenceModelActions } from "../../../../../slices/SequenceModelSlice";
 
-export const useGetDataSetupTableData = (dataSetups: DataSetupTO[]) => {
+export const useGetDataSetupTableData = (dataSetups: SequenceConfigurationTO[]) => {
     const dispatch = useDispatch();
     let bodyData: DavitTableRowData[];
     bodyData = dataSetups.map((dataSetup) => {
-        const onClickEdit = () => dispatch(EditActions.setMode.editDataSetup(dataSetup.id));
+        const onClickEdit = () => dispatch(EditActions.setMode.editSequenceConfiguration(dataSetup.id));
         const onClickSelect = () => {
-            dispatch(SequenceModelActions.setCurrentDataSetup(dataSetup.id));
+            dispatch(SequenceModelActions.setCurrentSequenceConfigurationById(dataSetup.id));
             dispatch(EditActions.setMode.view());
         };
         return createModelDataSetupColumn(dataSetup, onClickEdit, onClickSelect);
@@ -25,7 +25,7 @@ export const useGetDataSetupTableData = (dataSetups: DataSetupTO[]) => {
 const header = ["NAME", "ACTIONS"];
 
 const createModelDataSetupColumn = (
-    dataSetup: DataSetupTO,
+    dataSetup: SequenceConfigurationTO,
     editCallback: () => void,
     selectCallback: () => void,
 ): DavitTableRowData => {

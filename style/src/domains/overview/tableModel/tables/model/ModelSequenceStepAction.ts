@@ -38,7 +38,7 @@ export const useGetStepActionTableData = (
         dispatch(EditStep.save(copyStep));
 
         // load sequence from backend
-        dispatch(SequenceModelActions.setCurrentSequence(copyStep.squenceStepTO.sequenceFk));
+        dispatch(SequenceModelActions.setCurrentSequenceById(copyStep.sequenceStepTO.sequenceFk));
 
         // update current step if object to edit
         if (mode === Mode.EDIT_SEQUENCE_STEP) {

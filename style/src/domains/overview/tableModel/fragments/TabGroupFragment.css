@@ -1,0 +1,23 @@
+.tab-group {
+    animation-duration: var(--animation-time);
+    animation-name: appearTabGroup;
+    animation-timing-function: ease-in-out;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.28571429rem;
+    box-shadow: 0 0 0 1px var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: var(--table-group-tab-height);
+    overflow: hidden;
+}
+
+.tab-aggregator {
+    animation-duration: var(--animation-time);
+    animation-name: appearTab;
+    animation-timing-function: ease-in-out;
+    color: var(--primary-text-color);
+    height: var(--table-tab-height);
+    overflow: hidden;
+    padding: 0.5em;
+    text-align: center;
+}

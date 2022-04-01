@@ -1,9 +1,9 @@
 .react-select-container {
-    min-width: 15rem;
-    border: var(--davit-border-size-medium) solid var(--color-secondary);
-    border-radius: var(--davit-border-radius);
     background-color: transparent;
-    color: var(--text-color);
+    border: var(--border-size-medium) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--primary-text-color);
+    min-width: 15rem;
 }
 
 .react-select__control {
@@ -12,90 +12,95 @@
 }
 
 .react-select__control:hover {
-    background-color: var(--davit-hover-color) !important;
+    background-color: var(--color-hover) !important;
     cursor: pointer;
 }
 
 .react-select__indicator {
-    color: var(--text-color) !important;
+    color: var(--primary-text-color) !important;
 }
 
 .react-select__menu {
     position: absolute;
-    z-index: 99;
+    z-index: 99 !important;
 }
 
 .react-select__menu-list {
     background-color: var(--background-color);
-    border: var(--color-secondary) solid var(--davit-border-size-medium);
-    border-radius: var(--davit-border-radius);
+    border: var(--border-color) solid var(--border-size-medium);
+    border-radius: var(--border-radius);
+    max-width: fit-content;
     position: fixed !important;
     z-index: 99 !important;
-    max-width: fit-content;
 }
 
 .react-select__option.react-select__option--is-focused, .react-select__option:hover {
-    color: var(--color-secondary);
     background-color: transparent;
+    color: var(--secondary-color);
     cursor: pointer;
 }
 
 .react-select__option.react-select__option--is-selected {
-    background-color: var(--color-secondary);
-    color: var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
 }
 
 .react-select-container .react-select__single-value, .react-select__input {
-    color: var(--text-color);
+    color: var(--primary-text-color);
 }
 
 /*======================================== label dropdown ========================================*/
 
 .react-select-label-container {
-    min-width: 9rem;
-    border: var(--davit-border-size-medium) solid var(--color-secondary);
-    border-radius: var(--davit-border-radius);
     background-color: transparent;
-    color: var(--text-color);
+    border: var(--border-size-medium) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--primary-text-color);
+    min-width: 9rem;
 }
 
 .react-select-label__control {
     background-color: transparent !important;
     border: none !important;
+    box-shadow: none !important;
 }
 
 .react-select-label__control:hover {
+    background-color: var(--color-hover) !important;
     border: none !important;
-    background-color: var(--davit-hover-color) !important;
     cursor: pointer;
 }
 
 .react-select-label__indicator {
-    color: var(--text-color) !important;
+    color: var(--primary-text-color) !important;
+}
+
+.react-select-label__menu {
+    z-index: 99 !important;
 }
 
 .react-select-label__menu-list {
     background-color: var(--background-color);
-    border: var(--color-secondary) solid var(--davit-border-size-medium);
-    border-radius: var(--davit-border-radius);
+    border: var(--border-color) solid var(--border-size-medium);
+    border-radius: var(--border-radius);
+    max-width: fit-content;
     position: fixed !important;
     z-index: 99 !important;
-    max-width: fit-content;
 }
 
 .react-select-label__option.react-select-label__option--is-focused, .react-select-label__option:hover {
-    color: var(--color-secondary);
     background-color: transparent;
+    color: var(--secondary-color);
     cursor: pointer;
 }
 
 .react-select-label__option.react-select-label__option--is-selected {
-    background-color: var(--color-secondary);
-    color: var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
 }
 
 .react-select-label-container .react-select-label__single-value, .react-select-label__input {
-    color: var(--text-color);
+    color: var(--primary-text-color);
 }
 
 .react-select-label__value-container.react-select-label__value-container--has-value {

@@ -8,7 +8,7 @@ export const Form: FunctionComponent<FormProps> = (props) => {
     const {children} = props;
 
     return (
-        <div className={"form"}>
+        <div className={"form padding-vertical-small padding-horizontal-medium border border-small"}>
             {children}
         </div>
     );

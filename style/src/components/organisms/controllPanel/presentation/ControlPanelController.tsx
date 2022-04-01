@@ -5,7 +5,7 @@ import { DavitUtil } from "../../../../utils/DavitUtil";
 import { ControlPanelEditController } from "./fragments/edit/ControlPanelEditController";
 import { ControlPanelFileController } from "./fragments/file/ControlPanelFileController";
 import { ControlPanelTabController } from "./fragments/tabs/ControlPanelTabController";
-import { ControlPanelViewMenu } from "./fragments/view/ControllPanelViewMenu";
+import { ControlPanelViewController } from "./fragments/view/ControllPanelViewController";
 
 export interface ControlPanelProps {
 }
@@ -19,7 +19,7 @@ export const ControlPanelController: FunctionComponent<ControlPanelProps> = () =
                 return <ControlPanelEditController />;
             }
             if (mode.includes("VIEW")) {
-                return <ControlPanelViewMenu hidden={!mode.includes("VIEW")} />;
+                return <ControlPanelViewController mode={mode} />;
             }
             if (mode.includes("FILE")) {
                 return <ControlPanelFileController />;
@@ -50,7 +50,7 @@ const useControlPanelViewModel = () => {
                 dispatch(EditActions.setMode.editData());
                 break;
             case "DATASETUP":
-                dispatch(EditActions.setMode.editDataSetup());
+                dispatch(EditActions.setMode.editSequenceConfiguration());
                 break;
             case "SEQUENCE":
                 dispatch(EditActions.setMode.editSequence());
