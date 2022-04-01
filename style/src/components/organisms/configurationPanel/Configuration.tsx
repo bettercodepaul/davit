@@ -1,18 +1,9 @@
 import React, { FunctionComponent, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { ChainCTO } from "../../../dataAccess/access/cto/ChainCTO";
-import { SequenceCTO } from "../../../dataAccess/access/cto/SequenceCTO";
-import { ChainConfigurationTO } from "../../../dataAccess/access/to/ChainConfigurationTO";
+import { useDispatch } from "react-redux";
 import { ChainStateTO } from "../../../dataAccess/access/to/ChainStateTO";
-import { ChainTO } from "../../../dataAccess/access/to/ChainTO";
 import { InitDataTO } from "../../../dataAccess/access/to/InitDataTO";
-import { SequenceConfigurationTO } from "../../../dataAccess/access/to/SequenceConfigurationTO";
 import { SequenceStateTO } from "../../../dataAccess/access/to/SequenceStateTO";
-import { StateTO } from "../../../dataAccess/access/to/StateTO";
-import { editActions, EditActions, editSelectors } from "../../../slices/EditSlice";
-import { SequenceModelActions, sequenceModelSelectors, ViewLevel } from "../../../slices/SequenceModelSlice";
-import { EditChainConfiguration } from "../../../slices/thunks/ChainConfigurationThunks";
-import { EditSequenceConfiguration } from "../../../slices/thunks/SequenceConfigurationThunks";
+import { SequenceModelActions } from "../../../slices/SequenceModelSlice";
 import { ElementSize } from "../../../style/Theme";
 import { DavitUtil } from "../../../utils/DavitUtil";
 import {
@@ -31,11 +22,10 @@ import { SequenceConfigurationDropDown } from "../../atomic/dropdowns/SequenceCo
 import { DavitIcons } from "../../atomic/icons/IconSet";
 import { NoteIcon } from "../../atomic/icons/NoteIcon";
 import "./Configuration.css";
-import { useActorViewModel } from "../controllPanel/presentation/fragments/edit/fragments/viewmodels/ActorViewModel";
 import { ConfigurationSelectButton } from "./fragments/ConfigurationSelectButton";
-import { useConfigurationViewModel } from "./models/ConfigurationViewModel";
 import { SaveConfigurationModal } from "./fragments/SaveConfigurationModal";
 import { StateConfigurationView } from "./fragments/StateConfigurationView";
+import { useConfigurationViewModel } from "./models/ConfigurationViewModel";
 
 export interface ConfigurationPanelProps {
 
@@ -306,8 +296,10 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                 </div>
 
                 {sequenceOptions && <SequenceDropDown
-                    onSelect={(sequence) => {setSequence(sequence?.id);}}
-                                                      value={selectedSequence?.sequenceTO.id}
+                    onSelect={(sequence) => {
+                        setSequence(sequence?.id);
+                    }}
+                    value={selectedSequence?.sequenceTO.id}
 
                 />}
                 {!sequenceOptions && <ChainDropDown onSelect={setChain}
