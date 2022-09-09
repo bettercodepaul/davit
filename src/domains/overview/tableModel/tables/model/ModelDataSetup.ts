@@ -8,8 +8,7 @@ import { useAppDispatch } from "../../../../../store";
 
 export const useGetDataSetupTableData = (dataSetups: DataSetupTO[]) => {
     const dispatch = useAppDispatch();
-    let bodyData: DavitTableRowData[];
-    bodyData = dataSetups.map((dataSetup) => {
+    const bodyData = dataSetups.map((dataSetup) => {
         const onClickEdit = () => dispatch(EditActions.setMode.editDataSetup(dataSetup.id));
         const onClickSelect = () => {
             dispatch(SequenceModelActions.setCurrentDataSetup(dataSetup.id));

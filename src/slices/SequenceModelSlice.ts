@@ -404,7 +404,7 @@ export const sequenceModelSelectors = {
         }
     },
     selectActorData: (state: RootState): ActorData[] => {
-        let actorDatas: ActorData[] = [];
+        const actorDatas: ActorData[] = [];
         // Get step actor-data's if calculation is present
         if (state.sequenceModel.calcSequence || state.sequenceModel.calcChain) {
             const filteredSteps = getFilteredSteps(state);

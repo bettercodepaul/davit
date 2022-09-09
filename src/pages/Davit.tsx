@@ -38,7 +38,8 @@ export function Davit() {
             <Routes>
                 <Route 
                        path={ModuleRoutes.home}
-                >
+                       element={
+                    <>
                     <div className="davitGridContainer">
                         <ControlPanelController />
                         <ActorModelController />
@@ -48,43 +49,54 @@ export function Davit() {
                         <TableModelController />
                         <ErrorNotification />
                     </div>
+                    </>
+                       }
+                       >
                 </Route>
-                <Route 
+                {/* <Route 
                        path={ModuleRoutes.actor}
                 >
+                    <>
                     <div className="Carv2">
                         <div className="componentPage">
                             <ActorModelController fullScreen />
                         </div>
                     </div>
+                    </>
                 </Route>
                 <Route 
                        path={ModuleRoutes.data}
                 >
+                    <>
                     <div className="Carv2">
                         <div className="componentPage">
                             <DataModelController fullScreen />
                         </div>
                     </div>
+                    </>
                 </Route>
                 <Route 
                        path={ModuleRoutes.table}
                 >
+                    <>
                     <div className="Carv2">
                         <div className="componentPage">
                             <TableModelController fullScreen />
                         </div>
                     </div>
+                    </>
                 </Route>
                 <Route 
                        path={ModuleRoutes.flowChart}
                 >
+                    <>
                     <div className="Carv2">
                         <div className="componentPage">
                             <FlowChartController fullScreen />
                         </div>
                     </div>
-                </Route>
+                    </>
+                </Route> */}
             </Routes>
         </BrowserRouter>
     );

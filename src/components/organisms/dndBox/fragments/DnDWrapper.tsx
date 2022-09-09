@@ -61,6 +61,7 @@ export const DnDWrapper: FunctionComponent<DnDWrapperProps> = (props) => {
                 scaleY,
             }}
             ref={ref}
+            
         >
             {props.children}
         </motion.div>

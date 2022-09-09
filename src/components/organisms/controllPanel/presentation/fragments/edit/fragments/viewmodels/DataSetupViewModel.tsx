@@ -98,7 +98,7 @@ export const useDataSetupViewModel = () => {
     const saveInitData = (initData: InitDataTO) => {
         console.info(initData);
         if (!DavitUtil.isNullOrUndefined(initData) && !DavitUtil.isNullOrUndefined(dataSetupToEdit)) {
-            let copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
+            const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
             console.info(copyInitData);
             dispatch(EditInitData.save(copyInitData));
             dispatch(EditActions.setMode.editDataSetup(dataSetupToEdit!.dataSetup?.id));

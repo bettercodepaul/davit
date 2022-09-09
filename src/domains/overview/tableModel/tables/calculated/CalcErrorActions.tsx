@@ -47,7 +47,7 @@ const createCalcErrorActionColumn = (
 // ------------------------------------------------ Private ---------------------------------------------------
 
 const getDataName = (action: ActionTO, datas: DataCTO[]): string => {
-    let data: DataCTO | undefined = datas.find((data) => data.data.id === action.dataFk);
+    const data: DataCTO | undefined = datas.find((data) => data.data.id === action.dataFk);
     let dataName: string = data ? data.data.name : "Could not find Data!";
 
     if (data !== undefined && action.actionType === ActionType.ADD) {

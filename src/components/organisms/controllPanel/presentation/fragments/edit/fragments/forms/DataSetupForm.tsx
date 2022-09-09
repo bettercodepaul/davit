@@ -39,7 +39,7 @@ export const DataSetupForm: FunctionComponent<DataSetupFormProps> = () => {
     } = useDataSetupViewModel();
 
     const buildActorDataTableRow = (initData: InitDataTO): JSX.Element => {
-        let copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
+        const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
 
         return (
             <tr key={copyInitData.id}>
