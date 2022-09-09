@@ -18,6 +18,7 @@ import { GlobalActions, globalSelectors } from "../../slices/GlobalSlice";
 import { MasterDataActions, masterDataSelectors } from "../../slices/MasterDataSlice";
 import { sequenceModelSelectors } from "../../slices/SequenceModelSlice";
 import { EditActor } from "../../slices/thunks/ActorThunks";
+import { useAppDispatch } from "../../store";
 import { DavitUtil } from "../../utils/DavitUtil";
 import { ActorData } from "../../viewDataTypes/ActorData";
 import { ActorDataState } from "../../viewDataTypes/ActorDataState";
@@ -63,7 +64,7 @@ export const ActorModelController: FunctionComponent<ActorModelControllerProps> 
 ;
 
 const useViewModel = () => {
-        const dispatch = useDispatch();
+        const dispatch = useAppDispatch();
         // ====== SELECTORS =====
         const actors: ActorCTO[] = useSelector(masterDataSelectors.selectActors);
         const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);

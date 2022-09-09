@@ -5,6 +5,7 @@ import { DataInstanceTO } from "../../../../../../../dataAccess/access/to/DataIn
 import { EditActions, editSelectors } from "../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../slices/GlobalSlice";
 import { EditData } from "../../../../../../../slices/thunks/DataThunks";
+import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
 import { DavitBackButton } from "../../../../../../atomic/buttons/DavitBackButton";
 import { DavitDeleteButton } from "../../../../../../atomic/buttons/DavitDeleteButton";
@@ -57,7 +58,7 @@ export const ControlPanelEditDataInstance: FunctionComponent<ControlPanelEditDat
 const useControlPanelEditDataInstanceViewModel = () => {
     const dataToEdit: DataCTO | null = useSelector(editSelectors.selectDataToEdit);
     const instanceId: number | null = useSelector(editSelectors.selectInstanceIdToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         // check if component to edit is really set or go back to edit mode

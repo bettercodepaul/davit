@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { DavitTableRowData } from "../../../../../components/organisms/table/DavitTable";
 import { CalcChain, CalcChainLink } from "../../../../../services/SequenceChainService";
 import { SequenceModelActions, sequenceModelSelectors } from "../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetCalcLinkTableData = (calcChain: CalcChain | null) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const chainIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentLinkIndex);
 
     let bodyData: DavitTableRowData[] = [];

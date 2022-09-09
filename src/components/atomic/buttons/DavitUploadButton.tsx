@@ -2,13 +2,14 @@ import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons/faCloudUploa
 import React, { createRef, FunctionComponent } from "react";
 import { useDispatch } from "react-redux";
 import { GlobalActions } from "../../../slices/GlobalSlice";
+import { useAppDispatch } from "../../../store";
 import { DavitButton } from "./DavitButton";
 
 export interface DavitFileInputProps {
 }
 
 export const DavitUploadButton: FunctionComponent<DavitFileInputProps> = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const inputFileRef = createRef<HTMLInputElement>();
 
     const openFileBrowser = () => {

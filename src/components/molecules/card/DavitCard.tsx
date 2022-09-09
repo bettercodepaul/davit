@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { DataInstanceTO } from "../../../dataAccess/access/to/DataInstanceTO";
 import { EditActions } from "../../../slices/EditSlice";
 import { Filter, SequenceModelActions, sequenceModelSelectors } from "../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../store";
 import { createViewFragment, ViewFragmentProps } from "../../../viewDataTypes/ViewFragment";
 import { DavitCardButton } from "../../atomic/buttons/DavitCardButton";
 import { DavitShowMoreButton } from "../../atomic/buttons/DavitShowMoreButton";
@@ -115,7 +116,7 @@ export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
 const useDavitCardViewModel = (type: "DATA" | "ACTOR" | "INSTANCE", id: number) => {
     const activeFilters: Filter[] = useSelector(sequenceModelSelectors.activeFilters);
     const [showMenu, setShowMenu] = useState<boolean>(false);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onClickEdit = (currentId: number, currentType: "DATA" | "ACTOR" | "INSTANCE") => {
         switch (currentType) {

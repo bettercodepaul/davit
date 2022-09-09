@@ -4,12 +4,13 @@ import { ActorCTO } from "../../../../../../../../dataAccess/access/cto/ActorCTO
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { EditActor } from "../../../../../../../../slices/thunks/ActorThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useActorViewModel = () => {
 
     const actorToEdit: ActorCTO | null = useSelector(editSelectors.selectActorToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
 // check if component to edit is really set or gos back to edit mode

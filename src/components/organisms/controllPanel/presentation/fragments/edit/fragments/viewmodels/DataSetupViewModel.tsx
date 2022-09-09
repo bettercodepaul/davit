@@ -7,11 +7,12 @@ import { EditActions, editSelectors } from "../../../../../../../../slices/EditS
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { EditDataSetup } from "../../../../../../../../slices/thunks/DataSetupThunks";
 import { EditInitData } from "../../../../../../../../slices/thunks/InitDataThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useDataSetupViewModel = () => {
     const dataSetupToEdit: DataSetupCTO | null = useSelector(editSelectors.selectDataSetupToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [actorToEdit, setActorToEdit] = useState<ActorCTO | null>(null);
 
     useEffect(() => {

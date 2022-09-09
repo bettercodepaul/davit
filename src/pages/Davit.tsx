@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 // import {BrowserRouter, Route, Switch} from "react-router-dom";
 // electron needs HashRouter
-import { HashRouter as BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 import { ErrorNotification } from "../components/molecules/notifications/ErrorNotification";
 import { ControlPanelController } from "../components/organisms/controllPanel/presentation/ControlPanelController";
 import { SidePanelController } from "../components/organisms/sidePanel/SidePanelController";
@@ -14,6 +14,7 @@ import { FlowChartController } from "../domains/overview/flowChartModel/FlowChar
 import { TableModelController } from "../domains/overview/tableModel/presentation/TableModelController";
 import { GlobalActions } from "../slices/GlobalSlice";
 import { MasterDataActions } from "../slices/MasterDataSlice";
+import { useAppDispatch } from "../store";
 
 export const ModuleRoutes = {
     home: "/",
@@ -25,7 +26,7 @@ export const ModuleRoutes = {
 
 // inital data load from backend.
 export function Davit() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(MasterDataActions.loadAll());
         dispatch(GlobalActions.loadActorZoomFromBackend());
@@ -34,8 +35,8 @@ export function Davit() {
 
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact
+            <Routes>
+                <Route 
                        path={ModuleRoutes.home}
                 >
                     <div className="davitGridContainer">
@@ -48,7 +49,7 @@ export function Davit() {
                         <ErrorNotification />
                     </div>
                 </Route>
-                <Route exact
+                <Route 
                        path={ModuleRoutes.actor}
                 >
                     <div className="Carv2">
@@ -57,7 +58,7 @@ export function Davit() {
                         </div>
                     </div>
                 </Route>
-                <Route exact
+                <Route 
                        path={ModuleRoutes.data}
                 >
                     <div className="Carv2">
@@ -66,7 +67,7 @@ export function Davit() {
                         </div>
                     </div>
                 </Route>
-                <Route exact
+                <Route 
                        path={ModuleRoutes.table}
                 >
                     <div className="Carv2">
@@ -75,7 +76,7 @@ export function Davit() {
                         </div>
                     </div>
                 </Route>
-                <Route exact
+                <Route 
                        path={ModuleRoutes.flowChart}
                 >
                     <div className="Carv2">
@@ -84,7 +85,7 @@ export function Davit() {
                         </div>
                     </div>
                 </Route>
-            </Switch>
+            </Routes>
         </BrowserRouter>
     );
 }

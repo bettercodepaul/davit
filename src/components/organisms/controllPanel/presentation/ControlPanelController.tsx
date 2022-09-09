@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { EditActions, editSelectors, Mode } from "../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../store";
 import { DavitUtil } from "../../../../utils/DavitUtil";
 import { ControlPanelEditController } from "./fragments/edit/ControlPanelEditController";
 import { ControlPanelFileController } from "./fragments/file/ControlPanelFileController";
@@ -39,7 +40,7 @@ export const ControlPanelController: FunctionComponent<ControlPanelProps> = () =
 
 const useControlPanelViewModel = () => {
     const mode: Mode = useSelector(editSelectors.selectMode);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const onClickNavItem = (mode: string) => {
         switch (mode) {

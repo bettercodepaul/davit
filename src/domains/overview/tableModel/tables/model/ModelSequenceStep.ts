@@ -6,11 +6,12 @@ import { SequenceStepCTO } from "../../../../../dataAccess/access/cto/SequenceSt
 import { DecisionTO } from "../../../../../dataAccess/access/to/DecisionTO";
 import { GoTo, GoToTypes, Intermediate } from "../../../../../dataAccess/access/types/GoToType";
 import { EditActions } from "../../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetStepTableData = (
     selectedSequence: SequenceCTO | null,
 ): { header: string[]; bodyData: DavitTableRowData[] } => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     let list: DavitTableRowData[] = [];
     if (selectedSequence !== null) {
         list = selectedSequence.sequenceStepCTOs.map((step) => {

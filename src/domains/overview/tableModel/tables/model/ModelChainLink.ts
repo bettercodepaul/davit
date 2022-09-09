@@ -4,13 +4,14 @@ import { DavitTableRowData } from "../../../../../components/organisms/table/Dav
 import { ChainlinkCTO } from "../../../../../dataAccess/access/cto/ChainlinkCTO";
 import { ChainDecisionTO } from "../../../../../dataAccess/access/to/ChainDecisionTO";
 import { EditActions } from "../../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../../store";
 import { getChainGotoName } from "../../util/TableUtil";
 
 export const useGetModelChainLinkTableData = (
     selectedChainlinks: ChainlinkCTO[],
     selectedChainDecisions: ChainDecisionTO[],
 ) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     let bodyData: DavitTableRowData[];
     bodyData = selectedChainlinks.map((link) => {

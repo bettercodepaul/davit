@@ -20,6 +20,7 @@ import { GlobalActions, globalSelectors } from "../../slices/GlobalSlice";
 import { MasterDataActions, masterDataSelectors } from "../../slices/MasterDataSlice";
 import { sequenceModelSelectors } from "../../slices/SequenceModelSlice";
 import { EditData } from "../../slices/thunks/DataThunks";
+import { useAppDispatch } from "../../store";
 import { DavitUtil } from "../../utils/DavitUtil";
 import { ActorData } from "../../viewDataTypes/ActorData";
 import { ActorDataState } from "../../viewDataTypes/ActorDataState";
@@ -69,7 +70,7 @@ export const DataModelController: FunctionComponent<DataModelControllerProps> = 
 };
 
 const useMetaDataModelViewModel = () => {
-        const dispatch = useDispatch();
+        const dispatch = useAppDispatch();
         // ====== SELECTORS =====
         const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);
         const dataCTOToEdit: DataCTO | null = useSelector(editSelectors.selectDataToEdit);

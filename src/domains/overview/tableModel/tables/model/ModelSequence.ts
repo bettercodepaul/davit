@@ -4,9 +4,10 @@ import { DavitTableAction, DavitTableRowData } from "../../../../../components/o
 import { SequenceTO } from "../../../../../dataAccess/access/to/SequenceTO";
 import { EditActions } from "../../../../../slices/EditSlice";
 import { SequenceModelActions } from "../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetSequenceModelsTableBody = (sequences: SequenceTO[]) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     let bodyData: DavitTableRowData[] = [];
     if (sequences) {

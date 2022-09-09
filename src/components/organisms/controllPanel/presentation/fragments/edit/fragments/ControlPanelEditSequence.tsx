@@ -8,6 +8,7 @@ import { EditActions, editSelectors } from "../../../../../../../slices/EditSlic
 import { GlobalActions } from "../../../../../../../slices/GlobalSlice";
 import { sequenceModelSelectors } from "../../../../../../../slices/SequenceModelSlice";
 import { EditSequence } from "../../../../../../../slices/thunks/SequenceThunks";
+import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
 import { DavitBackButton } from "../../../../../../atomic/buttons/DavitBackButton";
 import { DavitButton } from "../../../../../../atomic/buttons/DavitButton";
@@ -88,7 +89,7 @@ export const ControlPanelEditSequence: FunctionComponent<ControlPanelEditSequenc
 const useControlPanelEditSequenceViewModel = () => {
     const sequenceToEdit: SequenceTO | null = useSelector(editSelectors.selectSequenceToEdit);
     const selectedSequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [isCreateAnother, setIsCreateAnother] = useState<boolean>(false);
 
     useEffect(() => {

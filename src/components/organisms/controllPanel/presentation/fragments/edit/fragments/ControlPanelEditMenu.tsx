@@ -7,6 +7,7 @@ import { DataRelationTO } from "../../../../../../../dataAccess/access/to/DataRe
 import { DataSetupTO } from "../../../../../../../dataAccess/access/to/DataSetupTO";
 import { GroupTO } from "../../../../../../../dataAccess/access/to/GroupTO";
 import { EditActions, editSelectors, Mode } from "../../../../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../../../../store";
 import { ActorDropDownLabel } from "../../../../../../atomic/dropdowns/ActorDropDown";
 import { ChainDropDownButton } from "../../../../../../atomic/dropdowns/ChainDropDown";
 import { DataLabelDropDown } from "../../../../../../atomic/dropdowns/DataDropDown";
@@ -86,7 +87,7 @@ export const ControlPanelEditMenu: FunctionComponent<ControlPanelEditMenuProps> 
 };
 
 const useControlPanelEditMenuViewModel = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const mode: Mode = useSelector(editSelectors.selectMode);
 
     return {

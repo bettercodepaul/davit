@@ -12,12 +12,13 @@ import { SequenceModelActions, sequenceModelSelectors } from "../../../../../../
 import { EditAction } from "../../../../../../../../slices/thunks/ActionThunks";
 import { EditSequence } from "../../../../../../../../slices/thunks/SequenceThunks";
 import { EditStep } from "../../../../../../../../slices/thunks/StepThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useStepViewModel = () => {
     const stepToEdit: SequenceStepCTO | null = useSelector(editSelectors.selectStepToEdit);
     const selectedSequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [currentGoTo, setCurrentGoTo] = useState<GoTo>({
         type: GoToTypes.STEP,
         id: -1,
