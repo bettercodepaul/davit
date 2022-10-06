@@ -5,6 +5,7 @@ import { ChainlinkCTO } from "../../../../../dataAccess/access/cto/ChainlinkCTO"
 import { ChainDecisionTO } from "../../../../../dataAccess/access/to/ChainDecisionTO";
 import { CalcChain } from "../../../../../services/SequenceChainService";
 import { EditActions } from "../../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../../store";
 import { getChainGotoName } from "../../util/TableUtil";
 
 export const useGetModelChainDecisionTableData = (
@@ -12,7 +13,7 @@ export const useGetModelChainDecisionTableData = (
     selectedChainLinks: ChainlinkCTO[],
     selectedChainDecisions: ChainDecisionTO[],
 ) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     let bodyData: DavitTableRowData[] = [];
     if (calcChain !== null) {

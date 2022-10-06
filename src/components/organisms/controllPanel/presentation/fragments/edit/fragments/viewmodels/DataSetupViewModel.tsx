@@ -7,11 +7,12 @@ import { EditActions, editSelectors } from "../../../../../../../../slices/EditS
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { EditDataSetup } from "../../../../../../../../slices/thunks/DataSetupThunks";
 import { EditInitData } from "../../../../../../../../slices/thunks/InitDataThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useDataSetupViewModel = () => {
     const dataSetupToEdit: DataSetupCTO | null = useSelector(editSelectors.selectDataSetupToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [actorToEdit, setActorToEdit] = useState<ActorCTO | null>(null);
 
     useEffect(() => {
@@ -97,7 +98,7 @@ export const useDataSetupViewModel = () => {
     const saveInitData = (initData: InitDataTO) => {
         console.info(initData);
         if (!DavitUtil.isNullOrUndefined(initData) && !DavitUtil.isNullOrUndefined(dataSetupToEdit)) {
-            let copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
+            const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
             console.info(copyInitData);
             dispatch(EditInitData.save(copyInitData));
             dispatch(EditActions.setMode.editDataSetup(dataSetupToEdit!.dataSetup?.id));

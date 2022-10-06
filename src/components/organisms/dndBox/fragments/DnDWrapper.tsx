@@ -1,4 +1,4 @@
-import { motion, useInvertedScale, useMotionValue } from "framer-motion";
+import { motion, useDeprecatedInvertedScale as useInvertedScale, useMotionValue } from "framer-motion";
 import React, { FunctionComponent, useEffect, useRef } from "react";
 import { PositionTO } from "../../../../dataAccess/access/to/PositionTO";
 import { WINDOW_FACTOR } from "../../../../DavitConstants";
@@ -61,6 +61,7 @@ export const DnDWrapper: FunctionComponent<DnDWrapperProps> = (props) => {
                 scaleY,
             }}
             ref={ref}
+            
         >
             {props.children}
         </motion.div>

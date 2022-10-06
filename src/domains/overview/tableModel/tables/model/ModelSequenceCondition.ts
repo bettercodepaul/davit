@@ -8,12 +8,13 @@ import { DecisionTO } from "../../../../../dataAccess/access/to/DecisionTO";
 import { EditActions, editSelectors } from "../../../../../slices/EditSlice";
 import { masterDataSelectors } from "../../../../../slices/MasterDataSlice";
 import { EditDecision } from "../../../../../slices/thunks/DecisionThunks";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetModelSequenceConditionTableData = (
     decision: DecisionTO | null,
     condition: ConditionTO | null,
 ): { header: string[]; bodyData: DavitTableRowData[] } => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const conditionToEdit: ConditionTO | null = useSelector(editSelectors.selectConditionToEdit);
 

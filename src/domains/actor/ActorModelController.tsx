@@ -18,6 +18,7 @@ import { GlobalActions, globalSelectors } from "../../slices/GlobalSlice";
 import { MasterDataActions, masterDataSelectors } from "../../slices/MasterDataSlice";
 import { sequenceModelSelectors } from "../../slices/SequenceModelSlice";
 import { EditActor } from "../../slices/thunks/ActorThunks";
+import { useAppDispatch } from "../../store";
 import { DavitUtil } from "../../utils/DavitUtil";
 import { ActorData } from "../../viewDataTypes/ActorData";
 import { ActorDataState } from "../../viewDataTypes/ActorDataState";
@@ -63,7 +64,7 @@ export const ActorModelController: FunctionComponent<ActorModelControllerProps> 
 ;
 
 const useViewModel = () => {
-        const dispatch = useDispatch();
+        const dispatch = useAppDispatch();
         // ====== SELECTORS =====
         const actors: ActorCTO[] = useSelector(masterDataSelectors.selectActors);
         const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);
@@ -296,8 +297,7 @@ const useViewModel = () => {
         };
 
         const actorsToDnDElements = (actors: ActorCTO[]): DnDBoxElement[] => {
-            let dndBoxElements: DnDBoxElement[];
-            dndBoxElements = actors
+            const dndBoxElements = actors
                 .filter((actor) => !(actorCTOToEdit && actorCTOToEdit.actor.id === actor.actor.id))
                 .map((actorr) => {
                     return {
@@ -336,9 +336,8 @@ const useViewModel = () => {
 
         const getArrows = (): DavitPathProps[] => {
             const arrowProps: DavitPathProps[] = [];
-            let arrowsToDraw: Arrow[];
 
-            arrowsToDraw = arrows;
+            const arrowsToDraw = arrows;
 
             if (editArrow) {
                 arrowsToDraw.push(editArrow);

@@ -9,6 +9,7 @@ import { masterDataSelectors } from "../../../../../../../slices/MasterDataSlice
 import { sequenceModelSelectors } from "../../../../../../../slices/SequenceModelSlice";
 import { EditChain } from "../../../../../../../slices/thunks/ChainThunks";
 import { EditSequence } from "../../../../../../../slices/thunks/SequenceThunks";
+import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
 import { DavitBackButton } from "../../../../../../atomic/buttons/DavitBackButton";
 import { DavitButton } from "../../../../../../atomic/buttons/DavitButton";
@@ -87,7 +88,7 @@ export const ControlPanelEditChain: FunctionComponent<ControlPanelEditChainProps
 
 const useControlPanelEditChainViewModel = () => {
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [isCreateAnother, setIsCreateAnother] = useState<boolean>(false);
     const isFirst: boolean = useSelector(masterDataSelectors.isFirstChainElement(selectedChain?.id || -1));
 

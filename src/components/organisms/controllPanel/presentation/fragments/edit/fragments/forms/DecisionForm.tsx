@@ -63,7 +63,7 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
 
 
     const buildConditionTableRow = (condition: ConditionTO): JSX.Element => {
-        let copyCondition: ConditionTO = DavitUtil.deepCopy(condition);
+        const copyCondition: ConditionTO = DavitUtil.deepCopy(condition);
 
         return (
             <tr key={copyCondition.id}>

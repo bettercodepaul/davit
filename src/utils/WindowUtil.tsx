@@ -4,6 +4,7 @@ import { SequenceCTO } from "../dataAccess/access/cto/SequenceCTO";
 import { ChainTO } from "../dataAccess/access/to/ChainTO";
 import { editSelectors, Mode } from "../slices/EditSlice";
 import { SequenceModelActions, sequenceModelSelectors } from "../slices/SequenceModelSlice";
+import { useAppDispatch } from "../store";
 import { DavitUtil } from "./DavitUtil";
 
 const getWidth = () => window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -94,7 +95,7 @@ export const useStepAndLinkNavigation = () => {
     const stepIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentStepIndex);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
     const linkIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentLinkIndex);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const isModeView = (): boolean => {
         return mode === Mode.VIEW;

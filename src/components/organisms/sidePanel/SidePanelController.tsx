@@ -6,6 +6,7 @@ import { EditActions, editSelectors, Mode } from "../../../slices/EditSlice";
 import { DavitSidePanelButton } from "../../atomic/buttons/DavitSidePanelButton";
 import { DavitIcons } from "../../atomic/icons/IconSet";
 import "./SidePanelController.css";
+import { useAppDispatch } from "../../../store";
 
 export interface SidePanelProps {
 }
@@ -49,7 +50,7 @@ export const SidePanelController: FunctionComponent<SidePanelProps> = () => {
 };
 
 const useSidePanelViewModel = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const mode = useSelector(editSelectors.selectMode);
 
     const setModeToEdit = () => {

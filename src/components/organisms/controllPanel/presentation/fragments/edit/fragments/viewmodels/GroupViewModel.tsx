@@ -4,11 +4,12 @@ import { GroupTO } from "../../../../../../../../dataAccess/access/to/GroupTO";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { EditGroup } from "../../../../../../../../slices/thunks/GroupThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 const useGroupViewModel = () => {
     const groupToEdit: GroupTO | null = useSelector(editSelectors.selectGroupToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         // check if sequence to edit is really set or gos back to edit mode

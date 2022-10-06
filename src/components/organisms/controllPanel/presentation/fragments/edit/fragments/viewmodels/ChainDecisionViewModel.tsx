@@ -9,12 +9,13 @@ import { EditActions, editSelectors } from "../../../../../../../../slices/EditS
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceModelSlice";
 import { EditChainDecision } from "../../../../../../../../slices/thunks/ChainDecisionThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useChainDecisionViewModel = () => {
     const decisionToEdit: ChainDecisionTO | null = useSelector(editSelectors.selectChainDecisionToEdit);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [currentIfGoTo, setCurrentIfGoTo] = useState<GoToChain>({type: GoToTypesChain.FIN});
     const [currentElseGoTo, setCurrentElseGoTo] = useState<GoToChain>({type: GoToTypesChain.ERROR});
     const [key, setKey] = useState<number>(0);
@@ -155,9 +156,9 @@ export const useChainDecisionViewModel = () => {
         if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
             const copyDecision: ChainDecisionTO = DavitUtil.deepCopy(decisionToEdit);
             // TODO: ConditonThunk soll das machen.
-            let conditionToUpdate: ConditionTO | undefined = copyDecision.conditions.find(condition => condition.id === conditionToSave.id);
+            const conditionToUpdate: ConditionTO | undefined = copyDecision.conditions.find(condition => condition.id === conditionToSave.id);
             if (conditionToUpdate) {
-                let filteredConditions: ConditionTO[] = copyDecision.conditions.filter(condition => condition.id !== conditionToSave.id);
+                const filteredConditions: ConditionTO[] = copyDecision.conditions.filter(condition => condition.id !== conditionToSave.id);
                 filteredConditions.push(conditionToSave);
                 copyDecision.conditions = filteredConditions;
             } else {

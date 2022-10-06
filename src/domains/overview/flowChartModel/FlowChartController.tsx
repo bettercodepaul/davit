@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
-import { ArcherContainer, ArcherElement, Relation } from "react-archer";
+import { ArcherContainer, ArcherElement } from "react-archer";
+import { RelationType } from "react-archer/lib/types";
 import { useSelector } from "react-redux";
 import { ViewPlaceholder } from "../../../components/layout/ViewPlaceholder";
 import { ChainCTO } from "../../../dataAccess/access/cto/ChainCTO";
@@ -62,7 +63,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
         }, [parentRef]);
 
         const buildSequenceChart = (node: NodeModel): JSX.Element => {
-            const rel: Relation[] = [];
+            const rel: RelationType[] = [];
 
             if (node.parentId) {
                 rel.push({
@@ -113,7 +114,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
         };
 
         const buildChainChart = (node: NodeModelChain): JSX.Element => {
-            const rel: Relation[] = [];
+            const rel: RelationType[] = [];
 
             if (node.parentId) {
                 rel.push({
@@ -166,9 +167,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
 
         const buildFlowChart = (): JSX.Element => {
             return (
-                <ArcherContainer noCurves={true}
-                                 arrowLength={0}
-                >
+                <ArcherContainer noCurves={true}>
                     {buildSequenceChart(nodeModelTree)}
                 </ArcherContainer>
             );
@@ -176,9 +175,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
 
         const buildChainFlowChart = (): JSX.Element => {
             return (
-                <ArcherContainer noCurves={true}
-                                 arrowLength={0}
-                >
+                <ArcherContainer noCurves={true}>
                     {buildChainChart(nodeModelChainTree)}
                 </ArcherContainer>
             );

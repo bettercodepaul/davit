@@ -101,7 +101,7 @@ export const SequenceChainService = {
 const executeChainDecisionCheck = (chainDecision: ChainDecisionTO, actorDatas: ActorData[]): GoToChain => {
     // const filteredCompData: ActorData[] = actorDatas.filter((actorData) => actorData.actorFk === chainDecision.actorFk);
     let goTo: GoToChain | undefined;
-    if (chainDecision.conditions !== []) {
+    if ((chainDecision.conditions || []).length > 0) {
         chainDecision.conditions.forEach((condition) => {
             const isIncluded: boolean = actorDatas.some(
                 (cd) => cd.dataFk === condition.dataFk && cd.instanceFk === condition.instanceFk && cd.actorFk === condition.actorFk,

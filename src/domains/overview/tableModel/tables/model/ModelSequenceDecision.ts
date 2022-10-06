@@ -6,9 +6,10 @@ import { SequenceStepCTO } from "../../../../../dataAccess/access/cto/SequenceSt
 import { DecisionTO } from "../../../../../dataAccess/access/to/DecisionTO";
 import { GoTo, GoToTypes, Intermediate } from "../../../../../dataAccess/access/types/GoToType";
 import { EditActions } from "../../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetModelSequenceDecisionTableData = (selectedSequence: SequenceCTO | null) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     let bodyData: DavitTableRowData[] = [];
     if (selectedSequence !== null) {

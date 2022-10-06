@@ -8,6 +8,7 @@ import { EditActions, editSelectors } from "../../../../../../../slices/EditSlic
 import { GlobalActions } from "../../../../../../../slices/GlobalSlice";
 import { masterDataSelectors } from "../../../../../../../slices/MasterDataSlice";
 import { EditInitData } from "../../../../../../../slices/thunks/InitDataThunks";
+import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
 import { DavitBackButton } from "../../../../../../atomic/buttons/DavitBackButton";
 import { DavitButton } from "../../../../../../atomic/buttons/DavitButton";
@@ -70,7 +71,7 @@ const useControlPanelEditDataSetupViewModel = () => {
         masterDataSelectors.selectDataSetupToById(initDataToEdit?.dataSetupFk || -1),
     );
     const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [key, setKey] = useState<number>(0);
 
     useEffect(() => {

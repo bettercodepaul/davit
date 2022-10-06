@@ -4,11 +4,11 @@ import { DavitTableRowData } from "../../../../../components/organisms/table/Dav
 import { DataSetupTO } from "../../../../../dataAccess/access/to/DataSetupTO";
 import { EditActions } from "../../../../../slices/EditSlice";
 import { SequenceModelActions } from "../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetDataSetupTableData = (dataSetups: DataSetupTO[]) => {
-    const dispatch = useDispatch();
-    let bodyData: DavitTableRowData[];
-    bodyData = dataSetups.map((dataSetup) => {
+    const dispatch = useAppDispatch();
+    const bodyData = dataSetups.map((dataSetup) => {
         const onClickEdit = () => dispatch(EditActions.setMode.editDataSetup(dataSetup.id));
         const onClickSelect = () => {
             dispatch(SequenceModelActions.setCurrentDataSetup(dataSetup.id));

@@ -11,6 +11,7 @@ import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { MasterDataActions, masterDataSelectors } from "../../../../../../../../slices/MasterDataSlice";
 import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceModelSlice";
 import { EditAction } from "../../../../../../../../slices/thunks/ActionThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 import { DataAndInstanceId } from "../../../../../../../atomic/dropdowns/InstanceDropDown";
 
@@ -20,7 +21,7 @@ export const useActionViewModel = () => {
     const actors: ActorCTO[] = useSelector(masterDataSelectors.selectActors);
     const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);
     const selectedSequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const [key, setKey] = useState<number>(0);
 

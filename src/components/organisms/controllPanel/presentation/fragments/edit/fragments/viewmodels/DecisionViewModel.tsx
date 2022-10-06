@@ -10,12 +10,13 @@ import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { SequenceModelActions, sequenceModelSelectors } from "../../../../../../../../slices/SequenceModelSlice";
 import { EditDecision } from "../../../../../../../../slices/thunks/DecisionThunks";
 import { EditSequence } from "../../../../../../../../slices/thunks/SequenceThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useDecisionViewModel = () => {
     const decisionToEdit: DecisionTO | null = useSelector(editSelectors.selectDecisionToEdit);
     const selectedSequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [key, setKey] = useState<number>(0);
 
     useEffect(() => {
@@ -178,9 +179,9 @@ export const useDecisionViewModel = () => {
         if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
             const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
             // TODO: ConditonThunk soll das machen.
-            let conditionToUpdate: ConditionTO | undefined = copyDecision.conditions.find(condition => condition.id === conditionToSave.id);
+            const conditionToUpdate: ConditionTO | undefined = copyDecision.conditions.find(condition => condition.id === conditionToSave.id);
             if (conditionToUpdate) {
-                let filteredConditions: ConditionTO[] = copyDecision.conditions.filter(condition => condition.id !== conditionToSave.id);
+                const filteredConditions: ConditionTO[] = copyDecision.conditions.filter(condition => condition.id !== conditionToSave.id);
                 filteredConditions.push(conditionToSave);
                 copyDecision.conditions = filteredConditions;
             } else {
