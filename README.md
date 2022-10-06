@@ -24,3 +24,8 @@
 [![Deploy Styleguide](https://github.com/bettercodepaul/davit/actions/workflows/create-style-guide.yml/badge.svg)](https://github.com/bettercodepaul/davit/actions/workflows/create-style-guide.yml)
 
 [DAVIT Style Guide](https://bettercodepaul.github.io/davit/style/)
+
+
+## Dev workflow
+
+Changes will be directly implemented in to the "dev" branch, so we have always the up to date changes.
