@@ -43,8 +43,8 @@ export const ActorForm: FunctionComponent<ActorFormProps> = () => {
 
                 <FormLine>
                     <DavitTextInput
-                        label="Name:"
-                        placeholder="Actor Name"
+                        label={t("ACTOR.EDIT_FORM.NAME_INPUT.LABEL") || undefined}
+                        placeholder={t("ACTOR.EDIT_FORM.NAME_INPUT.PLACEHOLDER")  || undefined}
                         onChangeCallback={(name: string) => changeName(name)}
                         onBlur={updateActor}
                         value={name}
@@ -66,7 +66,7 @@ export const ActorForm: FunctionComponent<ActorFormProps> = () => {
                     setKey(key + 1);
                 }}
                 >
-                    {"Create another"}
+                    {t("ACTOR.EDIT_FORM.CREATE_BUTTON")}
                 </DavitButton>
                 <DavitBackButton onClick={saveActor} />
             </FormFooter>
