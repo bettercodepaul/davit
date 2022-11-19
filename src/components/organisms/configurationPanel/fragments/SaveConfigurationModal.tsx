@@ -8,10 +8,11 @@ interface SaveConfigurationModalProps {
     onSaveCallback: (name: string) => void;
     onCloseCallback: () => void;
     name: string;
+    type: string;
 }
 
 export const SaveConfigurationModal: FunctionComponent<SaveConfigurationModalProps> = (props) => {
-    const {name, onSaveCallback, onCloseCallback} = props;
+    const {name, onSaveCallback, onCloseCallback, type} = props;
 
     const [editName, setEditName] = useState<string>("");
 
@@ -23,7 +24,7 @@ export const SaveConfigurationModal: FunctionComponent<SaveConfigurationModalPro
         <DavitModal>
             <Form>
                 <FormHeader>
-                    <h2>Save Configuration</h2>
+                    <h2>Save {type} Configuration</h2>
                 </FormHeader>
 
                 <FormBody>

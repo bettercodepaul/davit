@@ -254,7 +254,7 @@ export const masterDataSelectors = {
 
     selectChainConfigurationsByChainId: (chainId: number | undefined) => (state: RootState): ChainConfigurationTO[] => {
         if (chainId !== undefined) {
-            return state.masterData.chainConfigurations.filter(config => config.chainFk !== chainId);
+            return state.masterData.chainConfigurations.filter(config => config.chainFk === chainId);
         } else {
             return state.masterData.chainConfigurations;
         }

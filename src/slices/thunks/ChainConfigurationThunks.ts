@@ -27,6 +27,15 @@ const setChainConfigurationThunk = (chainConfiguration: ChainConfigurationTO): A
     dispatch(editActions.setChainConfiguration(chainConfiguration));
 };
 
+const saveChainConfigurationThunk = (chainConfiguration: ChainConfigurationTO): AppThunk => (dispatch) => {
+    const response: DataAccessResponse<ChainConfigurationTO> = DataAccess.saveChainConfigurationTO(chainConfiguration);
+    if (response.code !== 200) {
+        dispatch(GlobalActions.handleError(response.message));
+    }
+    dispatch(MasterDataActions.loadChainConfigurationsFromBackend());
+    dispatch(EditChainConfiguration.update(response.object));
+};
+
 const deleteChainConfigurationThunk = (chainConfiguration: ChainConfigurationTO): AppThunk => (dispatch) => {
     const response: DataAccessResponse<ChainConfigurationTO> = DataAccess.deleteChainConfiguration(chainConfiguration);
     if (response.code !== 200) {
@@ -36,6 +45,7 @@ const deleteChainConfigurationThunk = (chainConfiguration: ChainConfigurationTO)
 };
 
 export const EditChainConfiguration = {
+    save: saveChainConfigurationThunk,
     update: setChainConfigurationThunk,
     create: createChainConfigurationThunk,
     delete: deleteChainConfigurationThunk,

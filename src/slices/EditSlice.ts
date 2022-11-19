@@ -466,9 +466,7 @@ const setModeToEditConditionThunk = (decision: DecisionTO, condition?: Condition
 
 // TODO: this method is copied from sequencemodelslice! remove one and mage the other reachable in both slices
 const getArrowsForStepFk = (sequenceStepCTO: SequenceStepCTO, rootState: RootState): Arrow[] => {
-    let arrows: Arrow[];
-    arrows = mapActionsToArrows(sequenceStepCTO.actions, rootState);
-    return arrows;
+    return mapActionsToArrows(sequenceStepCTO.actions, rootState);
 };
 
 // TODO: this method is copied from sequencemodelslice! remove one and make the other reachable in both slices

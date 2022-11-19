@@ -219,6 +219,14 @@ export const useConfigurationViewModel = () => {
         }
     };
 
+    const saveChainConfig = (name: string) => {
+        if (chainConfigurationToEdit) {
+            const copyChainConfiguration: ChainConfigurationTO = DavitUtil.deepCopy(chainConfigurationToEdit);
+            copyChainConfiguration.name = name;
+            dispatch(EditChainConfiguration.save(copyChainConfiguration));
+        }
+    };
+
 
     const getNote = (): string => {
         let noteToReturn: string = "";
@@ -252,6 +260,7 @@ export const useConfigurationViewModel = () => {
         createChainInitData,
         deleteChainInitData,
         saveChainInitData,
+        saveChainConfig,
         getNote,
     };
 

@@ -61,6 +61,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
         deleteChainInitData,
         saveChainInitData,
         getNote,
+        saveChainConfig
     } = useConfigurationViewModel();
 
 
@@ -85,7 +86,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
     const buildSequenceActorDataTableRow = (initData: InitDataTO, index: number): JSX.Element => {
 
-        let copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
+        const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
 
         return (
             <tr key={index}>
@@ -143,7 +144,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
 
     const buildChainActorDataTableRow = (initData: InitDataTO, index: number): JSX.Element => {
-        let copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
+        const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
 
         return (
             <tr key={index}>
@@ -213,18 +214,18 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
     };
 
     const getChainStatesView = () => {
-        if (!DavitUtil.isNullOrUndefined(selectedChain) && !DavitUtil.isNullOrUndefined(chainConfigurationToEdit)) {
+        if (selectedChain && chainConfigurationToEdit) {
 
-            if (chainConfigurationToEdit!.stateValues.length > 0) {
+            if (chainConfigurationToEdit.stateValues.length > 0) {
                 return (
                     <StateConfigurationView
-                        states={getUpdateChainStatesByConfiguration(selectedChain!.chainStates || [])}
+                        states={getUpdateChainStatesByConfiguration(selectedChain.chainStates || [])}
                         setStateCallback={setIsStateInChainConfiguration}
                     />
                 );
             }
 
-            if (chainConfigurationToEdit!.stateValues.length === 0) {
+            if (chainConfigurationToEdit.stateValues.length === 0) {
                 return (
                     <div className="flex flex-center align-center">
                         <h2 className="padding-medium">-- no states declared --</h2>
@@ -435,7 +436,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
                     <div className="flex border-top border-medium">
 
-                        <div id="column1"
+                        <div id="config-chain-navigation-menu"
                              className="configurationSequenceChainColumn"
                         >
 
@@ -477,7 +478,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
                         </div>
 
-                        <div id="column2"
+                        <div id="config-chain-sates-data-setup"
                              className="border-left border-medium"
                         >
 
@@ -535,10 +536,17 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                     </div>
                 </div>}
 
-            {showSaveConfiguration && <SaveConfigurationModal
+            {showSaveConfiguration && selectedSequence && <SaveConfigurationModal
                 onSaveCallback={saveSequenceConfiguration}
                 onCloseCallback={() => setShowSaveConfiguration(false)}
                 name={sequenceConfigurationToEdit?.name || ""}
+                type="Sequence"
+            />}
+            {showSaveConfiguration && chainConfigurationToEdit && <SaveConfigurationModal
+                onSaveCallback={saveChainConfig}
+                onCloseCallback={() => setShowSaveConfiguration(false)}
+                name={chainConfigurationToEdit.name || ""}
+                type="Chain"
             />}
         </div>);
 };
