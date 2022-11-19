@@ -1,12 +1,13 @@
 import React, { FunctionComponent, useState } from "react";
-import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";
-import { DavitButton } from "../../../../../../../atomic/buttons/DavitButton";
-import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
-import { Form } from "../../../../../../../atomic/forms/Form";
+import { useTranslation } from "react-i18next";
+import { DavitBackButton } from "../../../../../../../atomic";
+import { DavitButton } from "../../../../../../../atomic";
+import { DavitDeleteButton } from "../../../../../../../atomic";
+import { Form } from "../../../../../../../atomic";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
-import { DavitTextInput } from "../../../../../../../atomic/textinput/DavitTextInput";
+import { DavitTextInput } from "../../../../../../../atomic";
 import { DavitCommentButton } from "../../../../../../../molecules";
 import { useActorViewModel } from "../viewmodels/ActorViewModel";
 import { FormDivider } from "./fragments/FormDivider";
@@ -16,7 +17,7 @@ interface ActorFormProps {
 }
 
 export const ActorForm: FunctionComponent<ActorFormProps> = () => {
-
+    const {t} = useTranslation();
     const [key, setKey] = useState<number>(0);
 
     const {
@@ -33,7 +34,7 @@ export const ActorForm: FunctionComponent<ActorFormProps> = () => {
     return (
         <Form key={key}>
             <FormHeader>
-                <h2>Actor</h2>
+                <h2>{t("ACTOR.EDIT_FORM.HEADER")}</h2>
             </FormHeader>
 
             <FormDivider />
