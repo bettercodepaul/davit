@@ -60,8 +60,7 @@ export const DataDataAccessService = {
 
     saveDataRelation(dataRelation: DataRelationTO): DataRelationTO {
         CheckHelper.nullCheck(dataRelation, "dataRelation");
-        const saveDataConnection = DataConnectionRepository.save(dataRelation);
-        return saveDataConnection;
+        return DataConnectionRepository.save(dataRelation);
     },
 
     deleteDataRelationCTO(dataRelationTO: DataRelationTO): DataRelationTO {

@@ -1,0 +1,12 @@
+{
+  "ACTOR": {
+    "EDIT_FORM": {
+      "HEADER": "Actor",
+      "CREATE_BUTTON": "Create another",
+      "NAME_INPUT": {
+        "LABEL": "Name",
+        "PLACEHOLDER": "Actor name"
+      }
+    }
+  }
+}
