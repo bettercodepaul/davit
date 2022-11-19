@@ -4,11 +4,12 @@ import { DataCTO } from "../../../../../../../../dataAccess/access/cto/DataCTO";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { EditData } from "../../../../../../../../slices/thunks/DataThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useDataViewModel = () => {
     const dataToEdit: DataCTO | null = useSelector(editSelectors.selectDataToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         // check if component to edit is really set or gso back to edit mode

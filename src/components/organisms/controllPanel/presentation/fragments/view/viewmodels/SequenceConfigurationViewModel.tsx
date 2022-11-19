@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ActorCTO } from "../../../../../../../dataAccess/access/cto/ActorCTO";
 import { SequenceConfigurationTO } from "../../../../../../../dataAccess/access/to/SequenceConfigurationTO";
 import { EditActions, editSelectors } from "../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../slices/GlobalSlice";
 import { EditSequenceConfiguration } from "../../../../../../../slices/thunks/SequenceConfigurationThunks";
+import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
 
 export const useSequenceConfigurationViewModel = () => {
     const sequenceConfigurationToEdit: SequenceConfigurationTO | null = useSelector(editSelectors.selectSequenceConfigurationToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [actorToEdit, setActorToEdit] = useState<ActorCTO | null>(null);
 
     useEffect(() => {

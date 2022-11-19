@@ -4,9 +4,10 @@ import { DavitTableRowData } from "../../../../../components/organisms/table/Dav
 import { ChainTO } from "../../../../../dataAccess/access/to/ChainTO";
 import { EditActions } from "../../../../../slices/EditSlice";
 import { SequenceModelActions } from "../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetChainModelsTableData = (chainModels: ChainTO[]) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     let bodyData: DavitTableRowData[] = [];
     if (chainModels) {
         bodyData = chainModels.map((chain) => {

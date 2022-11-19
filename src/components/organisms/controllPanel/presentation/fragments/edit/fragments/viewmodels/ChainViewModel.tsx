@@ -11,11 +11,12 @@ import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceM
 import { EditChainState } from "../../../../../../../../slices/thunks/ChainStateThunk";
 import { EditChain } from "../../../../../../../../slices/thunks/ChainThunks";
 import { EditSequence } from "../../../../../../../../slices/thunks/SequenceThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useChainViewModel = () => {
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [isCreateAnother, setIsCreateAnother] = useState<boolean>(false);
     const isFirst: boolean = useSelector(masterDataSelectors.isFirstChainElement(selectedChain?.id || -1));
 

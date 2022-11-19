@@ -11,12 +11,13 @@ import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceModelSlice";
 import { EditChainLink } from "../../../../../../../../slices/thunks/ChainLinkThunks";
 import { EditChain } from "../../../../../../../../slices/thunks/ChainThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useChainLinkViewModel = () => {
     const chainLinkToEdit: ChainLinkTO | null = useSelector(editSelectors.selectChainLinkToEdit);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [currentGoTo, setCurrentGoTo] = useState<GoToChain>({type: GoToTypesChain.LINK, id: -1});
 
     useEffect(() => {

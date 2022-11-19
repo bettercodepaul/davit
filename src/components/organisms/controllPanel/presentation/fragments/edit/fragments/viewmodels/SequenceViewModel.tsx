@@ -10,12 +10,13 @@ import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceModelSlice";
 import { EditSequenceState } from "../../../../../../../../slices/thunks/SequenceStateThunk";
 import { EditSequence } from "../../../../../../../../slices/thunks/SequenceThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useSequenceViewModel = () => {
     const sequenceToEdit: SequenceTO | null = useSelector(editSelectors.selectSequenceToEdit);
     const selectedSequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [isCreateAnother, setIsCreateAnother] = useState<boolean>(false);
 
     useEffect(() => {

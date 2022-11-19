@@ -4,9 +4,10 @@ import { DavitTableRowData } from "../../../../../components/organisms/table/Dav
 import { SequenceConfigurationTO } from "../../../../../dataAccess/access/to/SequenceConfigurationTO";
 import { EditActions } from "../../../../../slices/EditSlice";
 import { SequenceModelActions } from "../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetDataSetupTableData = (dataSetups: SequenceConfigurationTO[]) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     let bodyData: DavitTableRowData[];
     bodyData = dataSetups.map((dataSetup) => {
         const onClickEdit = () => dispatch(EditActions.setMode.editSequenceConfiguration(dataSetup.id));

@@ -6,13 +6,14 @@ import { EditActions, editSelectors } from "../../../../../../../../slices/EditS
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { masterDataSelectors } from "../../../../../../../../slices/MasterDataSlice";
 import { EditRelation } from "../../../../../../../../slices/thunks/RelationThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 import { DavitDropDownItemProps } from "../../../../../../../atomic/dropdowns/DavitDropDown";
 
 export const useDataRelationViewModel = () => {
     const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);
     const relationToEdit: DataRelationTO | null = useSelector(editSelectors.selectRelationToEdit);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [key, setKey] = useState<number>(0);
 
     useEffect(() => {

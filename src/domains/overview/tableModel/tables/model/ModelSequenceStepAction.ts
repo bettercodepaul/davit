@@ -10,6 +10,7 @@ import { EditActions, editSelectors, Mode } from "../../../../../slices/EditSlic
 import { masterDataSelectors } from "../../../../../slices/MasterDataSlice";
 import { SequenceModelActions } from "../../../../../slices/SequenceModelSlice";
 import { EditStep } from "../../../../../slices/thunks/StepThunks";
+import { useAppDispatch } from "../../../../../store";
 import { DavitUtil } from "../../../../../utils/DavitUtil";
 
 export const useGetStepActionTableData = (
@@ -19,7 +20,7 @@ export const useGetStepActionTableData = (
     const actors: ActorCTO[] = useSelector(masterDataSelectors.selectActors);
     const actionToEdit: ActionTO | null = useSelector(editSelectors.selectActionToEdit);
     const mode: Mode = useSelector(editSelectors.selectMode);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     let list: DavitTableRowData[] = [];
 

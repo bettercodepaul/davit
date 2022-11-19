@@ -102,6 +102,7 @@ export const SequenceChainService = {
 const executeChainDecisionCheck = (chainDecision: ChainDecisionTO, actorDatas: ActorData[], chainStates: ChainStateValue[]): GoToChain => {
     let goTo: GoToChain | undefined;
     // check conditions
+    // @ts-ignore
     if (chainDecision.conditions !== []) {
         chainDecision.conditions.forEach((condition) => {
             const isIncluded: boolean = actorDatas.some(

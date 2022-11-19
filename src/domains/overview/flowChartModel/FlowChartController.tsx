@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
-import { ArcherContainer, ArcherElement, Relation } from "react-archer";
+import { ArcherContainer, ArcherElement } from "react-archer";
 import { useDispatch, useSelector } from "react-redux";
 import { StateView } from "../../../components/molecules/StateView";
 import { ChainCTO } from "../../../dataAccess/access/cto/ChainCTO";
@@ -7,11 +7,13 @@ import { ChainLinkCTO } from "../../../dataAccess/access/cto/ChainlinkCTO";
 import { SequenceCTO } from "../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../dataAccess/access/cto/SequenceStepCTO";
 import { ChainDecisionTO } from "../../../dataAccess/access/to/ChainDecisionTO";
+import { RelationType } from "../../../dataAccess/access/to/DataRelationTO";
 import { DecisionTO } from "../../../dataAccess/access/to/DecisionTO";
 import { GoTo, GoToTypes, Terminal } from "../../../dataAccess/access/types/GoToType";
 import { GoToChain, GoToTypesChain, TerminalChain } from "../../../dataAccess/access/types/GoToTypeChain";
 import { CalcChain } from "../../../services/SequenceChainService";
 import { SequenceModelActions, sequenceModelSelectors, ViewLevel } from "../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../store";
 import { DavitUtil } from "../../../utils/DavitUtil";
 import { TabFragment } from "../tableModel/fragments/TabFragment";
 import { TabGroupFragment } from "../tableModel/fragments/TabGroupFragment";
@@ -58,25 +60,25 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
         }, [parentRef]);
 
         const buildSequenceChart = (node: NodeModel): JSX.Element => {
-            const rel: Relation[] = [];
+            const rel: RelationType[] = [];
 
-            if (node.parentId) {
-                rel.push({
-                    targetId: node.parentId,
-                    targetAnchor: "bottom",
-                    sourceAnchor: "top",
-                    style: {
-                        strokeColor:
-                            calcSteps.find((step) => step === node.parentId) && calcSteps.find((step) => step === node.id)
-                                ? lineColor()
-                                : "var(--background-color-header)",
-                        strokeWidth:
-                            calcSteps.find((step) => step === node.parentId) && calcSteps.find((step) => step === node.id)
-                                ? 5
-                                : 3,
-                    },
-                });
-            }
+            // if (node.parentId) {
+            //     rel.push({
+            //         targetId: node.parentId,
+            //         targetAnchor: "bottom",
+            //         sourceAnchor: "top",
+            //         style: {
+            //             strokeColor:
+            //                 calcSteps.find((step) => step === node.parentId) && calcSteps.find((step) => step === node.id)
+            //                     ? lineColor()
+            //                     : "var(--background-color-header)",
+            //             strokeWidth:
+            //                 calcSteps.find((step) => step === node.parentId) && calcSteps.find((step) => step === node.id)
+            //                     ? 5
+            //                     : 3,
+            //         },
+            //     });
+            // }
 
             return (
                 <div className="flowChartFlex"
@@ -84,7 +86,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
                      key={node.id}
                 >
                     <ArcherElement id={node.id}
-                                   relations={rel}
+                                   // relations={rel}
                     >
                         <div
                             className={node.id === "root" ? "ROOT" : node.leafType}
@@ -109,27 +111,27 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
         };
 
         const buildChainChart = (node: NodeModelChain): JSX.Element => {
-            const rel: Relation[] = [];
+            // const rel: Relation[] = [];
 
-            if (node.parentId) {
-                rel.push({
-                    targetId: node.parentId,
-                    targetAnchor: "bottom",
-                    sourceAnchor: "top",
-                    style: {
-                        strokeColor:
-                            calcLinkIds?.find((link) => link === node.parentId) &&
-                            calcLinkIds.find((link) => link === node.id)
-                                ? chainLineColor()
-                                : "var(--background-color-header)",
-                        strokeWidth:
-                            calcLinkIds?.find((link) => link === node.parentId) &&
-                            calcLinkIds.find((link) => link === node.id)
-                                ? 5
-                                : 3,
-                    },
-                });
-            }
+            // if (node.parentId) {
+                // rel.push({
+                //     targetId: node.parentId,
+                //     targetAnchor: "bottom",
+                //     sourceAnchor: "top",
+                //     style: {
+                //         strokeColor:
+                //             calcLinkIds?.find((link) => link === node.parentId) &&
+                //             calcLinkIds.find((link) => link === node.id)
+                //                 ? chainLineColor()
+                //                 : "var(--background-color-header)",
+                //         strokeWidth:
+                //             calcLinkIds?.find((link) => link === node.parentId) &&
+                //             calcLinkIds.find((link) => link === node.id)
+                //                 ? 5
+                //                 : 3,
+                //     },
+                // });
+            // }
 
             return (
                 <div className="flowChartFlex"
@@ -137,7 +139,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
                      key={node.id}
                 >
                     <ArcherElement id={node.id}
-                                   relations={rel}
+                                   // relations={rel}
                     >
                         <div className={node.leafType}
                              id={currentLinkId === node.id ? "flowChartCurrentStep" : ""}
@@ -162,9 +164,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
 
         const buildFlowChart = (): JSX.Element => {
             return (
-                <ArcherContainer noCurves={true}
-                                 arrowLength={0}
-                >
+                <ArcherContainer noCurves={true}>
                     {buildSequenceChart(nodeModelTree)}
                 </ArcherContainer>
             );
@@ -172,9 +172,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
 
         const buildChainFlowChart = (): JSX.Element => {
             return (
-                <ArcherContainer noCurves={true}
-                                 arrowLength={0}
-                >
+                <ArcherContainer noCurves={true}>
                     {buildChainChart(nodeModelChainTree)}
                 </ArcherContainer>
             );
@@ -258,7 +256,7 @@ const useFlowChartViewModel = () => {
         const currentStepId: string = useSelector(sequenceModelSelectors.selectCurrentStepId);
         const currentLinkId: string = useSelector(sequenceModelSelectors.selectCurrentLinkId);
         const viewLevel: ViewLevel = useSelector(sequenceModelSelectors.selectViewLevel);
-        const dispatch = useDispatch();
+        const dispatch = useAppDispatch();
 
         const getRoot = (sequence: SequenceCTO | null): Node => {
             const root: Node = {

@@ -10,12 +10,13 @@ import { EditActions, editSelectors } from "../../../../../../../../slices/EditS
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";
 import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceModelSlice";
 import { EditChainDecision } from "../../../../../../../../slices/thunks/ChainDecisionThunks";
+import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
 
 export const useChainDecisionViewModel = () => {
     const decisionToEdit: ChainDecisionTO | null = useSelector(editSelectors.selectChainDecisionToEdit);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [currentIfGoTo, setCurrentIfGoTo] = useState<GoToChain>({type: GoToTypesChain.FIN});
     const [currentElseGoTo, setCurrentElseGoTo] = useState<GoToChain>({type: GoToTypesChain.ERROR});
     const [key, setKey] = useState<number>(0);

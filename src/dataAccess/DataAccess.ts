@@ -36,7 +36,8 @@ export const DataAccess = {
             dataStore.storeFileData(fileData);
             return {...response, code: 200};
         } catch (error) {
-            return {...response, message: error.message};
+            const message = error instanceof Error ? error.message : '';
+            return {...response, message: message};
         }
     },
 
@@ -50,7 +51,8 @@ export const DataAccess = {
             dataStore.createNewProject();
             return {...response, code: 200};
         } catch (error) {
-            return {...response, message: error.message};
+            const message = error instanceof Error ? error.message : '';
+            return {...response, message: message};
         }
     },
 
@@ -65,7 +67,8 @@ export const DataAccess = {
             dataStore.downloadData(projectName);
             return {...response, code: 200};
         } catch (error) {
-            return {...response, message: error.message};
+            const message = error instanceof Error ? error.message : '';
+            return {...response, message: message};
         }
     },
 
@@ -362,7 +365,7 @@ function makeTransactional<T>(callback: () => T): DataAccessResponse<T> {
         dataStore.commitChanges();
     } catch (error) {
         console.warn(error);
-        response.message = error.message;
+        response.message = error instanceof Error ? error.message: "";
         dataStore.roleBack();
     }
     return response;

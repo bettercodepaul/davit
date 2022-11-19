@@ -4,6 +4,7 @@ import { ChainStateTO } from "../../../dataAccess/access/to/ChainStateTO";
 import { InitDataTO } from "../../../dataAccess/access/to/InitDataTO";
 import { SequenceStateTO } from "../../../dataAccess/access/to/SequenceStateTO";
 import { SequenceModelActions } from "../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../store";
 import { ElementSize } from "../../../style/Theme";
 import { DavitUtil } from "../../../utils/DavitUtil";
 import {
@@ -33,7 +34,7 @@ export interface ConfigurationPanelProps {
 
 export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const [sequenceOptions, setSequenceOptions] = useState<boolean>(false);
     const [showMore, setShowMore] = useState<boolean>(true);

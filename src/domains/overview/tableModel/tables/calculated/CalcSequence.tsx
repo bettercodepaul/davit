@@ -7,9 +7,10 @@ import { SequenceCTO } from "../../../../../dataAccess/access/cto/SequenceCTO";
 import { Terminal } from "../../../../../dataAccess/access/types/GoToType";
 import { CalculatedStep } from "../../../../../services/SequenceService";
 import { SequenceModelActions, sequenceModelSelectors } from "../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../store";
 
 export const useGetCalcSequenceTableData = (calcSteps: CalculatedStep[], selectedSequence: SequenceCTO | null) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const terminalStep: Terminal | null = useSelector(sequenceModelSelectors.selectTerminalStep);
     const loopStepStartIndex: number | null = useSelector(sequenceModelSelectors.selectLoopStepStartIndex);

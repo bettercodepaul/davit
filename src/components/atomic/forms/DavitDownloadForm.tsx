@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { GlobalActions } from "../../../slices/GlobalSlice";
+import { useAppDispatch } from "../../../store";
 import { useEnterHook, useEscHook } from "../../../utils/WindowUtil";
 import { DavitButton } from "../buttons/DavitButton";
 import { DavitTextInput } from "../textinput/DavitTextInput";
@@ -14,7 +15,7 @@ interface DavitDownloadFormProps {
 
 export const DavitDownloadForm: FunctionComponent<DavitDownloadFormProps> = (props) => {
     const {onCloseCallback} = props;
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [projectName, setProjectName] = useState<string>("");
 
     const onSubmit = () => {

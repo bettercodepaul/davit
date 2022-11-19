@@ -10,11 +10,12 @@ import { editActions, EditActions, editSelectors } from "../../../../slices/Edit
 import { SequenceModelActions, sequenceModelSelectors, ViewLevel } from "../../../../slices/SequenceModelSlice";
 import { EditChainConfiguration } from "../../../../slices/thunks/ChainConfigurationThunks";
 import { EditSequenceConfiguration } from "../../../../slices/thunks/SequenceConfigurationThunks";
+import { useAppDispatch } from "../../../../store";
 import { DavitUtil } from "../../../../utils/DavitUtil";
 
 export const useConfigurationViewModel = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const selectedSequence: SequenceCTO | null = useSelector(sequenceModelSelectors.selectSequence);
     const sequenceConfigurationToEdit: SequenceConfigurationTO | null = useSelector(editSelectors.selectSequenceConfigurationToEdit);

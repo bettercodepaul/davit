@@ -4,6 +4,7 @@ import React, { createRef, FunctionComponent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { EditActions } from "../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../slices/GlobalSlice";
+import { useAppDispatch } from "../../../../../../store";
 import { DavitDeleteButton, DavitDownloadModal, DavitIconButton } from "../../../../../atomic";
 import { ControlPanel } from "../edit/common/ControlPanel";
 import { OptionField } from "../edit/common/OptionField";
@@ -31,7 +32,7 @@ export const ControlPanelFileController: FunctionComponent<ControlPanelFileContr
         }
     };
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const deleteLocalStorage = () => {
         dispatch(EditActions.setMode.view());

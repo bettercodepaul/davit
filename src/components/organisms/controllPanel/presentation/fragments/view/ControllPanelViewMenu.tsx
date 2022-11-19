@@ -6,6 +6,7 @@ import { ChainTO } from "../../../../../../dataAccess/access/to/ChainTO";
 import { DataSetupTO } from "../../../../../../dataAccess/access/to/DataSetupTO";
 import { SequenceTO } from "../../../../../../dataAccess/access/to/SequenceTO";
 import { SequenceModelActions, sequenceModelSelectors } from "../../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../../store";
 import { DavitUtil } from "../../../../../../utils/DavitUtil";
 import { useStepAndLinkNavigation } from "../../../../../../utils/WindowUtil";
 import { ChainDropDown } from "../../../../../atomic/dropdowns/ChainDropDown";
@@ -78,7 +79,7 @@ const useControlPanelViewMenuViewModel = () => {
     const stepIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentStepIndex);
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
     const linkIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentLinkIndex);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const selectSequence = (sequence: SequenceTO | undefined) => {
         if (!DavitUtil.isNullOrUndefined(sequence)) {

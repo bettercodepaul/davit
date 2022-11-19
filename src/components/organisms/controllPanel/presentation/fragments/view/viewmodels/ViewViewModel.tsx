@@ -1,4 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+
+import { useSelector } from "react-redux";
 import { SequenceCTO } from "../../../../../../../dataAccess/access/cto/SequenceCTO";
 import { ChainTO } from "../../../../../../../dataAccess/access/to/ChainTO";
 import { SequenceTO } from "../../../../../../../dataAccess/access/to/SequenceTO";
@@ -8,6 +9,7 @@ import {
     sequenceModelSelectors,
     ViewLevel
 } from "../../../../../../../slices/SequenceModelSlice";
+import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
 
 export const useViewViewModel = () => {
@@ -16,7 +18,7 @@ export const useViewViewModel = () => {
     const selectedChain: ChainTO | null = useSelector(sequenceModelSelectors.selectChain);
     const linkIndex: number | null = useSelector(sequenceModelSelectors.selectCurrentLinkIndex);
     const viewLevel: ViewLevel = useSelector(sequenceModelSelectors.selectViewLevel);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const selectSequence = (sequence: SequenceTO | undefined) => {
         if (!DavitUtil.isNullOrUndefined(sequence)) {

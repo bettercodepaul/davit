@@ -5,6 +5,7 @@ import { DataCTO } from "../../../../../../../dataAccess/access/cto/DataCTO";
 import { ChainTO } from "../../../../../../../dataAccess/access/to/ChainTO";
 import { DataRelationTO } from "../../../../../../../dataAccess/access/to/DataRelationTO";
 import { EditActions, editSelectors, Mode } from "../../../../../../../slices/EditSlice";
+import { useAppDispatch } from "../../../../../../../store";
 import {
     ActorDropDownLabel,
     ChainDropDownButton,
@@ -76,7 +77,7 @@ export const ControlPanelEditMenu: FunctionComponent<ControlPanelEditMenuProps> 
 };
 
 const useControlPanelEditMenuViewModel = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const mode: Mode = useSelector(editSelectors.selectMode);
 
     return {

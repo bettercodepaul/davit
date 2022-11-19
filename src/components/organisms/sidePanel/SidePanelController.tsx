@@ -1,3 +1,4 @@
+import { useAppDispatch } from "../../../store";
 import React, { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../../assets/exxcellent_logo_200.png";
@@ -46,7 +47,7 @@ export const SidePanelController: FunctionComponent<SidePanelProps> = () => {
 };
 
 const useSidePanelViewModel = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const mode = useSelector(editSelectors.selectMode);
 
     const setModeToEdit = () => {
