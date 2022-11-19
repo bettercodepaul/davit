@@ -193,23 +193,26 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
     const getSequenceStatesView = () => {
         if (!DavitUtil.isNullOrUndefined(selectedSequence)
             && !DavitUtil.isNullOrUndefined(sequenceConfigurationToEdit)) {
+            selectedStateView(selectedSequence!.sequenceStates);
+        }
+    };
 
-            if (selectedSequence!.sequenceStates.length > 0) {
-                return (
-                    <StateConfigurationView
-                        states={getUpdateStatesByConfiguration(selectedSequence!.sequenceStates || [])}
-                        setStateCallback={setIsStateInSequenceConfiguration}
-                    />
-                );
-            }
+    const selectedStateView = (sequenceStates: SequenceStateTO[]) => {
+        if (sequenceStates.length > 0) {
+            return (
+                <StateConfigurationView
+                    states={getUpdateStatesByConfiguration(sequenceStates || [])}
+                    setStateCallback={setIsStateInSequenceConfiguration}
+                />
+            );
+        }
 
-            if (selectedSequence!.sequenceStates.length === 0) {
-                return (
-                    <div className="flex flex-center align-center">
-                        <h2 className="padding-medium">-- no states declared --</h2>
-                    </div>
-                );
-            }
+        if (selectedSequence!.sequenceStates.length === 0) {
+            return (
+                <div className="flex flex-center align-center">
+                    <h2 className="padding-medium">-- no states declared --</h2>
+                </div>
+            );
         }
     };
 
@@ -445,6 +448,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                             {/*---- overview -----*/}
                             <ConfigurationSelectButton label="Overview"
                                                        onClick={() => {
+                                                           // TODO: remove filters
                                                        }}
                                                        isSelected={false}
                             />
@@ -452,6 +456,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                             {/*---- chain -----*/}
                             <ConfigurationSelectButton label={selectedChain.chain.name}
                                                        onClick={() => {
+                                                           // TODO: filter on chain states
                                                        }}
                                                        isSelected={false}
                             />
@@ -461,16 +466,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                                 return (<ConfigurationSelectButton key={index}
                                                                    label={link.chainLink.name}
                                                                    onClick={() => {
-                                                                   }}
-                                                                   isSelected={false}
-                                />);
-                            })}
-
-                            {/*---- decisions -----*/}
-                            {selectedChain.decisions.map((decision, index) => {
-                                return (<ConfigurationSelectButton key={index}
-                                                                   label={decision.name}
-                                                                   onClick={() => {
+                                                                       //TODO: filter on link states
                                                                    }}
                                                                    isSelected={false}
                                 />);
@@ -492,7 +488,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
                                 {/*    State*/}
                                 <div className="configList padding-bottom-l">
-                                    {getSequenceStatesView()}
+                                    {selectedChain && selectedStateView(selectedChain.links.flatMap(link => link.sequence.sequenceStates))}
                                     {getChainStatesView()}
                                 </div>
 
