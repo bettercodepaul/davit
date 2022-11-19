@@ -28,10 +28,9 @@ const deleteConditionThunk = (conditionToDelete: ConditionTO): AppThunk => (disp
     if (conditionToDelete) {
         const decisionToEdit: DecisionTO = EditDecision.find(conditionToDelete.decisionFk);
         const copyDecision: DecisionTO = DavitUtil.deepCopy(decisionToEdit);
-        const filteredConditions: ConditionTO[] = copyDecision.conditions.filter(
+        copyDecision.conditions = copyDecision.conditions.filter(
             (condition) => condition.id !== conditionToDelete.id,
         );
-        copyDecision.conditions = filteredConditions;
         dispatch(EditDecision.save(copyDecision));
     }
 };
