@@ -22,7 +22,6 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "react",
     "@typescript-eslint",
     "react-hooks"
   ],
