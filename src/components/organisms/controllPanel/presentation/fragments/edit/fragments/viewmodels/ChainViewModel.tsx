@@ -105,7 +105,7 @@ export const useChainViewModel = () => {
 
     const createStateFkAndStateCondition = () => {
         if (!DavitUtil.isNullOrUndefined(selectedChain)) {
-            let newChainState: ChainStateTO = new ChainStateTO();
+            const newChainState: ChainStateTO = new ChainStateTO();
             newChainState.chainFk = selectedChain!.id;
             saveStateFkAndStateCondition(newChainState);
         }

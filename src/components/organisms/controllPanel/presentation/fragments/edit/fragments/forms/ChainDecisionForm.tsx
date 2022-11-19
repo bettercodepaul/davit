@@ -66,7 +66,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
     const labelSelectDecision: string = "Select next decision";
 
     const buildChainConditionTableRow = (condition: ConditionTO): JSX.Element => {
-        let copyCondition: ConditionTO = DavitUtil.deepCopy(condition);
+        const copyCondition: ConditionTO = DavitUtil.deepCopy(condition);
 
         return (
             <tr key={copyCondition.id}>

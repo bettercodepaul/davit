@@ -4,7 +4,7 @@ import { StoreTO } from "../access/to/StoreTO";
 export const DavitVersionManager = {
     updateProject(dataStoreObject: StoreTO): StoreTO {
         console.info("Call davit version manager.");
-        let migratedDataStoreObject: StoreTO = {} as StoreTO;
+        const migratedDataStoreObject: StoreTO = {} as StoreTO;
 
         switch (dataStoreObject.version) {
             case undefined:

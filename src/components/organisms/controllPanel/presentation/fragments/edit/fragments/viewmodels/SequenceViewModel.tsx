@@ -120,7 +120,7 @@ export const useSequenceViewModel = () => {
 
     const createSequenceState = () => {
         if (!DavitUtil.isNullOrUndefined(sequenceToEdit)) {
-            let newSequenceState: SequenceStateTO = new SequenceStateTO();
+            const newSequenceState: SequenceStateTO = new SequenceStateTO();
             newSequenceState.sequenceFk = sequenceToEdit!.id;
             saveSequenceState(newSequenceState);
         }

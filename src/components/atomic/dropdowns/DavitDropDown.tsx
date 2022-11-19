@@ -86,7 +86,7 @@ const handleOnChange = (value: any, onSelect: (dropdownItem: DavitDropDownItemPr
 };
 
 const getSelectedValue = (value: string | undefined, dropdownItems: DavitDropDownItemProps[]): ReactSelectOption => {
-    let selectedValue: ReactSelectOption = {value: "", label: ""};
+    const selectedValue: ReactSelectOption = {value: "", label: ""};
 
     if (value) {
 

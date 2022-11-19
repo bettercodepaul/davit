@@ -157,9 +157,9 @@ export const useChainDecisionViewModel = () => {
         if (!DavitUtil.isNullOrUndefined(decisionToEdit)) {
             const copyDecision: ChainDecisionTO = DavitUtil.deepCopy(decisionToEdit);
             // TODO: ConditonThunk soll das machen.
-            let conditionToUpdate: ConditionTO | undefined = copyDecision.conditions.find(condition => condition.id === conditionToSave.id);
+            const conditionToUpdate: ConditionTO | undefined = copyDecision.conditions.find(condition => condition.id === conditionToSave.id);
             if (conditionToUpdate) {
-                let filteredConditions: ConditionTO[] = copyDecision.conditions.filter(condition => condition.id !== conditionToSave.id);
+                const filteredConditions: ConditionTO[] = copyDecision.conditions.filter(condition => condition.id !== conditionToSave.id);
                 filteredConditions.push(conditionToSave);
                 copyDecision.conditions = filteredConditions;
             } else {

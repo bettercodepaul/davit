@@ -111,9 +111,9 @@ const useDnDBoxViewModel = (svgElements: DavitPathProps[]) => {
 
     useEffect(() => {
         if (constraintsRef !== null && constraintsRef.current !== null) {
-            let newPaths: DavitPathProps[] = [];
+            const newPaths: DavitPathProps[] = [];
             svgElements.forEach((svg) => {
-                let updatedSvg: DavitPathProps = svg;
+                const updatedSvg: DavitPathProps = svg;
                 updatedSvg.xSource = svg.xSource * (constraintsRef.current!.offsetWidth / 100);
                 updatedSvg.ySource = svg.ySource * (constraintsRef.current!.offsetHeight / 100);
                 updatedSvg.xTarget = svg.xTarget * (constraintsRef.current!.offsetWidth / 100);

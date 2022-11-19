@@ -83,7 +83,7 @@ export const ConstraintsHelper = {
     },
 
     deleteStepConstraintCheck(stepToDelete: SequenceStepTO, dataStore: DataStoreCTO) {
-        let errorMessagePrefix: string = `delete.error! step: ${stepToDelete.name} with id: ${stepToDelete.id} is still connected to: \n`;
+        const errorMessagePrefix: string = `delete.error! step: ${stepToDelete.name} with id: ${stepToDelete.id} is still connected to: \n`;
         let errorMessageSuffix: string = "";
 
         const constraintStep: SequenceStepTO | undefined = Array.from(dataStore.steps.values()).find(
