@@ -16,7 +16,7 @@ export const DavitButton: FunctionComponent<DavitButtonProps> = (props) => {
 
     return (
         <button onClick={onClick}
-                className={ElementSize[size] + " " + className + " " + (active ? "activeButton" : "")}
+                className={ ElementSize[size] + " " + className + " " + (active ? "activeButton" : "")}
                 disabled={disabled}
         >
             {label}
