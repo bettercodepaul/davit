@@ -4,6 +4,9 @@
 @import "./animations.css";
 @import "./border.css";
 @import "./colors.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
     --text-font-family: "DIN OT", Helvetica, Arial, sans-serif;
