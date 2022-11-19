@@ -1,9 +1,7 @@
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons/faCloudUploadAlt";
 import React, { createRef, FunctionComponent } from "react";
-import { useDispatch } from "react-redux";
 import { GlobalActions } from "../../../slices/GlobalSlice";
 import { useAppDispatch } from "../../../store";
-import { DavitButton } from "./DavitButton";
 import { DavitIconButton } from "./DavitIconButton";
 
 export interface DavitFileInputProps {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ActorCTO } from "../../../../../../../../dataAccess/access/cto/ActorCTO";
 import { DataCTO } from "../../../../../../../../dataAccess/access/cto/DataCTO";
 import { SequenceCTO } from "../../../../../../../../dataAccess/access/cto/SequenceCTO";
@@ -13,7 +13,7 @@ import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceM
 import { EditAction } from "../../../../../../../../slices/thunks/ActionThunks";
 import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import { DataAndInstanceId } from "../../../../../../../atomic/dropdowns/InstanceDropDown";
+import { DataAndInstanceId } from "../../../../../../../atomic";
 
 
 export const useActionViewModel = () => {

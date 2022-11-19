@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from "react";
-import { useDispatch } from "react-redux";
 import { ChainStateTO } from "../../../dataAccess/access/to/ChainStateTO";
 import { InitDataTO } from "../../../dataAccess/access/to/InitDataTO";
 import { SequenceStateTO } from "../../../dataAccess/access/to/SequenceStateTO";

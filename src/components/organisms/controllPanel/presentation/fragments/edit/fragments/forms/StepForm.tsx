@@ -3,21 +3,23 @@ import { faAngleUp } from "@fortawesome/free-solid-svg-icons/faAngleUp";
 import React, { FunctionComponent, useState } from "react";
 import { ActionTO } from "../../../../../../../../dataAccess/access/to/ActionTO";
 import { GoToTypes } from "../../../../../../../../dataAccess/access/types/GoToType";
-import { DavitIconButton } from "../../../../../../../atomic";
-import { DavitAddButton } from "../../../../../../../atomic";
-import { DavitBackButton } from "../../../../../../../atomic";
-import { DavitButton } from "../../../../../../../atomic";
-import { DavitDeleteButton } from "../../../../../../../atomic";
-import { DavitEditButton } from "../../../../../../../atomic";
-import { DavitShowMoreButton } from "../../../../../../../atomic";
-import { DecisionDropDown } from "../../../../../../../atomic";
-import { GoToOptionDropDown } from "../../../../../../../atomic";
-import { StepDropDown } from "../../../../../../../atomic";
-import { Form } from "../../../../../../../atomic";
+import {
+    DavitAddButton,
+    DavitBackButton,
+    DavitButton,
+    DavitDeleteButton,
+    DavitEditButton,
+    DavitIconButton,
+    DavitShowMoreButton,
+    DavitTextInput,
+    DecisionDropDown,
+    Form,
+    GoToOptionDropDown,
+    StepDropDown
+} from "../../../../../../../atomic";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
-import { DavitTextInput } from "../../../../../../../atomic";
 import { DavitCommentButton } from "../../../../../../../molecules";
 import { useActionViewModel } from "../viewmodels/ActionViewModel";
 import { useStepViewModel } from "../viewmodels/StepViewModel";

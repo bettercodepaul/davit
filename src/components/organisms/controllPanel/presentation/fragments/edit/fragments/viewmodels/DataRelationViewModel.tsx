@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { DataCTO } from "../../../../../../../../dataAccess/access/cto/DataCTO";
 import { DataRelationTO, Direction, RelationType } from "../../../../../../../../dataAccess/access/to/DataRelationTO";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
@@ -8,7 +8,7 @@ import { masterDataSelectors } from "../../../../../../../../slices/MasterDataSl
 import { EditRelation } from "../../../../../../../../slices/thunks/RelationThunks";
 import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import { DavitDropDownItemProps } from "../../../../../../../atomic/dropdowns/DavitDropDown";
+import { DavitDropDownItemProps } from "../../../../../../../atomic";
 
 export const useDataRelationViewModel = () => {
     const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);

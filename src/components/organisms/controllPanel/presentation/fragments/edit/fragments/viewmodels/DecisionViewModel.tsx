@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { SequenceCTO } from "../../../../../../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../../../../../../dataAccess/access/cto/SequenceStepCTO";
 import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";

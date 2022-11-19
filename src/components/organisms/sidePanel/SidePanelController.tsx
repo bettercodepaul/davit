@@ -1,9 +1,9 @@
-import { useAppDispatch } from "../../../store";
 import React, { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import logo from "../../../assets/exxcellent_logo_200.png";
 import { DAVIT_VERISON } from "../../../DavitConstants";
 import { EditActions, editSelectors, Mode } from "../../../slices/EditSlice";
+import { useAppDispatch } from "../../../store";
 import { ElementSize } from "../../../style/Theme";
 import { DavitIconButton } from "../../atomic";
 import { DavitIcons } from "../../atomic/icons/IconSet";

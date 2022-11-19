@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { DataCTO } from "../../../../../../../dataAccess/access/cto/DataCTO";
 import { DataInstanceTO } from "../../../../../../../dataAccess/access/to/DataInstanceTO";
 import { EditActions, editSelectors } from "../../../../../../../slices/EditSlice";
@@ -7,9 +7,9 @@ import { GlobalActions } from "../../../../../../../slices/GlobalSlice";
 import { EditData } from "../../../../../../../slices/thunks/DataThunks";
 import { useAppDispatch } from "../../../../../../../store";
 import { DavitUtil } from "../../../../../../../utils/DavitUtil";
-import { DavitBackButton } from "../../../../../../atomic/buttons/DavitBackButton";
-import { DavitDeleteButton } from "../../../../../../atomic/buttons/DavitDeleteButton";
-import { DavitTextInput } from "../../../../../../atomic/textinput/DavitTextInput";
+import { DavitBackButton } from "../../../../../../atomic";
+import { DavitDeleteButton } from "../../../../../../atomic";
+import { DavitTextInput } from "../../../../../../atomic";
 import { OptionField } from "../common/OptionField";
 
 export interface ControlPanelEditDataInstanceProps {

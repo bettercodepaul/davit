@@ -1,10 +1,9 @@
 import React, { FunctionComponent, useState } from "react";
-import { useDispatch } from "react-redux";
 import { GlobalActions } from "../../../slices/GlobalSlice";
 import { useAppDispatch } from "../../../store";
 import { useEnterHook, useEscHook } from "../../../utils/WindowUtil";
-import { DavitButton } from "../buttons/DavitButton";
-import { DavitTextInput } from "../textinput/DavitTextInput";
+import { DavitButton } from "../buttons";
+import { DavitTextInput } from "../textinput";
 import "./DavitDownloadForm.css";
 import { FormFooter } from "./fragments/FormFooter";
 import { FormHeader } from "./fragments/FormHeader";

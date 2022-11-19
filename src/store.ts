@@ -1,4 +1,4 @@
-import { Action, configureStore, getDefaultMiddleware, ThunkAction } from "@reduxjs/toolkit";
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { storageMiddleware } from "./middlewares/StateSync";
 import { EditReducer } from "./slices/EditSlice";

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { ArcherContainer, ArcherElement } from "react-archer";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { StateView } from "../../../components/molecules/StateView";
 import { ChainCTO } from "../../../dataAccess/access/cto/ChainCTO";
 import { ChainLinkCTO } from "../../../dataAccess/access/cto/ChainlinkCTO";

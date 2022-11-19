@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { DataSetupCTO } from "../../../../../../dataAccess/access/cto/DataSetupCTO";
+import { useSelector } from "react-redux";
 import { SequenceCTO } from "../../../../../../dataAccess/access/cto/SequenceCTO";
 import { ChainTO } from "../../../../../../dataAccess/access/to/ChainTO";
 import { DataSetupTO } from "../../../../../../dataAccess/access/to/DataSetupTO";
@@ -9,9 +8,8 @@ import { SequenceModelActions, sequenceModelSelectors } from "../../../../../../
 import { useAppDispatch } from "../../../../../../store";
 import { DavitUtil } from "../../../../../../utils/DavitUtil";
 import { useStepAndLinkNavigation } from "../../../../../../utils/WindowUtil";
-import { ChainDropDown } from "../../../../../atomic/dropdowns/ChainDropDown";
-import { DataSetupDropDown } from "../../../../../atomic/dropdowns/DataSetupDropDown";
-import { SequenceDropDown } from "../../../../../atomic/dropdowns/SequenceDropDown";
+import { ChainDropDown } from "../../../../../atomic";
+import { SequenceDropDown } from "../../../../../atomic";
 import { OptionField } from "../edit/common/OptionField";
 import { ViewNavigator } from "./fragments/ViewNavigator";
 

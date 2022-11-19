@@ -1,8 +1,7 @@
 import { faComment, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import React, { FunctionComponent, useState } from "react";
 import { DavitIconButton } from ".";
-import { DavitNoteModal } from "../modals/DavitNoteModal";
-import { DavitButton } from "./DavitButton";
+import { DavitNoteModal } from "../modals";
 
 export interface DavitCommentButtonProps {
     onSaveCallback: (comment: string) => void;

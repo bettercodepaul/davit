@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ActorCTO } from "../../../../../../../dataAccess/access/cto/ActorCTO";
 import { DataCTO } from "../../../../../../../dataAccess/access/cto/DataCTO";
 import { ChainTO } from "../../../../../../../dataAccess/access/to/ChainTO";

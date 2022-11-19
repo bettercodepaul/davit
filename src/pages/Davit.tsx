@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
 
 // import {BrowserRouter, Route, Switch} from "react-router-dom";
 // electron needs HashRouter
 import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
-import { ErrorNotification } from "../components/molecules/notifications/ErrorNotification";
+import { ErrorNotification } from "../components/molecules";
 import { ControlPanelController } from "../components/organisms/controllPanel/presentation/ControlPanelController";
 import { SidePanelController } from "../components/organisms/sidePanel/SidePanelController";
 import "../css/Davit.css";

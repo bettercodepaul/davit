@@ -1,7 +1,6 @@
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons/faCloudUploadAlt";
 import React, { createRef, FunctionComponent, useState } from "react";
-import { useDispatch } from "react-redux";
 import { EditActions } from "../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../slices/GlobalSlice";
 import { useAppDispatch } from "../../../../../../store";

@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useSelector } from "react-redux";
 import { DataSetupTO } from "../../../dataAccess/access/to/DataSetupTO";
-import { masterDataSelectors } from "../../../slices/MasterDataSlice";
 import { DavitUtil } from "../../../utils/DavitUtil";
 import { DavitDropDown, DavitDropDownItemProps, DavitLabelDropDown } from "./DavitDropDown";
 

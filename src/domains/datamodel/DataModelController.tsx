@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { DavitPathProps, DavitPathTypes } from "../../components/atomic/svg/DavitPath";
 import { DavitCard, DavitCardProps } from "../../components/molecules";
 import { DnDBox, DnDBoxElement, DnDBoxType } from "../../components/organisms/dndBox/DnDBox";

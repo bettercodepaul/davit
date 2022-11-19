@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { DataInstanceTO } from "../../../dataAccess/access/to/DataInstanceTO";
 import { EditActions } from "../../../slices/EditSlice";
 import { Filter, SequenceModelActions, sequenceModelSelectors } from "../../../slices/SequenceModelSlice";

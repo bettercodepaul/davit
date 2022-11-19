@@ -1,8 +1,7 @@
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import React, { FunctionComponent, useState } from "react";
 import { DavitIconButton } from ".";
-import { DavitDownloadModal } from "../modals/DavitDownlaodModal";
-import { DavitButton } from "./DavitButton";
+import { DavitDownloadModal } from "../modals";
 
 export interface DavitDownloadButtonProps {
 }

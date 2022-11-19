@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ChainCTO } from "../../../../dataAccess/access/cto/ChainCTO";
 import { SequenceCTO } from "../../../../dataAccess/access/cto/SequenceCTO";
 import { ChainConfigurationTO } from "../../../../dataAccess/access/to/ChainConfigurationTO";

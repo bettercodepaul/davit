@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { GroupTO } from "../../../../../../../../dataAccess/access/to/GroupTO";
 import { EditActions, editSelectors } from "../../../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../../../slices/GlobalSlice";

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { globalSelectors, globalSlice } from "../../../slices/GlobalSlice";
 import { useAppDispatch } from "../../../store";
 import { DavitNotification, NotificationLevel } from "./DavitNotification";

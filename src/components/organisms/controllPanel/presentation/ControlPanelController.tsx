@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { EditActions, editSelectors, Mode } from "../../../../slices/EditSlice";
 import { useAppDispatch } from "../../../../store";
 import { DavitUtil } from "../../../../utils/DavitUtil";
