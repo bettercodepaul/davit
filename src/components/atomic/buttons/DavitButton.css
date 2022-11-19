@@ -1,62 +1,23 @@
 button {
-    --size: 42px;
-    align-items: center;
-    background-color: transparent;
-
-    border-color: var(--border-color);
+    @apply bg-transparent border-solid flex items-center justify-center h-10 hover:cursor-pointer hover:bg-color-hover min-w-[42px] min-h-[42px] ;
     border-radius: var(--border-radius);
-
-    border-style: solid;
-    color: var(--primary-text-color);
-    display: flex;
-
-    height: var(--size); /* TODO do not use pixel perfect definitions */
-    justify-content: center;
-    min-height: var(--size);
-    min-width: var(--size);
-
-    padding: var(--spacing-small);
 }
-
-button:hover {
-    background: var(--color-hover);
-    cursor: pointer;
-}
-
 
 button.tiny {
-    --size: 1rem;
-    border-width: var(--border-size-small);
-    height: var(--size);
-    min-height: var(--size);
-    min-width: var(--size);
-
-    padding: 0;
+    @apply h-4 p-0 min-w-[1rem] min-h-[1rem];
 }
 
 button.small {
-    --size: 1.8rem;
-    border-width: var(--border-size-small);
-    height: var(--size);
-    min-height: var(--size);
-    min-width: var(--size);
-
-    padding: 0 var(--spacing-tiny) 0 var(--spacing-tiny);
+    @apply h-8 min-w-[1.8rem] min-h-[1.8rem];
 }
 
 button.medium {
 }
 
 button.large {
-    --size: 3.5rem;
-    height: var(--size);
-    min-height: var(--size);
-    min-width: var(--size);
-
-    padding: 0.5rem var(--spacing-medium) 0.5rem var(--spacing-medium);
+    @apply h-12 min-w-[3.5rem] min-h-[3.5rem];
 }
 
 button.activeButton {
-    background-color: var(--secondary-color);
-    border-color: var(--primary-text-color);
+    @apply bg-secondary-color border-color-light
 }
