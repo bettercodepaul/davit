@@ -27,3 +27,4 @@ dist
 
 storybook-static
 /.idea/misc.xml
+.idea
