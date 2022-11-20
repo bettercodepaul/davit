@@ -90,8 +90,10 @@
   },
   "devDependencies": {
     "concurrently": "7.4.0",
+    "cypress": "^11.1.0",
     "electron": "10.1.0",
     "electron-builder": "22.8.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "storybook-addon-designs": "5.4.5",
     "wait-on": "5.2.0"
   }

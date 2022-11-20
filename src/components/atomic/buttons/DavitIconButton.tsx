@@ -14,12 +14,13 @@ interface DavitIconButtonProps extends DavitButtonProps {
 }
 
 export const DavitIconButton: FunctionComponent<DavitIconButtonProps> = (props) => {
-    const {onClick, size, className = "", iconName, children, iconLeft, iconColor} = props;
+    const {onClick, size, className = "", iconName, children, iconLeft, iconColor, dataTestId} = props;
 
     return (
         <DavitButton onClick={onClick}
                      size={size}
                      className={className}
+                     dataTestId={dataTestId}
         >
             {iconName && iconLeft && <FontAwesomeIcon className={children ? "iconButtonIcon" : ""}
                                                       icon={iconName}

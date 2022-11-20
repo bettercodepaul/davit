@@ -19,12 +19,11 @@ export const ChainStateRepository = {
 
     save(chainState: ChainStateTO): ChainStateTO {
         CheckHelper.nullCheck(chainState, "chainState");
-        let chainStateToSave: ChainStateTO;
         let chainMockId: number = chainState.id;
 
         chainMockId = DataAccessUtil.getOrCreateId(chainMockId, this.findAll());
 
-        chainStateToSave = {
+        const chainStateToSave: ChainStateTO = {
             ...chainState,
             id: chainMockId,
         };

@@ -5,14 +5,15 @@ import { DavitAddButton } from "../atomic";
 interface AddOrEditProps {
     addCallBack: () => void;
     dropDown: JSX.Element;
+    dataTestId?:string;
 }
 
 export const AddOrEdit: FunctionComponent<AddOrEditProps> = (props) => {
-    const {addCallBack, dropDown} = props;
+    const {addCallBack, dropDown, dataTestId} = props;
 
     return (
         <div className="flex">
-            <DavitAddButton onClick={() => addCallBack()}
+            <DavitAddButton dataTestId={dataTestId + "_G1qqp"} onClick={() => addCallBack()}
                             size={ElementSize.medium}
             />
             {dropDown}

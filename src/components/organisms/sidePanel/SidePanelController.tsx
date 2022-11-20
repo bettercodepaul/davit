@@ -21,14 +21,17 @@ export const SidePanelController: FunctionComponent<SidePanelProps> = () => {
                              size={ElementSize.large}
                              className={"sidePanelButton" + ((mode.includes(Mode.EDIT.toString()) && mode !== Mode.VIEW_CONFIGURATION) ? " active" : "")}
                              onClick={setModeToEdit}
+                             dataTestId="zA5BP"
             />
             <DavitIconButton iconName={DavitIcons.eye}
                              className={"sidePanelButton" + (mode === Mode.VIEW || mode === Mode.VIEW_CONFIGURATION ? " active" : "")}
                              onClick={setModeToConfiguration}
+                             dataTestId="cskrB"
             />
             <DavitIconButton iconName={DavitIcons.file}
                              className={"sidePanelButton" + (mode === Mode.FILE ? " active" : "")}
                              onClick={setModeToFile}
+                             dataTestId="p8Ppa"
             />
             {/*TODO: enable wenn tabs are fixed!*/}
             {/*<DavitSidePanelButton icon="external alternate" onClick={setModeToTab} active={mode === Mode.TAB} />*/}

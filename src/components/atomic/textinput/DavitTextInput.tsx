@@ -8,10 +8,11 @@ export interface DavitTextInputProps {
     placeholder?: string;
     value?: string;
     label?: string;
+    dataTestId?: string;
 }
 
 export const DavitTextInput: FunctionComponent<DavitTextInputProps> = (props) => {
-    const {label, placeholder, value, onChangeCallback, onBlur, focus} = props;
+    const {label, placeholder, value, onChangeCallback, onBlur, focus, dataTestId} = props;
 
     const [stateValue, setStateValue] = useState<string>("");
 
@@ -32,6 +33,7 @@ export const DavitTextInput: FunctionComponent<DavitTextInputProps> = (props) =>
         <div className="flex">
             {label && <label className={"inputLabel flex flex-center padding-small"}>{label}</label>}
             <input
+                data-test-id={dataTestId}
                 className={label ? "input label padding-small" : "padding-small"}
                 type={"text"}
                 placeholder={placeholder}

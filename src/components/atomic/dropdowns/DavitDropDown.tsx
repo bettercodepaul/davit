@@ -16,6 +16,7 @@ export interface DavitDropDownProps {
     clearable?: boolean;
     className?: string;
     classPrefix?: string;
+    dataTestId?: string;
 }
 
 export interface DavitLabelDropDownProps {
@@ -23,7 +24,9 @@ export interface DavitLabelDropDownProps {
     dropdownItems: DavitDropDownItemProps[];
     label: string;
     className?: string;
-    classPrefix?: string;
+    classPrefix?: string;  
+    dataTestId?: string;
+
 }
 
 interface ReactSelectOption {
@@ -32,7 +35,7 @@ interface ReactSelectOption {
 }
 
 export const DavitDropDown: FunctionComponent<DavitDropDownProps> = (props) => {
-    const {dropdownItems, onSelect, placeholder, value, clearable, classPrefix, className} = props;
+    const {dropdownItems, onSelect, placeholder, value, clearable, classPrefix, className, dataTestId} = props;
 
 
     return (
@@ -44,12 +47,13 @@ export const DavitDropDown: FunctionComponent<DavitDropDownProps> = (props) => {
             value={getSelectedValue(value, dropdownItems)}
             options={dropdownItems.sort((a, b) => a.text.toLowerCase().localeCompare(b.text.toLowerCase())).map(dropdownItemToOption)}
             onChange={(value) => handleOnChange(value, onSelect)}
+            id={dataTestId}
         />
     );
 };
 
 export const DavitLabelDropDown: FunctionComponent<DavitLabelDropDownProps> = (props) => {
-        const {dropdownItems, onSelect, label, className, classPrefix} = props;
+        const {dropdownItems, onSelect, label, className, classPrefix, dataTestId} = props;
 
         return (
             <Select
@@ -59,6 +63,7 @@ export const DavitLabelDropDown: FunctionComponent<DavitLabelDropDownProps> = (p
                 options={dropdownItems.sort((a, b) => a.text.toLowerCase().localeCompare(b.text.toLowerCase())).map(dropdownItemToOption)}
                 onChange={(value) => handleOnChange(value, onSelect)}
                 isSearchable={false}
+                instanceId={dataTestId}
             />
         );
     }

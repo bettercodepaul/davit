@@ -296,8 +296,7 @@ const useMetaDataModelViewModel = () => {
         };
 
         const dataToDnDElements = (datas: DataCTO[]): DnDBoxElement[] => {
-            let dndBoxElements: DnDBoxElement[];
-            dndBoxElements = datas
+            const dndBoxElements: DnDBoxElement[] = datas
                 .filter((data) => !(dataCTOToEdit && dataCTOToEdit.data.id === data.data.id))
                 .map((dataa) => {
                     return {
@@ -370,7 +369,7 @@ const useMetaDataModelViewModel = () => {
         };
 
         const getRelations = (): DavitPathProps[] => {
-            let dataRelationsProps: DavitPathProps[] = [];
+            const dataRelationsProps: DavitPathProps[] = [];
 
             let copyDataRelations: DataRelationTO[] = DavitUtil.deepCopy(dataRelations);
 

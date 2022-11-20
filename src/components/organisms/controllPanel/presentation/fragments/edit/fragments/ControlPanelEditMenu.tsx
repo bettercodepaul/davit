@@ -35,8 +35,9 @@ export const ControlPanelEditMenu: FunctionComponent<ControlPanelEditMenuProps> 
         <ControlPanel>
             <OptionField label="actor">
                 <AddOrEdit
+                    dataTestId="wk68s"
                     addCallBack={() => editOrAddActor()}
-                    dropDown={<ActorDropDownLabel onSelect={editOrAddActor}
+                    dropDown={<ActorDropDownLabel dataTestId="7LsEB" onSelect={editOrAddActor}
                                                   label="Actor"
                     />}
                 />
@@ -44,12 +45,12 @@ export const ControlPanelEditMenu: FunctionComponent<ControlPanelEditMenuProps> 
             <OptionField label="Data"
                          divider={true}
             >
-                <AddOrEdit addCallBack={() => editOrAddData()}
+                <AddOrEdit dataTestId="JIWDG" addCallBack={() => editOrAddData()}
                            dropDown={<DataLabelDropDown onSelect={editOrAddData}
                                                         label="Data"
                            />}
                 />
-                <AddOrEdit addCallBack={() => editOrAddRelation()}
+                <AddOrEdit dataTestId="14RGZ" addCallBack={() => editOrAddRelation()}
                            dropDown={<RelationLabelDropDown onSelect={editOrAddRelation}
                                                             label="Relation"
                            />}
@@ -64,8 +65,10 @@ export const ControlPanelEditMenu: FunctionComponent<ControlPanelEditMenuProps> 
                                onSelect={(sequenceTO) => editOrAddSequence(sequenceTO?.id)}
                                label="Sequence"
                            />}
+                           dataTestId="tBuBo"
                 />
                 <AddOrEdit addCallBack={() => editOrAddChain()}
+                            dataTestId="oyOjR"
                            dropDown={<ChainDropDownButton
                                onSelect={(chain) => editOrAddChain(chain)}
                                label="Chain"

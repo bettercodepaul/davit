@@ -7,9 +7,10 @@ interface DavitBackButtonProps extends DavitButtonProps {
 }
 
 export const DavitBackButton: FunctionComponent<DavitBackButtonProps> = (props) => {
-    const {onClick} = props;
+    const {onClick, dataTestId} = props;
 
     return <DavitIconButton onClick={onClick}
                             iconName={DavitIcons.back}
+                            dataTestId={dataTestId}
     />;
 };

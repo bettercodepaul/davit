@@ -9,15 +9,17 @@ interface ActorDropDownProps {
     onSelect: (actor: ActorCTO | undefined) => void;
     placeholder?: string;
     value?: number;
+    dataTestId?: string;
 }
 
 interface ActorDropDownLabelProps {
     onSelect: (actor: ActorCTO | undefined) => void;
     label: string;
+    dataTestId?: string;
 }
 
 export const ActorDropDown: FunctionComponent<ActorDropDownProps> = (props) => {
-    const {onSelect, placeholder, value} = props;
+    const {onSelect, placeholder, value, dataTestId} = props;
     const {actors, actorToOption, selectActor} = useActorDropDownViewModel();
 
     return (
@@ -26,12 +28,13 @@ export const ActorDropDown: FunctionComponent<ActorDropDownProps> = (props) => {
             onSelect={(item) => onSelect(selectActor(Number(item.value), actors))}
             placeholder={placeholder}
             value={value?.toString()}
+            dataTestId={dataTestId}
         />
     );
 };
 
 export const ActorDropDownLabel: FunctionComponent<ActorDropDownLabelProps> = (props) => {
-    const {onSelect, label} = props;
+    const {onSelect, label, dataTestId} = props;
     const {actorToOption, actors, selectActor} = useActorDropDownViewModel();
 
     return (
@@ -39,6 +42,7 @@ export const ActorDropDownLabel: FunctionComponent<ActorDropDownLabelProps> = (p
             dropdownItems={actors.map((actor) => actorToOption(actor))}
             onSelect={(item) => onSelect(selectActor(Number(item.value), actors))}
             label={label}
+            dataTestId={dataTestId}
         />
     );
 };

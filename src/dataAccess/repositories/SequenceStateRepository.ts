@@ -19,12 +19,11 @@ export const SequenceStateRepository = {
 
     save(sequenceState: SequenceStateTO): SequenceStateTO {
         CheckHelper.nullCheck(sequenceState, "sequenceState");
-        let sequenceStateTOtoSave: SequenceStateTO;
         let sequenceStateId: number = sequenceState.id;
 
         sequenceStateId = DataAccessUtil.getOrCreateId(sequenceStateId, this.findAll());
 
-        sequenceStateTOtoSave = {
+        const sequenceStateTOtoSave: SequenceStateTO = {
             ...sequenceState,
             id: sequenceStateId,
         };

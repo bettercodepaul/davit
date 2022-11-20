@@ -134,7 +134,7 @@ export const SequenceActionReducer = {
          * Remove with status "deleted" and "check failed"
          * Change rest to status "persistent".
          * */
-        let updatedActorDatas: ActorData[] = actorDatas
+        const updatedActorDatas: ActorData[] = actorDatas
             .filter((actorData) => !isTransiantState(actorData.state))
             .map((actorData) => {
                 return {...actorData, state: ActorDataState.PERSISTENT};

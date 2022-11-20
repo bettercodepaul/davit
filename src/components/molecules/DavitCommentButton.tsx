@@ -1,10 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
-import { DavitIconButton, DavitNoteModal } from "../atomic";
+import { DavitButtonProps, DavitIconButton, DavitNoteModal } from "../atomic";
 import { DavitIcons } from "../atomic/icons/IconSet";
 
 export interface DavitCommentButtonProps {
     onSaveCallback: (comment: string) => void;
     comment: string;
+    dataTestId?: string;
 }
 
 export const DavitCommentButton: FunctionComponent<DavitCommentButtonProps> = (props) => {

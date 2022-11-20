@@ -25,10 +25,11 @@ export interface DavitCardProps {
     zoomFactor: number;
     onClick?: (id: number) => void;
     type: "DATA" | "ACTOR" | "INSTANCE";
+    dataTestId?:string;
 }
 
 export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
-    const {id, initName, initWidth, initHeight, dataFragments, instances, zoomFactor, type} = props;
+    const {id, initName, initWidth, initHeight, dataFragments, instances, zoomFactor, type, dataTestId} = props;
 
     const {onClickEdit, onClickFilter, showMenu, setShowMenu, isActiveFilter} = useDavitCardViewModel(type, id);
 
@@ -71,7 +72,7 @@ export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
                 </div>);
         } else {
             return (<div className="cardLabelWrapper padding-small">
-                <label>{initName}</label>
+                <label data-test-id={dataTestId + "_label"}>{initName}</label>
             </div>);
         }
     };
@@ -86,6 +87,7 @@ export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
             }}
             onClick={props.onClick ? () => props.onClick!(props.id) : undefined}
             key={id}
+            data-test-id={dataTestId}
         >
             <div className="cardHeader">
 

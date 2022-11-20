@@ -5,7 +5,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:cypress/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -22,7 +23,8 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "react-hooks"
+    "react-hooks",
+    "cypress"
   ],
   "rules": {
     "no-unused-vars": "off",
@@ -45,6 +47,13 @@
     //turned off to leave the decision weather a comment is needed or not to the developer
     "require-jsdoc": "off",
     "valid-jsdoc": "off"
+    // cypress
+  //   "cypress/no-assigning-return-values": "error",
+  //   "cypress/no-unnecessary-waiting": "error",
+  //   "cypress/assertion-before-screenshot": "warn",
+  //   "cypress/no-force": "warn",
+  //   "cypress/no-async-tests": "error",
+  //   "cypress/no-pause": "error"
   },
   "settings": {
     "react": {

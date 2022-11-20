@@ -282,8 +282,7 @@ const useViewModel = () => {
         };
 
         const actorsToDnDElements = (actors: ActorCTO[]): DnDBoxElement[] => {
-            let dndBoxElements: DnDBoxElement[];
-            dndBoxElements = actors
+            const dndBoxElements: DnDBoxElement[] = actors
                 .filter((actor) => !(actorCTOToEdit && actorCTOToEdit.actor.id === actor.actor.id))
                 .map((actorr) => {
                     return {
@@ -317,14 +316,14 @@ const useViewModel = () => {
                 ),
                 zoomFactor: actorZoom,
                 type: "ACTOR",
+                dataTestId:"rkL3I_" + actor.actor.name,
             };
         };
 
         const getArrows = (): DavitPathProps[] => {
             const arrowProps: DavitPathProps[] = [];
-            let arrowsToDraw: Arrow[];
 
-            arrowsToDraw = arrows;
+            const arrowsToDraw: Arrow[] = arrows;
 
             if (editArrow) {
                 arrowsToDraw.push(editArrow);

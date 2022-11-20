@@ -49,6 +49,7 @@ export const ActorForm: FunctionComponent<ActorFormProps> = () => {
                         onBlur={updateActor}
                         value={name}
                         focus
+                        dataTestId="hb6LI"
                     />
                 </FormLine>
 
@@ -57,18 +58,19 @@ export const ActorForm: FunctionComponent<ActorFormProps> = () => {
             <FormDivider />
 
             <FormFooter>
-                <DavitDeleteButton onClick={deleteActor} />
+                <DavitDeleteButton onClick={deleteActor} dataTestId="zOj3e" />
                 <DavitCommentButton onSaveCallback={saveNote}
                                     comment={note}
+                                    dataTestId="1vYjs"
                 />
-                <DavitButton onClick={() => {
+                <DavitButton dataTestId="Gdobj" onClick={() => {
                     createAnother();
                     setKey(key + 1);
                 }}
                 >
                     {t("ACTOR.EDIT_FORM.CREATE_BUTTON")}
                 </DavitButton>
-                <DavitBackButton onClick={saveActor} />
+                <DavitBackButton onClick={saveActor} dataTestId="FSfCd" />
             </FormFooter>
 
 

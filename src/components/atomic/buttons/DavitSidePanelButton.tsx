@@ -6,13 +6,14 @@ interface DavitButtonIconProps {
     onClick: () => void;
     icon: IconDefinition;
     active?: boolean;
+    dataTestId?:string
 }
 
 export const DavitSidePanelButton: FunctionComponent<DavitButtonIconProps> = (props) => {
-    const {onClick, icon, active} = props;
+    const {onClick, icon, active, dataTestId} = props;
 
     return (
-        <button className={"sidePanelButton" + (active ? " active" : "")}
+        <button data-test-id={dataTestId} className={"sidePanelButton" + (active ? " active" : "")}
                 onClick={onClick}
         >
             <FontAwesomeIcon icon={icon} />

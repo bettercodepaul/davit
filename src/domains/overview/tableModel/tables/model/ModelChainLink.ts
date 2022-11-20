@@ -12,8 +12,7 @@ export const useGetModelChainLinkTableData = (
 ) => {
     const dispatch = useAppDispatch();
 
-    let bodyData: DavitTableRowData[];
-    bodyData = selectedChainlinks.map((link) => {
+    const bodyData: DavitTableRowData[] = selectedChainlinks.map((link) => {
         const onClickEdit = () => dispatch(EditActions.setMode.editChainLink(link.chainLink));
         return createLinkColumn(link, selectedChainlinks, selectedChainDecisions, onClickEdit);
     });
