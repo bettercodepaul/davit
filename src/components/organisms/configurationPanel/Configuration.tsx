@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useState } from "react";
-import { ChainStateTO } from "../../../dataAccess/access/to/ChainStateTO";
-import { InitDataTO } from "../../../dataAccess/access/to/InitDataTO";
-import { SequenceStateTO } from "../../../dataAccess/access/to/SequenceStateTO";
-import { SequenceModelActions } from "../../../slices/SequenceModelSlice";
-import { useAppDispatch } from "../../../store";
-import { ElementSize } from "../../../style/Theme";
-import { DavitUtil } from "../../../utils/DavitUtil";
+import React, {FunctionComponent, useState} from "react";
+import {ChainStateTO} from "../../../dataAccess/access/to/ChainStateTO";
+import {InitDataTO} from "../../../dataAccess/access/to/InitDataTO";
+import {SequenceStateTO} from "../../../dataAccess/access/to/SequenceStateTO";
+import {SequenceModelActions} from "../../../slices/SequenceModelSlice";
+import {useAppDispatch} from "../../../store";
+import {ElementSize} from "../../../style/Theme";
+import {DavitUtil} from "../../../utils/DavitUtil";
 import {
     ActorDropDown,
     ChainDropDown,
@@ -16,16 +16,16 @@ import {
     InstanceDropDown,
     SequenceDropDown,
 } from "../../atomic";
-import { DavitToggleButton } from "../../atomic/buttons/DavitToggleButton";
-import { ChainConfigurationDropDown } from "../../atomic/dropdowns/ChainConfigurationDropDown";
-import { SequenceConfigurationDropDown } from "../../atomic/dropdowns/SequenceConfigurationDropDown";
-import { DavitIcons } from "../../atomic/icons/IconSet";
-import { NoteIcon } from "../../atomic/icons/NoteIcon";
+import {DavitToggleButton} from "../../atomic/buttons/DavitToggleButton";
+import {ChainConfigurationDropDown} from "../../atomic/dropdowns/ChainConfigurationDropDown";
+import {SequenceConfigurationDropDown} from "../../atomic/dropdowns/SequenceConfigurationDropDown";
+import {DavitIcons} from "../../atomic/icons/IconSet";
+import {NoteIcon} from "../../atomic/icons/NoteIcon";
 import "./Configuration.css";
-import { ConfigurationSelectButton } from "./fragments/ConfigurationSelectButton";
-import { SaveConfigurationModal } from "./fragments/SaveConfigurationModal";
-import { StateConfigurationView } from "./fragments/StateConfigurationView";
-import { useConfigurationViewModel } from "./models/ConfigurationViewModel";
+import {ConfigurationSelectButton} from "./fragments/ConfigurationSelectButton";
+import {SaveConfigurationModal} from "./fragments/SaveConfigurationModal";
+import {StateConfigurationView} from "./fragments/StateConfigurationView";
+import {useConfigurationViewModel} from "./models/ConfigurationViewModel";
 
 export interface ConfigurationPanelProps {
 
@@ -38,6 +38,9 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
     const [sequenceOptions, setSequenceOptions] = useState<boolean>(false);
     const [showMore, setShowMore] = useState<boolean>(true);
     const [showSaveConfiguration, setShowSaveConfiguration] = useState<boolean>(false);
+    const [showAllState, setShowAllState] = useState<boolean>(true);
+    const [showOnlyChainState, setShowOnlyChainState] = useState<boolean>(false);
+    const [showLinkId, setShowLinkId] = useState<number>(-1);
 
     const {
         runCalc,
@@ -118,7 +121,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                         <DavitDeleteButton onClick={() => {
                             deleteSequenceInitData(index);
                         }}
-                                           noConfirm
+                            noConfirm
                         />
                     </div>
                 </td>
@@ -176,7 +179,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                         <DavitDeleteButton onClick={() => {
                             deleteChainInitData(index);
                         }}
-                                           noConfirm
+                            noConfirm
                         />
                     </div>
                 </td>
@@ -307,13 +310,13 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
                 />}
                 {!sequenceOptions && <ChainDropDown onSelect={setChain}
-                                                    value={selectedChain?.chain.id}
+                    value={selectedChain?.chain.id}
                 />}
 
                 {(selectedSequence !== null || selectedChain !== null)
                     && < DavitShowMoreButton onClick={setShowMore}
-                                             show={showMore}
-                                             size={ElementSize.medium}
+                        show={showMore}
+                        size={ElementSize.medium}
                     />}
 
             </div>
@@ -329,11 +332,11 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                         {/*------ note -----*/}
                         <div className="flex flex-center padding-small border-bottom border-medium">
                             <NoteIcon size="2x"
-                                      className="margin-medium padding-small border border-medium"
+                                className="margin-medium padding-small border border-medium"
                             />
                             <textarea className="noteTextarea border border-medium padding-medium"
-                                      value={getNote()}
-                                      readOnly
+                                value={getNote()}
+                                readOnly
                             />
                         </div>
 
@@ -349,7 +352,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                             />}
 
                             {sequenceConfigurationToEdit?.id !== -1 &&
-                                <DavitDeleteButton onClick={deleteSequenceConfiguration} />}
+                                <DavitDeleteButton onClick={deleteSequenceConfiguration}/>}
 
                         </div>
 
@@ -378,7 +381,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                             <div className="configurationPanelHeader content-space-around align-center border-bottom border-medium">
                                 <label>Actor</label>
                                 <label>Data Instance</label>
-                                <DavitAddButton onClick={selectedSequence ? createSequenceInitData : createChainInitData} />
+                                <DavitAddButton onClick={selectedSequence ? createSequenceInitData : createChainInitData}/>
                             </div>
 
                             <div className="configList padding-bottom-l">
@@ -390,15 +393,15 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                         <div className="flex content-space-around padding-small border-top border-medium">
 
                             <DavitIconButton onClick={() => setShowSaveConfiguration(true)}
-                                             iconLeft={false}
-                                             iconName={DavitIcons.save}
-                                             className="greenBorder"
+                                iconLeft={false}
+                                iconName={DavitIcons.save}
+                                className="greenBorder"
                             >Save Config</DavitIconButton>
 
                             <DavitIconButton onClick={runCalc}
-                                             iconLeft={false}
-                                             iconName={DavitIcons.play}
-                                             className="calcButton"
+                                iconLeft={false}
+                                iconName={DavitIcons.play}
+                                className="calcButton"
                             >Calculate</DavitIconButton>
                         </div>
                     </div>
@@ -413,11 +416,11 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                     {/*------ note -----*/}
                     <div className="flex flex-center padding-small  border-bottom border-medium">
                         <NoteIcon size="2x"
-                                  className="margin-medium padding-small border border-medium"
+                            className="margin-medium padding-small border border-medium"
                         />
                         <textarea className="noteTextarea border border-medium padding-medium"
-                                  value={getNote()}
-                                  readOnly
+                            value={getNote()}
+                            readOnly
                         />
                     </div>
 
@@ -433,64 +436,81 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                         />}
 
                         {chainConfigurationToEdit?.id !== -1 &&
-                            <DavitDeleteButton onClick={deleteChainConfiguration} />}
+                            <DavitDeleteButton onClick={deleteChainConfiguration}/>}
 
                     </div>
 
                     <div className="flex border-top border-medium">
 
                         <div id="config-chain-navigation-menu"
-                             className="configurationSequenceChainColumn"
+                            className="configurationSequenceChainColumn"
                         >
-
-                            {/*TODO: go one here*/}
 
                             {/*---- overview -----*/}
                             <ConfigurationSelectButton label="Overview"
-                                                       onClick={() => {
-                                                           // TODO: remove filters
-                                                       }}
-                                                       isSelected={false}
+                                onClick={() => {
+                                    setShowOnlyChainState(false);
+                                    setShowLinkId(-1);
+                                    setShowAllState(true);
+                                }}
+                                isSelected={true}
                             />
 
                             {/*---- chain -----*/}
                             <ConfigurationSelectButton label={selectedChain.chain.name}
-                                                       onClick={() => {
-                                                           // TODO: filter on chain states
-                                                       }}
-                                                       isSelected={false}
+                                onClick={() => {
+                                    setShowOnlyChainState(true);
+                                    setShowAllState(false);
+                                    setShowLinkId(-1);
+                                }}
+                                isSelected={false}
                             />
 
                             {/*---- links -----*/}
                             {selectedChain.links.map((link, index) => {
                                 return (<ConfigurationSelectButton key={index}
-                                                                   label={link.chainLink.name}
-                                                                   onClick={() => {
-                                                                       //TODO: filter on link states
-                                                                   }}
-                                                                   isSelected={false}
+                                    label={link.chainLink.name}
+                                    onClick={() => {
+                                        setShowLinkId(link.chainLink.id);
+                                        setShowAllState(false);
+                                        setShowOnlyChainState(false);
+                                    }}
+                                    isSelected={false}
                                 />);
                             })}
 
                         </div>
 
                         <div id="config-chain-sates-data-setup"
-                             className="border-left border-medium"
+                            className="border-left border-medium"
                         >
 
                             <div>
                                 {/*/!*----- States -----*!/*/}
-                                <div className="configurationHeader flex flex-center align-center">
+                                {(showAllState || showOnlyChainState) && <div className="configurationHeader flex flex-center align-center">
                                     <h1 className="padding-medium">
                                         {selectedSequence ? "Sequence States" : "Chain States"}
                                     </h1>
-                                </div>
+                                </div>}
 
                                 {/*    State*/}
-                                <div className="configList padding-bottom-l">
-                                    {selectedChain && selectedStateView(selectedChain.links.flatMap(link => link.sequence.sequenceStates))}
+                                {(showAllState || showOnlyChainState) && <div className="configList padding-bottom-l">
                                     {getChainStatesView()}
-                                </div>
+                                </div>}
+
+                                {(!showOnlyChainState || showLinkId !== -1 || showAllState) &&
+                                    <div className="configurationHeader flex flex-center align-center">
+                                        <h1 className="padding-medium">
+                                            Link State
+                                        </h1>
+                                    </div>}
+
+                                {/*    State*/}
+                                {(!showOnlyChainState || showLinkId !== -1 || showAllState) && <div className="configList padding-bottom-l">
+                                    {selectedChain && selectedStateView(selectedChain.links
+                                        .filter(link => filterOnlySelectedLinkStates(link.chainLink.id))
+                                        .flatMap(link => link.sequence.sequenceStates))}
+                                </div>}
 
                             </div>
 
@@ -503,7 +523,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                                 <div className="configurationPanelHeader content-space-around align-center border-bottom border-medium">
                                     <label>Actor</label>
                                     <label>Data Instance</label>
-                                    <DavitAddButton onClick={selectedSequence ? createSequenceInitData : createChainInitData} />
+                                    <DavitAddButton onClick={selectedSequence ? createSequenceInitData : createChainInitData}/>
                                 </div>
 
                                 <div className="configList padding-bottom-l">
@@ -519,15 +539,15 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                     <div className="flex content-space-around padding-small border-top border-medium">
 
                         <DavitIconButton onClick={() => setShowSaveConfiguration(true)}
-                                         iconLeft={false}
-                                         iconName={DavitIcons.save}
-                                         className="greenBorder"
+                            iconLeft={false}
+                            iconName={DavitIcons.save}
+                            className="greenBorder"
                         >Save Config</DavitIconButton>
 
                         <DavitIconButton onClick={runCalc}
-                                         iconLeft={false}
-                                         iconName={DavitIcons.play}
-                                         className="calcButton"
+                            iconLeft={false}
+                            iconName={DavitIcons.play}
+                            className="calcButton"
                         >Calculate</DavitIconButton>
                     </div>
                 </div>}
@@ -544,5 +564,15 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
                 name={chainConfigurationToEdit.name || ""}
                 type="Chain"
             />}
+
+
+
         </div>);
+
+    function filterOnlySelectedLinkStates(linkId: number): boolean {
+        if (showLinkId !== -1) {
+            return linkId === showLinkId;
+        }
+        return true;
+    }
 };
