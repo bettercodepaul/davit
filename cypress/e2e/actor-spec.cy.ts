@@ -6,11 +6,16 @@ describe('Actor',async () => {
   it('create Actor', () => {
     cy.visit('http://localhost:9000/')
     const editMenu = new EditMenuTestController();
+    const sidePanel= new SidePanelTestController();
+    const actorForm= new ActorFormTestController();
+    const actorView= new ActorViewTestController();
     const name = "Actor1"
-    new SidePanelTestController().editButton().click();
+
+    sidePanel.editButton().click();
     editMenu.actorAddOrEditAddButton().click();
-    new ActorFormTestController().addActor(name);
-    const actorLabel= new ActorViewTestController().getActorLabel(name);
+    actorForm.addActor(name);
+    const actorLabel= actorView.getActorLabel(name);
+
     expect(actorLabel.should('have.text',name));
   })
 })
