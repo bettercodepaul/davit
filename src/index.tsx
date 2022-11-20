@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { store } from "./store";
 import "./style/index.css";
 import { Theme } from "./style/Theme";
-import './utils/I18nInitUtil';
+import './libs/I18nInitUtil';
 
 const container = document.getElementById('root');
 const root = createRoot(container ?? new HTMLElement()); // createRoot(container!) if you use TypeScript
