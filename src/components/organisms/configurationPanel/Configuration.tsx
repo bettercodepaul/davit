@@ -240,7 +240,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
             }
         }
     };
-
+// TODO: save chain config states
     const getSequenceInitDatas = () => {
         if (!DavitUtil.isNullOrUndefined(sequenceConfigurationToEdit)
             && !DavitUtil.isNullOrUndefined(selectedSequence)) {
