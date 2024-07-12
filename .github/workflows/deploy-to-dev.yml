@@ -4,94 +4,47 @@ on:
   push:
     branches:
       - main
-      - feature*
+      - *
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: '15.x'
+      - name: Setup Node
+        uses: actions/setup-node@v3
 
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
 
-      - name: Yarn Install
-        uses: CultureHQ/actions-yarn@v1.0.1
-        with:
-          args: install --ignore-engines
+      - name: Build project
+        run: npm run build
 
-      # If the App is not deploy in the Servers root directory React needs to know where it is located.
-      #https://create-react-app.dev/docs/deployment/#building-for-relative-paths
-      - name: Set homepage in package.json
-        uses: jossef/action-set-json-field@v1
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          file: package.json
-          field: homepage
-          value: https://bettercodepaul.github.io/davit/dev
-
-      - name: Yarn Build
-        uses: CultureHQ/actions-yarn@v1.0.1
-        with:
-          args: build
-
-      - name: Show files
-        run: ls -la
-
-      - name: Yarn Test
-        uses: CultureHQ/actions-yarn@v1.0.1
-        with:
-          args: test
-
-      - name: Lint
-        uses: CultureHQ/actions-yarn@master
-        with:
-          args: lint
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          path: build
+          name: production-files
+          path: ./dist
 
   deploy:
-    name: Deploy to DEV
-    needs: [ build ]
+    name: Deploy
+    needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
     steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
+      - name: Download artifact
+        uses: actions/download-artifact@v3
         with:
-          name: build
+          name: production-files
+          path: ./dist
 
-      - name: Show files
-        run: ls -la
-
-      - name: Deploy on DEV
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        if: success()
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: . # The folder the action should deploy.
-          TARGET_FOLDER: dev
-          CLEAN: true # Automatically remove deleted files from the deploy branch
-          #COMMIT_MESSAGE: 'Deploy commit $GITHUB_SHA'
-          SILENT: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
