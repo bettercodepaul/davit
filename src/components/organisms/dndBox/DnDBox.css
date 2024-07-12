@@ -1,0 +1,12 @@
+.zoomLabel {
+    animation-duration: 3s;
+    animation-name: disappear;
+    color: var(--primary-text-color);
+    font-size: 0.7em;
+    opacity: 0;
+}
+
+.fullscreen {
+    height: 100%;
+    width: 100%;
+}

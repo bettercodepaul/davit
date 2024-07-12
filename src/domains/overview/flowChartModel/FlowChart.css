@@ -1,0 +1,110 @@
+:root {
+    --flowchart-element-max-width: 15rem;
+    --flowchart-element-min-height: 1.5rem;
+    --flowchart-element-min-width: 6rem;
+    --flowchart-padding: 6px;
+}
+
+.flowChart {
+    display: block;
+    overflow: auto;
+    width: 100%;
+}
+
+.STEP, .LINK {
+    align-items: center;
+    background-color: var(--background-color-header);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 0 1px var(--border-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    max-width: var(--flowchart-element-max-width);
+    min-height: var(--flowchart-element-min-height);
+    min-width: var(--flowchart-element-min-width);
+    padding: var(--flowchart-padding);
+    text-align: center;
+}
+
+.COND, .DEC {
+    background-color: var(--color-black);
+    box-shadow: 0 0 0 1px var(--border-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    height: 2em;
+    transform: translateY(0.8em) rotate(45deg);
+    width: 2em;
+    z-index: 2;
+}
+
+.condLabel {
+    background-color: var(--background-color);
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px var(--border-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    transform: translateY(0.8em);
+    z-index: 1;
+}
+
+.FIN {
+    background-color: var(--data-add-color);
+    border: 0.2em solid var(--background-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.2em var(--data-add-color), 0 0 6px 6px rgba(0, 0, 0, 0.199);
+    height: 2em;
+    transform: translateY(0.2em);
+    width: 2em;
+}
+
+.IDLE {
+    background-color: var(--color-blue);
+    border: 0.2em solid var(--background-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.2em var(--color-blue), 0 0 6px 6px rgba(0, 0, 0, 0.199);
+    height: 2em;
+    transform: translateY(0.2em);
+    width: 2em;
+}
+
+.ERROR {
+    background-color: var(--data-delete-color);
+    border: 0.2em solid var(--background-color);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.2em var(--data-delete-color), 0 0 6px 6px rgba(0, 0, 0, 0.199);
+    height: 2em;
+    transform: translateY(0.2em);
+    width: 2em;
+}
+
+.ROOT {
+    background-color: var(--background-color-header);
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    height: 2em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 2em;
+}
+
+.flowChartFlex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#flowChartCurrentStep {
+    animation-duration: 0.5s;
+    animation-name: glow;
+    box-shadow: 0 0 6px 2px var(--secondary-color), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.flowChartHeader {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    max-height: 40vh;
+    max-width: 15vw;
+    overflow-y: auto;
+}

@@ -1,0 +1,95 @@
+:root {
+    --flowchart-element-min-height: 1.5rem;
+    --flowchart-element-min-width: 6rem;
+    --flowchart-element-max-width: 15rem;
+    --flowchart-padding: 6px;
+}
+
+.STEP, .LINK {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    background-color: var(--background-color-header);
+    min-height: var(--flowchart-element-min-height);
+    min-width: var(--flowchart-element-min-width);
+    max-width: var(--flowchart-element-max-width);
+    border-radius: var(--davit-border-radius);
+    padding: var(--flowchart-padding);
+    text-align: center;
+    box-shadow: 0 0 0 1px var(--color-border), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.COND, .DEC {
+    z-index: 2;
+    width: 2em;
+    height: 2em;
+    background-color: var(--background-color-shadow);
+    transform: translateY(0.8em) rotate(45deg);
+    box-shadow: 0 0 0 1px var(--color-border), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.condLabel {
+    z-index: 1;
+    color: black;
+    background-color: var(--background-color);
+    transform: translateY(0.8em);
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px var(--color-border), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.FIN {
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    background-color: var(--data-add-color);
+    border: 0.2em solid var(--background-color);
+    box-shadow: 0 0 0 0.2em var(--data-add-color), 0 0 6px 6px rgba(0, 0, 0, 0.199);
+    transform: translateY(0.2em);
+}
+
+.IDLE {
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    background-color: var(--color-exxcellent-blue);
+    border: 0.2em solid var(--background-color);
+    box-shadow: 0 0 0 0.2em var(--color-exxcellent-blue), 0 0 6px 6px rgba(0, 0, 0, 0.199);
+    transform: translateY(0.2em);
+}
+
+.ERROR {
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    background-color: var(--data-delete-color);
+    border: 0.2em solid var(--background-color);
+    box-shadow: 0 0 0 0.2em var(--data-delete-color), 0 0 6px 6px rgba(0, 0, 0, 0.199);
+    transform: translateY(0.2em);
+}
+
+.ROOT {
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    background-color: var(--background-color-header);
+    margin: 0.2em;
+    padding: 0.2em;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.flowChartFlex {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#flowChartCurrentStep {
+    box-shadow: 0 0 6px 2px var(--color-secondary), 0 0 5px 5px rgba(0, 0, 0, 0.199);
+    animation-duration: 0.5s;
+    animation-name: glow;
+}
