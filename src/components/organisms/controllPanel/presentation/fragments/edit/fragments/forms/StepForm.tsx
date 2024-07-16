@@ -3,20 +3,6 @@ import { faAngleUp } from "@fortawesome/free-solid-svg-icons/faAngleUp";
 import React, { FunctionComponent, useState } from "react";
 import { ActionTO } from "../../../../../../../../dataAccess/access/to/ActionTO";
 import { GoToTypes } from "../../../../../../../../dataAccess/access/types/GoToType";
-import {
-    DavitAddButton,
-    DavitBackButton,
-    DavitButton,
-    DavitDeleteButton,
-    DavitEditButton,
-    DavitIconButton,
-    DavitShowMoreButton,
-    DavitTextInput,
-    DecisionDropDown,
-    Form,
-    GoToOptionDropDown,
-    StepDropDown
-} from "../../../../../../../atomic";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
@@ -26,6 +12,18 @@ import { useStepViewModel } from "../viewmodels/StepViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { FormLabel } from "./fragments/FormLabel";
 import { FormLine, FormLinePosition } from "./fragments/FormLine";
+import {
+    DavitAddButton,
+    DavitBackButton,
+    DavitButton,
+    DavitDeleteButton,
+    DavitEditButton,
+    DavitIconButton,
+    DavitShowMoreButton
+} from '../../../../../../../atomic/buttons';
+import {DecisionDropDown, GoToOptionDropDown, StepDropDown} from '../../../../../../../atomic/dropdowns';
+import {Form} from '../../../../../../../atomic/forms';
+import {DavitTextInput} from '../../../../../../../atomic/textinput';
 
 interface StepFormProps {
 }
@@ -63,7 +61,7 @@ export const StepForm: FunctionComponent<StepFormProps> = () => {
 
     const [showActions, setShowActions] = useState(true);
 
-    const createActionRow = (action: ActionTO, index: number): JSX.Element => {
+    const createActionRow = (action: ActionTO, index: number): React.JSX.Element => {
         return (<tr key={index}>
                 <td>
                     <label>{getOptionText(action)}</label>

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import {FunctionComponent, useEffect} from "react";
 import { useSelector } from "react-redux";
 import { Arrow, ArrowType, DavitPathHead, DavitPathProps, DavitPathTypes } from "../../components/atomic/svg/DavitPath";
 import { DavitCard, DavitCardProps } from "../../components/molecules";
@@ -78,7 +78,7 @@ const useViewModel = () => {
 
         const actorZoom: number = useSelector(globalSelectors.selectActorZoomFactor);
 
-        React.useEffect(() => {
+        useEffect(() => {
             dispatch(MasterDataActions.loadActorsFromBackend());
             dispatch(MasterDataActions.loadGroupsFromBackend());
         }, [dispatch]);

@@ -1,8 +1,11 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
-import { DavitButton, DavitModal, DavitTextInput, Form } from "../../../atomic";
+import { FunctionComponent, useEffect, useState } from "react";
 import { FormBody } from "../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../atomic/forms/fragments/FormHeader";
+import {DavitModal} from '../../../atomic/modals';
+import {Form} from '../../../atomic/forms';
+import {DavitTextInput} from '../../../atomic/textinput';
+import {DavitButton} from '../../../atomic/buttons';
 
 interface SaveConfigurationModalProps {
     onSaveCallback: (name: string) => void;

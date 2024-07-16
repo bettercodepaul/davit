@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 import { SequenceCTO } from "../../../../../../dataAccess/access/cto/SequenceCTO";
 import { ChainTO } from "../../../../../../dataAccess/access/to/ChainTO";
@@ -8,10 +8,9 @@ import { SequenceModelActions, sequenceModelSelectors } from "../../../../../../
 import { useAppDispatch } from "../../../../../../store";
 import { DavitUtil } from "../../../../../../utils/DavitUtil";
 import { useStepAndLinkNavigation } from "../../../../../../utils/WindowUtil";
-import { ChainDropDown } from "../../../../../atomic";
-import { SequenceDropDown } from "../../../../../atomic";
 import { OptionField } from "../edit/common/OptionField";
 import { ViewNavigator } from "./fragments/ViewNavigator";
+import {ChainDropDown, SequenceDropDown} from '../../../../../atomic/dropdowns';
 
 export interface ControlPanelViewMenuProps {
     hidden: boolean;
@@ -23,7 +22,6 @@ export const ControlPanelViewMenu: FunctionComponent<ControlPanelViewMenuProps> 
         stepIndex,
         linkIndex,
         selectSequence,
-        selectDataSetup,
         currentSequence,
         currentChain,
         selectChain,
@@ -102,6 +100,7 @@ const useControlPanelViewMenuViewModel = () => {
 
     // TODO: maybe can be removed
     const selectDataSetup = (dataSetup: DataSetupTO | undefined): void => {
+        console.log(dataSetup);
         // if (DavitUtil.isNullOrUndefined(dataSetup)) {
         //     dispatch(SequenceModelActions.resetCurrentDataSetup);
         // } else {
@@ -109,13 +108,13 @@ const useControlPanelViewMenuViewModel = () => {
         // }
     };
 
-    const getSequenceName = (): string => {
-        if (sequence) {
-            return " * " + sequence.sequenceTO.name;
-        } else {
-            return "";
-        }
-    };
+    // const getSequenceName = (): string => {
+    //     if (sequence) {
+    //         return " * " + sequence.sequenceTO.name;
+    //     } else {
+    //         return "";
+    //     }
+    // };
 
     return {
         sequence,

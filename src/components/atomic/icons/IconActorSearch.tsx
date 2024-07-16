@@ -24,7 +24,7 @@ export const IconActorSearch: React.FC<IconProps> = ({
                                                          color = "currentColor",
                                                          style,
                                                          verticalOffset = 0,
-                                                         ...props
+
                                                      }) => {
     const height = size;
     const width = size;

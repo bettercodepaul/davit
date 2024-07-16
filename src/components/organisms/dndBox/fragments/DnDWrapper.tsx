@@ -42,7 +42,8 @@ export const DnDWrapper: FunctionComponent<DnDWrapperProps> = (props) => {
             dragConstraints={dragConstraintsRef}
             dragMomentum={false}
             dragElastic={0}
-            onDragEnd={(event, info) => {
+            onDragEnd={(event, info): void => {
+                console.log("only for lint warning", event);
                 onPositionUpdate(
                     /*
           keine Nachkommastellen

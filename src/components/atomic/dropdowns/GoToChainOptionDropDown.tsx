@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { GoToTypes } from "../../../dataAccess/access/types/GoToType";
 import { GoToTypesChain } from "../../../dataAccess/access/types/GoToTypeChain";
 import { DavitDropDown, DavitDropDownItemProps } from "./DavitDropDown";

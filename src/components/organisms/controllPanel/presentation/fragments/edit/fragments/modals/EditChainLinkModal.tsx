@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
-import { DavitDraggableModal } from "../../../../../../../atomic";
+import { FunctionComponent } from "react";
 import { ChainLinkForm } from "../forms/ChainLinkForm";
+import {DavitDraggableModal} from '../../../../../../../atomic/modals';
 
 interface EditChainLinkModalProps {
 

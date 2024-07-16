@@ -4,6 +4,7 @@ import "./OptionField.css";
 export interface OptionFieldProps {
     label?: string;
     divider?: boolean;
+    children?: React.JSX.Element[] | React.JSX.Element;
 }
 
 export const OptionField: FunctionComponent<OptionFieldProps> = (props) => {

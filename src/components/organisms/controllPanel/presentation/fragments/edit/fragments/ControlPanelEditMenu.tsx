@@ -1,21 +1,15 @@
-import React, { FunctionComponent } from "react";
-import { useSelector } from "react-redux";
-import { ActorCTO } from "../../../../../../../dataAccess/access/cto/ActorCTO";
-import { DataCTO } from "../../../../../../../dataAccess/access/cto/DataCTO";
-import { ChainTO } from "../../../../../../../dataAccess/access/to/ChainTO";
-import { DataRelationTO } from "../../../../../../../dataAccess/access/to/DataRelationTO";
-import { EditActions, editSelectors, Mode } from "../../../../../../../slices/EditSlice";
-import { useAppDispatch } from "../../../../../../../store";
-import {
-    ActorDropDownLabel,
-    ChainDropDownButton,
-    DataLabelDropDown,
-    RelationLabelDropDown,
-    SequenceLabelDropDown
-} from "../../../../../../atomic";
-import { AddOrEdit } from "../../../../../../molecules";
-import { ControlPanel } from "../common/ControlPanel";
-import { OptionField } from "../common/OptionField";
+import {FunctionComponent} from "react";
+import {useSelector} from "react-redux";
+import {ActorCTO} from "../../../../../../../dataAccess/access/cto/ActorCTO";
+import {DataCTO} from "../../../../../../../dataAccess/access/cto/DataCTO";
+import {ChainTO} from "../../../../../../../dataAccess/access/to/ChainTO";
+import {DataRelationTO} from "../../../../../../../dataAccess/access/to/DataRelationTO";
+import {EditActions, editSelectors, Mode} from "../../../../../../../slices/EditSlice";
+import {useAppDispatch} from "../../../../../../../store";
+import {AddOrEdit} from "../../../../../../molecules";
+import {ControlPanel} from "../common/ControlPanel";
+import {OptionField} from "../common/OptionField";
+import {ActorDropDownLabel, ChainDropDownButton, DataLabelDropDown, RelationLabelDropDown, SequenceLabelDropDown} from '../../../../../../atomic/dropdowns';
 
 
 export interface ControlPanelEditMenuProps {
@@ -37,39 +31,39 @@ export const ControlPanelEditMenu: FunctionComponent<ControlPanelEditMenuProps> 
                 <AddOrEdit
                     addCallBack={() => editOrAddActor()}
                     dropDown={<ActorDropDownLabel onSelect={editOrAddActor}
-                                                  label="Actor"
+                        label="Actor"
                     />}
                 />
             </OptionField>
             <OptionField label="Data"
-                         divider={true}
+                divider={true}
             >
                 <AddOrEdit addCallBack={() => editOrAddData()}
-                           dropDown={<DataLabelDropDown onSelect={editOrAddData}
-                                                        label="Data"
-                           />}
+                    dropDown={<DataLabelDropDown onSelect={editOrAddData}
+                        label="Data"
+                    />}
                 />
                 <AddOrEdit addCallBack={() => editOrAddRelation()}
-                           dropDown={<RelationLabelDropDown onSelect={editOrAddRelation}
-                                                            label="Relation"
-                           />}
+                    dropDown={<RelationLabelDropDown onSelect={editOrAddRelation}
+                        label="Relation"
+                    />}
                 />
             </OptionField>
 
             <OptionField label="sequence"
-                         divider={true}
+                divider={true}
             >
                 <AddOrEdit addCallBack={() => editOrAddSequence()}
-                           dropDown={<SequenceLabelDropDown
-                               onSelect={(sequenceTO) => editOrAddSequence(sequenceTO?.id)}
-                               label="Sequence"
-                           />}
+                    dropDown={<SequenceLabelDropDown
+                        onSelect={(sequenceTO) => editOrAddSequence(sequenceTO?.id)}
+                        label="Sequence"
+                    />}
                 />
                 <AddOrEdit addCallBack={() => editOrAddChain()}
-                           dropDown={<ChainDropDownButton
-                               onSelect={(chain) => editOrAddChain(chain)}
-                               label="Chain"
-                           />}
+                    dropDown={<ChainDropDownButton
+                        onSelect={(chain) => editOrAddChain(chain)}
+                        label="Chain"
+                    />}
                 />
             </OptionField>
         </ControlPanel>

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { ElementSize } from "../../../style/Theme";
 import "./DavitButton.css";
+import {ElementSize} from '../../../ElementSize.ts';
 
 export interface DavitButtonProps {
     onClick: () => void;
@@ -9,6 +9,7 @@ export interface DavitButtonProps {
     className?: string;
     active?: boolean;
     label?: string;
+    children?: React.ReactNode;
 }
 
 export const DavitButton: FunctionComponent<DavitButtonProps> = (props) => {

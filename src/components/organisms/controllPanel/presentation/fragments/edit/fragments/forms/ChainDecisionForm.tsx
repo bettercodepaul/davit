@@ -1,30 +1,22 @@
-import React, { FunctionComponent } from "react";
-import { ChainStateTO } from "../../../../../../../../dataAccess/access/to/ChainStateTO";
-import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";
-import { StateFkAndStateCondition } from "../../../../../../../../dataAccess/access/to/DecisionTO";
-import { GoToTypesChain } from "../../../../../../../../dataAccess/access/types/GoToTypeChain";
-import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import {
-    ActorDropDown,
-    ChainDecisionDropDown,
-    ChainLinkDropDown,
-    DavitAddButton,
-    DavitBackButton,
-    DavitDeleteButton,
-    DavitTextInput,
-    Form,
-    GoToChainOptionDropDown,
-    InstanceDropDown
-} from "../../../../../../../atomic";
-import { ChainStateDropDown } from "../../../../../../../atomic/dropdowns/ChainStateDropDown";
-import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
-import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
-import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
-import { ToggleButton } from "../../../../../../../molecules/ToggleButton";
-import { useChainDecisionViewModel } from "../viewmodels/ChainDecisionViewModel";
-import { FormDivider } from "./fragments/FormDivider";
-import { FormLabel } from "./fragments/FormLabel";
-import { FormLine } from "./fragments/FormLine";
+import {FunctionComponent} from "react";
+import {ChainStateTO} from "../../../../../../../../dataAccess/access/to/ChainStateTO";
+import {ConditionTO} from "../../../../../../../../dataAccess/access/to/ConditionTO";
+import {StateFkAndStateCondition} from "../../../../../../../../dataAccess/access/to/DecisionTO";
+import {GoToTypesChain} from "../../../../../../../../dataAccess/access/types/GoToTypeChain";
+import {DavitUtil} from "../../../../../../../../utils/DavitUtil";
+import {ChainStateDropDown} from "../../../../../../../atomic/dropdowns/ChainStateDropDown";
+import {FormBody} from "../../../../../../../atomic/forms/fragments/FormBody";
+import {FormFooter} from "../../../../../../../atomic/forms/fragments/FormFooter";
+import {FormHeader} from "../../../../../../../atomic/forms/fragments/FormHeader";
+import {ToggleButton} from "../../../../../../../molecules/ToggleButton";
+import {useChainDecisionViewModel} from "../viewmodels/ChainDecisionViewModel";
+import {FormDivider} from "./fragments/FormDivider";
+import {FormLabel} from "./fragments/FormLabel";
+import {FormLine} from "./fragments/FormLine";
+import {ActorDropDown, ChainDecisionDropDown, ChainLinkDropDown, GoToChainOptionDropDown, InstanceDropDown} from '../../../../../../../atomic/dropdowns';
+import {DavitAddButton, DavitBackButton, DavitDeleteButton} from '../../../../../../../atomic/buttons';
+import {Form} from '../../../../../../../atomic/forms';
+import {DavitTextInput} from '../../../../../../../atomic/textinput';
 
 interface ChainDecisionFormProps {
 
@@ -98,7 +90,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                         {copyCondition.id !== -1 && <DavitDeleteButton onClick={() => {
                             deleteCondition(copyCondition.id);
                         }}
-                                                                       noConfirm
+                            noConfirm
                         />}
                     </div>
                 </td>
@@ -126,21 +118,21 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                     <div className="flex content-space-between">
 
                         <ChainStateDropDown onSelect={(stateFkAndStateCondition) => selectChainState(stateFkAndStateCondition, index)}
-                                            chainFk={chainId}
-                                            value={stateFkAndStateCondition.stateFk.toString()}
-                                            placeholder="Select sequence state"
+                            chainFk={chainId}
+                            value={stateFkAndStateCondition.stateFk.toString()}
+                            placeholder="Select sequence state"
                         />
 
                         <ToggleButton toggleCallback={(is) => setStateCondition(stateFkAndStateCondition, index, is)}
-                                      isLeft={stateFkAndStateCondition.stateCondition}
-                                      leftLabel="TRUE"
-                                      rightLabel="FLASE"
+                            isLeft={stateFkAndStateCondition.stateCondition}
+                            leftLabel="TRUE"
+                            rightLabel="FLASE"
                         />
 
                         <DavitDeleteButton onClick={() => {
                             deleteStateFkAndStateCondition(stateFkAndStateCondition.stateFk);
                         }}
-                                           noConfirm
+                            noConfirm
                         />
                     </div>
                 </td>
@@ -155,7 +147,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                 <h2>Chain decision</h2>
             </FormHeader>
 
-            <FormDivider />
+            <FormDivider/>
 
             <FormBody>
 
@@ -170,7 +162,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                     />
                 </FormLine>
 
-                <FormDivider />
+                <FormDivider/>
 
                 <FormLine>
                     <FormLabel>{labelConditions}</FormLabel>
@@ -179,13 +171,13 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                 {/*------------------------- Condition -------------------------*/}
                 <FormLine>
                     <table className={"border"}
-                           style={{width: "40em"}}
+                        style={{width: "40em"}}
                     >
                         <thead>
                         <tr>
                             <td style={{textAlign: "center"}}>Actor</td>
                             <td style={{textAlign: "center"}}>Data Instance</td>
-                            <td className={"flex flex-end"}><DavitAddButton onClick={createCondition} /></td>
+                            <td className={"flex flex-end"}><DavitAddButton onClick={createCondition}/></td>
                         </tr>
                         </thead>
                         <tbody style={{maxHeight: "40vh"}}>
@@ -197,13 +189,13 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                 {/*------------------------- State -------------------------*/}
                 <FormLine>
                     <table className="border"
-                           style={{width: "40em"}}
+                        style={{width: "40em"}}
                     >
                         <thead>
                         <tr>
                             <td>State</td>
                             <td>Is</td>
-                            <td className={"flex flex-end"}><DavitAddButton onClick={createStateFkAndStateCondition} />
+                            <td className={"flex flex-end"}><DavitAddButton onClick={createStateFkAndStateCondition}/>
                             </td>
                         </tr>
                         </thead>
@@ -213,7 +205,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                     </table>
                 </FormLine>
 
-                <FormDivider />
+                <FormDivider/>
 
                 <FormLine>
                     <FormLabel>{labelIfGotoType}</FormLabel>
@@ -227,7 +219,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
 
                 {ifGoTo!.type === GoToTypesChain.LINK && (
                     <>
-                        <FormDivider />
+                        <FormDivider/>
 
                         <FormLine>
                             <FormLabel>{labelSelectLink}</FormLabel>
@@ -239,14 +231,14 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                         </FormLine>
                         <FormLine>
                             <FormLabel>{labelCreateLink}</FormLabel>
-                            <DavitAddButton onClick={() => createGoToStep(true)} />
+                            <DavitAddButton onClick={() => createGoToStep(true)}/>
                         </FormLine>
                     </>
                 )}
 
                 {ifGoTo!.type === GoToTypesChain.DEC && (
                     <>
-                        <FormDivider />
+                        <FormDivider/>
 
                         <FormLine>
                             <FormLabel>{labelSelectDecision}</FormLabel>
@@ -260,12 +252,12 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
 
                         <FormLine>
                             <FormLabel>{labelCreateDecision}</FormLabel>
-                            <DavitAddButton onClick={() => createGoToDecision(true)} />
+                            <DavitAddButton onClick={() => createGoToDecision(true)}/>
                         </FormLine>
                     </>
                 )}
 
-                <FormDivider />
+                <FormDivider/>
 
                 <FormLine>
                     <FormLabel>{labelElseGotoType}</FormLabel>
@@ -280,7 +272,7 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
 
                 {elseGoTo!.type === GoToTypesChain.LINK && (
                     <>
-                        <FormDivider />
+                        <FormDivider/>
 
                         <FormLine>
                             <FormLabel>{labelSelectLink}</FormLabel>
@@ -292,14 +284,14 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
                         </FormLine>
                         <FormLine>
                             <FormLabel>{labelCreateLink}</FormLabel>
-                            <DavitAddButton onClick={() => createGoToStep(false)} />
+                            <DavitAddButton onClick={() => createGoToStep(false)}/>
                         </FormLine>
                     </>
                 )}
 
                 {elseGoTo!.type === GoToTypesChain.DEC && (
                     <>
-                        <FormDivider />
+                        <FormDivider/>
 
                         <FormLine>
                             <FormLabel>{labelSelectDecision}</FormLabel>
@@ -313,19 +305,19 @@ export const ChainDecisionForm: FunctionComponent<ChainDecisionFormProps> = () =
 
                         <FormLine>
                             <FormLabel>{labelCreateDecision}</FormLabel>
-                            <DavitAddButton onClick={() => createGoToDecision(false)} />
+                            <DavitAddButton onClick={() => createGoToDecision(false)}/>
                         </FormLine>
                     </>
                 )}
 
             </FormBody>
 
-            <FormDivider />
+            <FormDivider/>
 
             <FormFooter>
                 <FormLine>
-                    <DavitDeleteButton onClick={deleteDecision} />
-                    <DavitBackButton onClick={goBack} />
+                    <DavitDeleteButton onClick={deleteDecision}/>
+                    <DavitBackButton onClick={goBack}/>
                 </FormLine>
             </FormFooter>
 

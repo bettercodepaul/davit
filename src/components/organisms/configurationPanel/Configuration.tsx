@@ -4,18 +4,7 @@ import {InitDataTO} from "../../../dataAccess/access/to/InitDataTO";
 import {SequenceStateTO} from "../../../dataAccess/access/to/SequenceStateTO";
 import {SequenceModelActions} from "../../../slices/SequenceModelSlice";
 import {useAppDispatch} from "../../../store";
-import {ElementSize} from "../../../style/Theme";
 import {DavitUtil} from "../../../utils/DavitUtil";
-import {
-    ActorDropDown,
-    ChainDropDown,
-    DavitAddButton,
-    DavitDeleteButton,
-    DavitIconButton,
-    DavitShowMoreButton,
-    InstanceDropDown,
-    SequenceDropDown,
-} from "../../atomic";
 import {DavitToggleButton} from "../../atomic/buttons/DavitToggleButton";
 import {ChainConfigurationDropDown} from "../../atomic/dropdowns/ChainConfigurationDropDown";
 import {SequenceConfigurationDropDown} from "../../atomic/dropdowns/SequenceConfigurationDropDown";
@@ -26,6 +15,9 @@ import {ConfigurationSelectButton} from "./fragments/ConfigurationSelectButton";
 import {SaveConfigurationModal} from "./fragments/SaveConfigurationModal";
 import {StateConfigurationView} from "./fragments/StateConfigurationView";
 import {useConfigurationViewModel} from "./models/ConfigurationViewModel";
+import {ActorDropDown, ChainDropDown, InstanceDropDown, SequenceDropDown} from '../../atomic/dropdowns';
+import {DavitAddButton, DavitDeleteButton, DavitIconButton, DavitShowMoreButton} from '../../atomic/buttons';
+import {ElementSize} from '../../../ElementSize.ts';
 
 export interface ConfigurationPanelProps {
 
@@ -87,7 +79,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
     };
 
 
-    const buildSequenceActorDataTableRow = (initData: InitDataTO, index: number): JSX.Element => {
+    const buildSequenceActorDataTableRow = (initData: InitDataTO, index: number): React.JSX.Element => {
 
         const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
 
@@ -146,7 +138,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
     };
 
 
-    const buildChainActorDataTableRow = (initData: InitDataTO, index: number): JSX.Element => {
+    const buildChainActorDataTableRow = (initData: InitDataTO, index: number): React.JSX.Element => {
         const copyInitData: InitDataTO = DavitUtil.deepCopy(initData);
 
         return (
@@ -193,12 +185,12 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
         dispatch(SequenceModelActions.resetAll);
     };
 
-    const getSequenceStatesView = () => {
-        if (!DavitUtil.isNullOrUndefined(selectedSequence)
-            && !DavitUtil.isNullOrUndefined(sequenceConfigurationToEdit)) {
-            selectedStateView(selectedSequence!.sequenceStates);
-        }
-    };
+    // const getSequenceStatesView = (): void => {
+    //     if (!DavitUtil.isNullOrUndefined(selectedSequence)
+    //         && !DavitUtil.isNullOrUndefined(sequenceConfigurationToEdit)) {
+    //         selectedStateView(selectedSequence!.sequenceStates);
+    //     }
+    // };
 
     const selectedStateView = (sequenceStates: SequenceStateTO[]) => {
         if (sequenceStates.length > 0) {
@@ -366,7 +358,7 @@ export const ConfigurationPanel: FunctionComponent<ConfigurationPanelProps> = ()
 
                             {/*    State*/}
                             <div className="configList padding-bottom-l">
-                                {getSequenceStatesView()}
+                                {/*{getSequenceStatesView()}*/}
                                 {getChainStatesView()}
                             </div>
 

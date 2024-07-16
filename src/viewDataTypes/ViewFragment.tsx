@@ -1,4 +1,4 @@
-import React from "react";
+
 import { ActorDataState } from "./ActorDataState";
 import "./ViewFragment.css";
 

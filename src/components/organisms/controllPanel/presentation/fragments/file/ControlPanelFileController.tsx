@@ -1,12 +1,13 @@
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons/faCloudUploadAlt";
-import React, { createRef, FunctionComponent, useState } from "react";
+import { createRef, FunctionComponent, useState } from "react";
 import { EditActions } from "../../../../../../slices/EditSlice";
 import { GlobalActions } from "../../../../../../slices/GlobalSlice";
 import { useAppDispatch } from "../../../../../../store";
-import { DavitDeleteButton, DavitDownloadModal, DavitIconButton } from "../../../../../atomic";
 import { ControlPanel } from "../edit/common/ControlPanel";
 import { OptionField } from "../edit/common/OptionField";
+import {DavitDeleteButton, DavitIconButton} from '../../../../../atomic/buttons';
+import {DavitDownloadModal} from '../../../../../atomic/modals';
 
 export interface ControlPanelFileControllerProps {
 }
@@ -61,7 +62,8 @@ export const ControlPanelFileController: FunctionComponent<ControlPanelFileContr
                 <DavitIconButton onClick={() => setShowForm(true)}
                                  iconName={faDownload}
                 />
-                {showForm && <DavitDownloadModal closeCallback={() => setShowForm(false)} />}
+                <DavitDownloadModal closeCallback={() => setShowForm(false)} visible={showForm}/>
+
             </OptionField>
             <OptionField label="Clear">
                 <DavitDeleteButton onClick={deleteLocalStorage} />

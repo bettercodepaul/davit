@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { FunctionComponent, useEffect, useRef, useState } from "react";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
 import { GeometricalDataTO } from "../../../dataAccess/access/to/GeometricalDataTO";
 import { PositionTO } from "../../../dataAccess/access/to/PositionTO";
 import { ASPECT_RATIO, WINDOW_FACTOR } from "../../../DavitConstants";

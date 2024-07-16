@@ -9,10 +9,11 @@ export enum FormlabelAlign {
 interface FormLabelProps {
     className?: string
     align?: FormlabelAlign
+    children?: string | React.JSX.Element;
 }
 
 export const FormLabel: FunctionComponent<FormLabelProps> = (props) => {
-    const {children, className, align} = props;
+    const {className, align, children} = props;
 
     return (
         <label className={className ? className : "flex flex-start"}

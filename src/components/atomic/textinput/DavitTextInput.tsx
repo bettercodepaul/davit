@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Ref, useEffect, useRef, useState } from "react";
+import { FunctionComponent, Ref, useEffect, useRef, useState } from "react";
 import "./DavitTextInput.css";
 
 export interface DavitTextInputProps {

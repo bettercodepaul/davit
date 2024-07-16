@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 
 interface ControlPanelProps {
+    children?: React.JSX.Element[] | React.JSX.Element;
 }
 
 export const ControlPanel: FunctionComponent<ControlPanelProps> = (props) => {

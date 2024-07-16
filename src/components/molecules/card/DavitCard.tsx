@@ -4,11 +4,11 @@ import { DataInstanceTO } from "../../../dataAccess/access/to/DataInstanceTO";
 import { EditActions } from "../../../slices/EditSlice";
 import { Filter, SequenceModelActions, sequenceModelSelectors } from "../../../slices/SequenceModelSlice";
 import { useAppDispatch } from "../../../store";
-import { ElementSize } from "../../../style/Theme";
+import {ElementSize} from '../../../ElementSize.ts';
 import { createViewFragment, ViewFragmentProps } from "../../../viewDataTypes/ViewFragment";
-import { DavitIconButton, DavitShowMoreButton } from "../../atomic";
 import { DavitIcons } from "../../atomic/icons/IconSet";
 import "./DavitCard.css";
+import {DavitIconButton, DavitShowMoreButton} from '../../atomic/buttons';
 
 /**
  *  Prop: initWidth / initHeight
@@ -47,7 +47,7 @@ export const DavitCard: FunctionComponent<DavitCardProps> = (props) => {
         );
     };
 
-    const getCardHeaderContent = (showOptions: boolean): JSX.Element => {
+    const getCardHeaderContent = (showOptions: boolean): React.JSX.Element => {
         if (showOptions) {
             return (
                 <div className="cardButtonGroup padding-tiny">

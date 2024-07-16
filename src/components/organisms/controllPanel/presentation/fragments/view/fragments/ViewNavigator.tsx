@@ -3,8 +3,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { faFastBackward } from "@fortawesome/free-solid-svg-icons/faFastBackward";
 import { faFastForward } from "@fortawesome/free-solid-svg-icons/faFastForward";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FunctionComponent } from "react";
-import { DavitButton, DavitIconButton } from "../../../../../../atomic";
+import { FunctionComponent } from "react";
+import {DavitButton, DavitIconButton} from '../../../../../../atomic/buttons';
 
 interface ViewNavigatorProps {
     fastBackward: () => void,

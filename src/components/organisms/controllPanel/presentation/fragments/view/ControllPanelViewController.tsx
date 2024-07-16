@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { Mode } from "../../../../../../slices/EditSlice";
 import { ControlPanelCalculationView } from "./fragments/ControlPanelCalculationView";
 import { ControlPanelConfiguration } from "./fragments/ControlPanelConfiguration";

@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { useSelector } from "react-redux";
 import { ChainStateTO } from "../../dataAccess/access/to/ChainStateTO";
 import { SequenceStateTO } from "../../dataAccess/access/to/SequenceStateTO";
 import { StateTO } from "../../dataAccess/access/to/StateTO";
 import { sequenceModelSelectors } from "../../slices/SequenceModelSlice";
-import { DavitShowMoreButton } from "../atomic";
 import "./StateView.css";
+import {DavitShowMoreButton} from '../atomic/buttons';
 
 interface StateViewProps {
     showChain: boolean;

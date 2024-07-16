@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { DavitNoteForm } from "../forms/DavitNoteForm";
 import { DavitModal } from "./DavitModal";
 

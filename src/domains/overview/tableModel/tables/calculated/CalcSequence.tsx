@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+
 import { useSelector } from "react-redux";
 import { DavitIcons } from "../../../../../components/atomic/icons/IconSet";
 import { DavitTableRowData } from "../../../../../components/organisms/table/DavitTable";

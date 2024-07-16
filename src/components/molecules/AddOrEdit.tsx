@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
-import { ElementSize } from "../../style/Theme";
-import { DavitAddButton } from "../atomic";
+import {DavitAddButton} from '../atomic/buttons';
+import {ElementSize} from '../../ElementSize.ts';
 
 interface AddOrEditProps {
     addCallBack: () => void;
-    dropDown: JSX.Element;
+    dropDown: React.JSX.Element[] | React.JSX.Element;
 }
 
 export const AddOrEdit: FunctionComponent<AddOrEditProps> = (props) => {

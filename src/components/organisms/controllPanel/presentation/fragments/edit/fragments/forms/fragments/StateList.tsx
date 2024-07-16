@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { StateTO } from "../../../../../../../../../dataAccess/access/to/StateTO";
-import { DavitAddButton, DavitDeleteButton, DavitTextInput } from "../../../../../../../../atomic";
 import { ToggleButton } from "../../../../../../../../molecules/ToggleButton";
 import "./StateList.css";
+import {DavitTextInput} from '../../../../../../../../atomic/textinput';
+import {DavitAddButton, DavitDeleteButton} from '../../../../../../../../atomic/buttons';
 
 interface StateListProps {
     statesToEdit: StateTO[];

@@ -1,16 +1,17 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 import { SequenceStateTO } from "../../../../../../../../dataAccess/access/to/SequenceStateTO";
 import { StateTO } from "../../../../../../../../dataAccess/access/to/StateTO";
 import { masterDataSelectors } from "../../../../../../../../slices/MasterDataSlice";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import { DavitBackButton, Form } from "../../../../../../../atomic";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
 import { useSequenceViewModel } from "../viewmodels/SequenceViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { StateList } from "./fragments/StateList";
+import {Form} from '../../../../../../../atomic/forms';
+import {DavitBackButton} from '../../../../../../../atomic/buttons';
 
 interface StateFormProps {
 }

@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
-import { DavitDraggableModal } from "../../../../../../../atomic";
+import { FunctionComponent } from "react";
 import { ChainDecisionForm } from "../forms/ChainDecisionForm";
+import {DavitDraggableModal} from '../../../../../../../atomic/modals';
 
 interface EditChainDecisionModalProps {
 
@@ -9,7 +9,6 @@ interface EditChainDecisionModalProps {
 export const EditChainDecisionModal: FunctionComponent<EditChainDecisionModalProps> = () => {
 
     return (
-        // eslint-disable-next-line react/jsx-no-undef
         <DavitDraggableModal form={<ChainDecisionForm />} />
     );
 };

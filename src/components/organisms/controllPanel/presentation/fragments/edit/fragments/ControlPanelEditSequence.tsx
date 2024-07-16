@@ -1,16 +1,11 @@
-import React, { FunctionComponent } from "react";
-import {
-    DavitBackButton,
-    DavitButton,
-    DavitDeleteButton,
-    DavitTextInput,
-    DecisionLabelDropDown,
-    StepLabelDropDown
-} from "../../../../../../atomic";
-import { AddOrEdit, DavitCommentButton } from "../../../../../../molecules";
-import { ControlPanel } from "../common/ControlPanel";
-import { OptionField } from "../common/OptionField";
-import { useSequenceViewModel } from "./viewmodels/SequenceViewModel";
+import {FunctionComponent} from "react";
+import {AddOrEdit, DavitCommentButton} from "../../../../../../molecules";
+import {ControlPanel} from "../common/ControlPanel";
+import {OptionField} from "../common/OptionField";
+import {useSequenceViewModel} from "./viewmodels/SequenceViewModel";
+import {DavitTextInput} from '../../../../../../atomic/textinput';
+import {DecisionLabelDropDown, StepLabelDropDown} from '../../../../../../atomic/dropdowns';
+import {DavitBackButton, DavitButton, DavitDeleteButton} from '../../../../../../atomic/buttons';
 
 export interface ControlPanelEditSequenceProps {
 }
@@ -45,29 +40,27 @@ export const ControlPanelEditSequence: FunctionComponent<ControlPanelEditSequenc
                 />
 
                 <DavitCommentButton onSaveCallback={saveNote}
-                                    comment={note}
+                    comment={note}
                 />
             </OptionField>
             <OptionField label="Create / Edit | Sequence - Step"
-                         divider={true}
+                divider={true}
             >
                 <AddOrEdit addCallBack={editOrAddSequenceStep}
-                           dropDown={<StepLabelDropDown onSelect={editOrAddSequenceStep}
-                                                        label="Step"
-                           />}
+                    dropDown={<StepLabelDropDown onSelect={editOrAddSequenceStep}
+                        label="Step"
+                    />}
                 />
             </OptionField>
             <OptionField label="Create / Edit | Sequence - Decision"
-                         divider={true}
+                divider={true}
             >
                 <AddOrEdit addCallBack={editOrAddDecision}
-                           dropDown={<DecisionLabelDropDown onSelect={editOrAddDecision}
-                                                            label="Decision"
-                           />}
+                    dropDown={<DecisionLabelDropDown onSelect={editOrAddDecision} label="Decision"/>}
                 />
             </OptionField>
             <OptionField label={"options"}
-                         divider={true}
+                divider={true}
             >
                 <DavitButton onClick={editStates}>State</DavitButton>
 
@@ -75,8 +68,8 @@ export const ControlPanelEditSequence: FunctionComponent<ControlPanelEditSequenc
                 >
                     {"Create another"}
                 </DavitButton>
-                <DavitBackButton onClick={saveSequence} />
-                <DavitDeleteButton onClick={deleteSequence} />
+                <DavitBackButton onClick={saveSequence}/>
+                <DavitDeleteButton onClick={deleteSequence}/>
             </OptionField>
         </ControlPanel>
     );

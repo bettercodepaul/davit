@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { ConfigurationPanel } from "../../../../../configurationPanel/Configuration";
 import { ControlPanel } from "../../edit/common/ControlPanel";
 

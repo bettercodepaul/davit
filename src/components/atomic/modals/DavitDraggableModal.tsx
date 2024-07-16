@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { PositionTO } from "../../../dataAccess/access/to/PositionTO";
 import { DnDBox, DnDBoxType } from "../../organisms/dndBox/DnDBox";
 import { DavitModal } from "./DavitModal";

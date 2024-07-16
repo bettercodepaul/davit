@@ -23,8 +23,7 @@ export const IconUp: React.FC<IconProps> = ({
                                                 size = "1em",
                                                 color = "currentColor",
                                                 style,
-                                                verticalOffset = 0,
-                                                ...props
+                                                verticalOffset = 0
                                             }) => {
     const height = size;
     const width = size;

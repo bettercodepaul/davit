@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { StateTO } from "../../../../dataAccess/access/to/StateTO";
 import { StateList } from "../../controllPanel/presentation/fragments/edit/fragments/forms/fragments/StateList";
 

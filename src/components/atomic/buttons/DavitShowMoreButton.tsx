@@ -1,7 +1,7 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons/faAngleDown";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
-import React, { FunctionComponent } from "react";
-import { ElementSize } from "../../../style/Theme";
+import { FunctionComponent } from "react";
+import {ElementSize} from '../../../ElementSize.ts';
 import { DavitIconButton } from "./DavitIconButton";
 
 interface DavitMoreButtonProps {

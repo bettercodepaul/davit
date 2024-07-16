@@ -1,9 +1,9 @@
 import { faShare } from "@fortawesome/free-solid-svg-icons";
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { ModuleRoutes } from "../../../../../../pages/Davit";
-import { DavitIconButton } from "../../../../../atomic";
 import { ControlPanel } from "../edit/common/ControlPanel";
 import { OptionField } from "../edit/common/OptionField";
+import {DavitIconButton} from '../../../../../atomic/buttons';
 
 export interface ControlPanelTabControllerProps {
     hidden: boolean;

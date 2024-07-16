@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import "./Form.css";
 
 export interface FormProps {
+    children?: React.JSX.Element[] | React.JSX.Element;
 }
 
 export const Form: FunctionComponent<FormProps> = (props) => {

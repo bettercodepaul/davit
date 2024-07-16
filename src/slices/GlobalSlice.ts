@@ -23,21 +23,24 @@ export const globalSlice = createSlice({
     name: "global",
     initialState: getInitialState(),
     reducers: {
-        handleError: (state, action: PayloadAction<string>) => {
+        handleError: (state, action: PayloadAction<string>): void => {
             state.errors.push(action.payload);
         },
         clearErrors: (state) => {
             state.errors = [];
         },
-        removeErrorAtIndex: (state, action: PayloadAction<number>) => {
+        removeErrorAtIndex: (state, action: PayloadAction<number>):void => {
             if (action.payload > -1 && action.payload < state.errors.length) {
-                state.errors = state.errors.filter((error, index) => index !== action.payload);
+                state.errors = state.errors.filter((error, index): boolean => {
+                    console.log("Only for linter", error);
+                    return index !== action.payload;
+                });
             }
         },
-        setActorZoom: (state, action: PayloadAction<number>) => {
+        setActorZoom: (state, action: PayloadAction<number>): void => {
             state.actorZoom = action.payload;
         },
-        setDataZoom: (state, action: PayloadAction<number>) => {
+        setDataZoom: (state, action: PayloadAction<number>):void => {
             state.dataZoom = action.payload;
         },
     },

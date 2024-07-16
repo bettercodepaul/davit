@@ -13,7 +13,7 @@ import { sequenceModelSelectors } from "../../../../../../../../slices/SequenceM
 import { EditAction } from "../../../../../../../../slices/thunks/ActionThunks";
 import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import { DataAndInstanceId } from "../../../../../../../atomic";
+import {DataAndInstanceId} from '../../../../../../../atomic/dropdowns';
 
 
 export const useActionViewModel = () => {

@@ -1,9 +1,10 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import "./TabGroupFragment.css";
 
 interface TabGroupFragmentProps {
     label: string;
-    style?: Object;
+    style?: NonNullable<unknown>;
+    children: React.JSX.Element[];
 }
 
 export const TabGroupFragment: FunctionComponent<TabGroupFragmentProps> = (props) => {

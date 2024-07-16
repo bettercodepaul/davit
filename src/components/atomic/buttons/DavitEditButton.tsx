@@ -1,5 +1,5 @@
 import { faWrench } from "@fortawesome/free-solid-svg-icons/faWrench";
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { DavitButtonProps } from "./DavitButton";
 import { DavitIconButton } from "./DavitIconButton";
 

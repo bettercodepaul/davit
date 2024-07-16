@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 import { DataCTO } from "../../../dataAccess/access/cto/DataCTO";
 import { DataRelationTO } from "../../../dataAccess/access/to/DataRelationTO";

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 import { GroupTO } from "../../../dataAccess/access/to/GroupTO";
 import { masterDataSelectors } from "../../../slices/MasterDataSlice";

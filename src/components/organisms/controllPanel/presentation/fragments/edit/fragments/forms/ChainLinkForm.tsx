@@ -1,17 +1,5 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { GoToTypesChain } from "../../../../../../../../dataAccess/access/types/GoToTypeChain";
-import {
-    ChainDecisionDropDown,
-    ChainLinkDropDown,
-    DavitAddButton,
-    DavitBackButton,
-    DavitButton,
-    DavitDeleteButton,
-    DavitTextInput,
-    Form,
-    GoToChainOptionDropDown,
-    SequenceDropDown
-} from "../../../../../../../atomic";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
@@ -19,6 +7,10 @@ import { useChainLinkViewModel } from "../viewmodels/ChainLinkViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { FormLabel } from "./fragments/FormLabel";
 import { FormLine } from "./fragments/FormLine";
+import {Form} from '../../../../../../../atomic/forms';
+import {DavitTextInput} from '../../../../../../../atomic/textinput';
+import {ChainDecisionDropDown, ChainLinkDropDown, GoToChainOptionDropDown, SequenceDropDown} from '../../../../../../../atomic/dropdowns';
+import {DavitAddButton, DavitBackButton, DavitButton, DavitDeleteButton} from '../../../../../../../atomic/buttons';
 
 interface ChainLinkFormProps {
 }

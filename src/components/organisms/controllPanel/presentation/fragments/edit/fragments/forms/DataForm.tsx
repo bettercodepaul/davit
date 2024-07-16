@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { DataInstanceTO } from "../../../../../../../../dataAccess/access/to/DataInstanceTO";
 import { DavitAddButton } from "../../../../../../../atomic/buttons/DavitAddButton";
 import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";

@@ -1,19 +1,19 @@
-import { faReply } from "@fortawesome/free-solid-svg-icons";
-import React, { FunctionComponent } from "react";
-import { ActionType } from "../../../../../../../../dataAccess/access/types/ActionType";
-import { DavitIconButton } from "../../../../../../../atomic";
-import { DavitButton } from "../../../../../../../atomic/buttons/DavitButton";
-import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
-import { ActionTypeDropDown } from "../../../../../../../atomic/dropdowns/ActionTypeDropDown";
-import { ActorDropDown } from "../../../../../../../atomic/dropdowns/ActorDropDown";
-import { DataDropDown } from "../../../../../../../atomic/dropdowns/DataDropDown";
-import { InstanceDropDown } from "../../../../../../../atomic/dropdowns/InstanceDropDown";
-import { Form } from "../../../../../../../atomic/forms/Form";
-import { DavitTextInput } from "../../../../../../../atomic/textinput/DavitTextInput";
-import { useActionViewModel } from "../viewmodels/ActionViewModel";
-import { FormDivider } from "./fragments/FormDivider";
-import { FormLabel, FormlabelAlign } from "./fragments/FormLabel";
-import { FormLine } from "./fragments/FormLine";
+import {faReply} from "@fortawesome/free-solid-svg-icons";
+import {FunctionComponent} from "react";
+import {ActionType} from "../../../../../../../../dataAccess/access/types/ActionType";
+import {DavitButton} from "../../../../../../../atomic/buttons";
+import {DavitDeleteButton} from "../../../../../../../atomic/buttons";
+import {ActionTypeDropDown} from "../../../../../../../atomic/dropdowns";
+import {ActorDropDown} from "../../../../../../../atomic/dropdowns";
+import {DataDropDown} from "../../../../../../../atomic/dropdowns";
+import {InstanceDropDown} from "../../../../../../../atomic/dropdowns";
+import {Form} from "../../../../../../../atomic/forms";
+import {DavitTextInput} from "../../../../../../../atomic/textinput";
+import {useActionViewModel} from "../viewmodels/ActionViewModel";
+import {FormDivider} from "./fragments/FormDivider";
+import {FormLabel, FormlabelAlign} from "./fragments/FormLabel";
+import {FormLine} from "./fragments/FormLine";
+import {DavitIconButton} from '../../../../../../../atomic/buttons';
 
 interface ActionFormProps {
 

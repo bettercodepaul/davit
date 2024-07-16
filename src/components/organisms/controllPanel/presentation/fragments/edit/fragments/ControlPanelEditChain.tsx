@@ -1,16 +1,11 @@
-import React, { FunctionComponent } from "react";
-import {
-    ChainDecisionDropDownButton,
-    ChainLinkDropDownButton,
-    DavitBackButton,
-    DavitButton,
-    DavitDeleteButton,
-    DavitTextInput
-} from "../../../../../../atomic";
+import { FunctionComponent } from "react";
 import { AddOrEdit, DavitCommentButton } from "../../../../../../molecules";
 import { ControlPanel } from "../common/ControlPanel";
 import { OptionField } from "../common/OptionField";
 import { useChainViewModel } from "./viewmodels/ChainViewModel";
+import {DavitTextInput} from '../../../../../../atomic/textinput';
+import {ChainDecisionDropDownButton, ChainLinkDropDownButton} from '../../../../../../atomic/dropdowns';
+import {DavitBackButton, DavitButton, DavitDeleteButton} from '../../../../../../atomic/buttons';
 
 export interface ControlPanelEditChainProps {
 }

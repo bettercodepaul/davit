@@ -8,6 +8,7 @@ export enum FormLinePosition {
 
 export interface FormLineProps {
     position?: FormLinePosition;
+    children?: React.JSX.Element[] | React.JSX.Element;
 }
 
 export const FormLine: FunctionComponent<FormLineProps> = (props) => {

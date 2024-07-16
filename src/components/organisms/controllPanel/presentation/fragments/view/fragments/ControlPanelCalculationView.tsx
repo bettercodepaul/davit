@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { FlowChartlabel } from "../../../../../../../domains/overview/flowChartModel/fragments/FlowChartlabel";
 import { ViewLevel } from "../../../../../../../slices/SequenceModelSlice";
 import { useStepAndLinkNavigation } from "../../../../../../../utils/WindowUtil";

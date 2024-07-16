@@ -1,23 +1,9 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { ConditionTO } from "../../../../../../../../dataAccess/access/to/ConditionTO";
 import { StateFkAndStateCondition } from "../../../../../../../../dataAccess/access/to/DecisionTO";
 import { SequenceStateTO } from "../../../../../../../../dataAccess/access/to/SequenceStateTO";
 import { GoToTypes } from "../../../../../../../../dataAccess/access/types/GoToType";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import {
-    ActorDropDown,
-    DavitAddButton,
-    DavitBackButton,
-    DavitButton,
-    DavitDeleteButton,
-    DavitTextInput,
-    DecisionDropDown,
-    Form,
-    GoToOptionDropDown,
-    InstanceDropDown,
-    StepDropDown
-} from "../../../../../../../atomic";
-import { SequenceStateDropDown } from "../../../../../../../atomic/dropdowns/SequenceStateDropDown";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";
@@ -27,6 +13,11 @@ import { useDecisionViewModel } from "../viewmodels/DecisionViewModel";
 import { FormDivider } from "./fragments/FormDivider";
 import { FormLabel, FormlabelAlign } from "./fragments/FormLabel";
 import { FormLine } from "./fragments/FormLine";
+import {ActorDropDown, DecisionDropDown, GoToOptionDropDown, InstanceDropDown, StepDropDown} from '../../../../../../../atomic/dropdowns';
+import {DavitAddButton, DavitBackButton, DavitButton, DavitDeleteButton} from '../../../../../../../atomic/buttons';
+import {SequenceStateDropDown} from '../../../../../../../atomic/dropdowns/SequenceStateDropDown.tsx';
+import {Form} from '../../../../../../../atomic/forms';
+import {DavitTextInput} from '../../../../../../../atomic/textinput';
 
 interface DecisionFormProps {
 
@@ -264,7 +255,6 @@ export const DecisionForm: FunctionComponent<DecisionFormProps> = () => {
                     </>
                 )}
 
-                {/*------------------------- Else option -------------------------*/}
                 <FormDivider />
 
                 <FormLine>

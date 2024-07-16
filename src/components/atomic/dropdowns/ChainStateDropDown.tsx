@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { useSelector } from "react-redux";
 import { ChainStateTO } from "../../../dataAccess/access/to/ChainStateTO";
 import { masterDataSelectors } from "../../../slices/MasterDataSlice";

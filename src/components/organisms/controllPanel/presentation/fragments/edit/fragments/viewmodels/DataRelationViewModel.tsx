@@ -8,7 +8,7 @@ import { masterDataSelectors } from "../../../../../../../../slices/MasterDataSl
 import { EditRelation } from "../../../../../../../../slices/thunks/RelationThunks";
 import { useAppDispatch } from "../../../../../../../../store";
 import { DavitUtil } from "../../../../../../../../utils/DavitUtil";
-import { DavitDropDownItemProps } from "../../../../../../../atomic";
+import {DavitDropDownItemProps} from '../../../../../../../atomic/dropdowns';
 
 export const useDataRelationViewModel = () => {
     const datas: DataCTO[] = useSelector(masterDataSelectors.selectDatas);

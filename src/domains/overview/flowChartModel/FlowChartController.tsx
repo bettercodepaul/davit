@@ -7,7 +7,6 @@ import { ChainLinkCTO } from "../../../dataAccess/access/cto/ChainlinkCTO";
 import { SequenceCTO } from "../../../dataAccess/access/cto/SequenceCTO";
 import { SequenceStepCTO } from "../../../dataAccess/access/cto/SequenceStepCTO";
 import { ChainDecisionTO } from "../../../dataAccess/access/to/ChainDecisionTO";
-import { RelationType } from "../../../dataAccess/access/to/DataRelationTO";
 import { DecisionTO } from "../../../dataAccess/access/to/DecisionTO";
 import { GoTo, GoToTypes, Terminal } from "../../../dataAccess/access/types/GoToType";
 import { GoToChain, GoToTypesChain, TerminalChain } from "../../../dataAccess/access/types/GoToTypeChain";
@@ -25,15 +24,11 @@ interface FlowChartControllerProps {
 export const FlowChartController: FunctionComponent<FlowChartControllerProps> = () => {
         const {
             nodeModelTree,
-            calcSteps,
-            calcLinkIds,
-            lineColor,
             currentStepId,
             nodeModelChainTree,
             currentLinkId,
             chain,
             sequence,
-            chainLineColor,
             viewLevel,
             setViewLevelToChain,
             setViewLevelToSequence,
@@ -60,7 +55,7 @@ export const FlowChartController: FunctionComponent<FlowChartControllerProps> = 
         }, [parentRef]);
 
         const buildSequenceChart = (node: NodeModel): JSX.Element => {
-            const rel: RelationType[] = [];
+            // const rel: RelationType[] = [];
 
             // if (node.parentId) {
             //     rel.push({

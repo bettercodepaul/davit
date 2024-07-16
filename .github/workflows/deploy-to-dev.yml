@@ -1,11 +1,6 @@
 name: Deploy to DEV
 
-on:
-  push:
-    branches:
-      - main
-      - *
-
+on: push
 jobs:
   build:
     name: Build

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";
 import { DavitButton } from "../../../../../../../atomic/buttons/DavitButton";
 import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";

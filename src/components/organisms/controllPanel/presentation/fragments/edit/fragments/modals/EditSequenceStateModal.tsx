@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
-import { DavitModal } from "../../../../../../../atomic";
+import { FunctionComponent } from "react";
 import { SequenceStateForm } from "../forms/SequenceStateForm";
+import {DavitModal} from '../../../../../../../atomic/modals';
 
 interface EditStateModalProps {
 }

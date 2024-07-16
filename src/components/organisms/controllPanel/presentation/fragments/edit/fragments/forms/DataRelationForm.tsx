@@ -1,10 +1,10 @@
-import React, { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { Direction } from "../../../../../../../../dataAccess/access/to/DataRelationTO";
-import { DavitBackButton } from "../../../../../../../atomic/buttons/DavitBackButton";
-import { DavitButton } from "../../../../../../../atomic/buttons/DavitButton";
-import { DavitDeleteButton } from "../../../../../../../atomic/buttons/DavitDeleteButton";
-import { DavitDropDown } from "../../../../../../../atomic/dropdowns/DavitDropDown";
-import { Form } from "../../../../../../../atomic/forms/Form";
+import { DavitBackButton } from "../../../../../../../atomic/buttons";
+import { DavitButton } from "../../../../../../../atomic/buttons";
+import { DavitDeleteButton } from "../../../../../../../atomic/buttons";
+import { DavitDropDown } from "../../../../../../../atomic/dropdowns";
+import { Form } from "../../../../../../../atomic/forms";
 import { FormBody } from "../../../../../../../atomic/forms/fragments/FormBody";
 import { FormFooter } from "../../../../../../../atomic/forms/fragments/FormFooter";
 import { FormHeader } from "../../../../../../../atomic/forms/fragments/FormHeader";

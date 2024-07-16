@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import { DavitButton } from "../atomic";
+import { FunctionComponent } from "react";
+import {DavitButton} from '../atomic/buttons';
 
 interface ToggleButtonProps {
     toggleCallback: (isLeft: boolean) => void;

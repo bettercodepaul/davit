@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
-import { DavitModal } from "../../../../../../../atomic";
+import { FunctionComponent } from "react";
 import { ChainStateForm } from "../forms/ChainStateForm";
+import {DavitModal} from '../../../../../../../atomic/modals';
 
 interface EditChainModalProps {
 }

@@ -130,7 +130,7 @@ export const useConfigurationViewModel = () => {
         if (!DavitUtil.isNullOrUndefined(sequenceConfigurationToEdit)) {
             const copySequenceConfiguration: SequenceConfigurationTO = DavitUtil.deepCopy(sequenceConfigurationToEdit);
             copySequenceConfiguration.initDatas =
-                copySequenceConfiguration.initDatas.filter((iData, iex) => iex !== index);
+                copySequenceConfiguration.initDatas.filter((iData, iex) => filterInitDataByIndex(iData, iex, index));
             dispatch(EditSequenceConfiguration.update(copySequenceConfiguration));
         }
     };
@@ -206,10 +206,15 @@ export const useConfigurationViewModel = () => {
         if (!DavitUtil.isNullOrUndefined(chainConfigurationToEdit)) {
             const copyChainConfiguration: ChainConfigurationTO = DavitUtil.deepCopy(chainConfigurationToEdit);
             copyChainConfiguration.initDatas =
-                copyChainConfiguration.initDatas.filter((iData, iex) => iex !== index);
+                copyChainConfiguration.initDatas.filter((iData, iex) => filterInitDataByIndex(iData, iex, index));
             dispatch(EditChainConfiguration.update(copyChainConfiguration));
         }
     };
+
+    const filterInitDataByIndex = (initDataTO: InitDataTO, index: number, index2:number): boolean => {
+        console.log("linter", initDataTO);
+        return index !== index2;
+    }
 
     const saveChainInitData = (initData: InitDataTO, index: number) => {
         if (!DavitUtil.isNullOrUndefined(chainConfigurationToEdit)) {

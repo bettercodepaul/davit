@@ -1,5 +1,5 @@
 import { motion, Point } from "framer-motion";
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { GeometricalDataCTO } from "../../../dataAccess/access/cto/GeometraicalDataCTO";
 import { Direction } from "../../../dataAccess/access/to/DataRelationTO";
 import "./DavitPath.css";
